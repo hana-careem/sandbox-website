@@ -109,7 +109,7 @@ export default function SandboxHero() {
 
       {/* Sticky Compact Countdown & CTA */}
       <div 
-        className={`fixed bottom-0 left-0 w-full z-40 bg-gradient-to-r from-[#4C1D95] to-[#D946EF] transition-transform duration-500 transform ${isSticky ? 'translate-y-0' : 'translate-y-full'} shadow-[0_-10px_30px_rgba(76,29,149,0.2)]`}
+        className={`fixed bottom-0 left-0 w-full z-40 bg-slate-950/90 backdrop-blur-xl border-t border-[#7C3AED]/30 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] transition-transform duration-500 transform ${isSticky ? 'translate-y-0' : 'translate-y-full'}`}
       >
         <div className="max-w-7xl mx-auto px-4 py-3 flex flex-row items-center justify-between">
           
