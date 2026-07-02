@@ -90,13 +90,12 @@ export default function SandboxHero() {
 
       {/* Sticky Compact Countdown & CTA */}
       <div 
-        className={`fixed bottom-0 left-0 w-full z-40 bg-slate-950/90 backdrop-blur-xl border-t-2 border-transparent transition-transform duration-500 transform ${isSticky ? 'translate-y-0' : 'translate-y-full'} shadow-[0_0_40px_rgba(124,58,237,0.15)]`}
-        style={{ borderImage: 'linear-gradient(to right, #7C3AED, #FF4D6D) 1' }}
+        className={`fixed bottom-0 left-0 w-full z-40 bg-gradient-to-r from-[#4C1D95] to-[#D946EF] transition-transform duration-500 transform ${isSticky ? 'translate-y-0' : 'translate-y-full'} shadow-[0_-10px_30px_rgba(76,29,149,0.2)]`}
       >
         <div className="max-w-7xl mx-auto px-4 py-3 flex flex-row items-center justify-between">
           
           {/* Ticking Numbers */}
-          <div className="flex gap-3 md:gap-8">
+          <div className="flex gap-4 md:gap-8">
             {[
               { label: 'Days', value: timeLeft.days },
               { label: 'Hrs', value: timeLeft.hours },
@@ -104,10 +103,10 @@ export default function SandboxHero() {
               { label: 'Sec', value: timeLeft.seconds }
             ].map((item, idx) => (
               <div key={idx} className="flex flex-col items-center">
-                <span className="text-2xl md:text-4xl font-black font-display text-transparent bg-clip-text bg-gradient-to-br from-white to-slate-400 tabular-nums drop-shadow-[0_0_10px_rgba(56,189,248,0.3)]">
+                <span className="text-2xl md:text-4xl font-black font-display text-white tabular-nums">
                   {item.value.toString().padStart(2, '0')}
                 </span>
-                <span className="text-[9px] md:text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">
+                <span className="text-[10px] md:text-xs font-bold text-white/90 uppercase tracking-widest mt-1">
                   {item.label}
                 </span>
               </div>
@@ -118,7 +117,7 @@ export default function SandboxHero() {
           <Link 
             href="https://forms.office.com/" 
             target="_blank"
-            className="inline-flex items-center justify-center px-6 py-3 text-sm md:text-base font-bold rounded-full text-white bg-gradient-to-r from-[#7C3AED] to-[#FF4D6D] shadow-[0_0_20px_rgba(255,77,109,0.4)] animate-pulse hover:animate-none hover:scale-105 transition-all"
+            className="inline-flex items-center justify-center px-6 py-3 text-sm md:text-base font-bold rounded-full text-white bg-[#FF4D6D] hover:bg-[#E11D48] shadow-[0_4px_14px_rgba(255,77,109,0.3)] transition-colors"
           >
             REGISTER NOW
           </Link>
