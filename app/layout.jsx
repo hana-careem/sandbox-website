@@ -1,6 +1,10 @@
 import './globals.css'
+import { Inter, Space_Grotesk } from 'next/font/google'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' })
 
 export const metadata = {
   title: 'Sandbox | APIIT',
@@ -9,11 +13,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <head>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
-      </head>
-      <body>
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+      <body className="bg-slate-950 text-slate-300 font-sans selection:bg-[#7C3AED] selection:text-white antialiased">
         <Navbar />
         {children}
         <Footer />

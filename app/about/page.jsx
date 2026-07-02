@@ -3,7 +3,6 @@ import AboutBanner from '../../components/about/AboutBanner';
 import OurHistory from '../../components/about/OurHistory';
 import OurGoals from '../../components/about/OurGoals';
 import VisionMission from '../../components/about/VisionMission';
-import TeamCTA from '../../components/about/TeamCTA';
 
 export const metadata = {
   title: 'About | Sandbox',
@@ -17,7 +16,6 @@ export default function AboutPage() {
       <OurHistory />
       <OurGoals />
       <VisionMission />
-      <TeamCTA />
     </main>
   );
 }

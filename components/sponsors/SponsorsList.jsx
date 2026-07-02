@@ -1,0 +1,65 @@
+"use client";
+import React from 'react';
+import Image from 'next/image';
+import ScrollReveal from '../ui/ScrollReveal';
+
+// TODO: Replace with exact sponsor names and logos
+const SPONSORS_DATA = {
+  "Title Sponsor": [
+    { name: "Placeholder Sponsor 1", logo: "/assets/placeholder.jpg" }
+  ],
+  "Platinum Sponsors": [
+    { name: "Placeholder Sponsor 2", logo: "/assets/placeholder.jpg" },
+    { name: "Placeholder Sponsor 3", logo: "/assets/placeholder.jpg" }
+  ],
+  "Gold Sponsors": [
+    { name: "Placeholder Sponsor 4", logo: "/assets/placeholder.jpg" },
+    { name: "Placeholder Sponsor 5", logo: "/assets/placeholder.jpg" }
+  ]
+};
+
+export default function SponsorsList() {
+  return (
+    <section className="pt-40 pb-24 bg-slate-950 relative z-10 min-h-screen">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ScrollReveal>
+          <div className="text-center mb-20">
+            <h1 className="text-5xl md:text-7xl font-black font-display text-white tracking-tighter mb-6">
+              OUR <span className="text-[#7C3AED]">SPONSORS</span>
+            </h1>
+            <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+              The organizations that made past editions of Sandbox possible.
+            </p>
+          </div>
+        </ScrollReveal>
+
+        {Object.entries(SPONSORS_DATA).map(([tier, sponsors], idx) => (
+          <div key={idx} className="mb-20">
+            <ScrollReveal>
+              <h2 className="text-3xl font-bold font-display text-center text-white mb-10 pb-4">
+                {tier}
+              </h2>
+            </ScrollReveal>
+            
+            <div className="flex flex-wrap justify-center gap-8">
+              {sponsors.map((sponsor, i) => (
+                <ScrollReveal key={i} delay={i * 100} direction="up">
+                  <div className="w-48 h-48 md:w-64 md:h-64 relative bg-slate-900 border border-white/5 rounded-2xl flex items-center justify-center p-8 hover:border-[#7C3AED]/50 transition-colors">
+                    <div className="relative w-full h-full opacity-70 hover:opacity-100 transition-opacity">
+                      <Image 
+                        src={sponsor.logo} 
+                        alt={sponsor.name} 
+                        fill 
+                        className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                      />
+                    </div>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}

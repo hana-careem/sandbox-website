@@ -14,25 +14,23 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navClass = `fixed top-0 w-full z-40 transition-all duration-300 ${
-    scrolled ? 'backdrop-blur-md bg-slate-950/70 border-b border-white/10 shadow-xl py-3' : 'bg-transparent py-5'
+  const navClass = `fixed top-0 w-full z-50 transition-all duration-300 ${
+    scrolled ? 'backdrop-blur-md bg-slate-950/80 border-b border-white/10 shadow-xl py-3' : 'bg-transparent py-5'
   }`;
 
   return (
     <nav className={navClass}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="text-2xl font-bold font-display tracking-tighter text-white">
+          
+          <div className="flex items-center">
+            <Link href="/" className="text-2xl font-bold font-display tracking-tighter text-white mr-8">
               SANDBOX
             </Link>
           </div>
           
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
-              Home
-            </Link>
-            
+          {/* Desktop Nav */}
+          <div className="hidden lg:flex items-center space-x-6 flex-1 justify-center">
             <div className="relative group">
               <button 
                 className="flex items-center text-sm font-medium text-slate-300 hover:text-white transition-colors py-2"
@@ -41,68 +39,58 @@ export default function Navbar() {
               >
                 About Us <ChevronDown size={16} className="ml-1" />
               </button>
-              
-              {/* Dropdown */}
               <div 
-                className={`absolute left-0 mt-2 w-48 rounded-xl backdrop-blur-md bg-slate-900/90 border border-white/10 shadow-2xl transition-all duration-200 ${aboutOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
+                className={`absolute left-0 mt-2 w-48 rounded-xl backdrop-blur-md bg-slate-900/95 border border-white/10 shadow-2xl transition-all duration-200 ${aboutOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
                 onMouseEnter={() => setAboutOpen(true)}
                 onMouseLeave={() => setAboutOpen(false)}
               >
                 <div className="py-2">
-                  <Link href="/about" className="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-white/5">
-                    Overview
-                  </Link>
-                  <Link href="/team" className="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-white/5">
-                    Meet the Team
-                  </Link>
-                  <Link href="/editions" className="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-white/5">
-                    Past Editions
-                  </Link>
+                  <Link href="/about" className="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-white/5">Overview</Link>
+                  <Link href="/about/team" className="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-white/5">Meet the Team</Link>
+                  <Link href="/about/editions" className="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-white/5">Past Editions</Link>
                 </div>
               </div>
             </div>
-            
+            <Link href="/sponsors" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Sponsors</Link>
+            <Link href="/what-we-offer" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">What We Offer</Link>
+            <Link href="/faqs" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">FAQs</Link>
+            <Link href="/contact" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Contact Us</Link>
+          </div>
+
+          {/* Right Actions: Register (Always Visible) & Hamburger (Mobile Only) */}
+          <div className="flex items-center space-x-4">
             <Link 
               href="https://forms.office.com/" 
               target="_blank"
-              className="inline-flex items-center justify-center px-5 py-2 text-sm font-medium rounded-full bg-[#7C3AED] hover:bg-[#6D28D9] text-white shadow-[0_0_15px_rgba(124,58,237,0.5)] transition-all"
+              className="inline-flex items-center justify-center px-4 md:px-6 py-2 md:py-2.5 text-sm font-bold rounded-full bg-[#7C3AED] hover:bg-[#6D28D9] text-white shadow-[0_0_15px_rgba(124,58,237,0.5)] transition-all"
             >
               Register Now
             </Link>
-          </div>
 
-          <div className="md:hidden flex items-center">
             <button 
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-300 hover:text-white focus:outline-none"
+              className="lg:hidden text-slate-300 hover:text-white focus:outline-none p-1"
             >
               {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
+
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      <div className={`md:hidden absolute w-full backdrop-blur-lg bg-slate-950/95 border-b border-white/10 transition-all duration-300 ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
-        <div className="px-4 pt-2 pb-6 space-y-1">
-          <Link href="/" className="block px-3 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg">
-            Home
-          </Link>
-          <div className="space-y-1 pl-3">
-            <div className="px-3 py-2 text-sm font-semibold text-slate-500 uppercase tracking-wider">About Us</div>
-            <Link href="/about" className="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg">
-              Overview
-            </Link>
-            <Link href="/team" className="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg">
-              Meet the Team
-            </Link>
-            <Link href="/editions" className="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg">
-              Past Editions
-            </Link>
+      {/* Mobile Menu Dropdown */}
+      <div className={`lg:hidden absolute w-full backdrop-blur-lg bg-slate-950/95 border-b border-white/10 transition-all duration-300 ${isOpen ? 'max-h-screen opacity-100 py-4' : 'max-h-0 opacity-0 overflow-hidden py-0'}`}>
+        <div className="px-4 space-y-1 overflow-y-auto max-h-[80vh]">
+          <div className="space-y-1 pb-2 border-b border-white/10">
+            <div className="px-3 py-2 text-xs font-bold text-slate-500 uppercase tracking-wider">About Us</div>
+            <Link href="/about" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg">Overview</Link>
+            <Link href="/about/team" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg">Meet the Team</Link>
+            <Link href="/about/editions" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg">Past Editions</Link>
           </div>
-          <Link href="https://forms.office.com/" target="_blank" className="block mt-4 px-3 py-3 text-center text-base font-medium text-white bg-[#7C3AED] rounded-lg">
-            Register Now
-          </Link>
+          <Link href="/sponsors" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg">Sponsors</Link>
+          <Link href="/what-we-offer" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg">What We Offer</Link>
+          <Link href="/faqs" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg">FAQs</Link>
+          <Link href="/contact" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg">Contact Us</Link>
         </div>
       </div>
     </nav>

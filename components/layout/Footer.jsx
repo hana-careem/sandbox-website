@@ -1,32 +1,38 @@
 import React from 'react';
 import Link from 'next/link';
-import { Mail, MapPin } from 'lucide-react';
+import { Mail, MapPin, Instagram } from 'lucide-react';
 
 export default function Footer() {
   return (
     <footer className="bg-slate-950 border-t border-slate-900 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           
-          <div className="space-y-4">
+          <div className="space-y-4 md:col-span-2">
             <h3 className="text-2xl font-bold font-display tracking-tighter text-white">SANDBOX</h3>
-            <p className="text-slate-400 text-sm max-w-xs leading-relaxed">
-              Sri Lanka's first and largest inter-school business pitching competition, empowering the next generation of student entrepreneurs.
+            <p className="text-slate-400 text-sm max-w-sm leading-relaxed">
+              Sri Lanka's first and largest inter-school business pitching competition, run by the APIIT Entrepreneurship Club in partnership with the Ministry of Education.
             </p>
+            <div className="flex space-x-4 pt-2">
+              <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#7C3AED] transition-colors">
+                <Instagram size={24} />
+              </a>
+              {/* TODO: Add other social links if required */}
+            </div>
           </div>
           
           <div>
-            <h4 className="text-white font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-white font-semibold mb-4">Explore</h4>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li><Link href="/" className="hover:text-[#38BDF8] transition-colors">Home</Link></li>
-              <li><Link href="/about" className="hover:text-[#38BDF8] transition-colors">About Us</Link></li>
-              <li><Link href="/team" className="hover:text-[#38BDF8] transition-colors">Meet the Team</Link></li>
-              <li><Link href="/editions" className="hover:text-[#38BDF8] transition-colors">Past Editions</Link></li>
+              <li><Link href="/about" className="hover:text-[#7C3AED] transition-colors">About Sandbox</Link></li>
+              <li><Link href="/sponsors" className="hover:text-[#7C3AED] transition-colors">Sponsors</Link></li>
+              <li><Link href="/what-we-offer" className="hover:text-[#7C3AED] transition-colors">What We Offer</Link></li>
+              <li><Link href="/faqs" className="hover:text-[#7C3AED] transition-colors">FAQs</Link></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-white font-semibold mb-4">Contact Us</h4>
+            <h4 className="text-white font-semibold mb-4">Contact</h4>
             <ul className="space-y-3 text-sm text-slate-400">
               <li className="flex items-start">
                 <MapPin size={18} className="mr-2 text-[#7C3AED] flex-shrink-0 mt-0.5" />
