@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Mail, MapPin, Instagram } from 'lucide-react';
+import { Mail, MapPin, Instagram, Facebook } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -14,10 +14,12 @@ export default function Footer() {
               Sri Lanka's first and largest inter-school business pitching competition, run by the APIIT Entrepreneurship Club in partnership with the Ministry of Education.
             </p>
             <div className="flex space-x-4 pt-2">
-              <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#7C3AED] transition-colors">
+              <a href="https://instagram.com/sandbox.lk" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#7C3AED] transition-colors">
                 <Instagram size={24} />
               </a>
-              {/* TODO: Add other social links if required */}
+              <a href="https://facebook.com/sandbox.apiit.lk" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#7C3AED] transition-colors">
+                <Facebook size={24} />
+              </a>
             </div>
           </div>
           

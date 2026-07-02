@@ -74,25 +74,6 @@ export default function SandboxHero() {
             </ScrollReveal>
 
             <ScrollReveal delay={400} className="w-full flex flex-col items-center">
-              {/* Large Hero Countdown */}
-              <div className="mb-10 w-full max-w-2xl mx-auto border border-slate-800 rounded-3xl p-8 bg-slate-900/50 backdrop-blur-sm shadow-2xl flex flex-wrap justify-center gap-6 md:gap-12">
-                {[
-                  { label: 'DAYS', value: timeLeft.days },
-                  { label: 'HOURS', value: timeLeft.hours },
-                  { label: 'MINUTES', value: timeLeft.minutes },
-                  { label: 'SECONDS', value: timeLeft.seconds }
-                ].map((item, idx) => (
-                  <div key={idx} className="flex flex-col items-center min-w-[70px]">
-                    <span className="text-4xl md:text-6xl font-black font-display text-white tracking-tighter">
-                      {item.value.toString().padStart(2, '0')}
-                    </span>
-                    <span className="text-xs text-slate-500 font-bold tracking-widest mt-2">
-                      {item.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
               {/* Prominent CTA */}
               <Link 
                 href="https://forms.office.com/" 

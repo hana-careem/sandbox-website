@@ -1,11 +1,8 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/page": "app/page.js",
-  "/about/page": "app/about/page.js",
-  "/about/team/page": "app/about/team/page.js",
-  "/faqs/page": "app/faqs/page.js",
-  "/sponsors/page": "app/sponsors/page.js",
   "/contact/page": "app/contact/page.js",
   "/what-we-offer/page": "app/what-we-offer/page.js",
-  "/about/editions/page": "app/about/editions/page.js"
+  "/about/team/page": "app/about/team/page.js",
+  "/page": "app/page.js",
+  "/faqs/page": "app/faqs/page.js"
 }
