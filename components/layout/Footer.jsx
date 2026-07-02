@@ -1,8 +1,24 @@
+"use client";
 import React from 'react';
 import Link from 'next/link';
 import { Mail, MapPin, Instagram, Facebook } from 'lucide-react';
 
 export default function Footer() {
+  const handleDeepLink = (e, appUrl, webUrl) => {
+    e.preventDefault();
+    const now = Date.now();
+    
+    // Try to open the app
+    window.location.href = appUrl;
+    
+    // Set a timeout to fallback to web if the app didn't open
+    setTimeout(() => {
+      if (Date.now() - now < 1500) {
+        window.open(webUrl, '_blank', 'noopener,noreferrer');
+      }
+    }, 1000);
+  };
+
   return (
     <footer className="bg-slate-950 border-t border-slate-900 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,12 +30,20 @@ export default function Footer() {
               Sri Lanka's first and largest inter-school business pitching competition, run by the APIIT Entrepreneurship Club in partnership with the Ministry of Education.
             </p>
             <div className="flex space-x-4 pt-2">
-              <a href="https://instagram.com/sandbox.lk" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#7C3AED] transition-colors">
+              <button 
+                onClick={(e) => handleDeepLink(e, 'instagram://user?username=sandbox.apiit', 'https://instagram.com/sandbox.apiit')}
+                className="text-slate-400 hover:text-[#7C3AED] transition-colors"
+                aria-label="Instagram"
+              >
                 <Instagram size={24} />
-              </a>
-              <a href="https://facebook.com/sandbox.apiit.lk" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#7C3AED] transition-colors">
+              </button>
+              <button 
+                onClick={(e) => handleDeepLink(e, 'fb://facewebmodal/f?href=https://web.facebook.com/profile.php?id=61591366320255', 'https://web.facebook.com/profile.php?id=61591366320255')}
+                className="text-slate-400 hover:text-[#7C3AED] transition-colors"
+                aria-label="Facebook"
+              >
                 <Facebook size={24} />
-              </a>
+              </button>
             </div>
           </div>
           

@@ -31,6 +31,7 @@ export default function Navbar() {
           
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center space-x-6 flex-1 justify-center">
+            <Link href="/" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Home</Link>
             <div className="relative group">
               <button 
                 className="flex items-center text-sm font-medium text-slate-300 hover:text-white transition-colors py-2"
@@ -81,6 +82,7 @@ export default function Navbar() {
       {/* Mobile Menu Dropdown */}
       <div className={`lg:hidden absolute w-full backdrop-blur-lg bg-slate-950/95 border-b border-white/10 transition-all duration-300 ${isOpen ? 'max-h-screen opacity-100 py-4' : 'max-h-0 opacity-0 overflow-hidden py-0'}`}>
         <div className="px-4 space-y-1 overflow-y-auto max-h-[80vh]">
+          <Link href="/" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg">Home</Link>
           <div className="space-y-1 pb-2 border-b border-white/10">
             <div className="px-3 py-2 text-xs font-bold text-slate-500 uppercase tracking-wider">About Us</div>
             <Link href="/about" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg">Overview</Link>
