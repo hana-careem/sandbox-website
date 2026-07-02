@@ -78,10 +78,29 @@ export default function SandboxHero() {
               <Link 
                 href="https://forms.office.com/" 
                 target="_blank"
-                className="inline-flex items-center justify-center px-10 py-5 text-xl font-bold rounded-full bg-[#7C3AED] hover:bg-[#6D28D9] text-white shadow-[0_0_30px_rgba(124,58,237,0.6)] transition-all transform hover:scale-105"
+                className="inline-flex items-center justify-center px-10 py-5 text-xl font-bold rounded-full bg-[#7C3AED] hover:bg-[#6D28D9] text-white shadow-[0_0_30px_rgba(124,58,237,0.6)] transition-all transform hover:scale-105 mb-12"
               >
                 Register Your Team Now
               </Link>
+
+              {/* Inline Hero Countdown (Static/Subdued) */}
+              <div className="flex justify-center items-center gap-4 md:gap-8 px-6 md:px-10 py-4 md:py-6 rounded-2xl bg-gradient-to-r from-[#4C1D95]/30 to-[#D946EF]/30 border border-white/10 backdrop-blur-sm">
+                {[
+                  { label: 'Days', value: timeLeft.days },
+                  { label: 'Hours', value: timeLeft.hours },
+                  { label: 'Minutes', value: timeLeft.minutes },
+                  { label: 'Seconds', value: timeLeft.seconds }
+                ].map((item, idx) => (
+                  <div key={idx} className="flex flex-col items-center min-w-[60px]">
+                    <span className="text-3xl md:text-5xl font-bold font-display text-white tabular-nums opacity-90">
+                      {item.value.toString().padStart(2, '0')}
+                    </span>
+                    <span className="text-[10px] md:text-xs font-medium text-slate-400 uppercase tracking-widest mt-1 md:mt-2">
+                      {item.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </ScrollReveal>
 
           </div>
