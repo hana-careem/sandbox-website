@@ -88,33 +88,39 @@ export default function SandboxHero() {
         </div>
       </section>
 
-      {/* Sticky Compact Countdown */}
+      {/* Sticky Compact Countdown & CTA */}
       <div 
-        className={`fixed bottom-0 left-0 w-full z-40 bg-slate-950/95 border-t border-[#7C3AED]/30 backdrop-blur-lg shadow-[0_-10px_30px_rgba(0,0,0,0.5)] transition-transform duration-500 transform ${isSticky ? 'translate-y-0' : 'translate-y-full'}`}
+        className={`fixed bottom-0 left-0 w-full z-40 bg-slate-950/90 backdrop-blur-xl border-t-2 border-transparent transition-transform duration-500 transform ${isSticky ? 'translate-y-0' : 'translate-y-full'} shadow-[0_0_40px_rgba(124,58,237,0.15)]`}
+        style={{ borderImage: 'linear-gradient(to right, #7C3AED, #FF4D6D) 1' }}
       >
-        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-          <div className="text-sm font-bold text-slate-300 hidden md:block">
-            Registration closes in:
-          </div>
-          <div className="flex gap-4 md:gap-8 mx-auto md:mx-0">
+        <div className="max-w-7xl mx-auto px-4 py-3 flex flex-row items-center justify-between">
+          
+          {/* Ticking Numbers */}
+          <div className="flex gap-3 md:gap-8">
             {[
-              { label: 'D', value: timeLeft.days },
-              { label: 'H', value: timeLeft.hours },
-              { label: 'M', value: timeLeft.minutes },
-              { label: 'S', value: timeLeft.seconds }
+              { label: 'Days', value: timeLeft.days },
+              { label: 'Hrs', value: timeLeft.hours },
+              { label: 'Min', value: timeLeft.minutes },
+              { label: 'Sec', value: timeLeft.seconds }
             ].map((item, idx) => (
-              <div key={idx} className="flex items-baseline gap-1">
-                <span className="text-xl font-black font-display text-white">{item.value.toString().padStart(2, '0')}</span>
-                <span className="text-xs font-bold text-[#7C3AED]">{item.label}</span>
+              <div key={idx} className="flex flex-col items-center">
+                <span className="text-2xl md:text-4xl font-black font-display text-transparent bg-clip-text bg-gradient-to-br from-white to-slate-400 tabular-nums drop-shadow-[0_0_10px_rgba(56,189,248,0.3)]">
+                  {item.value.toString().padStart(2, '0')}
+                </span>
+                <span className="text-[9px] md:text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">
+                  {item.label}
+                </span>
               </div>
             ))}
           </div>
+
+          {/* Sticky Register Button */}
           <Link 
             href="https://forms.office.com/" 
             target="_blank"
-            className="hidden md:inline-flex px-4 py-1.5 text-sm font-bold rounded-full bg-white text-[#7C3AED] hover:bg-slate-200 transition-colors"
+            className="inline-flex items-center justify-center px-6 py-3 text-sm md:text-base font-bold rounded-full text-white bg-gradient-to-r from-[#7C3AED] to-[#FF4D6D] shadow-[0_0_20px_rgba(255,77,109,0.4)] animate-pulse hover:animate-none hover:scale-105 transition-all"
           >
-            Register
+            REGISTER NOW
           </Link>
         </div>
       </div>

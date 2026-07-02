@@ -31,7 +31,7 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4 pt-2">
               <button 
-                onClick={(e) => handleDeepLink(e, 'instagram://user?username=sandbox.apiit', 'https://instagram.com/sandbox.apiit')}
+                onClick={(e) => handleDeepLink(e, 'instagram://user?username=sandbox.lk', 'https://www.instagram.com/sandbox.lk')}
                 className="text-slate-400 hover:text-[#7C3AED] transition-colors"
                 aria-label="Instagram"
               >
