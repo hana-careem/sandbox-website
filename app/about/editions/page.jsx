@@ -1,17 +1,14 @@
-import React from 'react';
-import EditionsBanner from '../../../components/about/EditionsBanner';
-import EditionTabs from '../../../components/about/EditionTabs';
+import SandboxPastEditions from '../../../components/about/SandboxPastEditions';
 
 export const metadata = {
   title: 'Past Editions | Sandbox',
-  description: 'Explore the history and winners of past Sandbox editions.',
+  description: 'Explore the history and winners of past Sandbox editions — the stages, the schools, and the ideas that made it.',
 };
 
 export default function EditionsPage() {
   return (
     <main className="w-full">
-      <EditionsBanner />
-      <EditionTabs />
+      <SandboxPastEditions />
     </main>
   );
 }
