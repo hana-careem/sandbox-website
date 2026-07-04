@@ -1,11 +1,12 @@
 import React from 'react';
+import Link from 'next/link';
 import ScrollReveal from '../ui/ScrollReveal';
 
 export default function OurHistory() {
   const history = [
-    { edition: "Sandbox 1.0", desc: "The inaugural edition that started it all, bringing together 50 schools for the first time." },
-    { edition: "Sandbox 2.0", desc: "Expanding nationwide, introducing masterclasses and increasing the prize pool significantly." },
-    { edition: "Sandbox 3.0", desc: "Our biggest edition yet, partnering with the Ministry of Education to reach 150+ schools." }
+    { edition: "Sandbox 1.0", editionParam: "1.0", desc: "The inaugural edition that started it all, bringing together 50 schools for the first time." },
+    { edition: "Sandbox 2.0", editionParam: "2.0", desc: "Expanding nationwide, introducing masterclasses and increasing the prize pool significantly." },
+    { edition: "Sandbox 3.0", editionParam: null, desc: "Our biggest edition yet, partnering with the Ministry of Education to reach 150+ schools." }
   ];
 
   return (
@@ -25,7 +26,18 @@ export default function OurHistory() {
                   </div>
                 </div>
                 <div className="w-full md:w-1/2 px-4">
-                  <h3 className="text-2xl font-bold text-[#FF4D6D] mb-4 font-display">{item.edition}</h3>
+                  <h3 className="text-2xl font-bold mb-4 font-display">
+                    {item.editionParam ? (
+                      <Link
+                        href={`/about/editions?edition=${item.editionParam}`}
+                        className="text-[#FF4D6D] hover:text-[#7C3AED] transition-colors underline-offset-4 hover:underline"
+                      >
+                        {item.edition}
+                      </Link>
+                    ) : (
+                      <span className="text-[#FF4D6D]">{item.edition}</span>
+                    )}
+                  </h3>
                   <p className="text-slate-300 text-lg leading-relaxed">{item.desc}</p>
                 </div>
               </div>

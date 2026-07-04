@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import SandboxPastEditions from '../../../components/about/SandboxPastEditions';
 
 export const metadata = {
@@ -8,7 +9,11 @@ export const metadata = {
 export default function EditionsPage() {
   return (
     <main className="w-full">
-      <SandboxPastEditions />
+      {/* Suspense is required by Next.js 14 when a client component uses
+          useSearchParams — it prevents the page from blocking SSR. */}
+      <Suspense fallback={null}>
+        <SandboxPastEditions />
+      </Suspense>
     </main>
   );
 }

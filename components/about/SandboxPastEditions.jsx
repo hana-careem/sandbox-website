@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { Wrench, Users, Trophy, Flag, ChevronDown } from "lucide-react";
 
 // ── Data ──────────────────────────────────────────────────────────────
@@ -174,7 +175,12 @@ function WinnerAnnouncement({ meta, editionLabel }) {
 }
 
 export default function SandboxPastEditions() {
-  const [activeId, setActiveId] = useState("2.0");
+  const searchParams = useSearchParams();
+  const VALID_IDS = SANDBOX_VERSIONS.map((v) => v.id); // ["2.0", "1.0"]
+  const paramId = searchParams.get("edition");
+  const initialId = VALID_IDS.includes(paramId) ? paramId : "2.0";
+
+  const [activeId, setActiveId] = useState(initialId);
   const [openStage, setOpenStage] = useState(0);
 
   const active = SANDBOX_VERSIONS.find((v) => v.id === activeId);
