@@ -160,8 +160,8 @@ export default function SandboxHero() {
       <div 
         className={`fixed bottom-0 left-0 w-full z-40 bg-slate-950/40 backdrop-blur-2xl border-t border-white/10 shadow-[0_-8px_32px_rgba(0,0,0,0.4)] transition-transform duration-500 transform ${isSticky ? 'translate-y-0' : 'translate-y-full'}`}
       >
-        <div className="max-w-7xl mx-auto px-4 py-3 flex flex-row items-center justify-between">
-          
+        <div className="max-w-7xl mx-auto px-4 py-3 flex flex-row items-center justify-center">
+
           {/* Ticking Numbers */}
           <div className="flex gap-4 md:gap-8">
             {[
@@ -174,15 +174,6 @@ export default function SandboxHero() {
               <Dial key={idx} label={item.label} value={item.value} max={item.max} instanceId="sticky" size="small" />
             ))}
           </div>
-
-          {/* Sticky Register Button */}
-          <Link
-            href="https://forms.office.com/"
-            target="_blank"
-            className="group inline-flex items-center justify-center gap-2 px-6 py-3 text-sm md:text-base font-semibold rounded-full text-[#0F172A] bg-[#FFFFFF] shadow-[0_4px_14px_rgba(0,0,0,0.25)] transition-all duration-300 hover:bg-[#E2E8F0] hover:-translate-y-0.5 active:translate-y-0.5"
-          >
-            REGISTER NOW
-          </Link>
         </div>
       </div>
     </>
