@@ -4,8 +4,9 @@ import { Eye, Target } from 'lucide-react';
 
 export default function VisionMission() {
   return (
-    <section className="py-24 bg-slate-900 border-t border-white/5">
-      <div className="container max-w-5xl mx-auto px-4">
+    <section className="py-20 bg-slate-950">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-b from-slate-900/80 via-slate-900/40 to-slate-900/10 px-6 py-16 md:px-16 ring-1 ring-white/5 shadow-[0_0_90px_rgba(56,189,248,0.08)]">
         <div className="grid md:grid-cols-2 gap-12">
           <ScrollReveal direction="left">
             <div className="bg-slate-950 border border-slate-800 rounded-3xl p-10 h-full">
@@ -26,6 +27,7 @@ export default function VisionMission() {
               </p>
             </div>
           </ScrollReveal>
+        </div>
         </div>
       </div>
     </section>

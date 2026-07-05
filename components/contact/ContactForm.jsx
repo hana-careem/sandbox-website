@@ -31,7 +31,7 @@ export default function ContactForm() {
                   </div>
                   <div>
                     <h4 className="text-white font-bold mb-1">Location</h4>
-                    <p className="text-slate-400">APIIT City Campus,<br/>Union Place, Colombo 02</p>
+                    <p className="text-slate-400">Entrepreneurship Club, Asia Pacific Institute of Information Technology,<br/>No. 388 Union Place, Colombo 02, Sri Lanka</p>
                   </div>
                 </div>
 
@@ -41,8 +41,8 @@ export default function ContactForm() {
                   </div>
                   <div>
                     <h4 className="text-white font-bold mb-1">Email</h4>
-                    <a href="mailto:entrepreneurship@apiit.lk" className="text-slate-400 hover:text-white transition-colors">
-                      entrepreneurship@apiit.lk
+                    <a href="mailto:eclub@apiit.lk" className="text-slate-400 hover:text-white transition-colors">
+                      eclub@apiit.lk
                     </a>
                   </div>
                 </div>

@@ -6,15 +6,15 @@ import ScrollReveal from '../ui/ScrollReveal';
 // TODO: Replace with exact sponsor names and logos
 const SPONSORS_DATA = {
   "Title Sponsor": [
-    { name: "Placeholder Sponsor 1", logo: "/assets/placeholder.jpg" }
+    { name: "Placeholder Sponsor 1", logo: "/assets/eclub-logo.png" }
   ],
   "Platinum Sponsors": [
-    { name: "Placeholder Sponsor 2", logo: "/assets/placeholder.jpg" },
-    { name: "Placeholder Sponsor 3", logo: "/assets/placeholder.jpg" }
+    { name: "Placeholder Sponsor 2", logo: "/assets/eclub-logo.png" },
+    { name: "Placeholder Sponsor 3", logo: "/assets/eclub-logo.png" }
   ],
   "Gold Sponsors": [
-    { name: "Placeholder Sponsor 4", logo: "/assets/placeholder.jpg" },
-    { name: "Placeholder Sponsor 5", logo: "/assets/placeholder.jpg" }
+    { name: "Placeholder Sponsor 4", logo: "/assets/eclub-logo.png" },
+    { name: "Placeholder Sponsor 5", logo: "/assets/eclub-logo.png" }
   ]
 };
 

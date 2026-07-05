@@ -16,7 +16,7 @@ export default function Navbar() {
   }, []);
 
   const navClass = `fixed top-0 w-full z-50 transition-all duration-300 ${
-    scrolled ? 'backdrop-blur-md bg-slate-950/80 border-b border-white/10 shadow-xl py-3' : 'bg-transparent py-5'
+    scrolled ? 'backdrop-blur-md bg-slate-950/80 border-b border-white/10 shadow-xl py-2' : 'bg-transparent py-4'
   }`;
 
   return (
@@ -25,13 +25,14 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           
           <div className="flex items-center">
-            <Link href="/" className="mr-8">
+            {/* Club logo — primary brand, links to home. Min 40px tappable area on mobile */}
+            <Link href="/" className="flex items-center mr-8 py-1" aria-label="Entrepreneurship Club of APIIT, Home">
               <Image
-                src="/assets/eclub-logo.webp"
-                alt="Sandbox"
-                width={160}
-                height={40}
-                className="h-10 w-auto"
+                src="/assets/eclub-logo.png"
+                alt="Entrepreneurship Club of APIIT"
+                width={200}
+                height={56}
+                className="h-11 md:h-14 w-auto object-contain"
                 priority
               />
             </Link>
@@ -41,13 +42,14 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center space-x-6 flex-1 justify-center">
             <Link href="/" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Home</Link>
             <div className="relative group">
-              <button 
+              <Link
+                href="/about"
                 className="flex items-center text-sm font-medium text-slate-300 hover:text-white transition-colors py-2"
                 onMouseEnter={() => setAboutOpen(true)}
                 onMouseLeave={() => setAboutOpen(false)}
               >
                 About Us <ChevronDown size={16} className="ml-1" />
-              </button>
+              </Link>
               <div 
                 className={`absolute left-0 mt-2 w-48 rounded-xl backdrop-blur-md bg-slate-900/95 border border-white/10 shadow-2xl transition-all duration-200 ${aboutOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
                 onMouseEnter={() => setAboutOpen(true)}
@@ -55,7 +57,6 @@ export default function Navbar() {
               >
                 <div className="py-2">
                   <Link href="/about" className="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-white/5">Overview</Link>
-                  <Link href="/about/team" className="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-white/5">Meet the Team</Link>
                   <Link href="/about/editions" className="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-white/5">Past Editions</Link>
                 </div>
               </div>
@@ -94,7 +95,6 @@ export default function Navbar() {
           <div className="space-y-1 pb-2 border-b border-white/10">
             <div className="px-3 py-2 text-xs font-bold text-slate-500 uppercase tracking-wider">About Us</div>
             <Link href="/about" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg">Overview</Link>
-            <Link href="/about/team" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg">Meet the Team</Link>
             <Link href="/about/editions" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg">Past Editions</Link>
           </div>
           <Link href="/sponsors" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg">Sponsors</Link>

@@ -1,16 +1,18 @@
 import React from 'react';
+import Link from 'next/link';
 import ScrollReveal from '../ui/ScrollReveal';
 
 export default function OurHistory() {
   const history = [
-    { edition: "Sandbox 1.0", desc: "The inaugural edition that started it all, bringing together 50 schools for the first time." },
-    { edition: "Sandbox 2.0", desc: "Expanding nationwide, introducing masterclasses and increasing the prize pool significantly." },
-    { edition: "Sandbox 3.0", desc: "Our biggest edition yet, partnering with the Ministry of Education to reach 150+ schools." }
+    { edition: "Sandbox 1.0", editionParam: "1.0", desc: "The inaugural edition in September 2024 that started it all, launching Sri Lanka's first inter-school business pitching competition under the theme of Sustainability." },
+    { edition: "Sandbox 2.0", editionParam: "2.0", desc: "The competition had grown to 38 participating schools and 50 competing teams under the theme of Community Concerns, with St. Joseph's College, Negombo crowned champions." },
+    { edition: "Sandbox 3.0", editionParam: null, desc: "Our current edition, themed \"A Better Sri Lanka Tomorrow\" and run in partnership with the Ministry of Education, opening the competition to schools nationwide." }
   ];
 
   return (
-    <section className="py-24 bg-slate-900 border-y border-white/5">
+    <section className="py-20 bg-slate-950">
       <div className="container max-w-5xl mx-auto px-4">
+        <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-b from-slate-900/80 via-slate-900/40 to-slate-900/10 px-6 py-16 md:px-16 ring-1 ring-white/5 shadow-[0_0_90px_rgba(124,58,237,0.10)]">
         <ScrollReveal>
           <h2 className="text-3xl md:text-5xl font-black font-display text-white mb-16 text-center">Our History</h2>
         </ScrollReveal>
@@ -25,12 +27,24 @@ export default function OurHistory() {
                   </div>
                 </div>
                 <div className="w-full md:w-1/2 px-4">
-                  <h3 className="text-2xl font-bold text-[#FF4D6D] mb-4 font-display">{item.edition}</h3>
+                  <h3 className="text-2xl font-bold mb-4 font-display">
+                    {item.editionParam ? (
+                      <Link
+                        href={`/about/editions?edition=${item.editionParam}`}
+                        className="text-[#FF4D6D] hover:text-[#7C3AED] transition-colors underline-offset-4 hover:underline"
+                      >
+                        {item.edition}
+                      </Link>
+                    ) : (
+                      <span className="text-[#FF4D6D]">{item.edition}</span>
+                    )}
+                  </h3>
                   <p className="text-slate-300 text-lg leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             </ScrollReveal>
           ))}
+        </div>
         </div>
       </div>
     </section>
