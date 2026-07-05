@@ -1,7 +1,10 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
-import { Mail, MapPin, Instagram, Facebook } from 'lucide-react';
+import { Mail, MapPin, Instagram, Facebook, Linkedin } from 'lucide-react';
+
+const LI_WEB_URL = "https://www.linkedin.com/in/entrepreneurship-club-of-apiit-788313287";
+const LI_APP_URL = "linkedin://in/entrepreneurship-club-of-apiit-788313287";
 
 export default function Footer() {
   const handleDeepLink = (e, appUrl, webUrl) => {
@@ -17,6 +20,38 @@ export default function Footer() {
         window.open(webUrl, '_blank', 'noopener,noreferrer');
       }
     }, 1000);
+  };
+
+  // LinkedIn: desktop → new tab; mobile → try app, fall back to web
+  const handleLinkedIn = (e) => {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if (!isMobile) {
+      // Desktop: just open in new tab, let the <a> href do its job
+      return; // don't preventDefault — browser handles it
+    }
+
+    // Mobile branch
+    e.preventDefault();
+    window.location.href = LI_APP_URL;
+
+    // If the app doesn't take over within 800 ms, fall back to the web URL.
+    // Clear the timer on pagehide/visibilitychange so users who DO have the
+    // app aren't bounced to the web page when they return to the browser.
+    const timer = setTimeout(() => {
+      window.open(LI_WEB_URL, '_blank', 'noopener,noreferrer');
+    }, 800);
+
+    const cancel = () => {
+      clearTimeout(timer);
+      window.removeEventListener('pagehide', cancel);
+      document.removeEventListener('visibilitychange', cancel);
+    };
+
+    window.addEventListener('pagehide', cancel, { once: true });
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) cancel();
+    }, { once: true });
   };
 
   return (
@@ -44,6 +79,18 @@ export default function Footer() {
               >
                 <Facebook size={24} />
               </button>
+              {/* LinkedIn: renders as a proper <a> for accessibility + no-JS;
+                  onClick enhances with app-deep-link on mobile only */}
+              <a
+                href={LI_WEB_URL}
+                aria-label="LinkedIn"
+                rel="noopener noreferrer"
+                target="_blank"
+                onClick={handleLinkedIn}
+                className="text-slate-400 hover:text-[#7C3AED] transition-colors"
+              >
+                <Linkedin size={24} />
+              </a>
             </div>
           </div>
           

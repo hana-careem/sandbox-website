@@ -47,7 +47,6 @@ export default function Navbar() {
               >
                 <div className="py-2">
                   <Link href="/about" className="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-white/5">Overview</Link>
-                  <Link href="/about/team" className="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-white/5">Meet the Team</Link>
                   <Link href="/about/editions" className="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-white/5">Past Editions</Link>
                 </div>
               </div>
@@ -86,7 +85,6 @@ export default function Navbar() {
           <div className="space-y-1 pb-2 border-b border-white/10">
             <div className="px-3 py-2 text-xs font-bold text-slate-500 uppercase tracking-wider">About Us</div>
             <Link href="/about" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg">Overview</Link>
-            <Link href="/about/team" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg">Meet the Team</Link>
             <Link href="/about/editions" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg">Past Editions</Link>
           </div>
           <Link href="/sponsors" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg">Sponsors</Link>
