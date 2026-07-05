@@ -224,7 +224,7 @@ export default function SandboxPastEditions() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 px-6 py-16 text-white md:px-16">
+    <div className="min-h-screen bg-slate-950 px-6 pt-36 pb-16 text-white md:px-16">
       {/* Ambient glow, top-left */}
       <div
         className="pointer-events-none fixed left-0 top-0 h-[420px] w-[620px] opacity-40"

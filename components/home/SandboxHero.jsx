@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import ScrollReveal from '../ui/ScrollReveal';
+import { ChevronRight } from 'lucide-react';
 
 // TODO: Replace with exact registration deadline when provided
 const REGISTRATION_DEADLINE = new Date('2026-10-15T00:00:00');
@@ -126,12 +127,15 @@ export default function SandboxHero() {
 
             <ScrollReveal delay={400} className="w-full flex flex-col items-center">
               {/* Prominent CTA */}
-              <Link 
-                href="https://forms.office.com/" 
+              <Link
+                href="https://forms.office.com/"
                 target="_blank"
-                className="inline-flex items-center justify-center px-10 py-5 text-xl font-bold rounded-full bg-[#7C3AED] hover:bg-[#6D28D9] text-white shadow-[0_0_30px_rgba(124,58,237,0.6)] transition-all transform hover:scale-105 mb-12"
+                className="group inline-flex items-center justify-center gap-3 px-10 py-5 text-xl font-bold rounded-full bg-[#7C3AED] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.30),0_14px_30px_-6px_rgba(124,58,237,0.7),0_0_38px_rgba(124,58,237,0.30)] transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 mb-12"
               >
-                Register Your Team Now
+                <span>Register Your Team Now</span>
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover:translate-x-0.5">
+                  <ChevronRight size={18} />
+                </span>
               </Link>
 
               {/* Inline Hero Countdown (Radial Dials) */}
@@ -172,10 +176,10 @@ export default function SandboxHero() {
           </div>
 
           {/* Sticky Register Button */}
-          <Link 
-            href="https://forms.office.com/" 
+          <Link
+            href="https://forms.office.com/"
             target="_blank"
-            className="inline-flex items-center justify-center px-6 py-3 text-sm md:text-base font-bold rounded-full text-white bg-[#FF4D6D] hover:bg-[#E11D48] shadow-[0_4px_14px_rgba(255,77,109,0.3)] transition-colors"
+            className="group inline-flex items-center justify-center gap-2 px-6 py-3 text-sm md:text-base font-bold rounded-full text-white bg-[#FF4D6D] shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_8px_20px_-6px_rgba(255,77,109,0.6),0_0_28px_rgba(255,77,109,0.35)] transition-all duration-300 hover:-translate-y-0.5"
           >
             REGISTER NOW
           </Link>

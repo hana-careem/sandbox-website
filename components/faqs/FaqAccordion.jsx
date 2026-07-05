@@ -5,6 +5,10 @@ import { ChevronDown } from 'lucide-react';
 
 const FAQ_DATA = [
   {
+    question: "What is this year's theme?",
+    answer: "This year's theme is “A Better Sri Lanka Tomorrow,” so the scope is limitless. Pitch any solution that makes life easier, improves your community, or makes the world a better place."
+  },
+  {
     question: "Who can participate in Sandbox?",
     answer: "Sandbox is open to Grade 10, O/L, and A/L students from schools across Sri Lanka, including government, private, and international schools."
   },
@@ -25,10 +29,6 @@ const FAQ_DATA = [
   {
     question: "Do we need a prototype to pitch?",
     answer: "A functional or conceptual prototype is required for the Grand Final. It's optional for the Preliminary Round."
-  },
-  {
-    question: "What is this year's theme?",
-    answer: "This year's theme is “A Better Sri Lanka Tomorrow,” so the scope is limitless. Pitch any solution that makes life easier, improves your community, or makes the world a better place."
   }
 ];
 
