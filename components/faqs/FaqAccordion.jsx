@@ -28,7 +28,7 @@ const FAQ_DATA = [
   },
   {
     question: "What is this year's theme?",
-    answer: "This year's theme is “A Better Sri Lanka Tomorrow.” Every pitch should tackle a real community problem with a sustainable solution."
+    answer: "This year's theme is “A Better Sri Lanka Tomorrow,” so the scope is limitless. Pitch any solution that makes life easier, improves your community, or makes the world a better place."
   }
 ];
 

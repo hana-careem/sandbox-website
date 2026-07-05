@@ -15,8 +15,8 @@ const Dial = ({ label, value, max, instanceId, size = "large" }) => {
   const tickSpacing = circumference / ticks;
   const dashArray = `2 ${tickSpacing - 2}`;
   
-  // Progress fills up as time approaches 0
-  const progress = 1 - (value / max); 
+  // Progress depletes as time passes (value goes down to 0)
+  const progress = value / max; 
   const offset = circumference - (progress * circumference);
 
   const containerClasses = size === "small" 
@@ -137,6 +137,7 @@ export default function SandboxHero() {
               {/* Inline Hero Countdown (Radial Dials) */}
               <div className="flex justify-center items-center gap-4 md:gap-8">
                 {[
+                  // TODO: Set max days to the total duration of the countdown once start date is known
                   { label: 'Days', value: timeLeft.days, max: 30 },
                   { label: 'Hours', value: timeLeft.hours, max: 24 },
                   { label: 'Minutes', value: timeLeft.minutes, max: 60 },
@@ -160,6 +161,7 @@ export default function SandboxHero() {
           {/* Ticking Numbers */}
           <div className="flex gap-4 md:gap-8">
             {[
+              // TODO: Set max days to the total duration of the countdown once start date is known
               { label: 'Days', value: timeLeft.days, max: 30 },
               { label: 'Hrs', value: timeLeft.hours, max: 24 },
               { label: 'Min', value: timeLeft.minutes, max: 60 },

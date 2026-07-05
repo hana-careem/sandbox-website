@@ -29,15 +29,6 @@ const SANDBOX_VERSIONS = [
       winningSchool: "St. Joseph's College, Negombo", // confirmed — Sunday Times, 30 Nov 2025
       prize: null, // cash amount not published — TODO if you have the figure
       theme: "Community Concerns",
-      // Defining format facts for this edition (from the 2025 rules docs).
-      facts: [
-        "Grade 10, O/L & A/L",
-        "3–5 per team",
-        "Max 2 teams / school",
-        "Mandatory workshop",
-        "Prototype for the final",
-        "Mentor pairing",
-      ],
     },
     stages: [
       {
@@ -73,13 +64,6 @@ const SANDBOX_VERSIONS = [
       winningSchool: null, // not found in public sources — TODO, verify with the E-club
       prize: null, // TODO
       theme: "Sustainability",
-      // Defining format facts for the debut edition (from the 2024 rules docs).
-      facts: [
-        "A/L students only",
-        "5 per team",
-        "Top 3 prizes",
-        "Sandbox Shield",
-      ],
     },
     stages: [
       {
