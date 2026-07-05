@@ -131,15 +131,6 @@ export default function SandboxHero() {
               </div>
             ))}
           </div>
-
-          {/* Sticky Register Button */}
-          <Link 
-            href="https://forms.office.com/" 
-            target="_blank"
-            className="inline-flex items-center justify-center px-6 py-3 text-sm md:text-base font-bold rounded-full text-white bg-[#FF4D6D] hover:bg-[#E11D48] shadow-[0_4px_14px_rgba(255,77,109,0.3)] transition-colors"
-          >
-            REGISTER NOW
-          </Link>
         </div>
       </div>
     </>

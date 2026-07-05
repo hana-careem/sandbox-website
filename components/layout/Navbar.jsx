@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
 export default function Navbar() {
@@ -24,8 +25,15 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold font-display tracking-tighter text-white mr-8">
-              SANDBOX
+            <Link href="/" className="mr-8">
+              <Image
+                src="/assets/eclub-logo.webp"
+                alt="Sandbox"
+                width={160}
+                height={40}
+                className="h-10 w-auto"
+                priority
+              />
             </Link>
           </div>
           
