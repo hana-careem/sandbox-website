@@ -29,8 +29,9 @@ export default function PrizesRecognition() {
   ];
 
   return (
-    <section className="py-24 bg-slate-900 border-t border-white/5">
+    <section className="py-20 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-b from-slate-900/80 via-slate-900/40 to-slate-900/10 px-6 py-16 md:px-16 ring-1 ring-white/5 shadow-[0_0_90px_rgba(255,77,109,0.08)]">
         <ScrollReveal>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black font-display text-white tracking-tighter mb-6">
@@ -56,6 +57,7 @@ export default function PrizesRecognition() {
               </div>
             </ScrollReveal>
           ))}
+        </div>
         </div>
       </div>
     </section>

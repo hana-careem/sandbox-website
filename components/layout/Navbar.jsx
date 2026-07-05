@@ -28,7 +28,7 @@ export default function Navbar() {
             {/* Club logo — primary brand, links to home. Min 40px tappable area on mobile */}
             <Link href="/" className="flex items-center mr-8 py-1" aria-label="Entrepreneurship Club of APIIT, Home">
               <Image
-                src="/assets/E-club logo.png"
+                src="/assets/eclub-logo.png"
                 alt="Entrepreneurship Club of APIIT"
                 width={200}
                 height={56}
@@ -42,13 +42,14 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center space-x-6 flex-1 justify-center">
             <Link href="/" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Home</Link>
             <div className="relative group">
-              <button 
+              <Link
+                href="/about"
                 className="flex items-center text-sm font-medium text-slate-300 hover:text-white transition-colors py-2"
                 onMouseEnter={() => setAboutOpen(true)}
                 onMouseLeave={() => setAboutOpen(false)}
               >
                 About Us <ChevronDown size={16} className="ml-1" />
-              </button>
+              </Link>
               <div 
                 className={`absolute left-0 mt-2 w-48 rounded-xl backdrop-blur-md bg-slate-900/95 border border-white/10 shadow-2xl transition-all duration-200 ${aboutOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
                 onMouseEnter={() => setAboutOpen(true)}

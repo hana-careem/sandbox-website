@@ -99,7 +99,7 @@ export default function SandboxHero() {
       <section ref={heroRef} className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-slate-950">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/assets/sandbox-hero.png" // TODO: Add real hero image
+            src="/assets/eclub-logo.png" // TODO: Add real hero image
             alt="Sandbox Hero Background"
             fill
             className="object-cover opacity-20 grayscale" 
@@ -179,7 +179,7 @@ export default function SandboxHero() {
           <Link
             href="https://forms.office.com/"
             target="_blank"
-            className="group inline-flex items-center justify-center gap-2 px-6 py-3 text-sm md:text-base font-bold rounded-full text-white bg-[#FF4D6D] shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_8px_20px_-6px_rgba(255,77,109,0.6),0_0_28px_rgba(255,77,109,0.35)] transition-all duration-300 hover:-translate-y-0.5"
+            className="group inline-flex items-center justify-center gap-2 px-6 py-3 text-sm md:text-base font-semibold rounded-full text-[#0F172A] bg-[#FFFFFF] shadow-[0_4px_14px_rgba(0,0,0,0.25)] transition-all duration-300 hover:bg-[#E2E8F0] hover:-translate-y-0.5 active:translate-y-0.5"
           >
             REGISTER NOW
           </Link>

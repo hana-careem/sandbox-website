@@ -39,7 +39,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-slate-950 border-t border-slate-900 pt-16 pb-8">
+    <footer className="bg-slate-950 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
 
@@ -48,7 +48,7 @@ export default function Footer() {
             {/* Primary: E-Club logo */}
             <Link href="/" aria-label="Entrepreneurship Club of APIIT, Home">
               <Image
-                src="/assets/E-club logo.png"
+                src="/assets/eclub-logo.png"
                 alt="Entrepreneurship Club of APIIT"
                 width={270}
                 height={75}
@@ -62,7 +62,7 @@ export default function Footer() {
               <span className="text-xs text-slate-400 shrink-0">An initiative of</span>
               {/* brightness-0 invert renders the logo white on our dark background */}
               <Image
-                src="/assets/Apiit logo.png"
+                src="/assets/apiit-logo.png"
                 alt="APIIT"
                 width={120}
                 height={40}

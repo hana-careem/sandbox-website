@@ -10,8 +10,9 @@ export default function OurHistory() {
   ];
 
   return (
-    <section className="py-24 bg-slate-900 border-y border-white/5">
+    <section className="py-20 bg-slate-950">
       <div className="container max-w-5xl mx-auto px-4">
+        <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-b from-slate-900/80 via-slate-900/40 to-slate-900/10 px-6 py-16 md:px-16 ring-1 ring-white/5 shadow-[0_0_90px_rgba(124,58,237,0.10)]">
         <ScrollReveal>
           <h2 className="text-3xl md:text-5xl font-black font-display text-white mb-16 text-center">Our History</h2>
         </ScrollReveal>
@@ -43,6 +44,7 @@ export default function OurHistory() {
               </div>
             </ScrollReveal>
           ))}
+        </div>
         </div>
       </div>
     </section>
