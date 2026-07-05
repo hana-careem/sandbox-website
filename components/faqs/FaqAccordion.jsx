@@ -3,27 +3,32 @@ import React, { useState } from 'react';
 import ScrollReveal from '../ui/ScrollReveal';
 import { ChevronDown } from 'lucide-react';
 
-// TODO: Replace with real FAQ data
 const FAQ_DATA = [
   {
     question: "Who can participate in Sandbox?",
-    answer: "Sandbox is open to all school students across Sri Lanka, including government, private, and international schools."
+    answer: "Sandbox is open to Grade 10, O/L, and A/L students from schools across Sri Lanka, including government, private, and international schools."
   },
   {
     question: "How many members can be in a team?",
-    answer: "TODO: Specify team size limits (e.g., Teams can consist of 2 to 4 members from the same school)."
+    answer: "Teams have 3 to 5 members from the same school, and each school can enter up to 2 teams."
   },
   {
     question: "Is there a registration fee?",
-    answer: "TODO: Specify if there is a registration fee."
+    answer: "No, Sandbox is completely free to enter."
   },
   {
+    // TODO: Replace with the confirmed registration deadline for the current
+    // edition once the committee sets it.
     question: "What is the deadline for registration?",
-    answer: "TODO: Specify the exact deadline date and time."
+    answer: "Registration dates for the upcoming edition will be announced soon. Follow our social channels or check back here for the exact deadline."
   },
   {
     question: "Do we need a prototype to pitch?",
-    answer: "TODO: Clarify whether prototypes are mandatory or optional."
+    answer: "A functional or conceptual prototype is required for the Grand Final. It's optional for the Preliminary Round."
+  },
+  {
+    question: "What is this year's theme?",
+    answer: "This year's theme is “A Better Sri Lanka Tomorrow.” Every pitch should tackle a real community problem with a sustainable solution."
   }
 ];
 

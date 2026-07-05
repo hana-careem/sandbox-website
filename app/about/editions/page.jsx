@@ -3,7 +3,7 @@ import SandboxPastEditions from '../../../components/about/SandboxPastEditions';
 
 export const metadata = {
   title: 'Past Editions | Sandbox',
-  description: 'Explore the history and winners of past Sandbox editions — the stages, the schools, and the ideas that made it.',
+  description: 'Explore the history and winners of past Sandbox editions, including the stages, the schools, and the ideas that made it.',
 };
 
 export default function EditionsPage() {

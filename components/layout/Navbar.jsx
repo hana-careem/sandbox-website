@@ -26,7 +26,7 @@ export default function Navbar() {
           
           <div className="flex items-center">
             {/* Club logo — primary brand, links to home. Min 40px tappable area on mobile */}
-            <Link href="/" className="flex items-center mr-8 py-1" aria-label="Entrepreneurship Club of APIIT — Home">
+            <Link href="/" className="flex items-center mr-8 py-1" aria-label="Entrepreneurship Club of APIIT, Home">
               <Image
                 src="/assets/E-club logo.png"
                 alt="Entrepreneurship Club of APIIT"

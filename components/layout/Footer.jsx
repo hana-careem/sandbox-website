@@ -46,7 +46,7 @@ export default function Footer() {
           {/* ── Brand column: Club logo leads, APIIT secondary ── */}
           <div className="space-y-5 md:col-span-2">
             {/* Primary: E-Club logo */}
-            <Link href="/" aria-label="Entrepreneurship Club of APIIT — Home">
+            <Link href="/" aria-label="Entrepreneurship Club of APIIT, Home">
               <Image
                 src="/assets/E-club logo.png"
                 alt="Entrepreneurship Club of APIIT"
@@ -118,11 +118,11 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-slate-400">
               <li className="flex items-start">
                 <MapPin size={18} className="mr-2 text-[#7C3AED] flex-shrink-0 mt-0.5" />
-                <span>APIIT City Campus,<br/>Union Place, Colombo 02</span>
+                <span>Entrepreneurship Club, Asia Pacific Institute of Information Technology,<br/>No. 388 Union Place, Colombo 02, Sri Lanka</span>
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="mr-2 text-[#7C3AED] flex-shrink-0" />
-                <a href="mailto:entrepreneurship@apiit.lk" className="hover:text-white transition-colors">entrepreneurship@apiit.lk</a>
+                <a href="mailto:eclub@apiit.lk" className="hover:text-white transition-colors">eclub@apiit.lk</a>
               </li>
             </ul>
           </div>

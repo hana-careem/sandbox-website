@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { Wrench, Users, Trophy, Flag, ChevronDown } from "lucide-react";
+import { Wrench, Users, Trophy, Flag, Target, ChevronDown } from "lucide-react";
 
 // ── Data ──────────────────────────────────────────────────────────────
 // PAGE_INTRO is the one-time framing paragraph for the whole page.
@@ -28,6 +28,16 @@ const SANDBOX_VERSIONS = [
     meta: {
       winningSchool: "St. Joseph's College, Negombo", // confirmed — Sunday Times, 30 Nov 2025
       prize: null, // cash amount not published — TODO if you have the figure
+      theme: "Community Concerns",
+      // Defining format facts for this edition (from the 2025 rules docs).
+      facts: [
+        "Grade 10, O/L & A/L",
+        "3–5 per team",
+        "Max 2 teams / school",
+        "Mandatory workshop",
+        "Prototype for the final",
+        "Mentor pairing",
+      ],
     },
     stages: [
       {
@@ -62,6 +72,14 @@ const SANDBOX_VERSIONS = [
     meta: {
       winningSchool: null, // not found in public sources — TODO, verify with the E-club
       prize: null, // TODO
+      theme: "Sustainability",
+      // Defining format facts for the debut edition (from the 2024 rules docs).
+      facts: [
+        "A/L students only",
+        "5 per team",
+        "Top 3 prizes",
+        "Sandbox Shield",
+      ],
     },
     stages: [
       {
@@ -174,6 +192,37 @@ function WinnerAnnouncement({ meta, editionLabel }) {
   );
 }
 
+// ── Theme section ─────────────────────────────────────────────────────
+// Each edition ran under its own theme (GWS gives every year a tagline).
+// Theme shows as a quoted, italic-violet line; the defining format facts
+// sit below as small chips. Flat background, no glass.
+function ThemeSection({ theme, facts }) {
+  if (!theme) return null;
+  return (
+    <div className="mb-10 border-b border-slate-800 pb-8">
+      <div className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-sky-400">
+        <Target size={14} />
+        Theme
+      </div>
+      <p className="mb-5 text-2xl font-bold font-display italic leading-snug text-violet-300 md:text-3xl">
+        &ldquo;{theme}&rdquo;
+      </p>
+      {facts && facts.length > 0 && (
+        <div className="flex flex-wrap gap-2">
+          {facts.map((f) => (
+            <span
+              key={f}
+              className="rounded-full border border-slate-700 bg-slate-800/60 px-3 py-1 text-xs text-slate-300"
+            >
+              {f}
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function SandboxPastEditions() {
   const searchParams = useSearchParams();
   const VALID_IDS = SANDBOX_VERSIONS.map((v) => v.id); // ["2.0", "1.0"]
@@ -246,7 +295,7 @@ export default function SandboxPastEditions() {
         </h2>
         <p className="mb-8 text-slate-400">
           {active.status === "completed"
-            ? "Wrapped — here's how it played out."
+            ? "Wrapped, here's how it played out."
             : "Here's how it's structured, start to finish."}
         </p>
 
@@ -255,6 +304,9 @@ export default function SandboxPastEditions() {
           meta={active.meta}
           editionLabel={`Sandbox ${active.id}`}
         />
+
+        {/* ── Theme: this edition's theme + format facts ────────────── */}
+        <ThemeSection theme={active.meta.theme} facts={active.meta.facts} />
 
         {/* ── Timeline ───────────────────────────────────────────────── */}
         <div className="relative">
