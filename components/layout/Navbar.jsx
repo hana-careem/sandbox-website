@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
 export default function Navbar() {
@@ -15,7 +16,7 @@ export default function Navbar() {
   }, []);
 
   const navClass = `fixed top-0 w-full z-50 transition-all duration-300 ${
-    scrolled ? 'backdrop-blur-md bg-slate-950/80 border-b border-white/10 shadow-xl py-3' : 'bg-transparent py-5'
+    scrolled ? 'backdrop-blur-md bg-slate-950/80 border-b border-white/10 shadow-xl py-2' : 'bg-transparent py-4'
   }`;
 
   return (
@@ -24,8 +25,16 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold font-display tracking-tighter text-white mr-8">
-              SANDBOX
+            {/* Club logo — primary brand, links to home. Min 40px tappable area on mobile */}
+            <Link href="/" className="flex items-center mr-8 py-1" aria-label="Entrepreneurship Club of APIIT — Home">
+              <Image
+                src="/assets/E-club logo.png"
+                alt="Entrepreneurship Club of APIIT"
+                width={200}
+                height={56}
+                className="h-11 md:h-14 w-auto object-contain"
+                priority
+              />
             </Link>
           </div>
           
