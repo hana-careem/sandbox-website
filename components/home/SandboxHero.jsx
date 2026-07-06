@@ -42,7 +42,7 @@ const Dial = ({ label, value, max, instanceId, size = "large" }) => {
             </mask>
           </defs>
           <circle cx="50" cy="50" r={radius} fill="transparent" stroke="#1e293b" strokeWidth={strokeW} mask={`url(#tick-mask-${instanceId}-${label})`} />
-          <circle cx="50" cy="50" r={radius} fill="transparent" stroke="#38BDF8" strokeWidth={strokeW} 
+          <circle cx="50" cy="50" r={radius} fill="transparent" stroke="#7C3AED" strokeWidth={strokeW}
             strokeDasharray={circumference} strokeDashoffset={offset} 
             mask={`url(#tick-mask-${instanceId}-${label})`} 
             className="transition-all duration-1000 ease-linear"
