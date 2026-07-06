@@ -4,6 +4,16 @@ import { Rocket } from 'lucide-react';
 
 const MILESTONES = [
   {
+    date: 'July 7th',
+    title: 'Registrations Open',
+    desc: 'Schools nationwide can now sign up their teams for this year\'s Sandbox.',
+  },
+  {
+    date: 'September 7th',
+    title: 'Registrations Close',
+    desc: 'Last call for teams to lock in their spot before the competition kicks off.',
+  },
+  {
     date: '2nd Week Sep',
     title: 'Press Conference',
     desc: 'The official launch — Sandbox is announced to schools and media nationwide.',
