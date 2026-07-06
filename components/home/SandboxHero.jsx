@@ -98,14 +98,15 @@ export default function SandboxHero() {
     <>
       <section ref={heroRef} className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-slate-950">
         <div className="absolute inset-0 z-0">
-          <Image 
-            src="/assets/eclub-logo.png" // TODO: Add real hero image
+          <Image
+            src="/assets/home-hero.jpg"
             alt="Sandbox Hero Background"
             fill
-            className="object-cover opacity-20 grayscale" 
+            className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/90 to-slate-950" />
+          <div className="absolute inset-0 bg-slate-950/55" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/40 to-slate-950" />
         </div>
 
         <div className="container max-w-7xl mx-auto px-4 relative z-10 flex flex-col items-center">
