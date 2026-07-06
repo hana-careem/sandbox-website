@@ -72,7 +72,7 @@ export default function ContactForm() {
                     type="text" 
                     id="name" 
                     className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#7C3AED] transition-colors"
-                    placeholder="John Doe"
+                    placeholder="Your Name"
                   />
                 </div>
                 <div>
@@ -81,7 +81,7 @@ export default function ContactForm() {
                     type="email" 
                     id="email" 
                     className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#7C3AED] transition-colors"
-                    placeholder="john@example.com"
+                    placeholder="you@example.com"
                   />
                 </div>
                 <div>

@@ -115,7 +115,7 @@ export default function SandboxHero() {
             <ScrollReveal delay={100}>
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-black font-display text-white tracking-tighter leading-[0.9] mb-6">
                 <span className="block text-slate-300">THE PREMIER</span>
-                <span className="block text-[#7C3AED]">BUSINESS PITCHING</span>
+                <span className="block text-[#9333EA]">BUSINESS PITCHING</span>
                 <span className="block text-slate-100">COMPETITION.</span>
               </h1>
             </ScrollReveal>
@@ -131,7 +131,7 @@ export default function SandboxHero() {
               <Link
                 href="https://forms.office.com/"
                 target="_blank"
-                className="group inline-flex items-center justify-center gap-3 px-10 py-5 text-xl font-bold rounded-full bg-[#7C3AED] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.30),0_14px_30px_-6px_rgba(124,58,237,0.7),0_0_38px_rgba(124,58,237,0.30)] transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 mb-12"
+                className="group inline-flex items-center justify-center gap-3 px-10 py-5 text-xl font-bold rounded-full bg-[#9333EA] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.30),0_14px_30px_-6px_rgba(147,51,234,0.7),0_0_38px_rgba(147,51,234,0.30)] transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 mb-12"
               >
                 <span>Register Now</span>
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover:translate-x-0.5">

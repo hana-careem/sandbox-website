@@ -27,8 +27,20 @@ export default function WhyAttend() {
   ];
 
   return (
-    <section className="py-24 bg-slate-950">
-      <div className="container max-w-7xl mx-auto px-4">
+    <section className="relative py-24 bg-slate-950 overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#2E1065]/50 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#7C3AED]/10 to-slate-950" />
+        <div
+          className="absolute inset-0 opacity-[0.06] mix-blend-overlay"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+          }}
+        />
+      </div>
+
+      <div className="container max-w-7xl mx-auto px-4 relative z-10">
         <ScrollReveal>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-black font-display text-white mb-4">Why Sandbox?</h2>

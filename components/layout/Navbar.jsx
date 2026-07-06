@@ -72,7 +72,7 @@ export default function Navbar() {
             <Link 
               href="https://forms.office.com/" 
               target="_blank"
-              className="inline-flex items-center justify-center px-4 md:px-6 py-2 md:py-2.5 text-sm font-bold rounded-full bg-[#7C3AED] hover:bg-[#6D28D9] text-white shadow-[0_0_15px_rgba(124,58,237,0.5)] transition-all"
+              className="inline-flex items-center justify-center px-4 md:px-6 py-2 md:py-2.5 text-sm font-bold rounded-full bg-[#9333EA] hover:bg-[#7E22CE] text-white shadow-[0_0_15px_rgba(147,51,234,0.5)] transition-all"
             >
               Register Now
             </Link>
