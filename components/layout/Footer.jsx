@@ -6,8 +6,19 @@ import { Mail, MapPin, Instagram, Facebook, Linkedin } from 'lucide-react';
 
 const LI_WEB_URL = "https://www.linkedin.com/in/entrepreneurship-club-of-apiit-788313287";
 const LI_APP_URL = "linkedin://in/entrepreneurship-club-of-apiit-788313287";
+const ADDRESS = 'Asia Pacific Institute of Information Technology, No. 388 Union Place, Colombo 02, Sri Lanka';
 
 export default function Footer() {
+  const handleAddressClick = (e) => {
+    e.preventDefault();
+    const q = encodeURIComponent(ADDRESS);
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const url = isIOS
+      ? `https://maps.apple.com/?q=${q}`
+      : `https://www.google.com/maps/search/?api=1&query=${q}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   const handleDeepLink = (e, appUrl, webUrl) => {
     e.preventDefault();
     const now = Date.now();
@@ -39,7 +50,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-slate-950 pt-16 pb-8">
+    <footer className="bg-slate-950 pt-16 pb-8 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
 
@@ -118,7 +129,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-slate-400">
               <li className="flex items-start">
                 <MapPin size={18} className="mr-2 text-[#7C3AED] flex-shrink-0 mt-0.5" />
-                <span>Entrepreneurship Club, Asia Pacific Institute of Information Technology,<br/>No. 388 Union Place, Colombo 02, Sri Lanka</span>
+                <a href="#" onClick={handleAddressClick} className="hover:text-white transition-colors cursor-pointer">Entrepreneurship Club, Asia Pacific Institute of Information Technology,<br/>No. 388 Union Place, Colombo 02, Sri Lanka</a>
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="mr-2 text-[#7C3AED] flex-shrink-0" />

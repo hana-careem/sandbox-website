@@ -17,7 +17,7 @@ export default function PartnerUp() {
           </p>
           <Link 
             href="/contact" 
-            className="inline-flex px-8 py-4 text-lg font-bold rounded-full bg-white text-[#7C3AED] hover:bg-slate-200 shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all"
+            className="inline-flex px-8 py-4 text-lg font-bold rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white transition-all focus:ring-2 focus:ring-white/50 focus:outline-none shadow-lg min-h-[44px]"
           >
             Become a Partner
           </Link>

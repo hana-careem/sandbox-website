@@ -54,14 +54,14 @@ export default function FaqAccordion() {
             const isOpen = openIndex === idx;
             return (
               <ScrollReveal key={idx} delay={idx * 50} direction="up">
-                <div className={`border rounded-2xl overflow-hidden transition-colors duration-300 ${isOpen ? 'border-[#7C3AED] bg-slate-900' : 'border-white/10 bg-slate-950 hover:border-white/20'}`}>
+                <div className={`border rounded-2xl overflow-hidden transition-all duration-300 backdrop-blur-md ${isOpen ? 'border-white/20 bg-white/10 shadow-lg' : 'border-white/5 bg-white/5 hover:bg-white/10'}`}>
                   <button
-                    className="w-full px-6 py-5 flex items-center justify-between focus:outline-none"
+                    className="w-full px-6 py-5 flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/50 rounded-2xl transition-all"
                     onClick={() => setOpenIndex(isOpen ? null : idx)}
                   >
                     <span className="text-lg font-bold text-white text-left pr-4">{faq.question}</span>
                     <ChevronDown 
-                      className={`text-slate-400 flex-shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#7C3AED]' : ''}`} 
+                      className={`text-slate-400 flex-shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-white' : ''}`} 
                       size={24} 
                     />
                   </button>

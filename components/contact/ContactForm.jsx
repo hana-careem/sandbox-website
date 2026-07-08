@@ -3,7 +3,19 @@ import React from 'react';
 import ScrollReveal from '../ui/ScrollReveal';
 import { Mail, MapPin, Phone } from 'lucide-react';
 
+const ADDRESS = 'Asia Pacific Institute of Information Technology, No. 388 Union Place, Colombo 02, Sri Lanka';
+
 export default function ContactForm() {
+  const handleAddressClick = (e) => {
+    e.preventDefault();
+    const q = encodeURIComponent(ADDRESS);
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const url = isIOS
+      ? `https://maps.apple.com/?q=${q}`
+      : `https://www.google.com/maps/search/?api=1&query=${q}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section className="pt-40 pb-24 bg-slate-950 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,7 +43,7 @@ export default function ContactForm() {
                   </div>
                   <div>
                     <h4 className="text-white font-bold mb-1">Location</h4>
-                    <p className="text-slate-400">Entrepreneurship Club, Asia Pacific Institute of Information Technology,<br/>No. 388 Union Place, Colombo 02, Sri Lanka</p>
+                    <a href="#" onClick={handleAddressClick} className="text-slate-400 hover:text-white transition-colors cursor-pointer">Entrepreneurship Club, Asia Pacific Institute of Information Technology,<br/>No. 388 Union Place, Colombo 02, Sri Lanka</a>
                   </div>
                 </div>
 
@@ -95,7 +107,7 @@ export default function ContactForm() {
                 </div>
                 <button 
                   type="button"
-                  className="w-full py-4 rounded-xl bg-[#7C3AED] hover:bg-[#6D28D9] text-white font-bold transition-colors"
+                  className="w-full py-4 rounded-full bg-[#7C3AED]/30 backdrop-blur-md border border-white/10 hover:bg-[#7C3AED]/40 text-white font-bold transition-all focus:ring-2 focus:ring-[#7C3AED]/50 focus:outline-none min-h-[44px] shadow-lg"
                 >
                   Send Message
                 </button>

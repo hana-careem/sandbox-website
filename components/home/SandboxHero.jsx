@@ -94,6 +94,8 @@ export default function SandboxHero() {
     };
   }, []);
 
+  const daysLeft = Math.max(0, Math.ceil((REGISTRATION_DEADLINE.getTime() - Date.now()) / 86400000));
+
   return (
     <>
       <section ref={heroRef} className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-slate-950">
@@ -131,10 +133,10 @@ export default function SandboxHero() {
               <Link
                 href="https://forms.office.com/"
                 target="_blank"
-                className="group inline-flex items-center justify-center gap-3 px-10 py-5 text-xl font-bold rounded-full bg-[#9333EA] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.30),0_14px_30px_-6px_rgba(147,51,234,0.7),0_0_38px_rgba(147,51,234,0.30)] transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 mb-12"
+                className="group inline-flex items-center justify-center gap-3 px-10 py-5 text-xl font-bold rounded-full bg-[#7C3AED]/30 backdrop-blur-md border border-white/10 hover:bg-[#7C3AED]/40 text-white transition-all duration-300 focus:ring-2 focus:ring-[#7C3AED]/50 focus:outline-none shadow-lg hover:-translate-y-0.5 active:translate-y-0 mb-12"
               >
                 <span>Register Now</span>
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover:translate-x-0.5">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 border border-white/10 transition-transform duration-300 group-hover:translate-x-0.5">
                   <ChevronRight size={18} />
                 </span>
               </Link>
@@ -161,10 +163,14 @@ export default function SandboxHero() {
       <div 
         className={`fixed bottom-0 left-0 w-full z-40 bg-slate-950/40 backdrop-blur-2xl border-t border-white/10 shadow-[0_-8px_32px_rgba(0,0,0,0.4)] transition-transform duration-500 transform ${isSticky ? 'translate-y-0' : 'translate-y-full'}`}
       >
-        <div className="max-w-7xl mx-auto px-4 py-3 flex flex-row items-center justify-center">
+        <div className="max-w-7xl mx-auto px-4 py-3 flex flex-row items-center justify-center gap-6">
+
+          <div className="hidden md:flex flex-col items-end">
+             <span className="text-sm font-semibold text-slate-300 uppercase tracking-wider">Registrations close in</span>
+          </div>
 
           {/* Ticking Numbers */}
-          <div className="flex gap-4 md:gap-8">
+          <div className="flex gap-4 md:gap-8 md:border-l md:border-white/10 md:pl-6">
             {[
               // TODO: Set max days to the total duration of the countdown once start date is known
               { label: 'Days', value: timeLeft.days, max: 30 },
@@ -175,6 +181,7 @@ export default function SandboxHero() {
               <Dial key={idx} label={item.label} value={item.value} max={item.max} instanceId="sticky" size="small" />
             ))}
           </div>
+          
         </div>
       </div>
     </>
