@@ -3,3 +3,11 @@
 node_modules/
 .next
 .env
+dist/
+out/
+build/
+*.log
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
