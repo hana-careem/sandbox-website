@@ -12,7 +12,7 @@ export default function WhatIsSandbox() {
               Sri Lanka's first inter-school business pitching competition, run by the Entrepreneurship Club of APIIT with the Ministry of Education. Students from schools nationwide pitch real business ideas to a panel of industry judges.
             </p>
             <p className="text-xl font-bold text-[#7C3AED] font-display mt-8">
-              This year's theme: A Better Sri Lanka Tomorrow.
+              This year's theme: A Better Tomorrow.
             </p>
           </ScrollReveal>
         </div>
