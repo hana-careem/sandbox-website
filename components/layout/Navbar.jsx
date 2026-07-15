@@ -29,20 +29,67 @@ export default function Navbar() {
 
   return (
     <nav className={navClass}>
-      <div className="flex justify-between items-center w-full relative">
+      <div className="flex justify-between lg:justify-start items-center w-full relative">
         
-        {/* Logo Left */}
-        <div className="flex items-center">
-          <Link href="/" className="flex items-center" aria-label="Sandbox, Home">
-            <Image
-              src="/assets/sandbox-logo.png"
-              alt="Sandbox"
-              width={160}
-              height={56}
-              className="h-10 md:h-12 w-auto object-contain scale-150 md:scale-[1.75] origin-left transition-all duration-300"
-              priority
-            />
-          </Link>
+        {/* Left Cluster: Logos + Links */}
+        <div className="flex items-center lg:gap-8">
+          
+          {/* Logos */}
+          <div className="flex items-center gap-3">
+            <Link href="/" className="flex items-center" aria-label="Sandbox, Home">
+              <Image
+                src="/assets/sandbox-logo.png"
+                alt="Sandbox"
+                width={160}
+                height={56}
+                className="h-10 md:h-12 w-auto object-contain scale-150 md:scale-[1.75] origin-left transition-all duration-300"
+                priority
+              />
+            </Link>
+
+            {/* Desktop E-Club Logo */}
+            <div className="hidden lg:flex items-center justify-center">
+              <Image
+                src="/assets/eclub-logo.png"
+                alt="E-Club"
+                width={40}
+                height={40}
+                className="h-9 w-auto object-contain scale-150 transition-all duration-300"
+              />
+            </div>
+          </div>
+
+          {/* Nav Links Center */}
+          <div className="hidden lg:flex items-center space-x-6">
+            <Link href="/" className="text-base font-medium text-slate-300 hover:text-white transition-colors">Home</Link>
+            
+            <div 
+              className="relative"
+              onMouseEnter={() => setDesktopAboutHover(true)}
+              onMouseLeave={() => setDesktopAboutHover(false)}
+            >
+              <Link
+                href="/about"
+                className="flex items-center text-base font-medium text-slate-300 hover:text-white transition-colors py-2"
+              >
+                About Us <ChevronDown size={16} className={`ml-1 transition-transform ${desktopAboutHover ? 'rotate-180' : ''}`} />
+              </Link>
+              <div 
+                className={`absolute left-1/2 -translate-x-1/2 mt-1 w-44 rounded-2xl backdrop-blur-xl bg-slate-900/90 border border-white/10 shadow-2xl transition-all duration-200 ${desktopAboutHover ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
+              >
+                <div className="p-2 flex flex-col gap-1">
+                  <Link href="/about" className="px-4 py-2 text-base text-slate-300 hover:text-white hover:bg-white/10 rounded-xl transition-colors">Overview</Link>
+                  <Link href="/about/editions" className="px-4 py-2 text-base text-slate-300 hover:text-white hover:bg-white/10 rounded-xl transition-colors">Past Editions</Link>
+                </div>
+              </div>
+            </div>
+
+            <Link href="/sponsors" className="text-base font-medium text-slate-300 hover:text-white transition-colors">Sponsors</Link>
+            <Link href="/what-we-offer" className="text-base font-medium text-slate-300 hover:text-white transition-colors">What We Offer</Link>
+            <Link href="/faqs" className="text-base font-medium text-slate-300 hover:text-white transition-colors">FAQs</Link>
+            <Link href="/contact" className="text-base font-medium text-slate-300 hover:text-white transition-colors">Contact Us</Link>
+          </div>
+
         </div>
 
         {/* Mobile Center Logo (E-Club) */}
@@ -56,36 +103,8 @@ export default function Navbar() {
           />
         </div>
         
-        {/* Nav Links Center */}
-        <div className="hidden lg:flex items-center space-x-6">
-          <Link href="/" className="text-base font-medium text-slate-300 hover:text-white transition-colors">Home</Link>
-          
-          <div 
-            className="relative"
-            onMouseEnter={() => setDesktopAboutHover(true)}
-            onMouseLeave={() => setDesktopAboutHover(false)}
-          >
-            <Link
-              href="/about"
-              className="flex items-center text-base font-medium text-slate-300 hover:text-white transition-colors py-2"
-            >
-              About Us <ChevronDown size={16} className={`ml-1 transition-transform ${desktopAboutHover ? 'rotate-180' : ''}`} />
-            </Link>
-            <div 
-              className={`absolute left-1/2 -translate-x-1/2 mt-1 w-44 rounded-2xl backdrop-blur-xl bg-slate-900/90 border border-white/10 shadow-2xl transition-all duration-200 ${desktopAboutHover ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
-            >
-              <div className="p-2 flex flex-col gap-1">
-                <Link href="/about" className="px-4 py-2 text-base text-slate-300 hover:text-white hover:bg-white/10 rounded-xl transition-colors">Overview</Link>
-                <Link href="/about/editions" className="px-4 py-2 text-base text-slate-300 hover:text-white hover:bg-white/10 rounded-xl transition-colors">Past Editions</Link>
-              </div>
-            </div>
-          </div>
-
-          <Link href="/sponsors" className="text-base font-medium text-slate-300 hover:text-white transition-colors">Sponsors</Link>
-          <Link href="/what-we-offer" className="text-base font-medium text-slate-300 hover:text-white transition-colors">What We Offer</Link>
-          <Link href="/faqs" className="text-base font-medium text-slate-300 hover:text-white transition-colors">FAQs</Link>
-          <Link href="/contact" className="text-base font-medium text-slate-300 hover:text-white transition-colors">Contact Us</Link>
-        </div>
+        {/* Spacer keeps the right side empty on desktop so layout doesn't shift */}
+        <div className="hidden lg:block ml-auto" />
 
         {/* CTA Right */}
         <div className="flex items-center space-x-3">
