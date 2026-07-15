@@ -47,16 +47,6 @@ export default function Navbar() {
               />
             </Link>
 
-            {/* Desktop E-Club Logo */}
-            <div className="hidden lg:flex items-center justify-center">
-              <Image
-                src="/assets/eclub-logo.png"
-                alt="E-Club"
-                width={40}
-                height={40}
-                className="h-9 w-auto object-contain scale-150 transition-all duration-300"
-              />
-            </div>
           </div>
 
           {/* Nav Links Center */}
@@ -92,16 +82,7 @@ export default function Navbar() {
 
         </div>
 
-        {/* Mobile Center Logo (E-Club) */}
-        <div className="absolute left-1/2 -translate-x-1/2 lg:hidden flex items-center justify-center">
-          <Image
-            src="/assets/eclub-logo.png"
-            alt="E-Club"
-            width={40}
-            height={40}
-            className="h-9 w-auto object-contain scale-125 md:scale-150 transition-all duration-300"
-          />
-        </div>
+
         
         {/* Spacer keeps the right side empty on desktop so layout doesn't shift */}
         <div className="hidden lg:block ml-auto" />
