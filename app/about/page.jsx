@@ -2,7 +2,6 @@ import React from 'react';
 import AboutBanner from '../../components/about/AboutBanner';
 import OurHistory from '../../components/about/OurHistory';
 import OurGoals from '../../components/about/OurGoals';
-import VisionMission from '../../components/about/VisionMission';
 
 export const metadata = {
   title: 'About | Sandbox',
@@ -15,7 +14,6 @@ export default function AboutPage() {
       <AboutBanner />
       <OurHistory />
       <OurGoals />
-      <VisionMission />
     </main>
   );
 }

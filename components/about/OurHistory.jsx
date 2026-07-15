@@ -5,8 +5,7 @@ import ScrollReveal from '../ui/ScrollReveal';
 export default function OurHistory() {
   const history = [
     { edition: "Sandbox 1.0", editionParam: "1.0", desc: "The inaugural edition in September 2024 that started it all, launching Sri Lanka's first inter-school business pitching competition under the theme of Sustainability." },
-    { edition: "Sandbox 2.0", editionParam: "2.0", desc: "The competition had grown to 38 participating schools and 50 competing teams under the theme of Community Concerns, with St. Joseph's College, Negombo crowned champions." },
-    { edition: "Sandbox 3.0", editionParam: null, desc: "Our current edition, themed \"A Better Sri Lanka Tomorrow\" and run in partnership with the Ministry of Education, opening the competition to schools nationwide." }
+    { edition: "Sandbox 2.0", editionParam: "2.0", desc: "The competition had grown to 38 participating schools and 50 competing teams under the theme of Community Concerns, with St. Joseph's College, Negombo crowned champions." }
   ];
 
   return (

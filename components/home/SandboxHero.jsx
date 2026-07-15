@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ScrollReveal from '../ui/ScrollReveal';
 import { ChevronRight } from 'lucide-react';
+import { useHeroCta } from '../ui/HeroCtaContext';
 
 // TODO: Replace with exact registration deadline when provided
 const REGISTRATION_DEADLINE = new Date('2026-10-15T00:00:00');
@@ -63,6 +64,20 @@ export default function SandboxHero() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [isSticky, setIsSticky] = useState(false);
   const heroRef = useRef(null);
+  const heroCtaRef = useRef(null);
+  const { setHeroCtaVisible } = useHeroCta();
+
+  // IntersectionObserver to track when the hero CTA scrolls out of view
+  useEffect(() => {
+    const el = heroCtaRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setHeroCtaVisible(entry.isIntersecting),
+      { rootMargin: '-80px 0px 0px 0px', threshold: 0 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [setHeroCtaVisible]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -131,6 +146,7 @@ export default function SandboxHero() {
             <ScrollReveal delay={400} className="w-full flex flex-col items-center">
               {/* Prominent CTA */}
               <Link
+                ref={heroCtaRef}
                 href="https://forms.office.com/"
                 target="_blank"
                 className="group inline-flex items-center justify-center gap-3 px-10 py-5 text-xl font-bold rounded-full bg-[#7C3AED]/30 backdrop-blur-md border border-white/10 hover:bg-[#7C3AED]/40 text-white transition-all duration-300 focus:ring-2 focus:ring-[#7C3AED]/50 focus:outline-none shadow-lg hover:-translate-y-0.5 active:translate-y-0 mb-12"
