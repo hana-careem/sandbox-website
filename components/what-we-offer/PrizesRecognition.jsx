@@ -1,33 +1,7 @@
-"use client";
 import React from 'react';
-import ScrollReveal from '../ui/ScrollReveal';
-import { Trophy, Medal, Star, Award } from 'lucide-react';
+import { Trophy } from 'lucide-react';
 
 export default function PrizesRecognition() {
-  const prizes = [
-    {
-      title: "Cash Prizes",
-      // TODO: exact cash amounts to be announced
-      description: "Significant cash prizes awarded to the top 3 teams to help kickstart their business ventures.",
-      icon: <Trophy className="w-8 h-8 text-[#9333EA]" />
-    },
-    {
-      title: "The Sandbox Shield",
-      description: "The ultimate honor, presented to the winning team to take back to their school.",
-      icon: <Medal className="w-8 h-8 text-[#9333EA]" />
-    },
-    {
-      title: "Special Awards",
-      description: "Recognition for Best Presentation, Most Innovative Idea, and Best Sustainability Impact.",
-      icon: <Star className="w-8 h-8 text-[#9333EA]" />
-    },
-    {
-      title: "Certificates",
-      description: "Every student who participates receives an official certificate of participation.",
-      icon: <Award className="w-8 h-8 text-[#9333EA]" />
-    }
-  ];
-
   return (
     <section className="py-20 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,31 +16,63 @@ export default function PrizesRecognition() {
           />
 
           <div className="relative z-10">
-            <ScrollReveal>
-              <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-black font-display text-white tracking-tighter mb-6">
-                  PRIZES & <span className="text-[#9333EA]">RECOGNITION</span>
-                </h2>
-                <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-                  Compete for glory, school pride, and the resources to turn your idea into reality.
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-black font-display text-white tracking-tighter mb-6">
+                PRIZES & <span className="text-[#9333EA]">RECOGNITION</span>
+              </h2>
+              <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                Compete for glory, school pride, and the resources to turn your idea into reality.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2 gap-6">
+              {/* Hero card: Sandbox Shield */}
+              <div className="sm:col-span-2 lg:col-span-2 lg:row-span-2 relative overflow-hidden bg-gradient-to-br from-[#3B0764]/70 to-[#701A5A]/60 border border-[#9333EA]/40 p-8 rounded-3xl hover:border-[#9333EA]/70 transition-colors flex flex-col items-center text-center shadow-[0_0_120px_rgba(147,51,234,0.35)]">
+                <div className="w-full flex-1 min-h-[16rem] overflow-hidden rounded-2xl ring-1 ring-[#9333EA]/40 mb-8 shadow-[0_0_60px_rgba(147,51,234,0.4)]">
+                  <img src="https://placehold.co/900x700" alt="" className="w-full h-full object-cover" />
+                </div>
+                <h3 className="text-3xl md:text-4xl font-black font-display text-white mb-4 tracking-tight">
+                  Sandbox Shield
+                </h3>
+                <p className="text-slate-300 leading-relaxed text-lg max-w-sm">
+                  The ultimate honor, presented to the winning team to take back to their school.
                 </p>
               </div>
-            </ScrollReveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {prizes.map((prize, idx) => (
-                <ScrollReveal key={idx} delay={idx * 100} direction="up">
-                  <div className="bg-slate-950/60 border border-white/5 p-8 rounded-2xl hover:border-[#9333EA]/50 transition-colors h-full flex flex-col text-center items-center">
-                    <div className="w-16 h-16 rounded-full bg-slate-900 flex items-center justify-center mb-6">
-                      {prize.icon}
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-3">{prize.title}</h3>
-                    <p className="text-sm text-slate-400 leading-relaxed flex-1">
-                      {prize.description}
-                    </p>
-                  </div>
-                </ScrollReveal>
-              ))}
+              {/* Cash Prizes */}
+              <div className="sm:col-span-2 lg:col-span-2 bg-slate-950/60 border border-[#9333EA]/30 p-8 rounded-2xl hover:border-[#9333EA]/60 transition-colors flex flex-col text-center items-center">
+                <div className="w-14 h-14 rounded-full bg-slate-900 flex items-center justify-center mb-4">
+                  <Trophy className="w-7 h-7 text-[#9333EA]" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Cash Prizes</h3>
+                {/* TODO: exact cash amounts to be announced */}
+                <p className="text-3xl md:text-4xl font-black text-[#9333EA] tracking-tight mb-3">TBA</p>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  Significant cash prizes awarded to the top 3 teams to help kickstart their business ventures.
+                </p>
+              </div>
+
+              {/* Special Awards */}
+              <div className="lg:col-span-1 bg-slate-950/60 border border-white/5 p-6 rounded-2xl hover:border-[#9333EA]/50 transition-colors flex flex-col text-center items-center">
+                <div className="w-full overflow-hidden rounded-xl mb-4">
+                  <img src="https://placehold.co/500x500" alt="" className="w-full h-48 md:h-56 object-cover" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Special Awards</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  Recognition for Best Presentation, Most Innovative Idea, and Best Sustainability Impact.
+                </p>
+              </div>
+
+              {/* Certificates */}
+              <div className="lg:col-span-1 bg-slate-950/60 border border-white/5 p-6 rounded-2xl hover:border-[#9333EA]/50 transition-colors flex flex-col text-center items-center">
+                <div className="w-full overflow-hidden rounded-xl mb-4">
+                  <img src="https://placehold.co/500x500" alt="" className="w-full h-48 md:h-56 object-cover" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Certificates</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  Every student who participates receives an official certificate of participation.
+                </p>
+              </div>
             </div>
           </div>
         </div>

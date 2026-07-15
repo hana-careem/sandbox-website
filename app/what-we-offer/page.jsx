@@ -1,5 +1,7 @@
 import React from 'react';
-import OfferingsGrid from '../../components/what-we-offer/OfferingsGrid';
+import IntroSection from '../../components/what-we-offer/IntroSection';
+import CoreSupport from '../../components/what-we-offer/CoreSupport';
+import CommunityGrowth from '../../components/what-we-offer/CommunityGrowth';
 import PrizesRecognition from '../../components/what-we-offer/PrizesRecognition';
 
 export const metadata = {
@@ -10,7 +12,9 @@ export const metadata = {
 export default function WhatWeOfferPage() {
   return (
     <main className="w-full">
-      <OfferingsGrid />
+      <IntroSection />
+      <CoreSupport />
+      <CommunityGrowth />
       <PrizesRecognition />
     </main>
   );
