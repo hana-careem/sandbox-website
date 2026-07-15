@@ -101,7 +101,7 @@ export default function SandboxHero() {
       <section ref={heroRef} className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-slate-950">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/assets/home-hero2.jpg"
+            src="/assets/home-hero.jpg"
             alt="Sandbox Hero Background"
             fill
             className="object-cover"
@@ -124,7 +124,7 @@ export default function SandboxHero() {
 
             <ScrollReveal delay={300}>
               <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-16 leading-relaxed">
-                Sri Lanka's first and largest inter-school entrepreneurial battleground. Run by the APIIT Entrepreneurship Club in partnership with the Ministry of Education.
+                Small pitches, big futures.
               </p>
             </ScrollReveal>
 
@@ -147,8 +147,7 @@ export default function SandboxHero() {
                   // TODO: Set max days to the total duration of the countdown once start date is known
                   { label: 'Days', value: timeLeft.days, max: 30 },
                   { label: 'Hours', value: timeLeft.hours, max: 24 },
-                  { label: 'Minutes', value: timeLeft.minutes, max: 60 },
-                  { label: 'Seconds', value: timeLeft.seconds, max: 60 }
+                  { label: 'Minutes', value: timeLeft.minutes, max: 60 }
                 ].map((item, idx) => (
                   <Dial key={idx} label={item.label} value={item.value} max={item.max} instanceId="inline" />
                 ))}
@@ -175,8 +174,7 @@ export default function SandboxHero() {
               // TODO: Set max days to the total duration of the countdown once start date is known
               { label: 'Days', value: timeLeft.days, max: 30 },
               { label: 'Hrs', value: timeLeft.hours, max: 24 },
-              { label: 'Min', value: timeLeft.minutes, max: 60 },
-              { label: 'Sec', value: timeLeft.seconds, max: 60 }
+              { label: 'Min', value: timeLeft.minutes, max: 60 }
             ].map((item, idx) => (
               <Dial key={idx} label={item.label} value={item.value} max={item.max} instanceId="sticky" size="small" />
             ))}
