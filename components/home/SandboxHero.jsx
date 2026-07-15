@@ -101,7 +101,7 @@ export default function SandboxHero() {
       <section ref={heroRef} className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-slate-950">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/assets/home-hero.jpg"
+            src="/assets/home-hero2.jpg"
             alt="Sandbox Hero Background"
             fill
             className="object-cover"
@@ -116,9 +116,9 @@ export default function SandboxHero() {
             
             <ScrollReveal delay={100}>
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-black font-display text-white tracking-tighter leading-[0.9] mb-6">
-                <span className="block text-slate-300">THE PREMIER</span>
-                <span className="block text-[#9333EA]">BUSINESS PITCHING</span>
-                <span className="block text-slate-100">COMPETITION.</span>
+                <span className="block text-slate-300 font-coolvetica italic font-normal tracking-wide">THE PREMIER</span>
+                <span className="block text-[#9333EA] font-rockville font-normal tracking-wide">Business Pitching</span>
+                <span className="block text-slate-100 font-coolvetica italic font-normal tracking-wide">COMPETITION.</span>
               </h1>
             </ScrollReveal>
 
