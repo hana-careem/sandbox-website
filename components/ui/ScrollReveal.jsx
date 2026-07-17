@@ -1,11 +1,16 @@
 "use client";
 import React, { useEffect, useRef, useState } from 'react';
 
-export default function ScrollReveal({ children, className = '', direction = 'up', delay = 0 }) {
+export default function ScrollReveal({ children, className = '', direction = 'up', delay = 0, immediate = false }) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
 
   useEffect(() => {
+    if (immediate) {
+      const timeout = setTimeout(() => setIsVisible(true), 10);
+      return () => clearTimeout(timeout);
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -20,7 +25,7 @@ export default function ScrollReveal({ children, className = '', direction = 'up
     return () => {
       if (ref.current) observer.unobserve(ref.current);
     };
-  }, []);
+  }, [immediate]);
 
   const translateMap = {
     up: 'translate-y-12',

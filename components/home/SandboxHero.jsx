@@ -138,37 +138,41 @@ export default function SandboxHero() {
             </ScrollReveal>
 
             <ScrollReveal delay={300}>
-              <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-16 leading-relaxed">
+              <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">
                 Small pitches, big futures.
               </p>
             </ScrollReveal>
 
-            <ScrollReveal delay={400} className="w-full flex flex-col items-center">
+            <div className="w-full flex flex-col items-center">
               {/* Prominent CTA */}
-              <Link
-                ref={heroCtaRef}
-                href="https://forms.office.com/"
-                target="_blank"
-                className="group inline-flex items-center justify-center gap-3 px-10 py-5 text-xl font-bold rounded-full bg-[#7C3AED]/30 backdrop-blur-md border border-white/10 hover:bg-[#7C3AED]/40 text-white transition-all duration-300 focus:ring-2 focus:ring-[#7C3AED]/50 focus:outline-none shadow-lg hover:-translate-y-0.5 active:translate-y-0 mb-12"
-              >
-                <span>Register Now</span>
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 border border-white/10 transition-transform duration-300 group-hover:translate-x-0.5">
-                  <ChevronRight size={18} />
-                </span>
-              </Link>
+              <ScrollReveal delay={400} immediate>
+                <Link
+                  ref={heroCtaRef}
+                  href="https://forms.office.com/"
+                  target="_blank"
+                  className="group inline-flex items-center justify-center gap-3 px-10 py-5 text-xl font-bold rounded-full bg-[#7C3AED]/30 backdrop-blur-md border border-white/10 hover:bg-[#7C3AED]/40 text-white transition-all duration-300 focus:ring-2 focus:ring-[#7C3AED]/50 focus:outline-none shadow-lg hover:-translate-y-0.5 active:translate-y-0 mb-12"
+                >
+                  <span>Register Now</span>
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 border border-white/10 transition-transform duration-300 group-hover:translate-x-0.5">
+                    <ChevronRight size={18} />
+                  </span>
+                </Link>
+              </ScrollReveal>
 
               {/* Inline Hero Countdown (Radial Dials) */}
-              <div className="flex justify-center items-center gap-4 md:gap-8">
-                {[
-                  // TODO: Set max days to the total duration of the countdown once start date is known
-                  { label: 'Days', value: timeLeft.days, max: 30 },
-                  { label: 'Hours', value: timeLeft.hours, max: 24 },
-                  { label: 'Minutes', value: timeLeft.minutes, max: 60 }
-                ].map((item, idx) => (
-                  <Dial key={idx} label={item.label} value={item.value} max={item.max} instanceId="inline" />
-                ))}
-              </div>
-            </ScrollReveal>
+              <ScrollReveal delay={500}>
+                <div className="flex justify-center items-center gap-4 md:gap-8">
+                  {[
+                    // TODO: Set max days to the total duration of the countdown once start date is known
+                    { label: 'Days', value: timeLeft.days, max: 30 },
+                    { label: 'Hours', value: timeLeft.hours, max: 24 },
+                    { label: 'Minutes', value: timeLeft.minutes, max: 60 }
+                  ].map((item, idx) => (
+                    <Dial key={idx} label={item.label} value={item.value} max={item.max} instanceId="inline" />
+                  ))}
+                </div>
+              </ScrollReveal>
+            </div>
 
           </div>
         </div>
