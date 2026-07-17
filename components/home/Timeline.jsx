@@ -1,46 +1,107 @@
-import React from 'react';
+"use client";
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import ScrollReveal from '../ui/ScrollReveal';
 import { Rocket } from 'lucide-react';
 
 const MILESTONES = [
   {
-    date: 'July 7th',
+    date: '7th of July',
     title: 'Registrations Open',
     desc: 'Schools nationwide can now sign up their teams for this year\'s Sandbox.',
   },
   {
-    date: 'September 7th',
+    date: '7th of September',
     title: 'Registrations Close',
     desc: 'Last call for teams to lock in their spot before the competition kicks off.',
   },
   {
-    date: '2nd Week Sep',
+    date: '2nd Week of September',
     title: 'Press Conference',
     desc: 'The official launch — Sandbox is announced to schools and media nationwide.',
   },
   {
-    date: 'End Sep',
+    date: '4th week of September',
     title: 'Workshops Begin',
     desc: 'Galle (school venue), Kandy (Kandy APIIT), and Colombo (may run 2 days).',
   },
   {
-    date: '2nd Week Oct',
+    date: '2nd Week of October',
     title: 'Preliminaries',
     desc: 'Teams pitch their ideas as the competition kicks into gear.',
   },
   {
-    date: 'Last Week Oct',
+    date: '4th Week of October',
     title: 'Semi-Finals',
     desc: 'The strongest teams battle it out for a place in the grand finale.',
   },
   {
-    date: '2nd–3rd Week Nov',
+    date: 'November 23rd',
     title: 'Grand Finals',
     desc: 'The top teams face off live for the title and the prize pool.',
   },
 ];
 
 export default function Timeline() {
+  const containerRef = useRef(null);
+  const dotRefs = useRef([]);
+  const [pathD, setPathD] = useState('');
+  const [viewBox, setViewBox] = useState('0 0 0 0');
+  const [rocketPos, setRocketPos] = useState(null);
+
+  useLayoutEffect(() => {
+    const getRelativeOffset = (el, ancestor) => {
+      let top = 0;
+      let left = 0;
+      let node = el;
+      while (node && node !== ancestor) {
+        top += node.offsetTop;
+        left += node.offsetLeft;
+        node = node.offsetParent;
+      }
+      return { top, left };
+    };
+
+    const recalculate = () => {
+      const container = containerRef.current;
+      const dots = dotRefs.current.filter(Boolean);
+      if (!container || dots.length === 0) return;
+
+      const isMobile = window.innerWidth < 768;
+      const points = dots.map((el) => {
+        const { top, left } = getRelativeOffset(el, container);
+        return {
+          x: left,
+          y: isMobile ? top + el.offsetHeight / 2 : top,
+        };
+      });
+
+      const anchorX = points[0].x;
+      const tailLength = isMobile ? 50 : 70;
+      const tailY = Math.max(points[0].y - tailLength, 0);
+
+      let d = `M ${anchorX} ${tailY} L ${anchorX} ${points[0].y}`;
+
+      for (let i = 1; i < points.length; i++) {
+        d += ` L ${anchorX} ${points[i].y}`;
+      }
+
+      setPathD(d);
+      setViewBox(`0 0 ${container.clientWidth} ${container.scrollHeight}`);
+      setRocketPos({ x: anchorX, y: tailY });
+    };
+
+    recalculate();
+
+    const resizeObserver = new ResizeObserver(() => recalculate());
+    if (containerRef.current) resizeObserver.observe(containerRef.current);
+    window.addEventListener('resize', recalculate);
+
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener('resize', recalculate);
+    };
+  }, []);
+
   return (
     <section className="relative py-24 bg-slate-950 overflow-hidden">
       {/* Decorative background rockets */}
@@ -65,15 +126,37 @@ export default function Timeline() {
           </div>
         </ScrollReveal>
 
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-slate-500 to-transparent md:-translate-x-1/2" />
+        <div ref={containerRef} className="relative pt-16">
+          {/* Wavy flight-path line, traced through the real dot positions */}
+          {pathD && (
+            <svg
+              className="absolute inset-0 w-full h-full pointer-events-none overflow-visible"
+              viewBox={viewBox}
+              fill="none"
+            >
+              <defs>
+                <linearGradient id="timeline-flight-path" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#C4B5FD" stopOpacity="1" />
+                  <stop offset="100%" stopColor="#C4B5FD" stopOpacity="0.5" />
+                </linearGradient>
+              </defs>
+              <path
+                d={pathD}
+                stroke="url(#timeline-flight-path)"
+                strokeWidth="3"
+                strokeLinecap="round"
+              />
+            </svg>
+          )}
 
           {/* Launch rocket riding the line */}
-          <Rocket
-            size={26}
-            className="absolute left-4 md:left-1/2 -top-8 -translate-x-1/2 -rotate-90 text-[#7C3AED] drop-shadow-[0_0_10px_rgba(124,58,237,0.6)] pointer-events-none"
-          />
+          {rocketPos && (
+            <Rocket
+              size={26}
+              style={{ left: rocketPos.x, top: rocketPos.y }}
+              className="absolute -translate-x-1/2 -translate-y-1/2 -rotate-45 text-[#7C3AED] drop-shadow-[0_0_10px_rgba(124,58,237,0.6)] pointer-events-none"
+            />
+          )}
 
           <div>
             {MILESTONES.map((item, idx) => {
@@ -86,7 +169,10 @@ export default function Timeline() {
                 >
                   <div className={`relative flex items-start md:items-center mb-12 last:mb-0 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                     {/* Dot */}
-                    <span className="absolute left-4 md:left-1/2 top-1.5 md:top-1/2 md:-translate-y-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-[#7C3AED] ring-4 ring-slate-950 shadow-[0_0_14px_rgba(124,58,237,0.7)] z-10" />
+                    <span
+                      ref={(el) => (dotRefs.current[idx] = el)}
+                      className="absolute left-4 md:left-1/2 top-1.5 md:top-1/2 md:-translate-y-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-[#7C3AED] ring-4 ring-slate-950 shadow-[0_0_14px_rgba(124,58,237,0.7)] z-10"
+                    />
 
                     {/* Spacer (desktop only) */}
                     <div className="hidden md:block md:w-1/2" />
