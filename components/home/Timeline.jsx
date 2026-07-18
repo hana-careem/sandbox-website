@@ -167,7 +167,7 @@ export default function Timeline() {
                   direction={isEven ? 'right' : 'left'}
                   delay={idx * 120}
                 >
-                  <div className={`relative flex items-start md:items-center mb-12 last:mb-0 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                  <div className={`relative flex items-start md:items-center mb-28 md:mb-12 last:mb-0 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                     {/* Dot */}
                     <span
                       ref={(el) => (dotRefs.current[idx] = el)}
