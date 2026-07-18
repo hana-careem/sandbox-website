@@ -1,24 +1,67 @@
 import React from 'react';
 import { BookOpen, TrendingUp, Presentation } from 'lucide-react';
+import SupportingContent from './SupportingContent';
 
 const CORE_SUPPORT_DATA = [
   {
     title: "Expert Workshops",
     description: "Learn the fundamentals of business planning, financial forecasting, and effective pitching directly from industry veterans.",
     icon: <BookOpen className="w-7 h-7 text-[#7C3AED]" />,
-    images: ["https://placehold.co/500x600", "https://placehold.co/500x600"]
+    images: [
+      "/assets/workshop-1.jpg",
+      "/assets/workshop-2.jpg",
+      "/assets/workshop-3.jpg",
+      "/assets/workshop-4.jpg",
+      "/assets/workshop-5.jpg",
+      "/assets/workshop-6.jpg"
+    ],
+    extra: {
+      type: 'bullets',
+      items: [
+        "Business planning, financial forecasting, pitch structuring",
+        "Small group format, real feedback from industry veterans",
+        "Covers common early-stage mistakes before you make them"
+      ]
+    }
   },
   {
     title: "Investor Exposure",
     description: "Pitch your ideas to a panel of real-world investors, CEOs, and business leaders who are looking for the next big thing.",
     icon: <TrendingUp className="w-7 h-7 text-[#7C3AED]" />,
-    images: ["https://placehold.co/500x600", "https://placehold.co/500x600"]
+    images: [
+      "https://placehold.co/400x400",
+      "https://placehold.co/400x400",
+      "https://placehold.co/400x400",
+      "https://placehold.co/400x400",
+      "https://placehold.co/400x400",
+      "https://placehold.co/400x400"
+    ],
+    extra: {
+      type: 'steps',
+      items: [
+        "Pitch directly to real-world investors and CEOs",
+        "Receive unfiltered feedback on your model and delivery",
+        "Get noticed for funding or follow-up conversations"
+      ]
+    }
   },
   {
     title: "Pitching Mastery",
     description: "Develop the confidence and public speaking skills necessary to command a room and sell your vision.",
     icon: <Presentation className="w-7 h-7 text-[#7C3AED]" />,
-    images: ["https://placehold.co/500x600", "https://placehold.co/500x600"]
+    images: [
+      "https://placehold.co/400x400",
+      "https://placehold.co/400x400",
+      "https://placehold.co/400x400",
+      "https://placehold.co/400x400",
+      "https://placehold.co/400x400",
+      "https://placehold.co/400x400"
+    ],
+    extra: {
+      type: 'tags',
+      tags: ["Confidence", "Structure", "Objection handling", "Delivery"],
+      note: "Built through repetition, not theory."
+    }
   }
 ];
 
@@ -41,13 +84,17 @@ export default function CoreSupport() {
               } items-center gap-10 md:gap-16 py-12 border-b border-white/5 last:border-b-0`}
             >
               <div className="relative w-full md:w-1/2">
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-3 gap-3">
                   {item.images.map((src, imgIdx) => (
                     <div
                       key={imgIdx}
-                      className="overflow-hidden rounded-2xl border border-white/5 shadow-[0_0_60px_rgba(124,58,237,0.12)]"
+                      className="overflow-hidden rounded-xl border border-white/5 shadow-[0_0_40px_rgba(124,58,237,0.10)]"
                     >
-                      <img src={src} alt="" className="w-full h-48 md:h-64 object-cover" />
+                      <img
+                        src={src}
+                        alt={`Sandbox workshop photo ${imgIdx + 1}`}
+                        className="w-full h-28 sm:h-36 md:h-44 object-cover"
+                      />
                     </div>
                   ))}
                 </div>
@@ -60,6 +107,7 @@ export default function CoreSupport() {
                 <p className="text-slate-400 leading-relaxed text-lg max-w-xl mx-auto md:mx-0">
                   {item.description}
                 </p>
+                <SupportingContent extra={item.extra} />
               </div>
             </div>
           ))}

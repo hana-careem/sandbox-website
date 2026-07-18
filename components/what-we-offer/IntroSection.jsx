@@ -15,6 +15,9 @@ export default function IntroSection() {
             <p className="text-xl md:text-2xl text-slate-300 leading-relaxed">
               Sandbox isn't just a competition; it's an accelerator for student potential. Here's what you gain by participating.
             </p>
+            <p className="mt-6 text-slate-400 leading-relaxed">
+              Every year, thousands of students have an idea worth building — but few have access to the mentorship, capital, and network that turns that idea into something real. Sandbox exists to close that gap. Whether you're refining a business plan for the first time or preparing to pitch to your first investor, this is the support system built to get you there.
+            </p>
           </div>
 
           <div className="md:w-1/2 w-full relative overflow-hidden rounded-3xl ring-1 ring-white/5 shadow-[0_0_90px_rgba(124,58,237,0.10)]">
