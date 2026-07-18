@@ -22,7 +22,7 @@ const MILESTONES = [
   {
     date: '4th week of September',
     title: 'Workshops Begin',
-    desc: 'Galle (school venue), Kandy (Kandy APIIT), and Colombo (may run 2 days).',
+    desc: 'Engaging and interactive workshops held in Colombo, Kandy, and Galle to aid participants in their preparation.',
   },
   {
     date: '2nd Week of October',
@@ -121,7 +121,7 @@ export default function Timeline() {
               <Rocket size={22} className="text-[#7C3AED] rotate-45" />
               <span className="text-sm font-bold tracking-widest text-[#7C3AED] uppercase">The Journey</span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-black font-display text-white mb-4">Road to the Finals</h2>
+            <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-white mb-4">Road to the Finals</h2>
             <p className="text-slate-400 max-w-2xl mx-auto text-lg">Here's how Sandbox unfolds, from launch to the grand finale.</p>
           </div>
         </ScrollReveal>

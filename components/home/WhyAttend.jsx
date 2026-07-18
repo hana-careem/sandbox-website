@@ -43,7 +43,7 @@ export default function WhyAttend() {
       <div className="container max-w-7xl mx-auto px-4 relative z-10">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black font-display text-white mb-4">Why Sandbox?</h2>
+            <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-white mb-4">Why Sandbox?</h2>
             <p className="text-slate-400 max-w-2xl mx-auto text-lg">It's more than a competition. It's the launchpad for your entrepreneurial journey.</p>
           </div>
         </ScrollReveal>

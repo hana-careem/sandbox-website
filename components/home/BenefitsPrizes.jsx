@@ -33,7 +33,7 @@ export default function BenefitsPrizes() {
       <div className="container max-w-7xl mx-auto px-4">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black font-display text-white mb-4">Prizes & Perks</h2>
+            <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-white mb-4">Prizes & Perks</h2>
             <p className="text-slate-400 max-w-2xl mx-auto text-lg">Massive cash prizes to fund your startup, plus exclusive perks for all finalists.</p>
           </div>
         </ScrollReveal>

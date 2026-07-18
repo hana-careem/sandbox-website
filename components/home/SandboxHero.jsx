@@ -131,15 +131,15 @@ export default function SandboxHero() {
             
             <ScrollReveal delay={100}>
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-black font-display text-white tracking-tighter leading-[0.9] mb-6">
-                <span className="block text-slate-300 font-coolvetica italic font-normal tracking-wide">THE PREMIER</span>
-                <span className="block text-[#9333EA] font-rockville font-normal tracking-wide">Business Pitching</span>
-                <span className="block text-slate-100 font-coolvetica italic font-normal tracking-wide">COMPETITION.</span>
+                <span className="block text-slate-300 font-coolvetica italic font-normal tracking-wide !text-5xl md:!text-7xl lg:!text-8xl">THE PREMIER</span>
+                <span className="block text-[#9333EA] font-arthead font-normal tracking-tight whitespace-nowrap !text-5xl md:!text-7xl lg:!text-8xl">BUSINESS PITCHING</span>
+                <span className="block text-slate-100 font-coolvetica italic font-normal tracking-wide !text-5xl md:!text-7xl lg:!text-8xl">COMPETITION.</span>
               </h1>
             </ScrollReveal>
 
             <ScrollReveal delay={300}>
               <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">
-                Small pitches, big futures.
+                Sri Lanka's first inter-school business pitching competition, where ideas take flight.
               </p>
             </ScrollReveal>
 
@@ -150,7 +150,7 @@ export default function SandboxHero() {
                   ref={heroCtaRef}
                   href="https://forms.office.com/"
                   target="_blank"
-                  className="group inline-flex items-center justify-center gap-3 px-10 py-5 text-xl font-bold rounded-full bg-[#7C3AED]/30 backdrop-blur-md border border-white/10 hover:bg-[#7C3AED]/40 text-white transition-all duration-300 focus:ring-2 focus:ring-[#7C3AED]/50 focus:outline-none shadow-lg hover:-translate-y-0.5 active:translate-y-0 mb-12"
+                  className="group inline-flex items-center justify-center gap-2.5 px-8 py-3.5 text-base font-bold rounded-full bg-[#7C3AED]/30 backdrop-blur-md border border-white/10 hover:bg-[#7C3AED]/40 text-white transition-all duration-300 focus:ring-2 focus:ring-[#7C3AED]/50 focus:outline-none shadow-lg hover:-translate-y-0.5 active:translate-y-0 mb-12"
                 >
                   <span>Register Now</span>
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 border border-white/10 transition-transform duration-300 group-hover:translate-x-0.5">
