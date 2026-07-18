@@ -31,26 +31,45 @@ export default function Navbar() {
     <nav className={navClass}>
       <div className="flex justify-between items-center w-full relative">
         
-        {/* Left Cluster: Logo */}
-        <div className="flex items-center">
+        {/* Left Cluster: Sandbox Logo */}
+        <div className="flex items-center z-10">
+          <Link href="/" className="flex items-center" aria-label="Sandbox, Home">
+            <Image
+              src="/assets/sandbox-logo.png"
+              alt="Sandbox"
+              width={160}
+              height={56}
+              className="h-10 md:h-12 w-auto object-contain scale-150 md:scale-[1.75] origin-left transition-all duration-300"
+              priority
+            />
+          </Link>
           
-          {/* Logos */}
-          <div className="flex items-center gap-3">
-            <Link href="/" className="flex items-center" aria-label="Sandbox, Home">
-              <Image
-                src="/assets/sandbox-logo.png"
-                alt="Sandbox"
-                width={160}
-                height={56}
-                className="h-10 md:h-12 w-auto object-contain scale-150 md:scale-[1.75] origin-left transition-all duration-300"
-                priority
-              />
-            </Link>
-
+          {/* Desktop E-Club Logo (next to Sandbox logo) */}
+          <div className="hidden lg:flex items-center ml-20">
+            <Image
+              src="/assets/eclub-logo.png"
+              alt="E-Club"
+              width={120}
+              height={40}
+              className="h-10 w-auto object-contain transition-all duration-300"
+              priority
+            />
           </div>
         </div>
+
+        {/* Center Cluster: E-Club Logo (Mobile Centered) */}
+        <div className="absolute left-1/2 -translate-x-1/2 flex items-center lg:hidden z-0">
+          <Image
+            src="/assets/eclub-logo.png"
+            alt="E-Club"
+            width={120}
+            height={40}
+            className="h-10 w-auto object-contain scale-150 transition-all duration-300"
+            priority
+          />
+        </div>
         {/* Right Cluster: Links + CTA */}
-        <div className="flex items-center lg:gap-8 gap-3">
+        <div className="flex items-center lg:gap-8 gap-3 ml-auto">
           {/* Nav Links Center */}
           <div className="hidden lg:flex items-center space-x-6">
             <Link href="/" className="text-base font-medium text-slate-300 hover:text-white transition-colors">Home</Link>
@@ -88,14 +107,13 @@ export default function Navbar() {
             <Link 
               href="https://forms.office.com/" 
               target="_blank"
-              className={`inline-flex items-center justify-center px-4 py-2 lg:px-6 lg:py-2.5 text-xs lg:text-sm font-bold rounded-full bg-[#7C3AED] hover:bg-[#6D28D9] text-white transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-105 active:scale-95 focus:ring-2 focus:ring-[#7C3AED]/50 focus:outline-none shadow-[0_0_15px_rgba(124,58,237,0.3)] hover:shadow-[0_0_20px_rgba(124,58,237,0.5)] ${
+              className={`hidden lg:inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold rounded-full bg-[#7C3AED] hover:bg-[#6D28D9] text-white transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-105 active:scale-95 focus:ring-2 focus:ring-[#7C3AED]/50 focus:outline-none shadow-[0_0_15px_rgba(124,58,237,0.3)] hover:shadow-[0_0_20px_rgba(124,58,237,0.5)] ${
                 showNavCta
                   ? 'opacity-100 translate-x-0 scale-100 pointer-events-auto'
                   : 'opacity-0 translate-x-8 scale-95 pointer-events-none'
               } motion-reduce:transition-opacity motion-reduce:translate-x-0 motion-reduce:scale-100`}
             >
-              <span className="hidden lg:inline">Register Now</span>
-              <span className="lg:hidden">Register</span>
+              <span>Register Now</span>
             </Link>
 
             {/* Hamburger (Mobile) */}
