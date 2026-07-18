@@ -38,19 +38,19 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
         aria-label="Primary"
       >
         {/* LEFT: brand */}
-        <Link href="/" className="flex items-center gap-8" aria-label="Sandbox home">
+        <Link href="/" className="flex items-center gap-6" aria-label="Sandbox home">
           <img src="/assets/sandbox-logo.png" alt="Sandbox" className="h-12 w-auto scale-150 origin-left" />
-          <span className="h-10 w-px bg-white/15 ml-4" />
-          <img src="/assets/eclub-logo.png" alt="APIIT E-Club" className="h-12 w-auto scale-150 origin-left ml-4 opacity-90" />
+          <span className="h-10 w-px bg-white/15 ml-2" />
+          <img src="/assets/eclub-logo.png" alt="APIIT E-Club" className="h-12 w-auto scale-150 origin-left ml-2 mr-24 opacity-90" />
         </Link>
 
-        {/* RIGHT corner: all links flush right — no empty space */}
-        <ul className="ml-auto flex items-center gap-1">
+        {/* CENTER: all links */}
+        <ul className="mx-auto flex items-center gap-2">
           <li>
             <Link
               href="/"
               className={
-                'rounded-full px-3 py-1.5 text-sm transition-colors ' +
+                'whitespace-nowrap rounded-full px-3 py-1.5 text-sm transition-colors ' +
                 (pathname === '/' ? 'text-white' : 'text-white/60 hover:text-white')
               }
             >
@@ -67,7 +67,7 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
             <Link
               href="/about"
               className={
-                'flex items-center gap-1 rounded-full px-3 py-1.5 text-sm transition-colors ' +
+                'whitespace-nowrap flex items-center gap-1 rounded-full px-3 py-1.5 text-sm transition-colors ' +
                 (pathname.startsWith('/about') ? 'text-white' : 'text-white/60 hover:text-white')
               }
             >
@@ -112,7 +112,7 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
                 <Link
                   href={to}
                   className={
-                    'rounded-full px-3 py-1.5 text-sm transition-colors ' +
+                    'whitespace-nowrap rounded-full px-3 py-1.5 text-sm transition-colors ' +
                     (isActive ? 'text-white' : 'text-white/60 hover:text-white')
                   }
                 >
