@@ -27,16 +27,19 @@ export const CATEGORIES = [
 // ---------------------------------------------------------------------------
 export const TEAM = [
   // --- Leadership ---
-  { name: 'Maneesha Thatuwalakanda', role: 'Chairperson', category: 'leadership', image: placeholderImage, linkedin: '', bio: 'Co-chairs the Sandbox 3.0 organising committee.' },
-  { name: 'Himansa Indusara', role: 'Chairperson', category: 'leadership', image: placeholderImage, linkedin: '', bio: 'Co-chairs the Sandbox 3.0 organising committee.' },
-  { name: 'Ayodya Perera', role: 'Project Coordinator', category: 'leadership', image: placeholderImage, linkedin: '', bio: 'Coordinates the Sandbox 3.0 project across every sub-team.' },
+  { name: 'Sudeesha Fonseka', role: 'President of Entrepreneurship Club', category: 'leadership', image: '/assets/Sudeesha Fonseka Treasurer.webp', linkedin: '', bio: 'President of the Entrepreneurship Club.' },
+  { name: 'Maneesha Thatuwalakanda', role: 'Chairperson', category: 'leadership', image: '/assets/Maneesha Thatuwalakanda communications.webp', linkedin: '', bio: 'Co-chairs the Sandbox 3.0 organising committee.' },
+  { name: 'Himansa Indusara', role: 'Chairperson', category: 'leadership', image: '/assets/Himansa Indusara Communication.webp', linkedin: '', bio: 'Co-chairs the Sandbox 3.0 organising committee.' },
+  { name: 'Ayodya Perera', role: 'Project Coordinator', category: 'leadership', image: '/assets/Ayodya Sasuni Perera Marketing.webp', linkedin: '', bio: 'Coordinates the Sandbox 3.0 project across every sub-team.' },
   { name: 'Tyanna Franchesca Avory', role: 'Secretary', category: 'leadership', image: placeholderImage, linkedin: '', bio: 'Secretary of the Sandbox 3.0 organising committee.' },
   { name: 'Pujaa Shruti Senthilnathan', role: 'Treasurer', category: 'leadership', image: placeholderImage, linkedin: '', bio: 'Manages the Sandbox 3.0 budget and finances.' },
-  { name: 'Yunus Nuhman', role: 'Head of IT', category: 'it', image: placeholderImage, linkedin: '', bio: 'Leads IT — the Sandbox site, registrations and infrastructure.' },
+  // linkedin: distinctive name match, but headline says Edith Cowan University —
+  // confirm with Yunus directly before shipping:
+  { name: 'Yunus Nuhman', role: 'Head of IT', category: 'it', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/yunusnuhman/', bio: 'Leads IT — the Sandbox site, registrations and infrastructure.' },
   // --- Heads ---
   { name: 'Nadyah Riyaz', role: 'Head of Media', category: 'media', image: placeholderImage, linkedin: '', bio: 'Co-leads media — photography, videography and event coverage.' },
   { name: 'Sameeha Fahim', role: 'Head of Media', category: 'media', image: placeholderImage, linkedin: '', bio: 'Co-leads media — photography, videography and event coverage.' },
-  { name: 'Kulthoom Husni', role: 'Head of Marketing', category: 'marketing', image: placeholderImage, linkedin: '', bio: 'Co-leads marketing — campaigns across schools and socials.' },
+  { name: 'Kulthoom Husni', role: 'Head of Marketing', category: 'marketing', image: '/assets/Kulthoom Husni media.webp', linkedin: '', bio: 'Co-leads marketing — campaigns across schools and socials.' },
   { name: 'Tharushika Gamage', role: 'Head of Marketing', category: 'marketing', image: placeholderImage, linkedin: '', bio: 'Co-leads marketing — campaigns across schools and socials.' },
   { name: 'Nadha Rizan', role: 'Head of Communications', category: 'comms', image: placeholderImage, linkedin: '', bio: 'Co-leads communications with schools, sponsors and participants.' },
   { name: 'Raveen', role: 'Head of Communications', category: 'comms', image: placeholderImage, linkedin: '', bio: 'Co-leads communications with schools, sponsors and participants.' },
@@ -49,7 +52,7 @@ export const TEAM = [
   { name: 'Tuan Shaahid Rainudeen', role: 'Media Team', category: 'media', image: placeholderImage, linkedin: '', bio: 'Media team, Sandbox 3.0.' },
   { name: 'Dasanya', role: 'Media Team', category: 'media', image: placeholderImage, linkedin: '', bio: 'Media team, Sandbox 3.0.' },
   // --- Marketing Team ---
-  { name: 'Diseni Chanulya Dharmadasa', role: 'Marketing Team', category: 'marketing', image: placeholderImage, linkedin: '', bio: 'Marketing team, Sandbox 3.0.' },
+  { name: 'Diseni Chanulya Dharmadasa', role: 'Marketing Team', category: 'marketing', image: '/assets/Diseni Chanulya Dharmadhasa Marketing.webp', linkedin: '', bio: 'Marketing team, Sandbox 3.0.' },
   { name: 'Umar Shafeek', role: 'Marketing Team', category: 'marketing', image: placeholderImage, linkedin: '', bio: 'Marketing team, Sandbox 3.0.' },
   { name: 'Thahnees Thariq', role: 'Marketing Team', category: 'marketing', image: placeholderImage, linkedin: '', bio: 'Marketing team, Sandbox 3.0. Previously Head of Logistics for Sandbox 1.0.' },
   // --- Communications Team ---
@@ -86,28 +89,49 @@ export const PAST_TEAMS = [
   {
     edition: 'Sandbox 2.0',
     year: '2025',
-    // Executive board scraped from the OLD live site (sandbox.apiit.lk/meet_the_team).
-    // Since 3.0 is the edition currently in progress, this should be the previous
-    // (2.0) board — CONFIRM the edition label + year with the club before shipping,
-    // then add photos + LinkedIn.
+    // Full roster from the official Sandbox 2.0 meet_the_team page
+    // (sandbox.apiit.lk) — Executive Board + Committee Members, photos wired to
+    // the files in public/assets. `group` renders as a sub-header on the page.
     members: [
-      { name: 'Methuli Perera', role: 'President of E-Club', image: placeholderImage, linkedin: '' },
-      { name: 'Suhayla Ralick', role: 'Chairperson', image: placeholderImage, linkedin: '' },
-      { name: 'Craleeth Gunathilake', role: 'Chairperson', image: placeholderImage, linkedin: '' },
-      { name: 'Shevan Gomis', role: 'Secretary', image: placeholderImage, linkedin: '' },
-      { name: 'Dewdun Jayakody', role: 'Asst. Secretary', image: placeholderImage, linkedin: '' },
-      { name: 'Sudeesha Fonseka', role: 'Treasurer', image: placeholderImage, linkedin: '' },
-      { name: 'Mukthar Riyaz', role: 'Asst. Treasurer', image: placeholderImage, linkedin: '' },
-      { name: 'Thevnaka De Silva', role: 'Head of Marketing', image: placeholderImage, linkedin: '' },
-      { name: 'Reema Mushtaq', role: 'Head of Marketing', image: placeholderImage, linkedin: '' },
-      { name: 'Sunera Dhammage', role: 'Head of Media', image: placeholderImage, linkedin: '' },
-      { name: 'Gajaanie Nandakumar', role: 'Head of Media', image: placeholderImage, linkedin: '' },
-      { name: 'Senula Silva', role: 'Head of Communications', image: placeholderImage, linkedin: '' },
-      { name: 'Tihara Sanulya', role: 'Head of Communications', image: placeholderImage, linkedin: '' },
-      { name: 'Mohamed Atheek Azmy', role: 'Head of Logistics', image: placeholderImage, linkedin: '' },
-      { name: 'Muaadh Mazloom', role: 'Head of Logistics', image: placeholderImage, linkedin: '' },
-      { name: 'Ashok Ainkaran Jeyathasan', role: 'Head of IT', image: placeholderImage, linkedin: '' },
-      { name: 'Jason Montini Fernando', role: 'Head of IT', image: placeholderImage, linkedin: '' },
+      // --- Executive Board ---
+      { group: 'Executive Board', name: 'Methuli Perera', role: 'President of E-Club', image: '/assets/Methuli perera 2.0 Club president.webp', linkedin: '' },
+      { group: 'Executive Board', name: 'Suhayla Ralick', role: 'Chairperson', image: '/assets/Suhalya ralick chairperson.webp', linkedin: '' },
+      { group: 'Executive Board', name: 'Craleeth Gunathilake', role: 'Chairperson', image: '/assets/Craleeth Gunathilake Chairperson.webp', linkedin: '' },
+      { group: 'Executive Board', name: 'Shevan Gomis', role: 'Secretary', image: '/assets/Shevan Gomis secretary.webp', linkedin: '' },
+      { group: 'Executive Board', name: 'Dewdun Jayakody', role: 'Asst. Secretary', image: '/assets/Dewdun Jayakody asst secretay.webp', linkedin: '' },
+      { group: 'Executive Board', name: 'Sudeesha Fonseka', role: 'Treasurer', image: '/assets/Sudeesha Fonseka Treasurer.webp', linkedin: '' },
+      { group: 'Executive Board', name: 'Mukthar Riyaz', role: 'Asst. Treasurer', image: '/assets/Mukthar Riyaz asst treasurer.webp', linkedin: '' },
+      { group: 'Executive Board', name: 'Thevnaka De Silva', role: 'Head of Marketing', image: '/assets/Thevnaka De Silva Head of marketingwebp.webp', linkedin: '' },
+      { group: 'Executive Board', name: 'Reema Mushtaq', role: 'Head of Marketing', image: '/assets/Reema Mushtaq head of marketing.webp', linkedin: '' },
+      // linkedin: business undergraduate, Sri Lanka — likely him, verify APIIT:
+      { group: 'Executive Board', name: 'Sunera Dhammage', role: 'Head of Media', image: '/assets/Sunera Dhammage Head of media .webp', linkedin: 'https://www.linkedin.com/in/sunera-dhammage' },
+      // LLB @ Staffordshire confirmed via public records, but her profile URL isn't
+      // search-indexed — grab it from LinkedIn search directly:
+      { group: 'Executive Board', name: 'Gajaanie Nandakumar', role: 'Head of Media', image: '/assets/Gajaanie Nandakumar head of media.webp', linkedin: '' },
+      { group: 'Executive Board', name: 'Senula Silva', role: 'Head of Communications', image: '/assets/Senula Silva Head of communicaations3.webp', linkedin: '' },
+      { group: 'Executive Board', name: 'Tihara Sanulya', role: 'Head of Communications', image: '/assets/Tihara Sanulya Head of communications.webp', linkedin: '' },
+      // linkedin: lk profile 'Atheek Azmy' — likely him, verify APIIT:
+      { group: 'Executive Board', name: 'Mohamed Atheek Azmy', role: 'Head of Logistics', image: '/assets/Mohamed Atheek Azmy Head of logistics .webp', linkedin: 'https://www.linkedin.com/in/atheek-azmy-39674132b' },
+      { group: 'Executive Board', name: 'Muaadh Mazloom', role: 'Head of Logistics', image: '/assets/Muaadh Mazloom Head of logistics.webp', linkedin: '' },
+      { group: 'Executive Board', name: 'Ashok Ainkaran Jeyathasan', role: 'Head of IT', image: '/assets/Ashok Ainkaran Jeyathasan Head of IT .webp', linkedin: '' },
+      // linkedin derived from his own LinkedIn post URL (distinctive name) — verify:
+      { group: 'Executive Board', name: 'Jason Montini Fernando', role: 'Head of IT', image: '/assets/Jason Montini Fernando Head of IT.webp', linkedin: 'https://www.linkedin.com/in/jason-montini-fernando-006317261/' },
+      // --- Committee Members ---
+      { group: 'Committee Members', name: 'Ayodya Sasuni Perera', role: 'Marketing', image: '/assets/Ayodya Sasuni Perera Marketing.webp', linkedin: '' },
+      { group: 'Committee Members', name: 'Diseni Chanulya Dharmadhasa', role: 'Marketing', image: '/assets/Diseni Chanulya Dharmadhasa Marketing.webp', linkedin: '' },
+      { group: 'Committee Members', name: 'Nethaya Mewni Gunathilaka', role: 'Marketing', image: '/assets/Nethaya Mewni Gunathilaka Head of marketing.webp', linkedin: '' },
+      { group: 'Committee Members', name: 'V. Denam Pathmanathan', role: 'Marketing', image: '/assets/V. Denam Pathmanathan marketing.webp', linkedin: '' },
+      { group: 'Committee Members', name: 'Nohim Roosara Vidanapathirana', role: 'Media', image: '/assets/Nohim Roosara Vidanapathirana media .webp', linkedin: '' },
+      { group: 'Committee Members', name: 'Kulthoom Husni', role: 'Media', image: '/assets/Kulthoom Husni media.webp', linkedin: '' },
+      { group: 'Committee Members', name: 'Himansa Indusara', role: 'Communications', image: '/assets/Himansa Indusara Communication.webp', linkedin: '' },
+      { group: 'Committee Members', name: 'Maneesha Thatuwalakanda', role: 'Communications', image: '/assets/Maneesha Thatuwalakanda communications.webp', linkedin: '' },
+      { group: 'Committee Members', name: 'Sajali Yehansa Waidyaratne', role: 'Communications', image: '/assets/Sajali Yehansa Waidyaratne communications.webp', linkedin: '' },
+      { group: 'Committee Members', name: 'Keiseray Zahir', role: 'Communications', image: '/assets/Keiseray Zahir communications.webp', linkedin: '' },
+      { group: 'Committee Members', name: 'Keith Jason Moraes', role: 'Logistics', image: '/assets/Keith Jason Moraes logistics.webp', linkedin: '' },
+      { group: 'Committee Members', name: 'Hifaz Hizni', role: 'Logistics', image: '/assets/Hifaz Hizni logistics.webp', linkedin: '' },
+      { group: 'Committee Members', name: 'Garuka Kalhara', role: 'Logistics', image: '/assets/Garuka Kalhara logistics.webp', linkedin: '' },
+      { group: 'Committee Members', name: 'Nethmi Fernando', role: 'IT', image: '/assets/Nethmi Fernando IT.webp', linkedin: '' },
+      { group: 'Committee Members', name: 'Nehaa Shruthi Senthilnathan', role: 'IT', image: '/assets/Nehaa Shruthi Senthilnathan IT.webp', linkedin: '' },
     ],
   },
   {

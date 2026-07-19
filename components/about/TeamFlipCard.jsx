@@ -1,11 +1,7 @@
 "use client";
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Linkedin, RotateCcw, Sparkles } from 'lucide-react'
-
-const prefersReducedMotion =
-  typeof window !== 'undefined' &&
-  window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
 
 const FACE_STYLE = {
   backfaceVisibility: 'hidden',
@@ -14,9 +10,45 @@ const FACE_STYLE = {
 
 export default function TeamFlipCard({ member }) {
   const [flipped, setFlipped] = useState(false)
+  const isAnimating = useRef(false)
+  const innerRef = useRef(null)
   const { name, role, image, linkedin, bio } = member
 
-  const toggle = () => setFlipped((f) => !f)
+  const toggle = () => {
+    if (isAnimating.current) return
+
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+
+    const nextFlipped = !flipped
+    setFlipped(nextFlipped)
+
+    if (prefersReducedMotion) {
+      return
+    }
+
+    if (innerRef.current) {
+      isAnimating.current = true
+
+      const startRotate = flipped ? 180 : 0
+      const endRotate = nextFlipped ? 180 : 0
+
+      const animation = innerRef.current.animate(
+        [
+          { transform: `rotateY(${startRotate}deg) scale(1)`, boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' },
+          { transform: `rotateY(${(startRotate + endRotate) / 2}deg) scale(1.07)`, boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5), 0 0 20px rgba(124,58,237,0.15)', offset: 0.5 },
+          { transform: `rotateY(${endRotate}deg) scale(1)`, boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' },
+        ],
+        { duration: 720, easing: 'cubic-bezier(0.45, 0, 0.2, 1)', fill: 'forwards' }
+      )
+
+      animation.onfinish = () => {
+        isAnimating.current = false
+      }
+    }
+  }
+
   const onKey = (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault()
@@ -27,6 +59,7 @@ export default function TeamFlipCard({ member }) {
   return (
     <div className="group" style={{ perspective: '1200px' }}>
       <div
+        ref={innerRef}
         role="button"
         tabIndex={0}
         aria-pressed={flipped}
@@ -38,9 +71,7 @@ export default function TeamFlipCard({ member }) {
         style={{
           transformStyle: 'preserve-3d',
           transform: flipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
-          transition: prefersReducedMotion
-            ? 'none'
-            : 'transform 0.7s cubic-bezier(0.3, 0.9, 0.35, 1)',
+          boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)',
         }}
       >
         {/* ---------- FRONT ---------- */}

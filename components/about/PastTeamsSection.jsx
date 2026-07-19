@@ -70,11 +70,31 @@ export default function PastTeamsSection({ teams = PAST_TEAMS, hideHeader = fals
               </div>
             )}
 
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
-              {members.map((m) => (
-                <PastMemberCard key={m.name + m.role} member={m} />
-              ))}
-            </div>
+            {/* Optional sub-groups (e.g. Executive Board / Committee) via m.group.
+                Members without a group render in one flat grid as before. */}
+            {(() => {
+              const groups = []
+              members.forEach((m) => {
+                const g = m.group || null
+                const last = groups[groups.length - 1]
+                if (last && last.label === g) last.items.push(m)
+                else groups.push({ label: g, items: [m] })
+              })
+              return groups.map(({ label, items }, gi) => (
+                <div key={label ?? gi} className={gi > 0 ? 'mt-10' : ''}>
+                  {label && (
+                    <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-white/40">
+                      {label}
+                    </p>
+                  )}
+                  <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
+                    {items.map((m) => (
+                      <PastMemberCard key={m.name + m.role} member={m} />
+                    ))}
+                  </div>
+                </div>
+              ))
+            })()}
           </div>
         ))}
       </div>
