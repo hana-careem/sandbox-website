@@ -116,32 +116,32 @@ export const PAST_TEAMS = [
     members: [
       // headshot: assets/sandbox1-kavindu-wannisinghe.png
       // linkedin pre-verified via APIIT E-Club VP + Staffordshire — double-check:
-      { name: 'Kavindu Wannisinghe', role: 'Chairperson', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/kavinduisi/' },
+      { name: 'Kavindu Wannisinghe', role: 'Chairperson', image: '/assets/Kavindu chairperson-1.png', linkedin: 'https://www.linkedin.com/in/kavinduisi/' },
       // headshot: assets/sandbox1-vidussh-gunasekera.png
       // linkedin verified — BA Business Innovation & Entrepreneurship, Staffordshire:
-      { name: 'Vidussh Gunasekera', role: 'Chairperson', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/vidussh-gunasekera/' },
+      { name: 'Vidussh Gunasekera', role: 'Chairperson', image: '/assets/Vidussh chairperson-1.png', linkedin: 'https://www.linkedin.com/in/vidussh-gunasekera/' },
       // headshot: assets/sandbox1-himidiri-paranayapa.png
-      { name: 'Himidiri Paranayapa', role: 'Chairperson', image: placeholderImage, linkedin: '' },
+      { name: 'Himidiri Paranayapa', role: 'Chairperson', image: '/assets/Himidiri chairperson.png', linkedin: '' },
       // headshot: assets/sandbox1-reema-shiyam.png
       // linkedin verified — BSc Computer Science, Staffordshire + Sandbox committee:
-      { name: 'Reema Shiyam', role: 'Secretary', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/reema-shiyam-266987280/' },
+      { name: 'Reema Shiyam', role: 'Secretary', image: '/assets/Reema  secretary.png', linkedin: 'https://www.linkedin.com/in/reema-shiyam-266987280/' },
       // headshot: assets/sandbox1-piyumiji-dangalle.png
       // linkedin likely (spelled "Dangalla" there, APIIT/APU marketing degree) — verify:
-      { name: 'Piyumiji Dangalle', role: 'Head of Marketing', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/piyumiji-dangalla-84382a212/' },
+      { name: 'Piyumiji Dangalle', role: 'Head of Marketing', image: '/assets/Beenali Head of Marketing.png', linkedin: 'https://www.linkedin.com/in/piyumiji-dangalla-84382a212/' },
       // headshot: assets/sandbox1-umar-hakeem.png
-      { name: 'Umar Hakeem', role: 'Head of Marketing', image: placeholderImage, linkedin: '' },
+      { name: 'Umar Hakeem', role: 'Head of Marketing', image: '/assets/Umar Head of Marketing.png', linkedin: '' },
       // headshot: assets/sandbox1-shevan-gomis.png
-      { name: 'Shevan Gomis', role: 'Head of Media', image: placeholderImage, linkedin: '' },
+      { name: 'Shevan Gomis', role: 'Head of Media', image: '/assets/Shevan-Head of Media1.png', linkedin: '' },
       // headshot: assets/sandbox1-rimzana-basheer.png
-      { name: 'Rimzana Basheer', role: 'Head of Media', image: placeholderImage, linkedin: '' },
+      { name: 'Rimzana Basheer', role: 'Head of Media', image: '/assets/Rimzana Head of Media.png', linkedin: '' },
       // headshot: assets/sandbox1-devon-bastianz.png
-      { name: 'Devon Bastianz', role: 'Head of Logistics', image: placeholderImage, linkedin: '' },
+      { name: 'Devon Bastianz', role: 'Head of Logistics', image: '/assets/Devon Head of Logistics.png', linkedin: '' },
       // headshot: assets/sandbox1-thahnees-thariq.png
-      { name: 'Thahnees Thariq', role: 'Head of Logistics', image: placeholderImage, linkedin: '' },
+      { name: 'Thahnees Thariq', role: 'Head of Logistics', image: '/assets/Thahnees Head of Logistics.png', linkedin: '' },
       // headshot: assets/sandbox1-amaya-fonseka.png
-      { name: 'Amaya Fonseka', role: 'Head of Communications', image: placeholderImage, linkedin: '' },
+      { name: 'Amaya Fonseka', role: 'Head of Communications', image: '/assets/Amaya Head of Communications.png', linkedin: '' },
       // headshot: assets/sandbox1-ranudi-abeysekera.png
-      { name: 'Ranudi Abeysekera', role: 'Head of Communications', image: placeholderImage, linkedin: '' },
+      { name: 'Ranudi Abeysekera', role: 'Head of Communications', image: '/assets/Ranudi Head of Communications.png', linkedin: '' },
     ],
   },
 ]
