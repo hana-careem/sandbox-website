@@ -13,7 +13,7 @@ export default function OurHistory() {
       <div className="container max-w-5xl mx-auto px-4">
         <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-b from-slate-900/80 via-slate-900/40 to-slate-900/10 px-6 py-16 md:px-16 ring-1 ring-white/5 shadow-[0_0_90px_rgba(124,58,237,0.10)]">
         <ScrollReveal>
-          <h2 className="text-3xl md:text-5xl font-black font-display text-white mb-16 text-center">Our History</h2>
+          <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-white mb-16 text-center">Our History</h2>
         </ScrollReveal>
 
         <div className="space-y-12">
@@ -26,16 +26,16 @@ export default function OurHistory() {
                   </div>
                 </div>
                 <div className="w-full md:w-1/2 px-4">
-                  <h3 className="text-2xl font-bold mb-4 font-display">
+                  <h3 className="text-2xl font-normal mb-4 font-coolvetica">
                     {item.editionParam ? (
                       <Link
                         href={`/about/editions?edition=${item.editionParam}`}
-                        className="text-[#FF4D6D] hover:text-[#7C3AED] transition-colors underline-offset-4 hover:underline"
+                        className="text-white hover:text-[#7C3AED] transition-colors underline-offset-4 hover:underline"
                       >
                         {item.edition}
                       </Link>
                     ) : (
-                      <span className="text-[#FF4D6D]">{item.edition}</span>
+                      <span className="text-white">{item.edition}</span>
                     )}
                   </h3>
                   <p className="text-slate-300 text-lg leading-relaxed">{item.desc}</p>

@@ -1,6 +1,7 @@
 import React from 'react';
 import SponsorsList from '../../components/sponsors/SponsorsList';
 import PartnerUp from '../../components/sponsors/PartnerUp';
+import PastPartners from '../../components/sponsors/PastPartners';
 
 export const metadata = {
   title: 'Sponsors | Sandbox',
@@ -12,6 +13,7 @@ export default function SponsorsPage() {
     <main className="w-full">
       <SponsorsList />
       <PartnerUp />
+      <PastPartners />
     </main>
   );
 }

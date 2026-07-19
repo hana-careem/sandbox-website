@@ -24,7 +24,7 @@ export default function SponsorsList() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-20">
-            <h1 className="text-5xl md:text-7xl font-black font-display text-white tracking-tighter mb-6">
+            <h1 className="text-5xl md:text-7xl font-coolvetica font-normal text-white tracking-normal mb-6">
               OUR <span className="text-[#7C3AED]">SPONSORS</span>
             </h1>
             <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">

@@ -16,10 +16,10 @@ export default function MeetTheTeamSection() {
         <p className="mb-4 text-xs uppercase tracking-[0.2em] text-[#38BDF8]">
           The people behind Sandbox
         </p>
-        <h1 className="font-['Space_Grotesk'] text-4xl font-medium leading-tight text-white md:text-5xl">
+        <h1 className="font-coolvetica text-4xl font-normal leading-tight text-white md:text-5xl">
           Meet the team that makes
           <br />
-          the <em className="italic text-[#FF4D6D]">magic</em> happen
+          the <em className="italic text-[#7C3AED]">magic</em> happen
         </h1>
         <p className="mx-auto mt-5 max-w-md text-sm leading-relaxed text-white/55 md:text-base">
           The student board organising Sri Lanka&rsquo;s flagship inter-school business
