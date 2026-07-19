@@ -27,9 +27,12 @@ export const CATEGORIES = [
 // ---------------------------------------------------------------------------
 export const TEAM = [
   // --- Leadership ---
+  { name: 'Maneesha Thatuwalakanda', role: 'Chairperson', category: 'leadership', image: placeholderImage, linkedin: '', bio: 'Co-chairs the Sandbox 3.0 organising committee.' },
+  { name: 'Himansa Indusara', role: 'Chairperson', category: 'leadership', image: placeholderImage, linkedin: '', bio: 'Co-chairs the Sandbox 3.0 organising committee.' },
   { name: 'Ayodya Perera', role: 'Project Coordinator', category: 'leadership', image: placeholderImage, linkedin: '', bio: 'Coordinates the Sandbox 3.0 project across every sub-team.' },
   { name: 'Tyanna Franchesca Avory', role: 'Secretary', category: 'leadership', image: placeholderImage, linkedin: '', bio: 'Secretary of the Sandbox 3.0 organising committee.' },
   { name: 'Pujaa Shruti Senthilnathan', role: 'Treasurer', category: 'leadership', image: placeholderImage, linkedin: '', bio: 'Manages the Sandbox 3.0 budget and finances.' },
+  { name: 'Yunus Nuhman', role: 'Head of IT', category: 'it', image: placeholderImage, linkedin: '', bio: 'Leads IT — the Sandbox site, registrations and infrastructure.' },
   // --- Heads ---
   { name: 'Nadyah Riyaz', role: 'Head of Media', category: 'media', image: placeholderImage, linkedin: '', bio: 'Co-leads media — photography, videography and event coverage.' },
   { name: 'Sameeha Fahim', role: 'Head of Media', category: 'media', image: placeholderImage, linkedin: '', bio: 'Co-leads media — photography, videography and event coverage.' },
@@ -39,7 +42,9 @@ export const TEAM = [
   { name: 'Raveen', role: 'Head of Communications', category: 'comms', image: placeholderImage, linkedin: '', bio: 'Co-leads communications with schools, sponsors and participants.' },
   { name: 'Asna Azver', role: 'Head of Logistics', category: 'logistics', image: placeholderImage, linkedin: '', bio: 'Co-leads logistics — venues, operations and event-day flow.' },
   { name: 'Burhanuddin', role: 'Head of Logistics', category: 'logistics', image: placeholderImage, linkedin: '', bio: 'Co-leads logistics — venues, operations and event-day flow.' },
-  { name: 'Yunus Nuhman', role: 'Head of IT', category: 'it', image: placeholderImage, linkedin: '', bio: 'Leads IT — the Sandbox site, registrations and infrastructure.' },
+  // --- IT Team ---
+  { name: 'Murad Hussain', role: 'IT Team', category: 'it', image: placeholderImage, linkedin: '', bio: 'IT team, Sandbox 3.0.' },
+  { name: 'Hana Careem', role: 'IT Team', category: 'it', image: placeholderImage, linkedin: '', bio: 'IT team, Sandbox 3.0.' },
   // --- Media Team ---
   { name: 'Tuan Shaahid Rainudeen', role: 'Media Team', category: 'media', image: placeholderImage, linkedin: '', bio: 'Media team, Sandbox 3.0.' },
   { name: 'Dasanya', role: 'Media Team', category: 'media', image: placeholderImage, linkedin: '', bio: 'Media team, Sandbox 3.0.' },
@@ -58,9 +63,6 @@ export const TEAM = [
   { name: 'Nithispranav', role: 'Logistics Team', category: 'logistics', image: placeholderImage, linkedin: '', bio: 'Logistics team, Sandbox 3.0.' },
   { name: 'Sarith Kariyawasam', role: 'Logistics Team', category: 'logistics', image: placeholderImage, linkedin: '', bio: 'Logistics team, Sandbox 3.0.' },
   { name: 'Rakkshetha Soundararajan', role: 'Logistics Team', category: 'logistics', image: placeholderImage, linkedin: '', bio: 'Logistics team, Sandbox 3.0.' },
-  // --- IT Team ---
-  { name: 'Murad Hussain', role: 'IT Team', category: 'it', image: placeholderImage, linkedin: '', bio: 'IT team, Sandbox 3.0.' },
-  { name: 'Hana Careem', role: 'IT Team', category: 'it', image: placeholderImage, linkedin: '', bio: 'IT team, Sandbox 3.0.' },
 ]
 
 // ---------------------------------------------------------------------------
