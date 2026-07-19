@@ -5,7 +5,7 @@
 // once Communications confirms them. Every member uses the shared placeholder image
 // until real headshots land in assets/ (rename them sandbox-team-<name>.png).
 
-import placeholderImage from '../assets/placeholder-image.png'
+const placeholderImage = '/assets/placeholder-image.png';
 
 export const CATEGORIES = [
   { id: 'all', label: 'View all' },
