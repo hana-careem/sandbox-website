@@ -3,6 +3,15 @@
 import { useState } from 'react'
 import { Linkedin, RotateCcw, Sparkles } from 'lucide-react'
 
+const prefersReducedMotion =
+  typeof window !== 'undefined' &&
+  window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+
+const FACE_STYLE = {
+  backfaceVisibility: 'hidden',
+  WebkitBackfaceVisibility: 'hidden',
+}
+
 export default function TeamFlipCard({ member }) {
   const [flipped, setFlipped] = useState(false)
   const { name, role, image, linkedin, bio } = member
@@ -16,7 +25,7 @@ export default function TeamFlipCard({ member }) {
   }
 
   return (
-    <div className="group [perspective:1200px]">
+    <div className="group" style={{ perspective: '1200px' }}>
       <div
         role="button"
         tabIndex={0}
@@ -24,18 +33,21 @@ export default function TeamFlipCard({ member }) {
         aria-label={`${name}, ${role}. ${flipped ? 'Hide' : 'Show'} background`}
         onClick={toggle}
         onKeyDown={onKey}
-        className={
-          'relative aspect-[3/4] w-full cursor-pointer rounded-2xl outline-none ' +
-          'transition-transform duration-500 [transform-style:preserve-3d] ' +
-          'focus-visible:ring-2 focus-visible:ring-[#7C3AED] ' +
-          'motion-reduce:duration-0 ' +
-          (flipped ? '[transform:rotateY(180deg)]' : '')
-        }
+        className="relative aspect-[3/4] w-full cursor-pointer rounded-2xl outline-none
+                   focus-visible:ring-2 focus-visible:ring-[#7C3AED]"
+        style={{
+          transformStyle: 'preserve-3d',
+          transform: flipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+          transition: prefersReducedMotion
+            ? 'none'
+            : 'transform 0.7s cubic-bezier(0.3, 0.9, 0.35, 1)',
+        }}
       >
         {/* ---------- FRONT ---------- */}
         <div
+          style={FACE_STYLE}
           className="absolute inset-0 flex flex-col overflow-hidden rounded-2xl
-                     border border-white/10 bg-[#17171d] [backface-visibility:hidden]"
+                     border border-white/10 bg-[#17171d]"
         >
           <div className="relative flex-1 overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -82,9 +94,9 @@ export default function TeamFlipCard({ member }) {
 
         {/* ---------- BACK: concise background ---------- */}
         <div
+          style={{ ...FACE_STYLE, transform: 'rotateY(180deg)' }}
           className="absolute inset-0 flex flex-col overflow-hidden rounded-2xl border
-                     border-[#7C3AED]/40 bg-[#1a1526] p-5
-                     [backface-visibility:hidden] [transform:rotateY(180deg)]"
+                     border-[#7C3AED]/40 bg-[#1a1526] p-5"
         >
           <p className="font-['Space_Grotesk'] text-base font-medium text-white">{name}</p>
           <p className="mb-3 text-sm text-[#FF4D6D]">{role}</p>

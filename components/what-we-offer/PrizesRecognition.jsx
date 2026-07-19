@@ -3,7 +3,7 @@ import { Trophy } from 'lucide-react';
 
 export default function PrizesRecognition() {
   return (
-    <section className="py-20 bg-slate-950">
+    <section id="prizes-recognition" className="py-20 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-[2.5rem] px-6 py-16 md:px-16 ring-1 ring-white/5 shadow-[0_0_90px_rgba(147,51,234,0.08)]">
           <div className="absolute inset-0 bg-gradient-to-br from-black via-[#3B0764]/50 to-[#701A5A]/40" />

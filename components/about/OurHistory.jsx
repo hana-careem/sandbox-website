@@ -21,9 +21,17 @@ export default function OurHistory() {
             <ScrollReveal key={idx} delay={idx * 150} direction={idx % 2 === 0 ? 'left' : 'right'}>
               <div className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8`}>
                 <div className="w-full md:w-1/2">
-                  <div className="aspect-video bg-slate-800 rounded-3xl border border-white/10 flex items-center justify-center text-slate-500">
-                    [Placeholder: {item.edition} Image]
-                  </div>
+                  {item.editionParam ? (
+                    <Link href={`/about/editions?edition=${item.editionParam}`} className="block w-full">
+                      <div className="aspect-video bg-slate-800 rounded-3xl border border-white/10 flex items-center justify-center text-slate-500 hover:border-[#7C3AED]/50 transition-colors">
+                        [Placeholder: {item.edition} Image]
+                      </div>
+                    </Link>
+                  ) : (
+                    <div className="aspect-video bg-slate-800 rounded-3xl border border-white/10 flex items-center justify-center text-slate-500">
+                      [Placeholder: {item.edition} Image]
+                    </div>
+                  )}
                 </div>
                 <div className="w-full md:w-1/2 px-4">
                   <h3 className="text-2xl font-normal mb-4 font-coolvetica">

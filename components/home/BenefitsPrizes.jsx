@@ -1,6 +1,7 @@
 import React from 'react';
 import ScrollReveal from '../ui/ScrollReveal';
 import { Trophy, Medal, Award } from 'lucide-react';
+import Link from 'next/link';
 
 export default function BenefitsPrizes() {
   const prizes = [
@@ -32,9 +33,11 @@ export default function BenefitsPrizes() {
     <section className="py-24 bg-slate-950">
       <div className="container max-w-7xl mx-auto px-4">
         <ScrollReveal>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-white mb-4">Prizes & Perks</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto text-lg">Massive cash prizes to fund your startup, plus exclusive perks for all finalists.</p>
+          <div className="text-center mb-16 hover:opacity-80 transition-opacity">
+            <Link href="/what-we-offer#prizes-recognition" className="inline-block">
+              <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-white mb-4 hover:text-[#7C3AED] transition-colors">Prizes & Perks</h2>
+              <p className="text-slate-400 max-w-2xl mx-auto text-lg">Massive cash prizes to fund your startup, plus exclusive perks for all finalists.</p>
+            </Link>
           </div>
         </ScrollReveal>
 
