@@ -1,0 +1,113 @@
+"use client";
+
+import { useState } from 'react'
+import { Linkedin, RotateCcw, Sparkles } from 'lucide-react'
+
+export default function TeamFlipCard({ member }) {
+  const [flipped, setFlipped] = useState(false)
+  const { name, role, image, linkedin, bio } = member
+
+  const toggle = () => setFlipped((f) => !f)
+  const onKey = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      toggle()
+    }
+  }
+
+  return (
+    <div className="group [perspective:1200px]">
+      <div
+        role="button"
+        tabIndex={0}
+        aria-pressed={flipped}
+        aria-label={`${name}, ${role}. ${flipped ? 'Hide' : 'Show'} background`}
+        onClick={toggle}
+        onKeyDown={onKey}
+        className={
+          'relative aspect-[3/4] w-full cursor-pointer rounded-2xl outline-none ' +
+          'transition-transform duration-500 [transform-style:preserve-3d] ' +
+          'focus-visible:ring-2 focus-visible:ring-[#7C3AED] ' +
+          'motion-reduce:duration-0 ' +
+          (flipped ? '[transform:rotateY(180deg)]' : '')
+        }
+      >
+        {/* ---------- FRONT ---------- */}
+        <div
+          className="absolute inset-0 flex flex-col overflow-hidden rounded-2xl
+                     border border-white/10 bg-[#17171d] [backface-visibility:hidden]"
+        >
+          <div className="relative flex-1 overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={image}
+              alt={name}
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            />
+            {/* bottom fade so the caption band reads cleanly */}
+            <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#17171d] to-transparent" />
+          </div>
+
+          <div className="px-4 pb-4 pt-1">
+            <p className="font-['Space_Grotesk'] text-base font-medium text-white">{name}</p>
+            <p className="text-sm text-white/55">{role}</p>
+            <a
+              href={linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              aria-label={`${name} on LinkedIn`}
+              className="mt-2 inline-flex items-center gap-1.5 text-xs text-[#38BDF8]
+                         transition-colors hover:text-white"
+            >
+              <Linkedin className="h-3.5 w-3.5" />
+              LinkedIn
+            </a>
+          </div>
+
+          {/* flip hint */}
+          <span
+            className="absolute right-3 top-3 grid h-7 w-7 place-items-center rounded-full
+                       bg-black/40 text-white/70 backdrop-blur-sm transition-opacity
+                       opacity-0 group-hover:opacity-100"
+            aria-hidden="true"
+          >
+            <Sparkles className="h-3.5 w-3.5" />
+          </span>
+        </div>
+
+        {/* ---------- BACK: concise background ---------- */}
+        <div
+          className="absolute inset-0 flex flex-col overflow-hidden rounded-2xl border
+                     border-[#7C3AED]/40 bg-[#1a1526] p-5
+                     [backface-visibility:hidden] [transform:rotateY(180deg)]"
+        >
+          <p className="font-['Space_Grotesk'] text-base font-medium text-white">{name}</p>
+          <p className="mb-3 text-sm text-[#FF4D6D]">{role}</p>
+
+          <p className="flex-1 overflow-y-auto text-sm leading-relaxed text-white/70">{bio}</p>
+
+          <div className="mt-4 flex items-center justify-between">
+            <a
+              href={linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              aria-label={`${name} on LinkedIn`}
+              className="inline-flex items-center gap-1.5 rounded-full border border-white/15
+                         px-3 py-1.5 text-xs text-white/80 transition-colors
+                         hover:border-[#38BDF8] hover:text-[#38BDF8]"
+            >
+              <Linkedin className="h-3.5 w-3.5" />
+              Connect
+            </a>
+            <span className="inline-flex items-center gap-1 text-[11px] text-white/40" aria-hidden="true">
+              <RotateCcw className="h-3 w-3" />
+              tap to flip back
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}

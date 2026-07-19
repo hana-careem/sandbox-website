@@ -1,0 +1,70 @@
+"use client";
+
+import { useState } from 'react'
+import TeamFlipCard from './TeamFlipCard'
+import { TEAM, CATEGORIES } from '../../data/teamData'
+
+export default function MeetTheTeamSection() {
+  const [active, setActive] = useState('all')
+
+  const members = active === 'all' ? TEAM : TEAM.filter((m) => m.category === active)
+
+  return (
+    <section className="bg-[#0d0d12] px-4 py-16 w-full">
+      {/* ---------- headline ---------- */}
+      <header className="mx-auto max-w-2xl text-center">
+        <p className="mb-4 text-xs uppercase tracking-[0.2em] text-[#38BDF8]">
+          The people behind Sandbox
+        </p>
+        <h1 className="font-['Space_Grotesk'] text-4xl font-medium leading-tight text-white md:text-5xl">
+          Meet the team that makes
+          <br />
+          the <em className="italic text-[#FF4D6D]">magic</em> happen
+        </h1>
+        <p className="mx-auto mt-5 max-w-md text-sm leading-relaxed text-white/55 md:text-base">
+          The student board organising Sri Lanka&rsquo;s flagship inter-school business
+          pitching competition. Tap a card to see their background.
+        </p>
+      </header>
+
+      {/* ---------- filter tabs ---------- */}
+      <nav
+        aria-label="Filter team by department"
+        className="mx-auto mt-10 flex max-w-3xl flex-wrap items-center justify-center gap-2"
+      >
+        {CATEGORIES.map(({ id, label }) => (
+          <button
+            key={id}
+            type="button"
+            onClick={() => setActive(id)}
+            aria-pressed={active === id}
+            className={
+              'rounded-full px-4 py-1.5 text-sm transition-colors ' +
+              (active === id
+                ? 'bg-white text-[#0d0d12]'
+                : 'text-white/55 hover:bg-white/5 hover:text-white')
+            }
+          >
+            {label}
+          </button>
+        ))}
+      </nav>
+
+      {/* ---------- grid ---------- */}
+      <div
+        aria-label="Team members"
+        className="mx-auto mt-12 grid max-w-5xl grid-cols-2 gap-4 md:grid-cols-3 md:gap-6 lg:grid-cols-4"
+      >
+        {members.map((m) => (
+          <TeamFlipCard key={m.name + m.role} member={m} />
+        ))}
+      </div>
+
+      {members.length === 0 && (
+        <p className="mt-16 text-center text-sm text-white/40">
+          No members in this team yet.
+        </p>
+      )}
+    </section>
+  )
+}

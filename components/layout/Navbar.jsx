@@ -22,11 +22,11 @@ const REGISTER_CLASSES =
 
 export default function Navbar({ showNavCta: showNavCtaProp }) {
   const ctx = useHeroCta();
-  const showNavCta = showNavCtaProp ?? !ctx.heroCtaVisible;
+  const pathname = usePathname();
+  const showNavCta = showNavCtaProp ?? (pathname !== '/' || !ctx.heroCtaVisible);
   const [menuOpen, setMenuOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);        // mobile accordion
   const [desktopAboutHover, setDesktopAboutHover] = useState(false); // desktop hover
-  const pathname = usePathname();
 
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4 md:pt-6">
@@ -100,6 +100,12 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
                   className="px-4 py-2 text-sm text-white/70 hover:text-white hover:bg-white/10 rounded-xl transition-colors"
                 >
                   Past Editions
+                </Link>
+                <Link
+                  href="/about/team"
+                  className="px-4 py-2 text-sm text-white/70 hover:text-white hover:bg-white/10 rounded-xl transition-colors"
+                >
+                  Meet the Team
                 </Link>
               </div>
             </div>
@@ -233,6 +239,13 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
                     className="block px-4 py-2.5 text-sm font-medium text-white/50 hover:text-white hover:bg-white/5 rounded-xl transition-colors"
                   >
                     Past Editions
+                  </Link>
+                  <Link
+                    href="/about/team"
+                    onClick={() => setMenuOpen(false)}
+                    className="block px-4 py-2.5 text-sm font-medium text-white/50 hover:text-white hover:bg-white/5 rounded-xl transition-colors"
+                  >
+                    Meet the Team
                   </Link>
                 </div>
               </div>
