@@ -9,56 +9,36 @@ import { useHeroCta } from '../ui/HeroCtaContext';
 // TODO: Replace with exact registration deadline when provided
 const REGISTRATION_DEADLINE = new Date('2026-10-15T00:00:00');
 
-const Dial = ({ label, value, max, instanceId, size = "large" }) => {
-  const radius = size === "small" ? 20 : 38;
-  const strokeW = size === "small" ? 4 : 8;
-  const circumference = 2 * Math.PI * radius;
-  const ticks = 40;
-  const tickSpacing = circumference / ticks;
-  const dashArray = `2 ${tickSpacing - 2}`;
-  
-  // Progress depletes as time passes (value goes down to 0)
-  const progress = value / max; 
-  const offset = circumference - (progress * circumference);
-
-  const containerClasses = size === "small" 
-    ? "w-12 h-12 md:w-14 md:h-14 mb-1" 
-    : "w-20 h-20 md:w-24 md:h-24 mb-2 md:mb-3 shadow-[0_0_15px_rgba(0,0,0,0.3)] bg-slate-900/60";
-
+const Dial = ({ label, value, size = "large" }) => {
   const numClasses = size === "small"
-    ? "text-lg md:text-xl"
-    : "text-2xl md:text-4xl";
+    ? "text-3xl md:text-4xl"
+    : "text-5xl md:text-7xl";
 
   const labelClasses = size === "small"
-    ? "text-[9px] md:text-[10px]"
-    : "text-[10px] md:text-xs";
+    ? "text-[9px] md:text-[10px] mt-0.5"
+    : "text-[10px] md:text-xs mt-2";
 
   return (
     <div className="flex flex-col items-center">
-      <div className={`relative flex items-center justify-center rounded-full ${containerClasses}`}>
-        <svg className="w-full h-full -rotate-90 absolute inset-0" viewBox="0 0 100 100">
-          <defs>
-            <mask id={`tick-mask-${instanceId}-${label}`}>
-              <circle cx="50" cy="50" r={radius} fill="transparent" stroke="white" strokeWidth={strokeW + 4} strokeDasharray={dashArray} />
-            </mask>
-          </defs>
-          <circle cx="50" cy="50" r={radius} fill="transparent" stroke="#1e293b" strokeWidth={strokeW} mask={`url(#tick-mask-${instanceId}-${label})`} />
-          <circle cx="50" cy="50" r={radius} fill="transparent" stroke="#7C3AED" strokeWidth={strokeW}
-            strokeDasharray={circumference} strokeDashoffset={offset} 
-            mask={`url(#tick-mask-${instanceId}-${label})`} 
-            className="transition-all duration-1000 ease-linear"
-          />
-        </svg>
-        <span className={`absolute font-bold font-display text-white tabular-nums ${numClasses}`}>
-          {value.toString().padStart(2, '0')}
-        </span>
-      </div>
-      <span className={`font-bold text-slate-400 uppercase tracking-widest ${labelClasses}`}>
+      <span className={`font-coolvetica font-normal text-white tabular-nums leading-none ${numClasses}`}>
+        {value.toString().padStart(2, '0')}
+      </span>
+      <span className={`font-normal text-slate-400 lowercase tracking-widest ${labelClasses}`}>
         {label}
       </span>
     </div>
   );
 };
+
+const Colon = ({ size = "large" }) => (
+  <span
+    className={`font-coolvetica font-normal text-slate-500 leading-none ${
+      size === "small" ? "text-3xl md:text-4xl" : "text-5xl md:text-7xl"
+    }`}
+  >
+    :
+  </span>
+);
 
 export default function SandboxHero() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -159,18 +139,23 @@ export default function SandboxHero() {
                 </Link>
               </ScrollReveal>
 
-              {/* Inline Hero Countdown (Radial Dials) */}
+              {/* Inline Hero Countdown */}
               <ScrollReveal delay={500}>
-                <div className="flex justify-center items-center gap-4 md:gap-8">
+                <div className="flex justify-center items-start gap-4 md:gap-6">
                   {[
-                    // TODO: Set max days to the total duration of the countdown once start date is known
-                    { label: 'Days', value: timeLeft.days, max: 30 },
-                    { label: 'Hours', value: timeLeft.hours, max: 24 },
-                    { label: 'Minutes', value: timeLeft.minutes, max: 60 }
+                    { label: 'Days', value: timeLeft.days },
+                    { label: 'Hours', value: timeLeft.hours },
+                    { label: 'Minutes', value: timeLeft.minutes }
                   ].map((item, idx) => (
-                    <Dial key={idx} label={item.label} value={item.value} max={item.max} instanceId="inline" />
+                    <React.Fragment key={idx}>
+                      {idx > 0 && <Colon />}
+                      <Dial label={item.label} value={item.value} />
+                    </React.Fragment>
                   ))}
                 </div>
+                <p className="text-lg md:text-xl text-slate-400 text-center mt-6 leading-relaxed">
+                  Until Registrations Close!
+                </p>
               </ScrollReveal>
             </div>
 
@@ -189,14 +174,16 @@ export default function SandboxHero() {
           </div>
 
           {/* Ticking Numbers */}
-          <div className="flex gap-4 md:gap-8 md:border-l md:border-white/10 md:pl-6">
+          <div className="flex items-start gap-3 md:gap-4 md:border-l md:border-white/10 md:pl-6">
             {[
-              // TODO: Set max days to the total duration of the countdown once start date is known
-              { label: 'Days', value: timeLeft.days, max: 30 },
-              { label: 'Hrs', value: timeLeft.hours, max: 24 },
-              { label: 'Min', value: timeLeft.minutes, max: 60 }
+              { label: 'Days', value: timeLeft.days },
+              { label: 'Hrs', value: timeLeft.hours },
+              { label: 'Min', value: timeLeft.minutes }
             ].map((item, idx) => (
-              <Dial key={idx} label={item.label} value={item.value} max={item.max} instanceId="sticky" size="small" />
+              <React.Fragment key={idx}>
+                {idx > 0 && <Colon size="small" />}
+                <Dial label={item.label} value={item.value} size="small" />
+              </React.Fragment>
             ))}
           </div>
           
