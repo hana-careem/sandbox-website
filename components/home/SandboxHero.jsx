@@ -132,7 +132,7 @@ export default function SandboxHero() {
             <ScrollReveal delay={100}>
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-black font-display text-white tracking-tighter leading-[0.9] mb-6">
                 <span className="block text-slate-300 font-coolvetica italic font-normal tracking-wide !text-5xl md:!text-7xl lg:!text-8xl">THE PREMIER</span>
-                <span className="block text-[#9333EA] font-arthead font-normal tracking-tight whitespace-nowrap !text-5xl md:!text-7xl lg:!text-8xl">BUSINESS PITCHING</span>
+                <span className="block text-[#9333EA] font-aubrey font-normal tracking-tight whitespace-nowrap !text-5xl md:!text-7xl lg:!text-8xl">Business Pitching</span>
                 <span className="block text-slate-100 font-coolvetica italic font-normal tracking-wide !text-5xl md:!text-7xl lg:!text-8xl">COMPETITION.</span>
               </h1>
             </ScrollReveal>
