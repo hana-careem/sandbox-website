@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 import { Wrench, Users, Flag, Trophy, Target, ChevronUp, ChevronDown, Camera } from "lucide-react";
 import PastTeamsSection from "./PastTeamsSection";
 import { PAST_TEAMS } from "../../data/teamData";
@@ -155,13 +156,15 @@ function StageCard({ stage, isOpen, onToggle }) {
         </button>
 
         {/* Body */}
-        <div className={`transition-all duration-500 ease-in-out ${isOpen ? 'max-h-[2500px] opacity-100' : 'max-h-0 opacity-0'}`}>
-          <div className="px-5 pb-5 sm:px-6 sm:pb-6 pt-0 border-t border-white/5">
-            {/* 10-Photo Carousel */}
-            <StagePhotoCarousel photos={stage.photos} stageTitle={stage.title} />
-            
-            {/* Stage description */}
-            <p className="text-slate-400 text-sm">{stage.desc}</p>
+        <div className={`grid transition-all duration-500 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+          <div className="overflow-hidden">
+            <div className="px-5 pb-5 sm:px-6 sm:pb-6 pt-0 border-t border-white/5">
+              {/* 10-Photo Carousel */}
+              <StagePhotoCarousel photos={stage.photos} stageTitle={stage.title} />
+              
+              {/* Stage description */}
+              <p className="text-slate-400 text-sm">{stage.desc}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -170,10 +173,20 @@ function StageCard({ stage, isOpen, onToggle }) {
 }
 
 export default function SandboxPastEditions() {
+  const searchParams = useSearchParams();
+  const editionParam = searchParams.get("edition");
+  
   const [activeEdition, setActiveEdition] = useState("2.0");
   const data = editions[activeEdition];
   
   const [openStageIdx, setOpenStageIdx] = useState(0);
+
+  useEffect(() => {
+    if (editionParam === "1.0" || editionParam === "2.0") {
+      setActiveEdition(editionParam);
+      setOpenStageIdx(0);
+    }
+  }, [editionParam]);
 
   const toggleStage = (idx) => {
     setOpenStageIdx(openStageIdx === idx ? -1 : idx);
