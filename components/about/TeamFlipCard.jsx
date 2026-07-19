@@ -51,18 +51,22 @@ export default function TeamFlipCard({ member }) {
           <div className="px-4 pb-4 pt-1">
             <p className="font-['Space_Grotesk'] text-base font-medium text-white">{name}</p>
             <p className="text-sm text-white/55">{role}</p>
-            <a
-              href={linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              aria-label={`${name} on LinkedIn`}
-              className="mt-2 inline-flex items-center gap-1.5 text-xs text-[#38BDF8]
-                         transition-colors hover:text-white"
-            >
-              <Linkedin className="h-3.5 w-3.5" />
-              LinkedIn
-            </a>
+            {linkedin ? (
+              <a
+                href={linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                aria-label={`${name} on LinkedIn`}
+                className="mt-2 inline-flex items-center gap-1.5 text-xs text-[#38BDF8]
+                           transition-colors hover:text-white"
+              >
+                <Linkedin className="h-3.5 w-3.5" />
+                LinkedIn
+              </a>
+            ) : (
+              <span className="mt-2 block h-[18px]" aria-hidden="true" />
+            )}
           </div>
 
           {/* flip hint */}
@@ -88,19 +92,23 @@ export default function TeamFlipCard({ member }) {
           <p className="flex-1 overflow-y-auto text-sm leading-relaxed text-white/70">{bio}</p>
 
           <div className="mt-4 flex items-center justify-between">
-            <a
-              href={linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              aria-label={`${name} on LinkedIn`}
-              className="inline-flex items-center gap-1.5 rounded-full border border-white/15
-                         px-3 py-1.5 text-xs text-white/80 transition-colors
-                         hover:border-[#38BDF8] hover:text-[#38BDF8]"
-            >
-              <Linkedin className="h-3.5 w-3.5" />
-              Connect
-            </a>
+            {linkedin ? (
+              <a
+                href={linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                aria-label={`${name} on LinkedIn`}
+                className="inline-flex items-center gap-1.5 rounded-full border border-white/15
+                           px-3 py-1.5 text-xs text-white/80 transition-colors
+                           hover:border-[#38BDF8] hover:text-[#38BDF8]"
+              >
+                <Linkedin className="h-3.5 w-3.5" />
+                Connect
+              </a>
+            ) : (
+              <span aria-hidden="true" />
+            )}
             <span className="inline-flex items-center gap-1 text-[11px] text-white/40" aria-hidden="true">
               <RotateCcw className="h-3 w-3" />
               tap to flip back

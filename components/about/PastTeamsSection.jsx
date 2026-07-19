@@ -17,16 +17,21 @@ function PastMemberCard({ member }) {
       <div className="px-4 pb-4 pt-1">
         <p className="font-['Space_Grotesk'] text-sm font-medium text-white md:text-base">{name}</p>
         <p className="text-xs text-white/55 md:text-sm">{role}</p>
-        <a
-          href={linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`${name} on LinkedIn`}
-          className="mt-2 inline-flex items-center gap-1.5 text-xs text-[#38BDF8] transition-colors hover:text-white"
-        >
-          <Linkedin className="h-3.5 w-3.5" />
-          LinkedIn
-        </a>
+        {linkedin ? (
+          <a
+            href={linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${name} on LinkedIn`}
+            className="mt-2 inline-flex items-center gap-1.5 text-xs text-[#38BDF8] transition-colors hover:text-white"
+          >
+            <Linkedin className="h-3.5 w-3.5" />
+            LinkedIn
+          </a>
+        ) : (
+          /* keeps card heights consistent while URL is missing */
+          <span className="mt-2 block h-[18px]" aria-hidden="true" />
+        )}
       </div>
     </div>
   )
