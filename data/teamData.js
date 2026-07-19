@@ -133,30 +133,18 @@ export const PAST_TEAMS = [
     edition: 'Sandbox 1.0',
     year: '2023',
     members: [
-      // headshot: public/assets/sandbox1-kavindu-wannisinghe.png
-      { name: 'Kavindu Wannisinghe', role: 'Chairperson',           image: placeholderImage, linkedin: 'https://www.linkedin.com/in/kavinduisi/' },
-      // headshot: public/assets/sandbox1-vidussh-gunasekera.png
-      { name: 'Vidussh Gunasekera',  role: 'Chairperson',           image: placeholderImage, linkedin: 'https://www.linkedin.com/in/vidussh-gunasekera/' },
-      // headshot: public/assets/sandbox1-himidiri-paranayapa.png
-      { name: 'Himidiri Paranayapa', role: 'Chairperson',           image: placeholderImage, linkedin: '' },
-      // headshot: public/assets/sandbox1-reema-shiyam.png
-      { name: 'Reema Shiyam',        role: 'Secretary',             image: placeholderImage, linkedin: 'https://www.linkedin.com/in/reema-shiyam-266987280/' },
-      // headshot: public/assets/sandbox1-piyumiji-dangalle.png
-      { name: 'Piyumiji Dangalle',   role: 'Head of Marketing',     image: placeholderImage, linkedin: 'https://www.linkedin.com/in/piyumiji-dangalla-84382a212/' },
-      // headshot: public/assets/sandbox1-umar-hakeem.png
-      { name: 'Umar Hakeem',         role: 'Head of Marketing',     image: placeholderImage, linkedin: '' },
-      // headshot: public/assets/sandbox1-shevan-gomis.png
-      { name: 'Shevan Gomis',        role: 'Head of Media',         image: placeholderImage, linkedin: '' },
-      // headshot: public/assets/sandbox1-rimzana-basheer.png
-      { name: 'Rimzana Basheer',     role: 'Head of Media',         image: placeholderImage, linkedin: '' },
-      // headshot: public/assets/sandbox1-devon-bastianz.png
-      { name: 'Devon Bastianz',      role: 'Head of Logistics',     image: placeholderImage, linkedin: '' },
-      // headshot: public/assets/sandbox1-thahnees-thariq.png
-      { name: 'Thahnees Thariq',     role: 'Head of Logistics',     image: placeholderImage, linkedin: '' },
-      // headshot: public/assets/sandbox1-amaya-fonseka.png
-      { name: 'Amaya Fonseka',       role: 'Head of Communications', image: placeholderImage, linkedin: '' },
-      // headshot: public/assets/sandbox1-ranudi-abeysekera.png
-      { name: 'Ranudi Abeysekera',   role: 'Head of Communications', image: placeholderImage, linkedin: '' },
+      { name: 'Kavindu Wannisinghe', role: 'Chairperson',           image: '/assets/Kavindu chairperson-1.png',        linkedin: 'https://www.linkedin.com/in/kavinduisi/' },
+      { name: 'Vidussh Gunasekera',  role: 'Chairperson',           image: '/assets/Vidussh chairperson-1.png',        linkedin: 'https://www.linkedin.com/in/vidussh-gunasekera/' },
+      { name: 'Himidiri Paranayapa', role: 'Chairperson',           image: '/assets/Himidiri chairperson.png',         linkedin: '' },
+      { name: 'Reema Shiyam',        role: 'Secretary',             image: '/assets/Reema  secretary.png',             linkedin: 'https://www.linkedin.com/in/reema-shiyam-266987280/' },
+      { name: 'Piyumiji Dangalle',   role: 'Head of Marketing',     image: '/assets/Beenali Head of Marketing.png',    linkedin: 'https://www.linkedin.com/in/piyumiji-dangalla-84382a212/' },
+      { name: 'Umar Hakeem',         role: 'Head of Marketing',     image: '/assets/Umar Head of Marketing.png',      linkedin: '' },
+      { name: 'Shevan Gomis',        role: 'Head of Media',         image: '/assets/Shevan-Head of Media1.png',        linkedin: '' },
+      { name: 'Rimzana Basheer',     role: 'Head of Media',         image: '/assets/Rimzana Head of Media.png',        linkedin: '' },
+      { name: 'Devon Bastianz',      role: 'Head of Logistics',     image: '/assets/Devon Head of Logistics.png',      linkedin: '' },
+      { name: 'Thahnees Thariq',     role: 'Head of Logistics',     image: '/assets/Thahnees Head of Logistics.png',   linkedin: '' },
+      { name: 'Amaya Fonseka',       role: 'Head of Communications', image: '/assets/Amaya Head of Communications.png', linkedin: '' },
+      { name: 'Ranudi Abeysekera',   role: 'Head of Communications', image: '/assets/Ranudi Head of Communications.png', linkedin: '' },
     ],
   },
 ]
