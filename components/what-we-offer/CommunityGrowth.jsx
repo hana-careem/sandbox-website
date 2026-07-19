@@ -67,7 +67,7 @@ export default function CommunityGrowth() {
     <section className="py-24 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black font-display text-white tracking-tighter mb-6">
+          <h2 className="text-4xl md:text-5xl font-coolvetica font-normal text-white tracking-normal mb-6">
             Community &amp; <span className="text-[#7C3AED]">Growth</span>
           </h2>
         </div>

@@ -17,7 +17,7 @@ export default function PrizesRecognition() {
 
           <div className="relative z-10">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-black font-display text-white tracking-tighter mb-6">
+              <h2 className="text-4xl md:text-5xl font-coolvetica font-normal text-white tracking-normal mb-6">
                 PRIZES & <span className="text-[#9333EA]">RECOGNITION</span>
               </h2>
               <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">

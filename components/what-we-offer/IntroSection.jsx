@@ -5,7 +5,7 @@ export default function IntroSection() {
     <section className="pt-40 pb-24 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-7xl font-black font-display text-white tracking-tighter">
+          <h1 className="text-5xl md:text-7xl font-coolvetica font-normal text-white tracking-normal">
             WHAT WE <span className="text-[#7C3AED]">OFFER</span>
           </h1>
         </div>
