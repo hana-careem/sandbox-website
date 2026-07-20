@@ -3,7 +3,6 @@ import SandboxHero from '../components/home/SandboxHero';
 import WhatIsSandbox from '../components/home/WhatIsSandbox';
 import Timeline from '../components/home/Timeline';
 import WhyAttend from '../components/home/WhyAttend';
-import BenefitsPrizes from '../components/home/BenefitsPrizes';
 
 export const metadata = {
   title: 'Sandbox | Inter-School Business Pitching Competition',
@@ -17,7 +16,6 @@ export default function Home() {
       <WhatIsSandbox />
       <Timeline />
       <WhyAttend />
-      <BenefitsPrizes />
     </main>
   );
 }
