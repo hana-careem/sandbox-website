@@ -29,12 +29,12 @@ const CORE_SUPPORT_DATA = [
     description: "Pitch your ideas to a panel of real-world investors, CEOs, and business leaders who are looking for the next big thing.",
     icon: <TrendingUp className="w-7 h-7 text-[#7C3AED]" />,
     images: [
-      "https://placehold.co/400x400",
-      "https://placehold.co/400x400",
-      "https://placehold.co/400x400",
-      "https://placehold.co/400x400",
-      "https://placehold.co/400x400",
-      "https://placehold.co/400x400"
+      "/assets/inv-01.jpg",
+      "/assets/inv-02.jpg",
+      "/assets/inv-03.jpg",
+      "/assets/inv-04.jpg",
+      "/assets/inv-05.jpg",
+      "/assets/inv-06.jpg"
     ],
     extra: {
       type: 'steps',
@@ -50,12 +50,12 @@ const CORE_SUPPORT_DATA = [
     description: "Develop the confidence and public speaking skills necessary to command a room and sell your vision.",
     icon: <Presentation className="w-7 h-7 text-[#7C3AED]" />,
     images: [
-      "https://placehold.co/400x400",
-      "https://placehold.co/400x400",
-      "https://placehold.co/400x400",
-      "https://placehold.co/400x400",
-      "https://placehold.co/400x400",
-      "https://placehold.co/400x400"
+      "/assets/p1.jpg",
+      "/assets/p2.jpg",
+      "/assets/p3.jpg",
+      "/assets/p4.jpg",
+      "/assets/p5.jpg",
+      "/assets/p6.jpg"
     ],
     extra: {
       type: 'tags',
@@ -92,7 +92,7 @@ export default function CoreSupport() {
                     >
                       <img
                         src={src}
-                        alt={`Sandbox workshop photo ${imgIdx + 1}`}
+                        alt={`${item.title} photo ${imgIdx + 1}`}
                         className="w-full h-28 sm:h-36 md:h-44 object-cover"
                       />
                     </div>
