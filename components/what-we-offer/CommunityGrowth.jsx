@@ -8,12 +8,12 @@ const COMMUNITY_GROWTH_DATA = [
     description: "Connect with like-minded student entrepreneurs from over 150 schools across the nation.",
     icon: <Users className="w-7 h-7 text-[#7C3AED]" />,
     images: [
-      "https://placehold.co/450x450",
-      "https://placehold.co/450x450",
-      "https://placehold.co/450x450",
-      "https://placehold.co/450x450",
-      "https://placehold.co/450x450",
-      "https://placehold.co/450x450"
+      "/assets/N1.jpg",
+      "/assets/N2.jpg",
+      "/assets/N3.jpg",
+      "/assets/N4.jpg",
+      "/assets/N5.jpg",
+      "/assets/N6.jpg"
     ],
     extra: {
       type: 'stat',
@@ -87,7 +87,11 @@ export default function CommunityGrowth() {
                       key={imgIdx}
                       className="overflow-hidden rounded-xl border border-white/5 shadow-[0_0_40px_rgba(124,58,237,0.10)]"
                     >
-                      <img src={src} alt="" className="w-full h-24 sm:h-28 md:h-32 object-cover" />
+                      <img
+                        src={src}
+                        alt={`${item.title} photo ${imgIdx + 1}`}
+                        className="w-full h-24 sm:h-28 md:h-32 object-cover"
+                      />
                     </div>
                   ))}
                 </div>
