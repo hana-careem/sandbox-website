@@ -17,7 +17,7 @@ export default function AboutEditionSlideshow({
   images = [],
   label = 'Sandbox',
   count = 8, // show about 8 pics
-  interval = 3000, // slide every 3 seconds
+  interval = 4000, // slide every 4 seconds
 }) {
   // Sample once per mount so the set is random but doesn't reshuffle on every render.
   const pics = useMemo(() => sample(images, count), [images, count])
@@ -54,6 +54,8 @@ export default function AboutEditionSlideshow({
       className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-white/10 bg-black/40"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
+      onTouchStart={() => setPaused(true)}
+      onTouchEnd={() => setPaused(false)}
       role="group"
       aria-roledescription="carousel"
       aria-label={`${label} photo gallery`}

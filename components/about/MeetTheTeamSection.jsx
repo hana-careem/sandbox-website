@@ -13,7 +13,7 @@ export default function MeetTheTeamSection() {
     <section className="bg-[#0d0d12] px-4 py-16 w-full">
       {/* ---------- headline ---------- */}
       <header className="mx-auto max-w-2xl text-center">
-        <p className="mb-4 text-xs uppercase tracking-[0.2em] text-[#38BDF8]">
+        <p className="mb-4 text-sm md:text-base uppercase tracking-[0.2em] text-[#38BDF8]">
           The people behind Sandbox
         </p>
         <h1 className="font-coolvetica text-4xl font-normal leading-tight text-white md:text-5xl">

@@ -22,10 +22,10 @@ export default function WhyAttend() {
   ];
 
   return (
-    <section className="relative py-24 bg-slate-950 overflow-hidden">
+    <section className="relative py-24 bg-black overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#2E1065]/50 to-black" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#7C3AED]/10 to-slate-950" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#2E1065]/30 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-[#7C3AED]/5 to-black" />
         <div
           className="absolute inset-0 opacity-[0.06] mix-blend-overlay"
           style={{

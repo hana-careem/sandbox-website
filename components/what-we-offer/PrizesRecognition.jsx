@@ -29,7 +29,7 @@ export default function PrizesRecognition() {
               {/* Hero card: Sandbox Shield */}
               <div className="sm:col-span-2 lg:col-span-2 lg:row-span-2 relative overflow-hidden bg-gradient-to-br from-[#3B0764]/70 to-[#701A5A]/60 border border-[#9333EA]/40 p-8 rounded-3xl hover:border-[#9333EA]/70 transition-colors flex flex-col items-center text-center shadow-[0_0_120px_rgba(147,51,234,0.35)]">
                 <div className="w-full flex-1 min-h-[16rem] overflow-hidden rounded-2xl ring-1 ring-[#9333EA]/40 mb-8 shadow-[0_0_60px_rgba(147,51,234,0.4)]">
-                  <img src="https://placehold.co/900x700" alt="" className="w-full h-full object-cover" />
+                  <img src="/assets/Sandbox shield.jpg" alt="Sandbox Shield" className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-3xl md:text-4xl font-black font-display text-white mb-4 tracking-tight">
                   Sandbox Shield
@@ -55,7 +55,7 @@ export default function PrizesRecognition() {
               {/* Special Awards */}
               <div className="lg:col-span-1 bg-slate-950/60 border border-white/5 p-6 rounded-2xl hover:border-[#9333EA]/50 transition-colors flex flex-col text-center items-center">
                 <div className="w-full overflow-hidden rounded-xl mb-4">
-                  <img src="https://placehold.co/500x500" alt="" className="w-full h-48 md:h-56 object-cover" />
+                  <img src="/assets/placeholder-image.png" alt="Special Awards" className="w-full h-48 md:h-56 object-cover" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">Special Awards</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
@@ -66,7 +66,7 @@ export default function PrizesRecognition() {
               {/* Certificates */}
               <div className="lg:col-span-1 bg-slate-950/60 border border-white/5 p-6 rounded-2xl hover:border-[#9333EA]/50 transition-colors flex flex-col text-center items-center">
                 <div className="w-full overflow-hidden rounded-xl mb-4">
-                  <img src="https://placehold.co/500x500" alt="" className="w-full h-48 md:h-56 object-cover" />
+                  <img src="/assets/placeholder-image.png" alt="Certificates" className="w-full h-48 md:h-56 object-cover" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">Certificates</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
