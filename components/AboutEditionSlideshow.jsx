@@ -1,12 +1,7 @@
 'use client'
 
-// AboutEditionSlideshow.jsx
-// Drop into: src/components/AboutEditionSlideshow.jsx  (Next.js App Router — client component)
-//
-// Replaces the "[Placeholder: Sandbox 1.0 Image]" / "2.0" text slots on /about with an
-// auto-advancing slideshow. Renders ~8 images, sliding to the next every 4 seconds.
-
 import { useState, useEffect, useMemo } from 'react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 // Fisher–Yates sample: pick `n` random items from an array (stable for one mount).
 function sample(arr, n) {
@@ -22,12 +17,15 @@ export default function AboutEditionSlideshow({
   images = [],
   label = 'Sandbox',
   count = 8, // show about 8 pics
-  interval = 4000, // slide every 4 seconds
+  interval = 2000, // slide every 2 seconds
 }) {
   // Sample once per mount so the set is random but doesn't reshuffle on every render.
   const pics = useMemo(() => sample(images, count), [images, count])
   const [i, setI] = useState(0)
   const [paused, setPaused] = useState(false)
+
+  // Manual nav via the side arrows (wraps around).
+  const go = (dir) => setI((prev) => (prev + dir + pics.length) % pics.length)
 
   useEffect(() => {
     if (paused || pics.length <= 1) return
@@ -80,6 +78,28 @@ export default function AboutEditionSlideshow({
 
       {/* subtle dark gradient so any caption/label stays legible */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+
+      {/* side arrows — previous / next */}
+      {pics.length > 1 && (
+        <>
+          <button
+            type="button"
+            onClick={() => go(-1)}
+            aria-label="Previous photo"
+            className="absolute left-2 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full border border-white/15 bg-black/40 text-white/80 backdrop-blur-sm transition hover:bg-black/70 hover:text-white"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+          <button
+            type="button"
+            onClick={() => go(1)}
+            aria-label="Next photo"
+            className="absolute right-2 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full border border-white/15 bg-black/40 text-white/80 backdrop-blur-sm transition hover:bg-black/70 hover:text-white"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
+        </>
+      )}
 
       {/* progress dots */}
       <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5">

@@ -7,7 +7,7 @@ import { ChevronRight } from 'lucide-react';
 import { useHeroCta } from '../ui/HeroCtaContext';
 
 // TODO: Replace with exact registration deadline when provided
-const REGISTRATION_DEADLINE = new Date('2026-10-15T00:00:00');
+const REGISTRATION_DEADLINE = new Date('2026-09-11T23:59:59');
 
 const Dial = ({ label, value, size = "large" }) => {
   const numClasses = size === "small"
@@ -128,7 +128,7 @@ export default function SandboxHero() {
               <ScrollReveal delay={400} immediate>
                 <Link
                   ref={heroCtaRef}
-                  href="https://forms.office.com/"
+                  href="https://forms.gle/aA7xeVSHBGGSuhs87"
                   target="_blank"
                   className="group inline-flex items-center justify-center gap-2.5 px-8 py-3.5 text-base font-bold rounded-full bg-[#7C3AED]/30 backdrop-blur-md border border-white/10 hover:bg-[#7C3AED]/40 text-white transition-all duration-300 focus:ring-2 focus:ring-[#7C3AED]/50 focus:outline-none shadow-lg hover:-translate-y-0.5 active:translate-y-0 mb-12"
                 >
@@ -141,7 +141,7 @@ export default function SandboxHero() {
 
               {/* Inline Hero Countdown */}
               <ScrollReveal delay={500}>
-                <div className="flex justify-center items-start gap-4 md:gap-6">
+                <div className="flex justify-center items-start gap-4 md:gap-6 mt-12">
                   {[
                     { label: 'Days', value: timeLeft.days },
                     { label: 'Hours', value: timeLeft.hours },

@@ -24,7 +24,7 @@ const FAQ_DATA = [
     // TODO: Replace with the confirmed registration deadline for the current
     // edition once the committee sets it.
     question: "What is the deadline for registration?",
-    answer: "Registration dates for the upcoming edition will be announced soon. Follow our social channels or check back here for the exact deadline."
+    answer: "Registrations for this edition will close on September 11th. Ensure your team signs up before the deadline!"
   },
   {
     question: "Do we need a prototype to pitch?",

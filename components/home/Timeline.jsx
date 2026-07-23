@@ -10,7 +10,7 @@ const MILESTONES = [
     desc: 'Schools nationwide can now sign up their teams for this year\'s Sandbox.',
   },
   {
-    date: '7th of September',
+    date: '11th of September',
     title: 'Registrations Close',
     desc: 'Last call for teams to lock in their spot before the competition kicks off.',
   },

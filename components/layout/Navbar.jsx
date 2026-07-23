@@ -7,7 +7,6 @@ import { useHeroCta } from '../ui/HeroCtaContext';
 
 const LINKS = [
   { to: '/', label: 'Home' },
-  { to: '/sponsors', label: 'Sponsors' },
   { to: '/what-we-offer', label: 'What We Offer' },
   { to: '/faqs', label: 'FAQs' },
   { to: '/contact', label: 'Contact Us' },
@@ -27,6 +26,8 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);        // mobile accordion
   const [desktopAboutHover, setDesktopAboutHover] = useState(false); // desktop hover
+  const [sponsorsOpen, setSponsorsOpen] = useState(false);
+  const [desktopSponsorsHover, setDesktopSponsorsHover] = useState(false);
 
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4 md:pt-6">
@@ -111,6 +112,59 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
             </div>
           </li>
 
+          {/* Sponsors with hover dropdown */}
+          <li
+            className="relative"
+            onMouseEnter={() => setDesktopSponsorsHover(true)}
+            onMouseLeave={() => setDesktopSponsorsHover(false)}
+          >
+            <Link
+              href="/sponsors"
+              className={
+                'whitespace-nowrap flex items-center gap-1 rounded-full px-3 py-1.5 text-sm transition-colors ' +
+                (pathname.startsWith('/sponsors') ? 'text-white' : 'text-white/60 hover:text-white')
+              }
+            >
+              Sponsors
+              <ChevronDown
+                size={14}
+                className={`transition-transform duration-200 ${desktopSponsorsHover ? 'rotate-180' : ''}`}
+              />
+            </Link>
+
+            {/* Dropdown */}
+            <div
+              className={`absolute left-1/2 -translate-x-1/2 top-full mt-2 w-44 rounded-2xl
+                         backdrop-blur-xl bg-[#141414]/95 border border-white/10 shadow-2xl
+                         transition-all duration-200 ${
+                desktopSponsorsHover
+                  ? 'opacity-100 visible translate-y-0'
+                  : 'opacity-0 invisible -translate-y-2'
+              }`}
+            >
+              <div className="p-2 flex flex-col gap-1">
+                <Link
+                  href="/sponsors"
+                  className="px-4 py-2 text-sm text-white/70 hover:text-white hover:bg-white/10 rounded-xl transition-colors"
+                >
+                  Our Sponsors
+                </Link>
+                <Link
+                  href="/sponsors/become-a-partner"
+                  className="px-4 py-2 text-sm text-white/70 hover:text-white hover:bg-white/10 rounded-xl transition-colors"
+                >
+                  Partner Up
+                </Link>
+                <Link
+                  href="/sponsors#past-sponsors"
+                  className="px-4 py-2 text-sm text-white/70 hover:text-white hover:bg-white/10 rounded-xl transition-colors"
+                >
+                  Past Sponsors
+                </Link>
+              </div>
+            </div>
+          </li>
+
           {LINKS.filter(l => l.to !== '/').map(({ to, label }) => {
             const isActive = pathname === to;
             return (
@@ -140,7 +194,7 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
           }
         >
           <a
-            href="https://forms.office.com/"
+            href="https://forms.gle/aA7xeVSHBGGSuhs87"
             target="_blank"
             rel="noopener noreferrer"
             tabIndex={showNavCta ? 0 : -1}
@@ -251,6 +305,53 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
               </div>
             </li>
 
+            {/* Sponsors accordion */}
+            <li>
+              <button
+                type="button"
+                onClick={() => setSponsorsOpen((o) => !o)}
+                className={
+                  'w-full flex items-center justify-between rounded-2xl px-4 py-3 text-base transition-colors ' +
+                  (pathname.startsWith('/sponsors')
+                    ? 'bg-white/5 text-white'
+                    : 'text-white/70 hover:bg-white/5 hover:text-white')
+                }
+              >
+                Sponsors
+                {sponsorsOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+              </button>
+
+              <div
+                className={`overflow-hidden transition-all duration-300 ${
+                  sponsorsOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'
+                }`}
+              >
+                <div className="pl-4 py-1 flex flex-col gap-1 border-l border-white/10 ml-6 mt-1 mb-2">
+                  <Link
+                    href="/sponsors"
+                    onClick={() => setMenuOpen(false)}
+                    className="block px-4 py-2.5 text-sm font-medium text-white/50 hover:text-white hover:bg-white/5 rounded-xl transition-colors"
+                  >
+                    Our Sponsors
+                  </Link>
+                  <Link
+                    href="/sponsors/become-a-partner"
+                    onClick={() => setMenuOpen(false)}
+                    className="block px-4 py-2.5 text-sm font-medium text-white/50 hover:text-white hover:bg-white/5 rounded-xl transition-colors"
+                  >
+                    Partner Up
+                  </Link>
+                  <Link
+                    href="/sponsors#past-sponsors"
+                    onClick={() => setMenuOpen(false)}
+                    className="block px-4 py-2.5 text-sm font-medium text-white/50 hover:text-white hover:bg-white/5 rounded-xl transition-colors"
+                  >
+                    Past Sponsors
+                  </Link>
+                </div>
+              </div>
+            </li>
+
             {LINKS.filter(l => l.to !== '/').map(({ to, label }) => {
               const isActive = pathname === to;
               return (
@@ -271,7 +372,7 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
 
             <li className="mt-2 px-1 pb-1">
               <a
-                href="https://forms.office.com/"
+                href="https://forms.gle/aA7xeVSHBGGSuhs87"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMenuOpen(false)}

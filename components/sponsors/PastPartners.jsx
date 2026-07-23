@@ -23,7 +23,7 @@ const PAST_PARTNERS = [
 
 export default function PastPartners() {
   return (
-    <section className="py-20 bg-slate-950">
+    <section id="past-sponsors" className="py-20 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <h2 className="text-4xl md:text-5xl font-coolvetica font-normal text-white text-center mb-12">

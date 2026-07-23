@@ -73,8 +73,11 @@ export default function PastTeamsSection({ teams = PAST_TEAMS, hideHeader = fals
             {/* Optional sub-groups (e.g. Executive Board / Committee) via m.group.
                 Members without a group render in one flat grid as before. */}
             {(() => {
+              const KEEP = /president|chair/i;
+              const leaders = members.filter((m) => KEEP.test(m.role));
+              
               const groups = []
-              members.forEach((m) => {
+              leaders.forEach((m) => {
                 const g = m.group || null
                 const last = groups[groups.length - 1]
                 if (last && last.label === g) last.items.push(m)
