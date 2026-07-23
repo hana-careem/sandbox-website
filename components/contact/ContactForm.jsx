@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import ScrollReveal from '../ui/ScrollReveal';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 
 const ADDRESS = 'Asia Pacific Institute of Information Technology, No. 388 Union Place, Colombo 02, Sri Lanka';
 
@@ -59,17 +59,7 @@ export default function ContactForm() {
                   </div>
                 </div>
 
-                {/* TODO: Add real phone numbers */}
-                <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-full bg-[#7C3AED]/20 flex items-center justify-center flex-shrink-0 mr-4">
-                    <Phone className="w-6 h-6 text-[#7C3AED]" />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-bold mb-1">Phone</h4>
-                    <p className="text-slate-400">TODO: Phone Number 1</p>
-                    <p className="text-slate-400">TODO: Phone Number 2</p>
-                  </div>
-                </div>
+
               </div>
             </div>
           </ScrollReveal>
