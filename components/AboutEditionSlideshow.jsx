@@ -17,7 +17,7 @@ export default function AboutEditionSlideshow({
   images = [],
   label = 'Sandbox',
   count = 8, // show about 8 pics
-  interval = 2000, // slide every 2 seconds
+  interval = 3000, // slide every 3 seconds
 }) {
   // Sample once per mount so the set is random but doesn't reshuffle on every render.
   const pics = useMemo(() => sample(images, count), [images, count])

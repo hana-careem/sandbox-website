@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { Wrench, Users, Flag, Trophy, Target, ChevronUp, ChevronDown, Camera } from "lucide-react";
 import PastTeamsSection from "./PastTeamsSection";
+import AboutEditionSlideshow from "../AboutEditionSlideshow";
 import { PAST_TEAMS } from "../../data/teamData";
 
 // ─── Photo pools — all images now flat in public/assets/ ─────────────────────
@@ -135,22 +136,9 @@ const iconMap = {
 };
 
 function StagePhotoCarousel({ photos, stageTitle }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-
-  useEffect(() => {
-    if (!photos || photos.length <= 1 || isPaused) return;
-
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % photos.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [photos, isPaused]);
-
   if (!photos || photos.length === 0) {
     return (
-      <div className="w-full aspect-[16/9] rounded-2xl overflow-hidden border border-white/5 bg-[#0F0F16] flex items-center justify-center mt-6 mb-4">
+      <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden border border-white/5 bg-[#0F0F16] flex items-center justify-center mt-6 mb-4">
         <span className="text-xs text-slate-500 uppercase tracking-widest">
           PHOTO PLACEHOLDER — {stageTitle.toUpperCase()}
         </span>
@@ -159,57 +147,8 @@ function StagePhotoCarousel({ photos, stageTitle }) {
   }
 
   return (
-    <div className="w-full mt-6 mb-4">
-      <div 
-        className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden border border-white/10 bg-[#0A0A0F] group"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-        onTouchStart={() => setIsPaused(true)}
-        onTouchEnd={() => setIsPaused(false)}
-      >
-        {/* Slides */}
-        {photos.map((src, idx) => (
-          <div
-            key={idx}
-            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-              idx === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
-            }`}
-          >
-            {src ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={src}
-                alt={`${stageTitle} slide ${idx + 1}`}
-                loading={idx === 0 ? 'eager' : 'lazy'}
-                className="w-full h-full object-cover"
-              />
-            ) : (
-              <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-[#0F0F16]">
-                <Camera size={28} className="text-slate-600" />
-                <span className="text-[10px] font-semibold uppercase tracking-widest text-slate-600 text-center px-4">
-                  PHOTO PLACEHOLDER — {stageTitle.toUpperCase()} #{idx + 1}
-                </span>
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-
-      {/* Dots Indicator under the frame */}
-      {photos.length > 1 && (
-        <div className="flex justify-center gap-1.5 mt-3">
-          {photos.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentIndex(idx)}
-              className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-                idx === currentIndex ? "bg-[#7C3AED] w-3" : "bg-white/20 hover:bg-white/40"
-              }`}
-              aria-label={`Go to slide ${idx + 1}`}
-            />
-          ))}
-        </div>
-      )}
+    <div className="mt-6 mb-4">
+      <AboutEditionSlideshow images={photos} label={stageTitle} />
     </div>
   );
 }
