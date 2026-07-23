@@ -1,11 +1,70 @@
+'use client';
 import React from 'react';
 import Link from 'next/link';
 import ScrollReveal from '../ui/ScrollReveal';
+import AboutEditionSlideshow from '../AboutEditionSlideshow';
+
+// ─── Sandbox 1.0 photos (all now flat in public/assets/) ────────────────────
+const s1_imgs = [
+  '/assets/What we offer sandbox 1.0 (1).jpg',
+  '/assets/What we offer sandbox 1.0 (2).jpg',
+  '/assets/Wht we offer sandbox 1.0 (1).jpg',
+  '/assets/Wht we offer sandbox 1.0 (2).jpg',
+  '/assets/Wht we offer sandbox 1.0 (3).jpg',
+  '/assets/Wht we offer sandbox 1.0 (4).jpg',
+  '/assets/Wht we offer sandbox 1.0 (5).jpg',
+  '/assets/Wht we offer sandbox 1.0 (6).jpg',
+  '/assets/Wht we offer sandbox 1.0 (7).jpg',
+  '/assets/Wht we offer sandbox 1.0 (8).jpg',
+  '/assets/Wht we offer sandbox 1.0 (9).jpg',
+  '/assets/Wht we offer sandbox 1.0 (10).jpg',
+  '/assets/Wht we offer sandbox 1.0 (11).jpg',
+];
+
+// ─── Sandbox 2.0 photos (Grand Final + Preliminaries + Workshop) ─────────────
+const s2_imgs = [
+  // Grand Final (10)
+  '/assets/Grand final sandbox 2.0 (1).jpg',
+  '/assets/Grand final sandbox 2.0 (2).jpg',
+  '/assets/Grand final sandbox 2.0 (3).jpg',
+  '/assets/Grand final sandbox 2.0 (4).jpg',
+  '/assets/Grand final sandbox 2.0 (5).jpg',
+  '/assets/Grand final sandbox 2.0 (6).jpg',
+  '/assets/Grand final sandbox 2.0 (7).jpg',
+  '/assets/Grand final sandbox 2.0 (8).jpg',
+  '/assets/Grand final sandbox 2.0 (9).jpg',
+  '/assets/Grand final sandbox 2.0 (10).jpg',
+  // Preliminaries (6)
+  '/assets/preliminairies sandbox 2.0 (1).jpg',
+  '/assets/preliminairies sandbox 2.0 (2).jpg',
+  '/assets/preliminairies sandbox 2.0 (3).jpg',
+  '/assets/preliminairies sandbox 2.0 (4).jpg',
+  '/assets/preliminairies sandbox 2.0 (5).jpg',
+  '/assets/preliminairies sandbox 2.0 (6).jpg',
+  // Workshop (7)
+  '/assets/Workshop sandbox 2.0 (1).jpg',
+  '/assets/Workshop sandbox 2.0 (2).jpg',
+  '/assets/Workshop sandbox 2.0 (3).jpg',
+  '/assets/Workshop sandbox 2.0 (4).jpg',
+  '/assets/Workshop sandbox 2.0 (5).jpg',
+  '/assets/Workshop sandbox 2.0 (6).jpg',
+  '/assets/Workshop sandbox 2.0 (7).jpg',
+];
 
 export default function OurHistory() {
   const history = [
-    { edition: "Sandbox 1.0", editionParam: "1.0", desc: "The inaugural edition in September 2024 that started it all, launching Sri Lanka's first inter-school business pitching competition under the theme of Sustainability." },
-    { edition: "Sandbox 2.0", editionParam: "2.0", desc: "The competition had grown to 38 participating schools and 50 competing teams under the theme of Community Concerns, with St. Joseph's College, Negombo crowned champions." }
+    {
+      edition: "Sandbox 1.0",
+      editionParam: "1.0",
+      desc: "The inaugural edition in September 2024 that started it all, launching Sri Lanka's first inter-school business pitching competition under the theme of Sustainability.",
+      images: s1_imgs,
+    },
+    {
+      edition: "Sandbox 2.0",
+      editionParam: "2.0",
+      desc: "The competition had grown to 38 participating schools and 50 competing teams under the theme of Community Concerns, with St. Joseph's College, Negombo crowned champions.",
+      images: s2_imgs,
+    },
   ];
 
   return (
@@ -23,14 +82,10 @@ export default function OurHistory() {
                 <div className="w-full md:w-1/2">
                   {item.editionParam ? (
                     <Link href={`/about/editions?edition=${item.editionParam}`} className="block w-full">
-                      <div className="aspect-video bg-slate-800 rounded-3xl border border-white/10 flex items-center justify-center text-slate-500 hover:border-[#7C3AED]/50 transition-colors">
-                        [Placeholder: {item.edition} Image]
-                      </div>
+                      <AboutEditionSlideshow images={item.images} label={item.edition} />
                     </Link>
                   ) : (
-                    <div className="aspect-video bg-slate-800 rounded-3xl border border-white/10 flex items-center justify-center text-slate-500">
-                      [Placeholder: {item.edition} Image]
-                    </div>
+                    <AboutEditionSlideshow images={item.images} label={item.edition} />
                   )}
                 </div>
                 <div className="w-full md:w-1/2 px-4">

@@ -7,6 +7,84 @@ import { Wrench, Users, Flag, Trophy, Target, ChevronUp, ChevronDown, Camera } f
 import PastTeamsSection from "./PastTeamsSection";
 import { PAST_TEAMS } from "../../data/teamData";
 
+// ─── Photo pools — all images now flat in public/assets/ ─────────────────────
+const PH = '/assets/placeholder-image.png'; // fallback when no photos available
+
+const PHOTOS = {
+  '2.0': {
+    workshop: [
+      '/assets/Workshop sandbox 2.0 (1).jpg',
+      '/assets/Workshop sandbox 2.0 (2).jpg',
+      '/assets/Workshop sandbox 2.0 (3).jpg',
+      '/assets/Workshop sandbox 2.0 (4).jpg',
+      '/assets/Workshop sandbox 2.0 (5).jpg',
+      '/assets/Workshop sandbox 2.0 (6).jpg',
+      '/assets/Workshop sandbox 2.0 (7).jpg',
+    ],
+    prelims: [
+      '/assets/preliminairies sandbox 2.0 (1).jpg',
+      '/assets/preliminairies sandbox 2.0 (2).jpg',
+      '/assets/preliminairies sandbox 2.0 (3).jpg',
+      '/assets/preliminairies sandbox 2.0 (4).jpg',
+      '/assets/preliminairies sandbox 2.0 (5).jpg',
+      '/assets/preliminairies sandbox 2.0 (6).jpg',
+    ],
+    semis: [PH, PH, PH, PH, PH, PH, PH, PH], // No semi-final photos yet
+    grandFinal: [
+      '/assets/Grand final sandbox 2.0 (1).jpg',
+      '/assets/Grand final sandbox 2.0 (2).jpg',
+      '/assets/Grand final sandbox 2.0 (3).jpg',
+      '/assets/Grand final sandbox 2.0 (4).jpg',
+      '/assets/Grand final sandbox 2.0 (5).jpg',
+      '/assets/Grand final sandbox 2.0 (6).jpg',
+      '/assets/Grand final sandbox 2.0 (7).jpg',
+      '/assets/Grand final sandbox 2.0 (8).jpg',
+      '/assets/Grand final sandbox 2.0 (9).jpg',
+      '/assets/Grand final sandbox 2.0 (10).jpg',
+    ],
+  },
+  '1.0': {
+    workshop: [
+      '/assets/Workshop sandbox 1.0 (1).jpg',
+      '/assets/Workshop sandbox 1.0 (2).jpg',
+      '/assets/Workshop sandbox 1.0 (3).jpg',
+      '/assets/Workshop sandbox 1.0 (4).jpg',
+      '/assets/Workshop sandbox 1.0 (5).jpg',
+      '/assets/Workshop sandbox 1.0 (6).jpg',
+      '/assets/Workshop sandbox 1.0 (7).jpg',
+      '/assets/Workshop sandbox 1.0 (8).jpg',
+      '/assets/Workshop sandbox 1.0 (9).jpg',
+      '/assets/Workshop sandbox 1.0 (10).jpg',
+      '/assets/Workshop sandbox 1.0 (11).jpg',
+      '/assets/Workshop sandbox 1.0 (12).jpg',
+      '/assets/Workshop sandbox 1.0 (13).jpg',
+      '/assets/Workshop sandbox 1.0 (14).jpg',
+      '/assets/Workshop sandbox 1.0 (15).jpg',
+      '/assets/Workshop sandbox 1.0 (16).jpg',
+      '/assets/Workshop sandbox 1.0 (17).jpg',
+      '/assets/Workshop sandbox 1.0 (18).jpg',
+      '/assets/Workshop sandbox 1.0 (19).jpg',
+      '/assets/Workshop sandbox 1.0 (20).jpg',
+      '/assets/Workshop sandbox 1.0 (21).jpg',
+      '/assets/Workshop sandbox 1.0 (22).jpg',
+      '/assets/Workshop sandbox 1.0 (23).jpg',
+      '/assets/Workshop sandbox 1.0 (24).jpg',
+      '/assets/Workshop sandbox 1.0 (25).jpg',
+    ],
+    prelims: [PH, PH, PH, PH, PH, PH, PH, PH], // No preliminary photos yet
+    semis:   [PH, PH, PH, PH, PH, PH, PH, PH], // No semifinals photos yet
+    grandFinal: [
+      '/assets/Grand final sandbox 1.0 (1).jpg',
+      '/assets/Grand final sandbox 1.0 (2).jpg',
+      '/assets/Grand final sandbox 1.0 (3).jpg',
+      '/assets/Grand final sandbox 1.0 (4).jpg',
+      '/assets/Grand final sandbox 1.0 (5).jpg',
+      '/assets/Grand final sandbox 1.0 (6).jpg',
+      '/assets/Grand final sandbox 1.0 (7).jpg',
+    ],
+  },
+};
+
 const editions = {
   "2.0": {
     label: "Sandbox 2.0",
@@ -21,10 +99,10 @@ const editions = {
     },
     theme: "Community Concerns",
     stages: [
-      { title: "Workshop",       icon: "Wrench", desc: "Hands-on sessions across three cities to sharpen ideas before the pitch.", photos: Array(10).fill(null) },
-      { title: "Preliminaries",  icon: "Users",  desc: "The top 50 teams face off to determine who advances.", photos: Array(10).fill(null) },
-      { title: "Semifinals",     icon: "Flag",   desc: "The competition narrows down to the very best ideas.", photos: Array(10).fill(null) },
-      { title: "Grand Final",    icon: "Trophy", desc: "The ultimate showdown in front of industry judges.", photos: Array(10).fill(null) },
+      { title: "Workshop",       icon: "Wrench", desc: "Hands-on sessions across three cities to sharpen ideas before the pitch.", photos: PHOTOS['2.0'].workshop },
+      { title: "Preliminaries",  icon: "Users",  desc: "The top 50 teams face off to determine who advances.", photos: PHOTOS['2.0'].prelims },
+      { title: "Semifinals",     icon: "Flag",   desc: "The competition narrows down to the very best ideas.", photos: PHOTOS['2.0'].semis },
+      { title: "Grand Final",    icon: "Trophy", desc: "The ultimate showdown in front of industry judges.", photos: PHOTOS['2.0'].grandFinal },
     ],
   },
   "1.0": {
@@ -41,10 +119,10 @@ const editions = {
     },
     theme: "Sustainability",
     stages: [
-      { title: "Workshop",           icon: "Wrench", desc: "The very first Sandbox workshop.", photos: Array(10).fill(null) },
-      { title: "Preliminary Rounds", icon: "Users",  desc: "Early stage pitches to test the waters.", photos: Array(10).fill(null) },
-      { title: "Semifinals",         icon: "Flag",   desc: "Refining the concepts for the big stage.", photos: Array(10).fill(null) },
-      { title: "Finals",             icon: "Trophy", desc: "The inaugural grand finale.", photos: Array(10).fill(null) },
+      { title: "Workshop",           icon: "Wrench", desc: "The very first Sandbox workshop.", photos: PHOTOS['1.0'].workshop },
+      { title: "Preliminary Rounds", icon: "Users",  desc: "Early stage pitches to test the waters.", photos: PHOTOS['1.0'].prelims },
+      { title: "Semifinals",         icon: "Flag",   desc: "Refining the concepts for the big stage.", photos: PHOTOS['1.0'].semis },
+      { title: "Finals",             icon: "Trophy", desc: "The inaugural grand finale.", photos: PHOTOS['1.0'].grandFinal },
     ],
   },
 };
@@ -99,10 +177,11 @@ function StagePhotoCarousel({ photos, stageTitle }) {
           >
             {src ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img 
-                src={src} 
-                alt={`${stageTitle} slide ${idx + 1}`} 
-                className="w-full h-full object-cover" 
+              <img
+                src={src}
+                alt={`${stageTitle} slide ${idx + 1}`}
+                loading={idx === 0 ? 'eager' : 'lazy'}
+                className="w-full h-full object-cover"
               />
             ) : (
               <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-[#0F0F16]">

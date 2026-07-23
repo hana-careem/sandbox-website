@@ -1,21 +1,24 @@
 "use client";
 import React from 'react';
-import Image from 'next/image';
 import ScrollReveal from '../ui/ScrollReveal';
+import PastSponsorsMarquee from '../PastSponsorsMarquee';
 
+// ─── All 12 past partners, logos served from public/assets/ ──────────────────
+// ⚠️  KVK, Life Vision, and Sampath logos are JPEGs — they may show white boxes
+//     on the dark background. Ask the Media team to re-export them as transparent PNGs.
 const PAST_PARTNERS = [
-  { name: 'ATA', logo: '/assets/ATA-logo.png' },
+  { name: 'ATA',          logo: '/assets/ATA-logo.png' },
   { name: 'Black Canvas', logo: '/assets/Black-Canvas-logo.png' },
-  { name: 'CEA', logo: '/assets/CEA-logo.png' },
-  { name: 'Hi-Tech', logo: '/assets/hi-tech-logo.png' },
-  { name: 'JKOA', logo: '/assets/JKOA-logo.png' },
-  { name: 'KVK', logo: '/assets/KVK-logo.jpeg' },
-  { name: 'Life Vision', logo: '/assets/life-vision-logo.jpeg' },
-  { name: 'SAB', logo: '/assets/sab-logo.png' },
-  { name: 'Sampath', logo: '/assets/sampath-logo.jpeg' },
-  { name: 'Sasnaka', logo: '/assets/sasnaka-logo.png' },
-  { name: 'Unilever', logo: '/assets/unilever-logo.png' },
-  { name: 'Veerakesari', logo: '/assets/veerakesari-logo.png' },
+  { name: 'CEA',          logo: '/assets/CEA-logo.png' },
+  { name: 'Hi-Tech',      logo: '/assets/hi-tech-logo.png' },
+  { name: 'JKOA',         logo: '/assets/JKOA-logo.png' },
+  { name: 'KVK',          logo: '/assets/KVK-logo.jpeg' },          // ⚠️ JPEG — needs transparent PNG
+  { name: 'Life Vision',  logo: '/assets/life-vision-logo.jpeg' },   // ⚠️ JPEG — needs transparent PNG
+  { name: 'SAB',          logo: '/assets/sab-logo.png' },
+  { name: 'Sampath',      logo: '/assets/sampath-logo.jpeg' },       // ⚠️ JPEG — needs transparent PNG
+  { name: 'Sasnaka',      logo: '/assets/sasnaka-logo.png' },
+  { name: 'Unilever',     logo: '/assets/unilever-logo.png' },
+  { name: 'Veerakesari',  logo: '/assets/veerakesari-logo.png' },
 ];
 
 export default function PastPartners() {
@@ -28,22 +31,8 @@ export default function PastPartners() {
           </h2>
         </ScrollReveal>
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-4">
-          {PAST_PARTNERS.map((partner, i) => (
-            <ScrollReveal key={partner.name} delay={i * 60} direction="up">
-              <div className="aspect-[3/2] bg-slate-900 border border-white/5 rounded-xl flex items-center justify-center p-6 hover:border-[#7C3AED]/50 transition-colors">
-                <div className="relative w-full h-full">
-                  <Image
-                    src={partner.logo}
-                    alt={`${partner.name} logo`}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
+        {/* Alternating-direction marquee — replaces the old static grid */}
+        <PastSponsorsMarquee sponsors={PAST_PARTNERS} perRow={4} />
       </div>
     </section>
   );

@@ -4,6 +4,22 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Mail, MapPin, Instagram, Facebook, Linkedin } from 'lucide-react';
 
+// lucide-react ships no TikTok brand icon — inline SVG glyph, currentColor so
+// it inherits the same hover colour as every other icon in the social row.
+function TikTokIcon({ size = 22 }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.79 1.53V6.79a4.86 4.86 0 0 1-1.02-.1z" />
+    </svg>
+  );
+}
+
 const LI_WEB_URL = "https://www.linkedin.com/in/entrepreneurship-club-of-apiit-788313287";
 const LI_APP_URL = "linkedin://in/entrepreneurship-club-of-apiit-788313287";
 const ADDRESS = 'Asia Pacific Institute of Information Technology, No. 388 Union Place, Colombo 02, Sri Lanka';
@@ -54,30 +70,29 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
 
-          {/* ── Brand column: Club logo leads, APIIT secondary ── */}
+          {/* ── Brand column: APIIT logo leads, E-Club secondary ── */}
           <div className="space-y-5 md:col-span-2">
-            {/* Primary: E-Club logo */}
-            <Link href="/" aria-label="Entrepreneurship Club of APIIT, Home">
+            {/* Primary: APIIT logo (now top) */}
+            <Link href="/" aria-label="APIIT, Home">
               <Image
-                src="/assets/eclub-logo.png"
-                alt="Entrepreneurship Club of APIIT"
+                src="/assets/apiit-logo.png"
+                alt="APIIT"
                 width={270}
                 height={75}
-                className="h-[72px] w-auto object-contain"
+                className="h-[72px] w-auto object-contain brightness-0 invert"
               />
             </Link>
             <p className="text-slate-400 text-sm">The inter-school business pitching competition.</p>
 
-            {/* Secondary: APIIT institutional backing */}
+            {/* Secondary: E-Club in "An initiative of" slot */}
             <div className="flex items-center gap-5 pt-1">
               <span className="text-xs text-slate-400 shrink-0">An initiative of</span>
-              {/* brightness-0 invert renders the logo white on our dark background */}
               <Image
-                src="/assets/apiit-logo.png"
-                alt="APIIT"
+                src="/assets/eclub-logo.png"
+                alt="APIIT Entrepreneurship Club"
                 width={120}
                 height={40}
-                className="h-10 w-auto object-contain brightness-0 invert"
+                className="h-10 w-auto object-contain"
               />
             </div>
 
@@ -110,6 +125,15 @@ export default function Footer() {
                 className="text-slate-400 hover:text-[#7C3AED] transition-colors"
               >
                 <Linkedin size={22} />
+              </a>
+              <a
+                href="https://www.tiktok.com/@sandbox.lk"
+                aria-label="Sandbox on TikTok"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-[#7C3AED] transition-colors"
+              >
+                <TikTokIcon size={22} />
               </a>
             </div>
           </div>
