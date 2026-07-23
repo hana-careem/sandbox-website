@@ -55,7 +55,7 @@ export default function PrizesRecognition() {
               {/* Special Awards */}
               <div className="lg:col-span-1 bg-slate-950/60 border border-white/5 p-6 rounded-2xl hover:border-[#9333EA]/50 transition-colors flex flex-col text-center items-center">
                 <div className="w-full overflow-hidden rounded-xl mb-4">
-                  <img src="/assets/What we offer special awards.jpg" alt="Special Awards" className="w-full h-48 md:h-56 object-cover" />
+                  <img src="/assets/What we offer trophy .jpg" alt="Special Awards" className="w-full h-48 md:h-56 object-cover" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">Special Awards</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
@@ -66,7 +66,7 @@ export default function PrizesRecognition() {
               {/* Certificates */}
               <div className="lg:col-span-1 bg-slate-950/60 border border-white/5 p-6 rounded-2xl hover:border-[#9333EA]/50 transition-colors flex flex-col text-center items-center">
                 <div className="w-full overflow-hidden rounded-xl mb-4">
-                  <img src="/assets/What we offer certificates).jpg" alt="Certificates" className="w-full h-48 md:h-56 object-cover" />
+                  <img src="/assets/What we offer certs).jpg" alt="Certificates" className="w-full h-48 md:h-56 object-cover" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">Certificates</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
