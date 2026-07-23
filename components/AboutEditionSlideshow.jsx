@@ -72,8 +72,8 @@ export default function AboutEditionSlideshow({
             (idx === i
               ? 'translate-x-0'
               : idx === (i - 1 + pics.length) % pics.length
-                ? '-translate-x-full'
-                : 'translate-x-full')
+                ? 'translate-x-full'
+                : '-translate-x-full')
           }
         />
       ))}
