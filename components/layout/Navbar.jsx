@@ -42,7 +42,7 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
         <Link href="/" className="flex items-center gap-6" aria-label="Sandbox home">
           <img src="/assets/sandbox-logo.png" alt="Sandbox" className="h-12 w-auto scale-150 origin-left" />
           <span className="h-10 w-px bg-white/15 ml-2" />
-          <img src="/assets/eclub-logo.png" alt="APIIT E-Club" className="h-12 w-auto scale-150 origin-left ml-2 mr-24 opacity-90" />
+          <img src="/assets/eclub-logo.png" alt="APIIT E-Club" className="h-12 w-auto scale-150 origin-left ml-2 mr-32 opacity-90" />
         </Link>
 
         {/* CENTER: all links */}

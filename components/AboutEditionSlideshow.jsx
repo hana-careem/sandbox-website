@@ -66,12 +66,12 @@ export default function AboutEditionSlideshow({
           alt={`${label} — photo ${idx + 1}`}
           loading={idx === 0 ? 'eager' : 'lazy'}
           className={
-            'absolute inset-0 h-full w-full object-cover transition-all duration-700 ease-out ' +
+            'absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-in-out ' +
             (idx === i
-              ? 'translate-x-0 opacity-100'
+              ? 'translate-x-0'
               : idx === (i - 1 + pics.length) % pics.length
-                ? '-translate-x-4 opacity-0'
-                : 'translate-x-4 opacity-0')
+                ? '-translate-x-full'
+                : 'translate-x-full')
           }
         />
       ))}
