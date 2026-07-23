@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
@@ -24,6 +24,24 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
   const pathname = usePathname();
   const showNavCta = showNavCtaProp ?? (pathname !== '/' || !ctx.heroCtaVisible);
   const [menuOpen, setMenuOpen] = useState(false);
+  const mobileRef = useRef(null)
+
+  useEffect(() => {
+    if (!menuOpen) return
+    const onPointerDown = (e) => {
+      if (mobileRef.current && !mobileRef.current.contains(e.target)) {
+        setMenuOpen(false)
+      }
+    }
+    const onScroll = () => setMenuOpen(false)
+    document.addEventListener('pointerdown', onPointerDown)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown)
+      window.removeEventListener('scroll', onScroll)
+    }
+  }, [menuOpen])
+
   const [aboutOpen, setAboutOpen] = useState(false);        // mobile accordion
   const [desktopAboutHover, setDesktopAboutHover] = useState(false); // desktop hover
   const [sponsorsOpen, setSponsorsOpen] = useState(false);
@@ -213,7 +231,7 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
       </nav>
 
       {/* ---------------- MOBILE: three-zone bar ---------------- */}
-      <div className="pointer-events-auto w-full max-w-[420px] md:hidden">
+      <div ref={mobileRef} className="pointer-events-auto w-full max-w-[420px] md:hidden">
         <nav
           className="flex h-[52px] items-center justify-between rounded-full border
                      border-white/10 bg-[#141414]/80 px-4 backdrop-blur-xl"

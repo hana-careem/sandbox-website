@@ -5,6 +5,7 @@ import Link from 'next/link';
 import ScrollReveal from '../ui/ScrollReveal';
 import { ChevronRight } from 'lucide-react';
 import { useHeroCta } from '../ui/HeroCtaContext';
+import PartnersTicker from './PartnersTicker';
 
 // TODO: Replace with exact registration deadline when provided
 const REGISTRATION_DEADLINE = new Date('2026-09-11T23:59:59');
@@ -157,6 +158,7 @@ export default function SandboxHero() {
                   Until Registrations Close!
                 </p>
               </ScrollReveal>
+              <PartnersTicker />
             </div>
 
           </div>

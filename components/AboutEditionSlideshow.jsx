@@ -22,23 +22,22 @@ export default function AboutEditionSlideshow({
   // Sample once per mount so the set is random but doesn't reshuffle on every render.
   const pics = useMemo(() => sample(images, count), [images, count])
   const [i, setI] = useState(0)
-  const [paused, setPaused] = useState(false)
 
   // Manual nav via the side arrows (wraps around).
   const go = (dir) => setI((prev) => (prev + dir + pics.length) % pics.length)
 
   useEffect(() => {
-    if (paused || pics.length <= 1) return
+    if (pics.length <= 1) return
     const reduce =
       typeof window !== 'undefined' &&
       window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
-    if (reduce) return // respect reduced-motion: hold on the first slide
+    if (reduce) return
 
     const id = setInterval(() => {
       setI((prev) => (prev + 1) % pics.length)
     }, interval)
     return () => clearInterval(id)
-  }, [paused, pics.length, interval])
+  }, [pics.length, interval])
 
   if (pics.length === 0) {
     // Nothing imported yet — keep the layout from breaking (project placeholder rule).
@@ -52,10 +51,6 @@ export default function AboutEditionSlideshow({
   return (
     <div
       className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-white/10 bg-black/40"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onTouchStart={() => setPaused(true)}
-      onTouchEnd={() => setPaused(false)}
       role="group"
       aria-roledescription="carousel"
       aria-label={`${label} photo gallery`}
