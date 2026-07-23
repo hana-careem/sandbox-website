@@ -6,7 +6,7 @@ import { ChevronDown } from 'lucide-react';
 const FAQ_DATA = [
   {
     question: "What is this year's theme?",
-    answer: "This year's theme is “A Better Sri Lanka Tomorrow,” so the scope is limitless. Pitch any solution that makes life easier, improves your community, or makes the world a better place."
+    answer: "This year's theme is “A Better Tomorrow,” so the scope is limitless. Pitch any solution that makes life easier, improves your community, or makes the world a better place."
   },
   {
     question: "Who can participate in Sandbox?",
