@@ -42,7 +42,7 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
         <Link href="/" className="flex items-center gap-6" aria-label="Sandbox home">
           <img src="/assets/sandbox-logo.png" alt="Sandbox" className="h-12 w-auto scale-150 origin-left" />
           <span className="h-10 w-px bg-white/15 ml-2" />
-          <img src="/assets/eclub-logo.png" alt="APIIT E-Club" className="h-12 w-auto scale-150 origin-left ml-2 mr-32 opacity-90" />
+          <img src="/assets/eclub-logo.png" alt="APIIT E-Club" className="h-12 w-auto scale-150 origin-left ml-2 mr-48 opacity-90" />
         </Link>
 
         {/* CENTER: all links */}
@@ -150,7 +150,7 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
                   Our Sponsors
                 </Link>
                 <Link
-                  href="/sponsors/become-a-partner"
+                  href="/sponsors#become-a-partner"
                   className="px-4 py-2 text-sm text-white/70 hover:text-white hover:bg-white/10 rounded-xl transition-colors"
                 >
                   Partner Up
@@ -335,7 +335,7 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
                     Our Sponsors
                   </Link>
                   <Link
-                    href="/sponsors/become-a-partner"
+                    href="/sponsors#become-a-partner"
                     onClick={() => setMenuOpen(false)}
                     className="block px-4 py-2.5 text-sm font-medium text-white/50 hover:text-white hover:bg-white/5 rounded-xl transition-colors"
                   >
