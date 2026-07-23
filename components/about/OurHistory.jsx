@@ -80,20 +80,14 @@ export default function OurHistory() {
             <ScrollReveal key={idx} delay={idx * 150} direction={idx % 2 === 0 ? 'left' : 'right'}>
               <div className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8`}>
                 <div className="w-full md:w-1/2">
-                  {item.editionParam ? (
-                    <Link href={`/about/editions?edition=${item.editionParam}`} className="block w-full">
-                      <AboutEditionSlideshow images={item.images} label={item.edition} />
-                    </Link>
-                  ) : (
-                    <AboutEditionSlideshow images={item.images} label={item.edition} />
-                  )}
+                  <AboutEditionSlideshow images={item.images} label={item.edition} />
                 </div>
                 <div className="w-full md:w-1/2 px-4">
                   <h3 className="text-2xl font-normal mb-4 font-coolvetica">
                     {item.editionParam ? (
                       <Link
                         href={`/about/editions?edition=${item.editionParam}`}
-                        className="text-white hover:text-[#7C3AED] transition-colors underline-offset-4 hover:underline"
+                        className="text-white hover:text-[#38BDF8] transition-colors underline-offset-4 hover:underline cursor-pointer"
                       >
                         {item.edition}
                       </Link>
