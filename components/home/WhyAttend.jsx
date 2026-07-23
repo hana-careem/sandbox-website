@@ -24,6 +24,9 @@ export default function WhyAttend() {
   return (
     <section className="relative py-24 bg-black overflow-hidden">
       <div className="absolute inset-0 z-0">
+        {/* Soft edge blends — no sharp boundaries with adjacent sections */}
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-slate-950 to-transparent z-10" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950 to-transparent z-10" />
         <div className="absolute inset-0 bg-gradient-to-br from-black via-[#2E1065]/30 to-black" />
         <div className="absolute inset-0 bg-gradient-to-b from-black via-[#7C3AED]/5 to-black" />
         <div
