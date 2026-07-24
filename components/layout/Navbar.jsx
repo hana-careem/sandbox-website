@@ -15,9 +15,9 @@ const LINKS = [
 // Solid, fully-opaque violet pill — reuse your existing Register button classes here
 // if you already have one; the important part is that it never goes translucent.
 const REGISTER_CLASSES =
-  'inline-flex items-center gap-1.5 rounded-full bg-[#7C3AED] px-4 py-2 text-sm ' +
-  'font-medium text-white shadow-[0_0_20px_-4px_rgba(124,58,237,0.6)] ' +
-  'hover:bg-[#6D28D9] transition-colors'
+  'inline-flex items-center gap-1.5 rounded-full bg-[#a64d79] px-4 py-2 text-sm ' +
+  'font-medium text-white shadow-[0_0_20px_-4px_rgba(166,77,121,0.6)] ' +
+  'hover:bg-[#8f3f66] transition-colors'
 
 export default function Navbar({ showNavCta: showNavCtaProp }) {
   const ctx = useHeroCta();
