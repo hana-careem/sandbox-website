@@ -14,7 +14,6 @@ const DEFAULT_PARTNERS = [
   { name: 'Ministry of Education' },
   { name: 'APIIT Sri Lanka' },
   { name: 'APIIT Entrepreneurship Club' },
-  { name: 'Sandbox 3.0' },
   { name: 'Sri Lankan Schools' },
   { name: 'Inter-School Network' },
   { name: 'Colombo' },
