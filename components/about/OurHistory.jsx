@@ -87,7 +87,7 @@ export default function OurHistory() {
                     {item.editionParam ? (
                       <Link
                         href={`/about/editions?edition=${item.editionParam}`}
-                        className="text-white hover:text-[#38BDF8] transition-colors underline-offset-4 hover:underline cursor-pointer"
+                        className="text-white hover:text-[#14f2db] transition-colors underline-offset-4 hover:underline cursor-pointer"
                       >
                         {item.edition}
                       </Link>

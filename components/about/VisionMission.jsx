@@ -10,7 +10,7 @@ export default function VisionMission() {
         <div className="grid md:grid-cols-2 gap-12">
           <ScrollReveal direction="left">
             <div className="bg-slate-950 border border-slate-800 rounded-3xl p-10 h-full">
-              <Eye size={48} className="text-[#38BDF8] mb-6" />
+              <Eye size={48} className="text-[#14f2db] mb-6" />
               <h3 className="text-2xl font-bold text-white mb-4">Our Vision</h3>
               <p className="text-slate-400 leading-relaxed">
                 To be the premier launchpad for student entrepreneurs in Sri Lanka, creating a generation of innovators ready to solve tomorrow's challenges.

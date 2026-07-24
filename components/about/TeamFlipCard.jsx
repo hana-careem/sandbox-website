@@ -101,7 +101,7 @@ export default function TeamFlipCard({ member }) {
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
                 aria-label={`${name} on LinkedIn`}
-                className="mt-2 inline-flex items-center gap-1.5 text-xs text-[#38BDF8]
+                className="mt-2 inline-flex items-center gap-1.5 text-xs text-[#14f2db]
                            transition-colors hover:text-white"
               >
                 <Linkedin className="h-3.5 w-3.5" />
@@ -144,7 +144,7 @@ export default function TeamFlipCard({ member }) {
                 aria-label={`${name} on LinkedIn`}
                 className="inline-flex items-center gap-1.5 rounded-full border border-white/15
                            px-3 py-1.5 text-xs text-white/80 transition-colors
-                           hover:border-[#38BDF8] hover:text-[#38BDF8]"
+                           hover:border-[#38BDF8] hover:text-[#14f2db]"
               >
                 <Linkedin className="h-3.5 w-3.5" />
                 Connect

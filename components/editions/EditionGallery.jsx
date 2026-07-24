@@ -58,7 +58,7 @@ export default function EditionGallery({ edition }) {
         </div>
         <div className="flex gap-8 md:gap-16 text-center md:text-left divide-x divide-slate-800">
           <div className="pl-4">
-            <div className="text-3xl font-bold text-[#38BDF8]">{data.stats.schools}</div>
+            <div className="text-3xl font-bold text-[#14f2db]">{data.stats.schools}</div>
             <div className="text-slate-400 text-sm">Schools</div>
           </div>
           <div className="pl-8">

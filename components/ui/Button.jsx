@@ -27,13 +27,13 @@ export default function Button({
       "shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_10px_24px_-6px_rgba(255,77,109,0.6),0_0_30px_rgba(255,77,109,0.3)] " +
       "hover:-translate-y-0.5 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.42),0_16px_32px_-6px_rgba(255,77,109,0.85),0_0_46px_rgba(255,77,109,0.5)]",
     outline:
-      "bg-white/5 text-[#38BDF8] ring-1 ring-inset ring-[#38BDF8]/40 backdrop-blur-sm " +
+      "bg-white/5 text-[#14f2db] ring-1 ring-inset ring-[#38BDF8]/40 backdrop-blur-sm " +
       "shadow-[0_8px_20px_-8px_rgba(0,0,0,0.5)] hover:-translate-y-0.5 hover:bg-[#38BDF8]/10",
     ghost: "text-white hover:bg-white/10",
   };
 
   const arrowBg =
-    variant === 'outline' ? 'bg-[#38BDF8]/20 text-[#38BDF8]' : 'bg-white/20 text-white';
+    variant === 'outline' ? 'bg-[#38BDF8]/20 text-[#14f2db]' : 'bg-white/20 text-white';
 
   return (
     <button

@@ -23,7 +23,7 @@ function PastMemberCard({ member }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${name} on LinkedIn`}
-            className="mt-2 inline-flex items-center gap-1.5 text-xs text-[#38BDF8] transition-colors hover:text-white"
+            className="mt-2 inline-flex items-center gap-1.5 text-xs text-[#14f2db] transition-colors hover:text-white"
           >
             <Linkedin className="h-3.5 w-3.5" />
             LinkedIn
@@ -42,7 +42,7 @@ export default function PastTeamsSection({ teams = PAST_TEAMS, hideHeader = fals
     <section aria-label="Past organising teams" className="mx-auto max-w-5xl px-0 py-8 sm:px-4 sm:py-16">
       {!hideHeader && (
         <header className="mb-10 text-center">
-          <p className="mb-3 text-xs uppercase tracking-[0.2em] text-[#38BDF8]">Past editions</p>
+          <p className="mb-3 text-xs uppercase tracking-[0.2em] text-[#14f2db]">Past editions</p>
           <h2 className="font-['Space_Grotesk'] text-3xl font-medium text-white md:text-4xl">
             Meet the teams
           </h2>

@@ -290,8 +290,8 @@ export default function SandboxPastEditions() {
         {/* E. THEME block */}
         <div className="mb-12">
           <div className="flex items-center gap-2 mb-4">
-            <Target size={18} className="text-[#38BDF8]" />
-            <span className="text-[#38BDF8] uppercase font-bold tracking-[0.15em] text-xs">Theme</span>
+            <Target size={18} className="text-[#14f2db]" />
+            <span className="text-[#14f2db] uppercase font-bold tracking-[0.15em] text-xs">Theme</span>
           </div>
           <p className="text-2xl md:text-3xl italic text-violet-200">"{data.theme}"</p>
         </div>
