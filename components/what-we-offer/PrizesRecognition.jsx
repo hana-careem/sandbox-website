@@ -18,7 +18,7 @@ export default function PrizesRecognition() {
           <div className="relative z-10">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-coolvetica font-normal text-white tracking-normal mb-6">
-                PRIZES & <span className="text-[#9333EA]">RECOGNITION</span>
+                PRIZES & <span className="text-[#a64d79]">RECOGNITION</span>
               </h2>
               <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
                 Compete for glory, school pride, and the resources to turn your idea into reality.
@@ -42,11 +42,11 @@ export default function PrizesRecognition() {
               {/* Cash Prizes */}
               <div className="sm:col-span-2 lg:col-span-2 bg-slate-950/60 border border-[#9333EA]/30 p-8 rounded-2xl hover:border-[#9333EA]/60 transition-colors flex flex-col text-center items-center">
                 <div className="w-14 h-14 rounded-full bg-slate-900 flex items-center justify-center mb-4">
-                  <Trophy className="w-7 h-7 text-[#9333EA]" />
+                  <Trophy className="w-7 h-7 text-[#691e56]" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">Cash Prizes</h3>
                 {/* TODO: exact cash amounts to be announced */}
-                <p className="text-3xl md:text-4xl font-black text-[#9333EA] tracking-tight mb-3">TBA</p>
+                <p className="text-3xl md:text-4xl font-black text-[#691e56] tracking-tight mb-3">TBA</p>
                 <p className="text-sm text-slate-400 leading-relaxed">
                   Significant cash prizes awarded to the top 3 teams to help kickstart their business ventures.
                 </p>
