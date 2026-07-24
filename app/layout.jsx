@@ -10,6 +10,11 @@ const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space
 export const metadata = {
   title: 'Sandbox | APIIT',
   description: 'Inter-School Business Pitching Competition',
+  icons: {
+    icon: '/assets/sandbox-logo-cropped.png',
+    shortcut: '/assets/sandbox-logo-cropped.png',
+    apple: '/assets/sandbox-logo-cropped.png',
+  },
 }
 
 export default function RootLayout({ children }) {
