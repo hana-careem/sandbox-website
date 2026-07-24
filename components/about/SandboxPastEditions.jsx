@@ -94,7 +94,7 @@ const editions = {
     winner: {
       school: "St. Joseph's College, Negombo",
       wonText: "won Sandbox 2.0, taking home",
-      prize: "cash prize amount",
+      prize: "LKR 50,000",
       prizeTodo: true,
       is2_0: true
     },
@@ -262,7 +262,7 @@ export default function SandboxPastEditions() {
           <div className="text-2xl md:text-3xl font-medium leading-snug">
             {data.winner.is2_0 && (
               <p>
-                <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-[#7C3AED]">{data.winner.school}</span>
+                <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#a64d79] to-[#691e56]">{data.winner.school}</span>
                 <span className="text-white"> {data.winner.wonText} </span>
                 <span className="italic text-slate-500">{data.winner.prize}</span>
                 {data.winner.prizeTodo && <span className="inline-block align-middle ml-2 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-slate-800/80 text-slate-400 rounded border border-white/5">TODO</span>}
