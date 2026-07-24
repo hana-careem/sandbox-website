@@ -62,7 +62,7 @@ export default function EditionGallery({ edition }) {
             <div className="text-slate-400 text-sm">Schools</div>
           </div>
           <div className="pl-8">
-            <div className="text-3xl font-bold text-[#7C3AED]">{data.stats.teams}</div>
+            <div className="text-3xl font-bold text-[#a64d79]">{data.stats.teams}</div>
             <div className="text-slate-400 text-sm">Teams</div>
           </div>
           <div className="pl-8">

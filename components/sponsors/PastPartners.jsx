@@ -27,7 +27,7 @@ export default function PastPartners() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <h2 className="text-4xl md:text-5xl font-coolvetica font-normal text-white text-center mb-12">
-            Past <span className="text-[#7C3AED]">Partners</span>
+            Past <span className="text-[#a64d79]">Partners</span>
           </h2>
         </ScrollReveal>
 

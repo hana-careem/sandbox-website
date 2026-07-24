@@ -6,7 +6,7 @@ export default function IntroSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-7xl font-coolvetica font-normal text-white tracking-normal">
-            WHAT WE <span className="text-[#7C3AED]">OFFER</span>
+            WHAT WE <span className="text-[#a64d79]">OFFER</span>
           </h1>
         </div>
 

@@ -103,11 +103,11 @@ export default function Timeline() {
   }, []);
 
   return (
-    <section className="relative py-24 bg-slate-950 overflow-hidden">
+    <section className="relative py-24 bg-[#060718] overflow-hidden">
       {/* Decorative background rockets */}
       <Rocket
         size={220}
-        className="absolute -top-10 -left-16 text-[#7C3AED]/5 rotate-45 pointer-events-none select-none"
+        className="absolute -top-10 -left-16 text-[#a64d79]/5 rotate-45 pointer-events-none select-none"
       />
       <Rocket
         size={180}
@@ -118,8 +118,8 @@ export default function Timeline() {
         <ScrollReveal>
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 mb-4">
-              <Rocket size={22} className="text-[#7C3AED] rotate-45" />
-              <span className="text-sm font-bold tracking-widest text-[#7C3AED] uppercase">The Journey</span>
+              <Rocket size={22} className="text-[#a64d79] rotate-45" />
+              <span className="text-sm font-bold tracking-widest text-[#a64d79] uppercase">The Journey</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-white mb-4">Road to the Finals</h2>
             <p className="text-slate-400 max-w-2xl mx-auto text-lg">Here's how Sandbox unfolds, from launch to the grand finale.</p>
@@ -154,7 +154,7 @@ export default function Timeline() {
             <Rocket
               size={26}
               style={{ left: rocketPos.x, top: rocketPos.y }}
-              className="absolute -translate-x-1/2 -translate-y-1/2 -rotate-45 text-[#7C3AED] drop-shadow-[0_0_10px_rgba(124,58,237,0.6)] pointer-events-none"
+              className="absolute -translate-x-1/2 -translate-y-1/2 -rotate-45 text-[#a64d79] drop-shadow-[0_0_10px_rgba(124,58,237,0.6)] pointer-events-none"
             />
           )}
 
@@ -171,7 +171,7 @@ export default function Timeline() {
                     {/* Dot */}
                     <span
                       ref={(el) => (dotRefs.current[idx] = el)}
-                      className="absolute left-4 md:left-1/2 top-1.5 md:top-1/2 md:-translate-y-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-[#7C3AED] ring-4 ring-slate-950 shadow-[0_0_14px_rgba(124,58,237,0.7)] z-10"
+                      className="absolute left-4 md:left-1/2 top-1.5 md:top-1/2 md:-translate-y-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-[#ff75b9] shadow-[0_0_14px_rgba(255,117,185,0.7)] z-10"
                     />
 
                     {/* Spacer (desktop only) */}
@@ -180,7 +180,7 @@ export default function Timeline() {
                     {/* Card */}
                     <div className={`w-full pl-12 md:w-1/2 md:pl-0 ${isEven ? 'md:pl-12' : 'md:pr-12'}`}>
                       <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition-colors">
-                        <span className="inline-block text-xs font-bold tracking-widest text-[#7C3AED] uppercase mb-2">{item.date}</span>
+                        <span className="inline-block text-xs font-bold tracking-widest text-[#a64d79] uppercase mb-2">{item.date}</span>
                         <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
                         <p className="text-slate-400 leading-relaxed">{item.desc}</p>
                       </div>

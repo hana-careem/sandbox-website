@@ -6,7 +6,7 @@ const COMMUNITY_GROWTH_DATA = [
   {
     title: "Networking Opportunities",
     description: "Connect with like-minded student entrepreneurs from over 150 schools across the nation.",
-    icon: <Users className="w-7 h-7 text-[#7C3AED]" />,
+    icon: <Users className="w-7 h-7 text-[#a64d79]" />,
     images: [
       "https://placehold.co/450x450",
       "https://placehold.co/450x450",
@@ -25,7 +25,7 @@ const COMMUNITY_GROWTH_DATA = [
   {
     title: "Career Building",
     description: "Enhance your resume and university applications with verifiable entrepreneurial experience.",
-    icon: <Briefcase className="w-7 h-7 text-[#7C3AED]" />,
+    icon: <Briefcase className="w-7 h-7 text-[#a64d79]" />,
     images: [
       "https://placehold.co/450x450",
       "https://placehold.co/450x450",
@@ -42,7 +42,7 @@ const COMMUNITY_GROWTH_DATA = [
   {
     title: "Mentorship",
     description: "Receive personalized guidance and feedback from assigned mentors throughout the competition lifecycle.",
-    icon: <Award className="w-7 h-7 text-[#7C3AED]" />,
+    icon: <Award className="w-7 h-7 text-[#a64d79]" />,
     images: [
       "https://placehold.co/450x450",
       "https://placehold.co/450x450",
@@ -68,7 +68,7 @@ export default function CommunityGrowth() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-coolvetica font-normal text-white tracking-normal mb-6">
-            Community &amp; <span className="text-[#7C3AED]">Growth</span>
+            Community &amp; <span className="text-[#a64d79]">Growth</span>
           </h2>
         </div>
 

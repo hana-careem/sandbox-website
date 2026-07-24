@@ -104,14 +104,14 @@ export default function Footer() {
             <div className="flex space-x-4 pt-1">
               <button
                 onClick={(e) => handleDeepLink(e, 'instagram://user?username=sandbox.lk', 'https://www.instagram.com/sandbox.lk')}
-                className="text-slate-400 hover:text-[#7C3AED] transition-colors"
+                className="text-slate-400 hover:text-[#a64d79] transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={22} />
               </button>
               <button
                 onClick={(e) => handleDeepLink(e, 'fb://facewebmodal/f?href=https://web.facebook.com/profile.php?id=61591366320255', 'https://web.facebook.com/profile.php?id=61591366320255')}
-                className="text-slate-400 hover:text-[#7C3AED] transition-colors"
+                className="text-slate-400 hover:text-[#a64d79] transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook size={22} />
@@ -122,7 +122,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 target="_blank"
                 onClick={handleLinkedIn}
-                className="text-slate-400 hover:text-[#7C3AED] transition-colors"
+                className="text-slate-400 hover:text-[#a64d79] transition-colors"
               >
                 <Linkedin size={22} />
               </a>
@@ -131,7 +131,7 @@ export default function Footer() {
                 aria-label="Sandbox on TikTok"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-[#7C3AED] transition-colors"
+                className="text-slate-400 hover:text-[#a64d79] transition-colors"
               >
                 <TikTokIcon size={22} />
               </a>
@@ -141,10 +141,10 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Explore</h4>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li><Link href="/about" className="hover:text-[#7C3AED] transition-colors">About Sandbox</Link></li>
-              <li><Link href="/sponsors" className="hover:text-[#7C3AED] transition-colors">Sponsors</Link></li>
-              <li><Link href="/what-we-offer" className="hover:text-[#7C3AED] transition-colors">What We Offer</Link></li>
-              <li><Link href="/faqs" className="hover:text-[#7C3AED] transition-colors">FAQs</Link></li>
+              <li><Link href="/about" className="hover:text-[#a64d79] transition-colors">About Sandbox</Link></li>
+              <li><Link href="/sponsors" className="hover:text-[#a64d79] transition-colors">Sponsors</Link></li>
+              <li><Link href="/what-we-offer" className="hover:text-[#a64d79] transition-colors">What We Offer</Link></li>
+              <li><Link href="/faqs" className="hover:text-[#a64d79] transition-colors">FAQs</Link></li>
             </ul>
           </div>
 
@@ -152,11 +152,11 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-4">Contact</h4>
             <ul className="space-y-3 text-sm text-slate-400">
               <li className="flex items-start">
-                <MapPin size={18} className="mr-2 text-[#7C3AED] flex-shrink-0 mt-0.5" />
+                <MapPin size={18} className="mr-2 text-[#a64d79] flex-shrink-0 mt-0.5" />
                 <a href="#" onClick={handleAddressClick} className="hover:text-white transition-colors cursor-pointer">Entrepreneurship Club, Asia Pacific Institute of Information Technology,<br/>No. 388 Union Place, Colombo 02, Sri Lanka</a>
               </li>
               <li className="flex items-center">
-                <Mail size={18} className="mr-2 text-[#7C3AED] flex-shrink-0" />
+                <Mail size={18} className="mr-2 text-[#a64d79] flex-shrink-0" />
                 <a href="mailto:eclub@apiit.lk" className="hover:text-white transition-colors">eclub@apiit.lk</a>
               </li>
             </ul>

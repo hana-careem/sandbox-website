@@ -18,6 +18,7 @@ module.exports = {
         adolphus: ['Adolphus', 'sans-serif'],
         arthead: ['Arthead', 'sans-serif'],
         aubrey: ['Aubrey', 'sans-serif'],
+        resolve: ['ResolveSans', 'sans-serif'],
       },
     },
   },

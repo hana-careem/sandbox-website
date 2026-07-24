@@ -20,7 +20,7 @@ export default function VisionMission() {
           
           <ScrollReveal direction="right">
             <div className="bg-slate-950 border border-slate-800 rounded-3xl p-10 h-full">
-              <Target size={48} className="text-[#7C3AED] mb-6" />
+              <Target size={48} className="text-[#a64d79] mb-6" />
               <h3 className="text-2xl font-bold text-white mb-4">Our Mission</h3>
               <p className="text-slate-400 leading-relaxed">
                 To equip students with the skills, mentorship, and resources needed to transform their creative ideas into viable, scalable business models through nationwide competition.

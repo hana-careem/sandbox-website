@@ -22,7 +22,7 @@ export default function ContactForm() {
         <ScrollReveal>
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-7xl font-coolvetica font-normal text-white tracking-normal mb-6">
-              CONTACT <span className="text-[#7C3AED]">US</span>
+              CONTACT <span className="text-[#a64d79]">US</span>
             </h1>
             <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
               Have questions about Sandbox? Want to partner with us? Reach out and our team will get back to you.
@@ -39,7 +39,7 @@ export default function ContactForm() {
               <div className="space-y-8">
                 <div className="flex items-start">
                   <div className="w-12 h-12 rounded-full bg-[#7C3AED]/20 flex items-center justify-center flex-shrink-0 mr-4">
-                    <MapPin className="w-6 h-6 text-[#7C3AED]" />
+                    <MapPin className="w-6 h-6 text-[#a64d79]" />
                   </div>
                   <div>
                     <h4 className="text-white font-bold mb-1">Location</h4>
@@ -49,7 +49,7 @@ export default function ContactForm() {
 
                 <div className="flex items-start">
                   <div className="w-12 h-12 rounded-full bg-[#7C3AED]/20 flex items-center justify-center flex-shrink-0 mr-4">
-                    <Mail className="w-6 h-6 text-[#7C3AED]" />
+                    <Mail className="w-6 h-6 text-[#a64d79]" />
                   </div>
                   <div>
                     <h4 className="text-white font-bold mb-1">Email</h4>

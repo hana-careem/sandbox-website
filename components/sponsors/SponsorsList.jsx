@@ -25,7 +25,7 @@ export default function SponsorsList() {
         <ScrollReveal>
           <div className="text-center mb-20">
             <h1 className="text-5xl md:text-7xl font-coolvetica font-normal text-white tracking-normal mb-6">
-              OUR <span className="text-[#7C3AED]">SPONSORS</span>
+              OUR <span className="text-[#a64d79]">SPONSORS</span>
             </h1>
             <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
               The organizations that make Sandbox possible.

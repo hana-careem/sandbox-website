@@ -60,7 +60,7 @@ export default function EditionTabs() {
         <div className="mb-12 text-center max-w-3xl mx-auto">
           <ScrollReveal key={activeTab}>
             <h2 className="text-3xl md:text-5xl font-bold font-display text-white mb-6">
-              {activeTab} <span className="text-[#7C3AED]">({currentEdition.year})</span>
+              {activeTab} <span className="text-[#a64d79]">({currentEdition.year})</span>
             </h2>
             <p className="text-slate-400 text-lg leading-relaxed">
               {currentEdition.description}

@@ -19,7 +19,7 @@ export default function MeetTheTeamSection() {
         <h1 className="font-coolvetica text-4xl font-normal leading-tight text-white md:text-5xl">
           Meet the team that makes
           <br />
-          the <em className="italic text-[#7C3AED]">magic</em> happen
+          the <em className="italic text-[#a64d79]">magic</em> happen
         </h1>
         <p className="mx-auto mt-5 max-w-md text-sm leading-relaxed text-white/55 md:text-base">
           The student board organising Sri Lanka&rsquo;s flagship inter-school business

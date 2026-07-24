@@ -159,7 +159,7 @@ function StageCard({ stage, isOpen, onToggle }) {
   return (
     <div className="relative pl-12 sm:pl-16">
       {/* Icon Node */}
-      <div className={`absolute left-0 top-3 w-8 h-8 sm:w-10 sm:h-10 rounded-full border bg-[#0A0A0F] flex items-center justify-center z-10 transition-colors duration-300 ${isOpen ? 'border-[#7C3AED] shadow-[0_0_15px_rgba(124,58,237,0.4)] text-[#7C3AED]' : 'border-white/10 text-slate-500'}`}>
+      <div className={`absolute left-0 top-3 w-8 h-8 sm:w-10 sm:h-10 rounded-full border bg-[#0A0A0F] flex items-center justify-center z-10 transition-colors duration-300 ${isOpen ? 'border-[#7C3AED] shadow-[0_0_15px_rgba(124,58,237,0.4)] text-[#a64d79]' : 'border-white/10 text-slate-500'}`}>
         <IconComponent size={16} />
       </div>
 
@@ -216,7 +216,7 @@ export default function SandboxPastEditions() {
         
         {/* A. Intro / hero block */}
         <div className="mb-14">
-          <p className="text-[#7C3AED] uppercase font-bold text-xs tracking-[0.2em] mb-4">Past Editions</p>
+          <p className="text-[#a64d79] uppercase font-bold text-xs tracking-[0.2em] mb-4">Past Editions</p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-display text-white mb-6 tracking-tight">Where Sandbox has been.</h1>
           <p className="text-slate-400 leading-relaxed">
             Held every year in Colombo, Sandbox is Sri Lanka's first-ever inter-school business pitching competition, run by the Entrepreneurship Club of APIIT in partnership with the Ministry of Education. It launched in September 2024, open to government, private, and international schools alike. By its second edition in 2025, the competition had grown to 38 participating schools and 50 competing teams, with the strongest ideas advancing through a workshop and preliminary round to a live grand finale in front of a panel of industry judges.
@@ -247,7 +247,7 @@ export default function SandboxPastEditions() {
         <div className="mb-10">
           <h2 className="text-3xl md:text-4xl font-extrabold font-display tracking-tight mb-3">
             <span className="text-white">{data.label} </span>
-            <span className="text-[#7C3AED]">({data.year})</span>
+            <span className="text-[#a64d79]">({data.year})</span>
           </h2>
           <p className="text-slate-400 text-lg">{data.subtitle}</p>
         </div>

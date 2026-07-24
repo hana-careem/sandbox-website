@@ -21,7 +21,7 @@ export default function SupportingContent({ extra }) {
       <ol className="mt-6 space-y-4 max-w-xl mx-auto md:mx-0 text-left">
         {extra.items.map((text, i) => (
           <li key={i} className="flex items-start gap-4">
-            <span className="shrink-0 w-8 h-8 rounded-full border border-[#7C3AED]/40 bg-[#7C3AED]/10 text-[#7C3AED] font-bold text-sm flex items-center justify-center">
+            <span className="shrink-0 w-8 h-8 rounded-full border border-[#7C3AED]/40 bg-[#7C3AED]/10 text-[#a64d79] font-bold text-sm flex items-center justify-center">
               {i + 1}
             </span>
             <span className="text-slate-400 leading-relaxed pt-1">{text}</span>
@@ -38,7 +38,7 @@ export default function SupportingContent({ extra }) {
           {extra.tags.map((tag) => (
             <span
               key={tag}
-              className="px-4 py-1.5 rounded-full border border-[#7C3AED]/30 bg-[#7C3AED]/10 text-[#7C3AED] text-sm font-medium"
+              className="px-4 py-1.5 rounded-full border border-[#7C3AED]/30 bg-[#7C3AED]/10 text-[#a64d79] text-sm font-medium"
             >
               {tag}
             </span>
@@ -53,7 +53,7 @@ export default function SupportingContent({ extra }) {
     return (
       <div className="mt-6 max-w-xl mx-auto md:mx-0">
         <div className="flex items-baseline gap-4 justify-center md:justify-start flex-wrap">
-          <span className="text-5xl md:text-6xl font-black font-display text-[#7C3AED] tracking-tight">
+          <span className="text-5xl md:text-6xl font-black font-display text-[#a64d79] tracking-tight">
             {extra.value}
           </span>
           <span className="text-white font-semibold text-lg">{extra.label}</span>

@@ -6,7 +6,7 @@ const CORE_SUPPORT_DATA = [
   {
     title: "Expert Workshops",
     description: "Learn the fundamentals of business planning, financial forecasting, and effective pitching directly from industry veterans.",
-    icon: <BookOpen className="w-7 h-7 text-[#7C3AED]" />,
+    icon: <BookOpen className="w-7 h-7 text-[#a64d79]" />,
     images: [
       "/assets/workshop-1.jpg",
       "/assets/workshop-2.jpg",
@@ -27,7 +27,7 @@ const CORE_SUPPORT_DATA = [
   {
     title: "Investor Exposure",
     description: "Pitch your ideas to a panel of real-world investors, CEOs, and business leaders who are looking for the next big thing.",
-    icon: <TrendingUp className="w-7 h-7 text-[#7C3AED]" />,
+    icon: <TrendingUp className="w-7 h-7 text-[#a64d79]" />,
     images: [
       "https://placehold.co/400x400",
       "https://placehold.co/400x400",
@@ -48,7 +48,7 @@ const CORE_SUPPORT_DATA = [
   {
     title: "Pitching Mastery",
     description: "Develop the confidence and public speaking skills necessary to command a room and sell your vision.",
-    icon: <Presentation className="w-7 h-7 text-[#7C3AED]" />,
+    icon: <Presentation className="w-7 h-7 text-[#a64d79]" />,
     images: [
       "https://placehold.co/400x400",
       "https://placehold.co/400x400",
@@ -71,7 +71,7 @@ export default function CoreSupport() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-coolvetica font-normal text-white tracking-normal mb-6">
-            Core <span className="text-[#7C3AED]">Support</span>
+            Core <span className="text-[#a64d79]">Support</span>
           </h2>
         </div>
 
