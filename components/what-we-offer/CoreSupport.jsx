@@ -1,6 +1,7 @@
 import React from 'react';
 import { BookOpen, TrendingUp, Presentation } from 'lucide-react';
 import SupportingContent from './SupportingContent';
+import ScrollReveal from '../ui/ScrollReveal';
 
 const CORE_SUPPORT_DATA = [
   {
@@ -69,16 +70,18 @@ export default function CoreSupport() {
   return (
     <section className="py-24 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-coolvetica font-normal text-white tracking-normal mb-6">
-            Core <span className="text-[#a64d79]">Support</span>
-          </h2>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-coolvetica font-normal text-white tracking-normal mb-6">
+              Core <span className="text-[#a64d79]">Support</span>
+            </h2>
+          </div>
+        </ScrollReveal>
 
         <div>
           {CORE_SUPPORT_DATA.map((item, idx) => (
+            <ScrollReveal key={item.title} direction={idx % 2 === 0 ? 'left' : 'right'}>
             <div
-              key={item.title}
               className={`flex flex-col ${
                 idx % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'
               } items-center gap-10 md:gap-16 py-12 border-b border-white/5 last:border-b-0`}
@@ -110,6 +113,7 @@ export default function CoreSupport() {
                 <SupportingContent extra={item.extra} />
               </div>
             </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
