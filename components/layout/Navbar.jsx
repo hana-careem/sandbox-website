@@ -130,8 +130,6 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
             </div>
           </li>
 
-          </li>
-
           <li>
             <Link
               href="/what-we-offer"
@@ -336,8 +334,6 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
                   </Link>
                 </div>
               </div>
-            </li>
-
             </li>
 
             <li>
