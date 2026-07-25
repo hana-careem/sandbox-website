@@ -6,7 +6,7 @@ export default function WhatIsSandbox() {
     <section className="py-20 bg-gradient-to-b from-[#060718] via-[#691e56] to-[#060718]">
       <div className="container max-w-4xl mx-auto px-4 text-center">
         <ScrollReveal>
-          <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-white mb-8 tracking-tight">What is Sand<span className="font-resolve font-light">box</span>?</h2>
+          <h2 className="text-3xl md:text-5xl font-coolvetica font-bold text-white mb-8 tracking-tight">What is Sandbox?</h2>
           <p className="text-white text-lg md:text-xl font-semibold mb-6">
               Sri Lanka's First Inter-School Business Pitch Competition
             </p>
