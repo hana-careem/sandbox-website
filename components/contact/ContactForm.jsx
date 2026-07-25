@@ -53,8 +53,8 @@ export default function ContactForm() {
                   </div>
                   <div>
                     <h4 className="text-white font-bold mb-1">Email</h4>
-                    <a href="mailto:eclub@apiit.lk" className="text-slate-400 hover:text-white transition-colors">
-                      eclub@apiit.lk
+                    <a href="mailto:Sandbox@apiit.lk" className="text-slate-400 hover:text-white transition-colors">
+                      Sandbox@apiit.lk
                     </a>
                   </div>
                 </div>
