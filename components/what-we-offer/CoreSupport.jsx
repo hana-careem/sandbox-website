@@ -26,7 +26,7 @@ const CORE_SUPPORT_DATA = [
     }
   },
   {
-    title: "Investor Exposure",
+    title: "Industry Exposure",
     description: "Pitch your ideas to a panel of real-world investors, CEOs, and business leaders who are looking for the next big thing.",
     icon: <TrendingUp className="w-7 h-7 text-[#a64d79]" />,
     images: [

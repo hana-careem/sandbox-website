@@ -23,12 +23,11 @@ const PHOTOS = {
       '/assets/Workshop sandbox 2.0 (7).jpg',
     ],
     prelims: [
-      '/assets/preliminairies sandbox 2.0 (1).jpg',
-      '/assets/preliminairies sandbox 2.0 (2).jpg',
-      '/assets/preliminairies sandbox 2.0 (3).jpg',
-      '/assets/preliminairies sandbox 2.0 (4).jpg',
-      '/assets/preliminairies sandbox 2.0 (5).jpg',
-      '/assets/preliminairies sandbox 2.0 (6).jpg',
+      '/assets/Preliminaries sandbox 2.0 (1).jpg',
+      '/assets/Preliminaries sandbox 2.0 (2).jpg',
+      '/assets/Preliminaries sandbox 2.0 (3).jpg',
+      '/assets/Preliminaries sandbox 2.0 (4).jpg',
+      '/assets/Preliminaries sandbox 2.0 (5).jpg',
     ],
     semis: [PH, PH, PH, PH, PH, PH, PH, PH], // No semi-final photos yet
     grandFinal: [
@@ -102,7 +101,6 @@ const editions = {
     stages: [
       { title: "Workshop",       icon: "Wrench", desc: "Hands-on sessions across three cities to sharpen ideas before the pitch.", photos: PHOTOS['2.0'].workshop },
       { title: "Preliminaries",  icon: "Users",  desc: "The top 50 teams face off to determine who advances.", photos: PHOTOS['2.0'].prelims },
-      { title: "Semifinals",     icon: "Flag",   desc: "The competition narrows down to the very best ideas.", photos: PHOTOS['2.0'].semis },
       { title: "Grand Final",    icon: "Trophy", desc: "The ultimate showdown in front of industry judges.", photos: PHOTOS['2.0'].grandFinal },
     ],
   },
@@ -122,7 +120,6 @@ const editions = {
     stages: [
       { title: "Workshop",           icon: "Wrench", desc: "The very first Sandbox workshop.", photos: PHOTOS['1.0'].workshop },
       { title: "Preliminary Rounds", icon: "Users",  desc: "Early stage pitches to test the waters.", photos: PHOTOS['1.0'].prelims },
-      { title: "Semifinals",         icon: "Flag",   desc: "Refining the concepts for the big stage.", photos: PHOTOS['1.0'].semis },
       { title: "Finals",             icon: "Trophy", desc: "The inaugural grand finale.", photos: PHOTOS['1.0'].grandFinal },
     ],
   },

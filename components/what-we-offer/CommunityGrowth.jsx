@@ -24,23 +24,6 @@ const COMMUNITY_GROWTH_DATA = [
     }
   },
   {
-    title: "Career Building",
-    description: "Enhance your resume and university applications with verifiable entrepreneurial experience.",
-    icon: <Briefcase className="w-7 h-7 text-[#a64d79]" />,
-    images: [
-      "https://placehold.co/450x450",
-      "https://placehold.co/450x450",
-      "https://placehold.co/450x450",
-      "https://placehold.co/450x450",
-      "https://placehold.co/450x450",
-      "https://placehold.co/450x450"
-    ],
-    extra: {
-      type: 'paragraph',
-      text: "A verifiable line on your resume that goes beyond coursework — something you can actually speak to in an interview, backed by a real outcome."
-    }
-  },
-  {
     title: "Mentorship",
     description: "Receive personalized guidance and feedback from assigned mentors throughout the competition lifecycle.",
     icon: <Award className="w-7 h-7 text-[#a64d79]" />,

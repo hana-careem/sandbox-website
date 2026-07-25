@@ -4,11 +4,10 @@ import ScrollReveal from '../ui/ScrollReveal';
 export default function WhatIsSandbox() {
   return (
     <section className="py-20 bg-gradient-to-b from-[#060718] via-[#691e56] to-[#060718]">
-      <div className="container max-w-4xl mx-auto px-4">
-        <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-b from-slate-900/80 via-slate-900/40 to-slate-900/10 px-6 py-16 md:px-16 text-center ring-1 ring-white/5 shadow-[0_0_90px_rgba(124,58,237,0.10)]">
-          <ScrollReveal>
-            <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-white mb-8 tracking-tight">What is Sand<span className="font-resolve font-light">box</span>?</h2>
-            <p className="text-white text-lg md:text-xl font-semibold mb-6">
+      <div className="container max-w-4xl mx-auto px-4 text-center">
+        <ScrollReveal>
+          <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-white mb-8 tracking-tight">What is Sand<span className="font-resolve font-light">box</span>?</h2>
+          <p className="text-white text-lg md:text-xl font-semibold mb-6">
               Sri Lanka's First Inter-School Business Pitch Competition
             </p>
             <p className="text-slate-300 text-lg leading-relaxed mb-6">
@@ -26,8 +25,7 @@ export default function WhatIsSandbox() {
             <p className="text-slate-300 text-lg leading-relaxed">
               Students are challenged to think beyond the ordinary — to build ideas that don't just make money, but make a difference. From sustainability to social impact, technology to community upliftment, contestants will present ventures designed to solve tomorrow's problems, today.
             </p>
-          </ScrollReveal>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

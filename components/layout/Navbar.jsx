@@ -7,7 +7,6 @@ import { useHeroCta } from '../ui/HeroCtaContext';
 
 const LINKS = [
   { to: '/', label: 'Home' },
-  { to: '/what-we-offer', label: 'What We Offer' },
   { to: '/faqs', label: 'FAQs' },
   { to: '/contact', label: 'Contact Us' },
 ]
@@ -59,8 +58,9 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
         {/* LEFT: brand */}
         <Link href="/" className="flex items-center gap-6" aria-label="Sandbox home">
           <img src="/assets/sandbox-logo.png" alt="Sandbox" className="h-12 w-auto scale-150 origin-left" />
-          <span className="h-10 w-px bg-white/15 ml-2" />
-          <img src="/assets/eclub-logo.png" alt="APIIT E-Club" className="h-12 w-auto scale-150 origin-left ml-2 mr-48 opacity-90" />
+          {/* Eclub logo hidden per request — keep for later */}
+          {/* <span className="h-10 w-px bg-white/15 ml-2" />
+          <img src="/assets/eclub-logo.png" alt="APIIT E-Club" className="h-12 w-auto scale-150 origin-left ml-2 mr-48 opacity-90" /> */}
         </Link>
 
         {/* CENTER: all links */}
@@ -128,6 +128,20 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
                 </Link>
               </div>
             </div>
+          </li>
+
+          </li>
+
+          <li>
+            <Link
+              href="/what-we-offer"
+              className={
+                'whitespace-nowrap rounded-full px-3 py-1.5 text-sm transition-colors ' +
+                (pathname === '/what-we-offer' ? 'text-white' : 'text-white/60 hover:text-white')
+              }
+            >
+              What We Offer
+            </Link>
           </li>
 
           {/* Sponsors with hover dropdown */}
@@ -241,7 +255,8 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
             <img src="/assets/sandbox-logo.png" alt="Sandbox" className="h-10 w-auto scale-150 origin-left" />
           </Link>
 
-          <img src="/assets/eclub-logo.png" alt="APIIT E-Club" className="h-10 w-auto scale-150 opacity-90" />
+          {/* Eclub logo hidden per request — keep for later */}
+          {/* <img src="/assets/eclub-logo.png" alt="APIIT E-Club" className="h-10 w-auto scale-150 opacity-90" /> */}
 
           <button
             type="button"
@@ -321,6 +336,21 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
                   </Link>
                 </div>
               </div>
+            </li>
+
+            </li>
+
+            <li>
+              <Link
+                href="/what-we-offer"
+                onClick={() => setMenuOpen(false)}
+                className={
+                  'block rounded-2xl px-4 py-3 text-base transition-colors ' +
+                  (pathname === '/what-we-offer' ? 'bg-white/5 text-white' : 'text-white/70 hover:bg-white/5 hover:text-white')
+                }
+              >
+                What We Offer
+              </Link>
             </li>
 
             {/* Sponsors accordion */}

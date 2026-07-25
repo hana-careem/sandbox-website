@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useMemo } from 'react'
+import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 // Fisher–Yates sample: pick `n` random items from an array (stable for one mount).
@@ -57,11 +58,12 @@ export default function AboutEditionSlideshow({
     >
       {pics.map((src, idx) => (
         // Cross-fade + gentle slide. All slides stacked; only the active one is visible.
-        <img
+        <Image
           key={idx}
           src={typeof src === 'string' ? src : src?.src /* next/image static import shape */}
           alt={`${label} — photo ${idx + 1}`}
           loading={idx === 0 ? 'eager' : 'lazy'}
+          fill
           className={
             'absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-in-out ' +
             (idx === i
