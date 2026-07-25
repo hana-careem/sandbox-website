@@ -4,9 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { Wrench, Users, Flag, Trophy, Target, ChevronUp, ChevronDown, Camera } from "lucide-react";
-import PastTeamsSection from "./PastTeamsSection";
 import AboutEditionSlideshow from "../AboutEditionSlideshow";
-import { PAST_TEAMS } from "../../data/teamData";
 
 // ─── Photo pools — all images now flat in public/assets/ ─────────────────────
 const PH = '/assets/placeholder-image.png'; // fallback when no photos available
@@ -312,15 +310,7 @@ export default function SandboxPastEditions() {
           </div>
         </div>
 
-        {/* G. Meet the teams section for active edition */}
-        {PAST_TEAMS.filter(t => t.edition === `Sandbox ${activeEdition}`).length > 0 && (
-          <div className="mt-16">
-            <PastTeamsSection 
-              teams={PAST_TEAMS.filter(t => t.edition === `Sandbox ${activeEdition}`)} 
-              hideHeader={true} 
-            />
-          </div>
-        )}
+
 
       </div>
     </div>
