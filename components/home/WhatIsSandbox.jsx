@@ -3,7 +3,7 @@ import ScrollReveal from '../ui/ScrollReveal';
 
 export default function WhatIsSandbox() {
   return (
-    <section className="py-20 bg-gradient-to-b from-[#060718] via-[#691e56] to-[#060718]">
+    <section className="py-20 bg-gradient-to-b from-[#060718] to-[#691e56]">
       <div className="container max-w-4xl mx-auto px-4 text-center">
         <ScrollReveal>
           <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-white mb-8 tracking-tight">What is Sandbox?</h2>
