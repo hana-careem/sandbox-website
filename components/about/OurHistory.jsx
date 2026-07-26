@@ -34,13 +34,14 @@ const s2_imgs = [
   '/assets/Grand final sandbox 2.0 (8).jpg',
   '/assets/Grand final sandbox 2.0 (9).jpg',
   '/assets/Grand final sandbox 2.0 (10).jpg',
-  // Preliminaries (6)
-  '/assets/preliminairies sandbox 2.0 (1).jpg',
-  '/assets/preliminairies sandbox 2.0 (2).jpg',
-  '/assets/preliminairies sandbox 2.0 (3).jpg',
-  '/assets/preliminairies sandbox 2.0 (4).jpg',
-  '/assets/preliminairies sandbox 2.0 (5).jpg',
-  '/assets/preliminairies sandbox 2.0 (6).jpg',
+  // Preliminaries (7)
+  '/assets/Preliminaries Sandbox 2.0 (1).jpg',
+  '/assets/Preliminaries Sandbox 2.0 (2).jpg',
+  '/assets/Preliminaries Sandbox 2.0 (3).jpg',
+  '/assets/Preliminaries Sandbox 2.0 (4).jpg',
+  '/assets/Preliminaries Sandbox 2.0 (5).jpg',
+  '/assets/Preliminaries Sandbox 2.0 (6).jpg',
+  '/assets/Preliminaries Sandbox 2.0 (7).jpg',
   // Workshop (7)
   '/assets/Workshop sandbox 2.0 (1).jpg',
   '/assets/Workshop sandbox 2.0 (2).jpg',

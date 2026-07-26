@@ -21,11 +21,13 @@ const PHOTOS = {
       '/assets/Workshop sandbox 2.0 (7).jpg',
     ],
     prelims: [
-      '/assets/Preliminaries sandbox 2.0 (1).jpg',
-      '/assets/Preliminaries sandbox 2.0 (2).jpg',
-      '/assets/Preliminaries sandbox 2.0 (3).jpg',
-      '/assets/Preliminaries sandbox 2.0 (4).jpg',
-      '/assets/Preliminaries sandbox 2.0 (5).jpg',
+      '/assets/Preliminaries Sandbox 2.0 (1).jpg',
+      '/assets/Preliminaries Sandbox 2.0 (2).jpg',
+      '/assets/Preliminaries Sandbox 2.0 (3).jpg',
+      '/assets/Preliminaries Sandbox 2.0 (4).jpg',
+      '/assets/Preliminaries Sandbox 2.0 (5).jpg',
+      '/assets/Preliminaries Sandbox 2.0 (6).jpg',
+      '/assets/Preliminaries Sandbox 2.0 (7).jpg',
     ],
     semis: [PH, PH, PH, PH, PH, PH, PH, PH], // No semi-final photos yet
     grandFinal: [
@@ -43,33 +45,20 @@ const PHOTOS = {
   },
   '1.0': {
     workshop: [
-      '/assets/Workshop sandbox 1.0 (1).jpg',
-      '/assets/Workshop sandbox 1.0 (2).jpg',
-      '/assets/Workshop sandbox 1.0 (3).jpg',
-      '/assets/Workshop sandbox 1.0 (4).jpg',
-      '/assets/Workshop sandbox 1.0 (5).jpg',
-      '/assets/Workshop sandbox 1.0 (6).jpg',
       '/assets/Workshop sandbox 1.0 (7).jpg',
       '/assets/Workshop sandbox 1.0 (8).jpg',
-      '/assets/Workshop sandbox 1.0 (9).jpg',
       '/assets/Workshop sandbox 1.0 (10).jpg',
-      '/assets/Workshop sandbox 1.0 (11).jpg',
       '/assets/Workshop sandbox 1.0 (12).jpg',
       '/assets/Workshop sandbox 1.0 (13).jpg',
-      '/assets/Workshop sandbox 1.0 (14).jpg',
-      '/assets/Workshop sandbox 1.0 (15).jpg',
-      '/assets/Workshop sandbox 1.0 (16).jpg',
       '/assets/Workshop sandbox 1.0 (17).jpg',
-      '/assets/Workshop sandbox 1.0 (18).jpg',
       '/assets/Workshop sandbox 1.0 (19).jpg',
       '/assets/Workshop sandbox 1.0 (20).jpg',
       '/assets/Workshop sandbox 1.0 (21).jpg',
       '/assets/Workshop sandbox 1.0 (22).jpg',
       '/assets/Workshop sandbox 1.0 (23).jpg',
       '/assets/Workshop sandbox 1.0 (24).jpg',
-      '/assets/Workshop sandbox 1.0 (25).jpg',
     ],
-    prelims: [PH, PH, PH, PH, PH, PH, PH, PH], // No preliminary photos yet
+    prelims: [], // No preliminary photos
     semis:   [PH, PH, PH, PH, PH, PH, PH, PH], // No semifinals photos yet
     grandFinal: [
       '/assets/Grand final sandbox 1.0 (1).jpg',
@@ -117,7 +106,7 @@ const editions = {
     theme: "Sustainability",
     stages: [
       { title: "Workshop",           icon: "Wrench", desc: "The very first Sandbox workshop.", photos: PHOTOS['1.0'].workshop },
-      { title: "Preliminary Rounds", icon: "Users",  desc: "Early stage pitches to test the waters.", photos: PHOTOS['1.0'].prelims },
+      { title: "Preliminary",        icon: "Users",  desc: "Early stage pitches to test the waters.", photos: PHOTOS['1.0'].prelims },
       { title: "Finals",             icon: "Trophy", desc: "The inaugural grand finale.", photos: PHOTOS['1.0'].grandFinal },
     ],
   },

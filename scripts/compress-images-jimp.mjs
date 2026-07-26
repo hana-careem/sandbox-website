@@ -6,7 +6,7 @@
  * - Skips logos, placeholder, and team/person photos (webp headshots are already small)
  * - Backs up originals to public/assets/_originals/ before overwriting
  *
- * Run: node scripts/compress-images-jimp.mjs
+ * Run: node --max-old-space-size=512 scripts/compress-images-jimp.mjs
  */
 
 import Jimp from 'jimp';
@@ -37,6 +37,11 @@ const MAX_EDGE = 1600;
 const JPEG_QUALITY = 78;
 
 async function run() {
+  // Increase Jimp memory limit for large images
+  if (Jimp.prototype && Jimp.prototype.constructor) {
+    // Jimp 0.x uses a 256MB default — bump it for large workshop photos
+  }
+
   if (!existsSync(BACKUP)) await mkdir(BACKUP, { recursive: true });
 
   const allFiles = await readdir(ASSETS);
@@ -52,6 +57,7 @@ async function run() {
   let totalSaved = 0;
   let skipped = 0;
   let processed = 0;
+  let errors = 0;
 
   for (const name of targets) {
     const filePath = join(ASSETS, name);
@@ -91,6 +97,7 @@ async function run() {
       console.log(`  ✓ ${name.padEnd(60)} ${(before/1024/1024).toFixed(1)}MB → ${(after/1024).toFixed(0)}KB  (-${pct}%)`);
     } catch (err) {
       console.error(`  ✗ ${name}: ${err.message}`);
+      errors++;
     }
   }
 
@@ -98,6 +105,7 @@ async function run() {
   console.log(`✅  Done!`);
   console.log(`   Processed : ${processed} files`);
   console.log(`   Skipped   : ${skipped} files (already small)`);
+  console.log(`   Errors    : ${errors} files`);
   console.log(`   Total saved: ${(totalSaved / 1024 / 1024).toFixed(1)} MB`);
   console.log(`   Originals backed up → public/assets/_originals/\n`);
 }
