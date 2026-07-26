@@ -103,7 +103,23 @@ export default function Timeline() {
   }, []);
 
   return (
-    <section className="relative py-24 bg-[linear-gradient(to_bottom,#691e56_0%,#ffffff_12%,#ffffff_100%)] overflow-hidden">
+    <section className="relative py-24 bg-black overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        {/* Soft edge blends — no sharp boundaries with adjacent sections */}
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-slate-950 to-transparent z-10" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#2E1065]/30 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-[#7C3AED]/5 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-[#3c1c33]/40 to-transparent" />
+        <div
+          className="absolute inset-0 opacity-[0.06] mix-blend-overlay"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+          }}
+        />
+      </div>
+
       {/* Decorative background rockets */}
       <Rocket
         size={220}
@@ -141,8 +157,8 @@ export default function Timeline() {
               <Rocket size={22} className="text-[#a64d79] rotate-45" />
               <span className="text-sm font-bold tracking-widest text-[#a64d79] uppercase">The Journey</span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-slate-900 mb-4">Road to the Finals</h2>
-            <p className="text-slate-600 max-w-2xl mx-auto text-lg">Here's how Sandbox unfolds, from launch to the grand finale.</p>
+            <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-white mb-4">Road to the Finals</h2>
+            <p className="text-slate-400 max-w-2xl mx-auto text-lg">Here's how Sandbox unfolds, from launch to the grand finale.</p>
           </div>
         </ScrollReveal>
 
@@ -199,10 +215,10 @@ export default function Timeline() {
 
                     {/* Card */}
                     <div className={`w-full pl-12 md:w-1/2 md:pl-0 ${isEven ? 'md:pl-12' : 'md:pr-12'}`}>
-                      <div className={`relative rounded-2xl p-6 border-t-2 border-[#D4537E] ring-1 ring-black/5 shadow-[0_8px_24px_rgba(212,83,126,0.10)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_32px_rgba(212,83,126,0.18)] ${isEven ? 'bg-white' : 'bg-[#fdf2f6]'}`}>
+                      <div className={`relative rounded-2xl p-6 border-t-2 border-[#D4537E] ring-1 ring-white/10 shadow-[0_8px_24px_rgba(212,83,126,0.15)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_32px_rgba(212,83,126,0.25)] ${isEven ? 'bg-[#2a1523]' : 'bg-[#331a2b]'}`}>
                         <span className="inline-block text-xs font-bold tracking-widest text-[#D4537E] uppercase mb-2">{item.date}</span>
-                        <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
-                        <p className="text-slate-600 leading-relaxed">{item.desc}</p>
+                        <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                        <p className="text-slate-400 leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
                   </div>
