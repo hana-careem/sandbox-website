@@ -158,7 +158,7 @@ export default function SandboxHero() {
                   Until Registrations Close!
                 </p>
               </ScrollReveal>
-              <PartnersTicker />
+              {/* <PartnersTicker /> */}
             </div>
 
           </div>

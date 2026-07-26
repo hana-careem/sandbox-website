@@ -77,7 +77,7 @@ export default function PartnersTicker({
 }) {
   return (
     <section className="w-full py-10" aria-label="Partners">
-      <p className="mb-5 text-center text-sm text-white/50">{caption}</p>
+      {/* <p className="mb-5 text-center text-sm text-white/50">{caption}</p> */}
       <div className="mx-auto flex max-w-3xl items-center gap-6 px-6">
         {Array.from({ length: SLOTS }).map((_, s) => (
           // hide the last slot on small screens so names never crowd

@@ -17,11 +17,10 @@ function sample(arr, n) {
 export default function AboutEditionSlideshow({
   images = [],
   label = 'Sandbox',
-  count = 8, // show about 8 pics
   interval = 4000, // slide every 4 seconds
 }) {
-  // Sample once per mount so the set is random but doesn't reshuffle on every render.
-  const pics = useMemo(() => sample(images, count), [images, count])
+  // Use all provided images, filter out any placeholders if they exist
+  const pics = useMemo(() => images.filter(img => img && !img.includes('placeholder-image.png')), [images])
   const [i, setI] = useState(0)
 
   // Manual nav via the side arrows (wraps around).
@@ -29,10 +28,6 @@ export default function AboutEditionSlideshow({
 
   useEffect(() => {
     if (pics.length <= 1) return
-    const reduce =
-      typeof window !== 'undefined' &&
-      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
-    if (reduce) return
 
     const id = setInterval(() => {
       setI((prev) => (prev + 1) % pics.length)
