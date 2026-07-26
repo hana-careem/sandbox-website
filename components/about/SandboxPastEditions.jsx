@@ -4,8 +4,84 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { Wrench, Users, Flag, Trophy, Target, ChevronUp, ChevronDown, Camera } from "lucide-react";
-import PastTeamsSection from "./PastTeamsSection";
-import { PAST_TEAMS } from "../../data/teamData";
+import AboutEditionSlideshow from "../AboutEditionSlideshow";
+
+// ─── Photo pools — all images now flat in public/assets/ ─────────────────────
+const PH = '/assets/placeholder-image.png'; // fallback when no photos available
+
+const PHOTOS = {
+  '2.0': {
+    workshop: [
+      '/assets/Workshop sandbox 2.0 (1).jpg',
+      '/assets/Workshop sandbox 2.0 (2).jpg',
+      '/assets/Workshop sandbox 2.0 (3).jpg',
+      '/assets/Workshop sandbox 2.0 (4).jpg',
+      '/assets/Workshop sandbox 2.0 (5).jpg',
+      '/assets/Workshop sandbox 2.0 (6).jpg',
+      '/assets/Workshop sandbox 2.0 (7).jpg',
+    ],
+    prelims: [
+      '/assets/Preliminaries sandbox 2.0 (1).jpg',
+      '/assets/Preliminaries sandbox 2.0 (2).jpg',
+      '/assets/Preliminaries sandbox 2.0 (3).jpg',
+      '/assets/Preliminaries sandbox 2.0 (4).jpg',
+      '/assets/Preliminaries sandbox 2.0 (5).jpg',
+    ],
+    semis: [PH, PH, PH, PH, PH, PH, PH, PH], // No semi-final photos yet
+    grandFinal: [
+      '/assets/Grand final sandbox 2.0 (1).jpg',
+      '/assets/Grand final sandbox 2.0 (2).jpg',
+      '/assets/Grand final sandbox 2.0 (3).jpg',
+      '/assets/Grand final sandbox 2.0 (4).jpg',
+      '/assets/Grand final sandbox 2.0 (5).jpg',
+      '/assets/Grand final sandbox 2.0 (6).jpg',
+      '/assets/Grand final sandbox 2.0 (7).jpg',
+      '/assets/Grand final sandbox 2.0 (8).jpg',
+      '/assets/Grand final sandbox 2.0 (9).jpg',
+      '/assets/Grand final sandbox 2.0 (10).jpg',
+    ],
+  },
+  '1.0': {
+    workshop: [
+      '/assets/Workshop sandbox 1.0 (1).jpg',
+      '/assets/Workshop sandbox 1.0 (2).jpg',
+      '/assets/Workshop sandbox 1.0 (3).jpg',
+      '/assets/Workshop sandbox 1.0 (4).jpg',
+      '/assets/Workshop sandbox 1.0 (5).jpg',
+      '/assets/Workshop sandbox 1.0 (6).jpg',
+      '/assets/Workshop sandbox 1.0 (7).jpg',
+      '/assets/Workshop sandbox 1.0 (8).jpg',
+      '/assets/Workshop sandbox 1.0 (9).jpg',
+      '/assets/Workshop sandbox 1.0 (10).jpg',
+      '/assets/Workshop sandbox 1.0 (11).jpg',
+      '/assets/Workshop sandbox 1.0 (12).jpg',
+      '/assets/Workshop sandbox 1.0 (13).jpg',
+      '/assets/Workshop sandbox 1.0 (14).jpg',
+      '/assets/Workshop sandbox 1.0 (15).jpg',
+      '/assets/Workshop sandbox 1.0 (16).jpg',
+      '/assets/Workshop sandbox 1.0 (17).jpg',
+      '/assets/Workshop sandbox 1.0 (18).jpg',
+      '/assets/Workshop sandbox 1.0 (19).jpg',
+      '/assets/Workshop sandbox 1.0 (20).jpg',
+      '/assets/Workshop sandbox 1.0 (21).jpg',
+      '/assets/Workshop sandbox 1.0 (22).jpg',
+      '/assets/Workshop sandbox 1.0 (23).jpg',
+      '/assets/Workshop sandbox 1.0 (24).jpg',
+      '/assets/Workshop sandbox 1.0 (25).jpg',
+    ],
+    prelims: [PH, PH, PH, PH, PH, PH, PH, PH], // No preliminary photos yet
+    semis:   [PH, PH, PH, PH, PH, PH, PH, PH], // No semifinals photos yet
+    grandFinal: [
+      '/assets/Grand final sandbox 1.0 (1).jpg',
+      '/assets/Grand final sandbox 1.0 (2).jpg',
+      '/assets/Grand final sandbox 1.0 (3).jpg',
+      '/assets/Grand final sandbox 1.0 (4).jpg',
+      '/assets/Grand final sandbox 1.0 (5).jpg',
+      '/assets/Grand final sandbox 1.0 (6).jpg',
+      '/assets/Grand final sandbox 1.0 (7).jpg',
+    ],
+  },
+};
 
 const editions = {
   "2.0": {
@@ -15,16 +91,15 @@ const editions = {
     winner: {
       school: "St. Joseph's College, Negombo",
       wonText: "won Sandbox 2.0, taking home",
-      prize: "cash prize amount",
+      prize: "LKR 50,000",
       prizeTodo: true,
       is2_0: true
     },
     theme: "Community Concerns",
     stages: [
-      { title: "Workshop",       icon: "Wrench", desc: "Hands-on sessions across three cities to sharpen ideas before the pitch.", photos: Array(10).fill(null) },
-      { title: "Preliminaries",  icon: "Users",  desc: "The top 50 teams face off to determine who advances.", photos: Array(10).fill(null) },
-      { title: "Semifinals",     icon: "Flag",   desc: "The competition narrows down to the very best ideas.", photos: Array(10).fill(null) },
-      { title: "Grand Final",    icon: "Trophy", desc: "The ultimate showdown in front of industry judges.", photos: Array(10).fill(null) },
+      { title: "Workshop",       icon: "Wrench", desc: "Hands-on sessions across three cities to sharpen ideas before the pitch.", photos: PHOTOS['2.0'].workshop },
+      { title: "Preliminaries",  icon: "Users",  desc: "The top 50 teams face off to determine who advances.", photos: PHOTOS['2.0'].prelims },
+      { title: "Grand Final",    icon: "Trophy", desc: "The ultimate showdown in front of industry judges.", photos: PHOTOS['2.0'].grandFinal },
     ],
   },
   "1.0": {
@@ -41,10 +116,9 @@ const editions = {
     },
     theme: "Sustainability",
     stages: [
-      { title: "Workshop",           icon: "Wrench", desc: "The very first Sandbox workshop.", photos: Array(10).fill(null) },
-      { title: "Preliminary Rounds", icon: "Users",  desc: "Early stage pitches to test the waters.", photos: Array(10).fill(null) },
-      { title: "Semifinals",         icon: "Flag",   desc: "Refining the concepts for the big stage.", photos: Array(10).fill(null) },
-      { title: "Finals",             icon: "Trophy", desc: "The inaugural grand finale.", photos: Array(10).fill(null) },
+      { title: "Workshop",           icon: "Wrench", desc: "The very first Sandbox workshop.", photos: PHOTOS['1.0'].workshop },
+      { title: "Preliminary Rounds", icon: "Users",  desc: "Early stage pitches to test the waters.", photos: PHOTOS['1.0'].prelims },
+      { title: "Finals",             icon: "Trophy", desc: "The inaugural grand finale.", photos: PHOTOS['1.0'].grandFinal },
     ],
   },
 };
@@ -57,22 +131,9 @@ const iconMap = {
 };
 
 function StagePhotoCarousel({ photos, stageTitle }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-
-  useEffect(() => {
-    if (!photos || photos.length <= 1 || isPaused) return;
-
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % photos.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [photos, isPaused]);
-
   if (!photos || photos.length === 0) {
     return (
-      <div className="w-full aspect-[16/9] rounded-2xl overflow-hidden border border-white/5 bg-[#0F0F16] flex items-center justify-center mt-6 mb-4">
+      <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden border border-white/5 bg-[#0F0F16] flex items-center justify-center mt-6 mb-4">
         <span className="text-xs text-slate-500 uppercase tracking-widest">
           PHOTO PLACEHOLDER — {stageTitle.toUpperCase()}
         </span>
@@ -81,56 +142,8 @@ function StagePhotoCarousel({ photos, stageTitle }) {
   }
 
   return (
-    <div className="w-full mt-6 mb-4">
-      <div 
-        className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden border border-white/10 bg-[#0A0A0F] group"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-        onTouchStart={() => setIsPaused(true)}
-        onTouchEnd={() => setIsPaused(false)}
-      >
-        {/* Slides */}
-        {photos.map((src, idx) => (
-          <div
-            key={idx}
-            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-              idx === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
-            }`}
-          >
-            {src ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img 
-                src={src} 
-                alt={`${stageTitle} slide ${idx + 1}`} 
-                className="w-full h-full object-cover" 
-              />
-            ) : (
-              <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-[#0F0F16]">
-                <Camera size={28} className="text-slate-600" />
-                <span className="text-[10px] font-semibold uppercase tracking-widest text-slate-600 text-center px-4">
-                  PHOTO PLACEHOLDER — {stageTitle.toUpperCase()} #{idx + 1}
-                </span>
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-
-      {/* Dots Indicator under the frame */}
-      {photos.length > 1 && (
-        <div className="flex justify-center gap-1.5 mt-3">
-          {photos.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentIndex(idx)}
-              className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-                idx === currentIndex ? "bg-[#7C3AED] w-3" : "bg-white/20 hover:bg-white/40"
-              }`}
-              aria-label={`Go to slide ${idx + 1}`}
-            />
-          ))}
-        </div>
-      )}
+    <div className="mt-6 mb-4">
+      <AboutEditionSlideshow images={photos} label={stageTitle} />
     </div>
   );
 }
@@ -141,7 +154,7 @@ function StageCard({ stage, isOpen, onToggle }) {
   return (
     <div className="relative pl-12 sm:pl-16">
       {/* Icon Node */}
-      <div className={`absolute left-0 top-3 w-8 h-8 sm:w-10 sm:h-10 rounded-full border bg-[#0A0A0F] flex items-center justify-center z-10 transition-colors duration-300 ${isOpen ? 'border-[#7C3AED] shadow-[0_0_15px_rgba(124,58,237,0.4)] text-[#7C3AED]' : 'border-white/10 text-slate-500'}`}>
+      <div className={`absolute left-0 top-3 w-8 h-8 sm:w-10 sm:h-10 rounded-full border bg-[#0A0A0F] flex items-center justify-center z-10 transition-colors duration-300 ${isOpen ? 'border-[#7C3AED] shadow-[0_0_15px_rgba(124,58,237,0.4)] text-[#a64d79]' : 'border-white/10 text-slate-500'}`}>
         <IconComponent size={16} />
       </div>
 
@@ -198,7 +211,7 @@ export default function SandboxPastEditions() {
         
         {/* A. Intro / hero block */}
         <div className="mb-14">
-          <p className="text-[#7C3AED] uppercase font-bold text-xs tracking-[0.2em] mb-4">Past Editions</p>
+          <p className="text-[#a64d79] uppercase font-bold text-xs tracking-[0.2em] mb-4">Past Editions</p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-display text-white mb-6 tracking-tight">Where Sandbox has been.</h1>
           <p className="text-slate-400 leading-relaxed">
             Held every year in Colombo, Sandbox is Sri Lanka's first-ever inter-school business pitching competition, run by the Entrepreneurship Club of APIIT in partnership with the Ministry of Education. It launched in September 2024, open to government, private, and international schools alike. By its second edition in 2025, the competition had grown to 38 participating schools and 50 competing teams, with the strongest ideas advancing through a workshop and preliminary round to a live grand finale in front of a panel of industry judges.
@@ -229,7 +242,7 @@ export default function SandboxPastEditions() {
         <div className="mb-10">
           <h2 className="text-3xl md:text-4xl font-extrabold font-display tracking-tight mb-3">
             <span className="text-white">{data.label} </span>
-            <span className="text-[#7C3AED]">({data.year})</span>
+            <span className="text-[#a64d79]">({data.year})</span>
           </h2>
           <p className="text-slate-400 text-lg">{data.subtitle}</p>
         </div>
@@ -244,7 +257,7 @@ export default function SandboxPastEditions() {
           <div className="text-2xl md:text-3xl font-medium leading-snug">
             {data.winner.is2_0 && (
               <p>
-                <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-[#7C3AED]">{data.winner.school}</span>
+                <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#a64d79] to-[#691e56]">{data.winner.school}</span>
                 <span className="text-white"> {data.winner.wonText} </span>
                 <span className="italic text-slate-500">{data.winner.prize}</span>
                 {data.winner.prizeTodo && <span className="inline-block align-middle ml-2 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-slate-800/80 text-slate-400 rounded border border-white/5">TODO</span>}
@@ -272,8 +285,8 @@ export default function SandboxPastEditions() {
         {/* E. THEME block */}
         <div className="mb-12">
           <div className="flex items-center gap-2 mb-4">
-            <Target size={18} className="text-[#38BDF8]" />
-            <span className="text-[#38BDF8] uppercase font-bold tracking-[0.15em] text-xs">Theme</span>
+            <Target size={18} className="text-[#14f2db]" />
+            <span className="text-[#14f2db] uppercase font-bold tracking-[0.15em] text-xs">Theme</span>
           </div>
           <p className="text-2xl md:text-3xl italic text-violet-200">"{data.theme}"</p>
         </div>
@@ -297,15 +310,7 @@ export default function SandboxPastEditions() {
           </div>
         </div>
 
-        {/* G. Meet the teams section for active edition */}
-        {PAST_TEAMS.filter(t => t.edition === `Sandbox ${activeEdition}`).length > 0 && (
-          <div className="mt-16">
-            <PastTeamsSection 
-              teams={PAST_TEAMS.filter(t => t.edition === `Sandbox ${activeEdition}`)} 
-              hideHeader={true} 
-            />
-          </div>
-        )}
+
 
       </div>
     </div>

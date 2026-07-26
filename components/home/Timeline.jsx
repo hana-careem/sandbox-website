@@ -10,7 +10,7 @@ const MILESTONES = [
     desc: 'Schools nationwide can now sign up their teams for this year\'s Sandbox.',
   },
   {
-    date: '7th of September',
+    date: '11th of September',
     title: 'Registrations Close',
     desc: 'Last call for teams to lock in their spot before the competition kicks off.',
   },
@@ -103,26 +103,46 @@ export default function Timeline() {
   }, []);
 
   return (
-    <section className="relative py-24 bg-slate-950 overflow-hidden">
+    <section className="relative py-24 bg-[linear-gradient(to_bottom,#691e56_0%,#ffffff_12%,#ffffff_100%)] overflow-hidden">
       {/* Decorative background rockets */}
       <Rocket
         size={220}
-        className="absolute -top-10 -left-16 text-[#7C3AED]/5 rotate-45 pointer-events-none select-none"
+        className="absolute -top-10 -left-16 text-[#a64d79]/5 rotate-45 pointer-events-none select-none z-0"
       />
       <Rocket
         size={180}
-        className="absolute bottom-0 -right-10 text-[#FF4D6D]/5 -rotate-12 pointer-events-none select-none"
+        className="absolute bottom-0 -right-10 text-[#FF4D6D]/5 -rotate-12 pointer-events-none select-none z-0"
+      />
+      <Rocket
+        size={140}
+        className="absolute top-1/4 right-8 md:right-24 text-[#D4537E]/[0.07] rotate-[30deg] pointer-events-none select-none z-0"
+      />
+      <Rocket
+        size={110}
+        className="absolute top-1/2 left-6 md:left-20 text-[#D4537E]/[0.06] -rotate-[20deg] pointer-events-none select-none z-0"
+      />
+      <Rocket
+        size={160}
+        className="absolute top-2/3 right-4 md:right-1/3 text-[#D4537E]/[0.06] rotate-[15deg] pointer-events-none select-none z-0"
+      />
+      <Rocket
+        size={90}
+        className="absolute top-[38%] left-1/3 text-[#D4537E]/[0.05] rotate-[50deg] pointer-events-none select-none z-0"
+      />
+      <Rocket
+        size={130}
+        className="absolute bottom-16 left-10 md:left-1/4 text-[#D4537E]/[0.06] -rotate-[35deg] pointer-events-none select-none z-0"
       />
 
       <div className="container max-w-5xl mx-auto px-4 relative z-10">
         <ScrollReveal>
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 mb-4">
-              <Rocket size={22} className="text-[#7C3AED] rotate-45" />
-              <span className="text-sm font-bold tracking-widest text-[#7C3AED] uppercase">The Journey</span>
+              <Rocket size={22} className="text-[#a64d79] rotate-45" />
+              <span className="text-sm font-bold tracking-widest text-[#a64d79] uppercase">The Journey</span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-white mb-4">Road to the Finals</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto text-lg">Here's how Sandbox unfolds, from launch to the grand finale.</p>
+            <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-slate-900 mb-4">Road to the Finals</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto text-lg">Here's how Sandbox unfolds, from launch to the grand finale.</p>
           </div>
         </ScrollReveal>
 
@@ -136,8 +156,8 @@ export default function Timeline() {
             >
               <defs>
                 <linearGradient id="timeline-flight-path" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#C4B5FD" stopOpacity="1" />
-                  <stop offset="100%" stopColor="#C4B5FD" stopOpacity="0.5" />
+                  <stop offset="0%" stopColor="#D4537E" stopOpacity="1" />
+                  <stop offset="100%" stopColor="#D4537E" stopOpacity="0.6" />
                 </linearGradient>
               </defs>
               <path
@@ -154,7 +174,7 @@ export default function Timeline() {
             <Rocket
               size={26}
               style={{ left: rocketPos.x, top: rocketPos.y }}
-              className="absolute -translate-x-1/2 -translate-y-1/2 -rotate-45 text-[#7C3AED] drop-shadow-[0_0_10px_rgba(124,58,237,0.6)] pointer-events-none"
+              className="absolute -translate-x-1/2 -translate-y-1/2 -rotate-45 text-[#D4537E] drop-shadow-[0_0_10px_rgba(212,83,126,0.6)] pointer-events-none"
             />
           )}
 
@@ -171,7 +191,7 @@ export default function Timeline() {
                     {/* Dot */}
                     <span
                       ref={(el) => (dotRefs.current[idx] = el)}
-                      className="absolute left-4 md:left-1/2 top-1.5 md:top-1/2 md:-translate-y-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-[#7C3AED] ring-4 ring-slate-950 shadow-[0_0_14px_rgba(124,58,237,0.7)] z-10"
+                      className="absolute left-4 md:left-1/2 top-1.5 md:top-1/2 md:-translate-y-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-[#D4537E] shadow-[0_0_14px_rgba(212,83,126,0.6)] z-10"
                     />
 
                     {/* Spacer (desktop only) */}
@@ -179,10 +199,10 @@ export default function Timeline() {
 
                     {/* Card */}
                     <div className={`w-full pl-12 md:w-1/2 md:pl-0 ${isEven ? 'md:pl-12' : 'md:pr-12'}`}>
-                      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition-colors">
-                        <span className="inline-block text-xs font-bold tracking-widest text-[#7C3AED] uppercase mb-2">{item.date}</span>
-                        <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                        <p className="text-slate-400 leading-relaxed">{item.desc}</p>
+                      <div className={`relative rounded-2xl p-6 border-t-2 border-[#D4537E] ring-1 ring-black/5 shadow-[0_8px_24px_rgba(212,83,126,0.10)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_32px_rgba(212,83,126,0.18)] ${isEven ? 'bg-white' : 'bg-[#fdf2f6]'}`}>
+                        <span className="inline-block text-xs font-bold tracking-widest text-[#D4537E] uppercase mb-2">{item.date}</span>
+                        <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
+                        <p className="text-slate-600 leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
                   </div>

@@ -6,7 +6,7 @@ import { ChevronDown } from 'lucide-react';
 const FAQ_DATA = [
   {
     question: "What is this year's theme?",
-    answer: "This year's theme is “A Better Sri Lanka Tomorrow,” so the scope is limitless. Pitch any solution that makes life easier, improves your community, or makes the world a better place."
+    answer: "This year's theme is “A Better Tomorrow,” so the scope is limitless. Pitch any solution that makes life easier, improves your community, or makes the world a better place."
   },
   {
     question: "Who can participate in Sandbox?",
@@ -24,7 +24,7 @@ const FAQ_DATA = [
     // TODO: Replace with the confirmed registration deadline for the current
     // edition once the committee sets it.
     question: "What is the deadline for registration?",
-    answer: "Registration dates for the upcoming edition will be announced soon. Follow our social channels or check back here for the exact deadline."
+    answer: "Registrations for this edition will close on September 11th. Ensure your team signs up before the deadline!"
   },
   {
     question: "Do we need a prototype to pitch?",
@@ -41,7 +41,7 @@ export default function FaqAccordion() {
         <ScrollReveal>
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-7xl font-coolvetica font-normal text-white tracking-normal mb-6">
-              FREQUENTLY ASKED <span className="text-[#7C3AED]">QUESTIONS</span>
+              FREQUENTLY ASKED <span className="text-[#a64d79]">QUESTIONS</span>
             </h1>
             <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
               Everything you need to know about participating in Sri Lanka's largest inter-school pitching competition.

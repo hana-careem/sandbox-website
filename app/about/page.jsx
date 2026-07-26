@@ -15,8 +15,8 @@ export default function AboutPage() {
     <main className="bg-slate-950 min-h-screen text-slate-300 font-sans selection:bg-[#7C3AED] selection:text-white">
       <AboutBanner />
       <OurHistory />
-      <MeetTheTeamSection />
       <OurGoals />
+      <MeetTheTeamSection />
     </main>
   );
 }

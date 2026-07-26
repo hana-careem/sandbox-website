@@ -1,12 +1,13 @@
 import React from 'react';
-import { Users, Briefcase, Award } from 'lucide-react';
+import { Users, Briefcase } from 'lucide-react';
 import SupportingContent from './SupportingContent';
+import ScrollReveal from '../ui/ScrollReveal';
 
 const COMMUNITY_GROWTH_DATA = [
   {
     title: "Networking Opportunities",
     description: "Connect with like-minded student entrepreneurs from over 150 schools across the nation.",
-    icon: <Users className="w-7 h-7 text-[#7C3AED]" />,
+    icon: <Users className="w-7 h-7 text-[#a64d79]" />,
     images: [
       "/assets/N1.jpg",
       "/assets/N2.jpg",
@@ -21,44 +22,6 @@ const COMMUNITY_GROWTH_DATA = [
       label: "Schools in the Sandbox network",
       note: "Real relationships with peers solving similar problems."
     }
-  },
-  {
-    title: "Career Building",
-    description: "Enhance your resume and university applications with verifiable entrepreneurial experience.",
-    icon: <Briefcase className="w-7 h-7 text-[#7C3AED]" />,
-    images: [
-      "https://placehold.co/450x450",
-      "https://placehold.co/450x450",
-      "https://placehold.co/450x450",
-      "https://placehold.co/450x450",
-      "https://placehold.co/450x450",
-      "https://placehold.co/450x450"
-    ],
-    extra: {
-      type: 'paragraph',
-      text: "A verifiable line on your resume that goes beyond coursework — something you can actually speak to in an interview, backed by a real outcome."
-    }
-  },
-  {
-    title: "Mentorship",
-    description: "Receive personalized guidance and feedback from assigned mentors throughout the competition lifecycle.",
-    icon: <Award className="w-7 h-7 text-[#7C3AED]" />,
-    images: [
-      "https://placehold.co/450x450",
-      "https://placehold.co/450x450",
-      "https://placehold.co/450x450",
-      "https://placehold.co/450x450",
-      "https://placehold.co/450x450",
-      "https://placehold.co/450x450"
-    ],
-    extra: {
-      type: 'bullets',
-      items: [
-        "One dedicated mentor for the full competition",
-        "Feedback on both business model and pitch delivery",
-        "Support from idea through to final presentation"
-      ]
-    }
   }
 ];
 
@@ -66,16 +29,18 @@ export default function CommunityGrowth() {
   return (
     <section className="py-24 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-coolvetica font-normal text-white tracking-normal mb-6">
-            Community &amp; <span className="text-[#7C3AED]">Growth</span>
-          </h2>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-coolvetica font-normal text-white tracking-normal mb-6">
+              Community &amp; <span className="text-[#a64d79]">Growth</span>
+            </h2>
+          </div>
+        </ScrollReveal>
 
         <div>
           {COMMUNITY_GROWTH_DATA.map((item, idx) => (
+            <ScrollReveal key={item.title} direction={idx % 2 === 0 ? 'left' : 'right'}>
             <div
-              key={item.title}
               className={`flex flex-col ${
                 idx % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'
               } items-center gap-10 md:gap-16 py-12 border-b border-white/5 last:border-b-0`}
@@ -107,6 +72,7 @@ export default function CommunityGrowth() {
                 <SupportingContent extra={item.extra} />
               </div>
             </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

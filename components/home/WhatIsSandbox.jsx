@@ -3,17 +3,41 @@ import ScrollReveal from '../ui/ScrollReveal';
 
 export default function WhatIsSandbox() {
   return (
-    <section className="py-20 bg-slate-950">
-      <div className="container max-w-4xl mx-auto px-4">
-        <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-b from-slate-900/80 via-slate-900/40 to-slate-900/10 px-6 py-16 md:px-16 text-center ring-1 ring-white/5 shadow-[0_0_90px_rgba(124,58,237,0.10)]">
-          <ScrollReveal>
-            <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-white mb-8 tracking-tight">What is Sandbox?</h2>
-            <p className="text-slate-300 text-lg leading-relaxed mb-6">
-              Sri Lanka's first inter-school business pitching competition, run by the Entrepreneurship Club of APIIT with the Ministry of Education. Students from schools nationwide pitch real business ideas to a panel of industry judges.
-            </p>
-            <p className="text-xl font-coolvetica font-normal text-[#7C3AED] mt-8">
-              This year's theme: A Better Tomorrow.
-            </p>
+    <section className="py-20 bg-gradient-to-b from-[#060718] to-[#691e56]">
+      <div className="container max-w-6xl mx-auto px-4">
+        <ScrollReveal>
+          <h2 className="text-4xl md:text-6xl font-coolvetica font-normal text-white mb-12 tracking-tight text-center">What is Sandbox?</h2>
+        </ScrollReveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
+          {/* Left: intro */}
+          <ScrollReveal direction="left">
+            <div className="h-full rounded-2xl border border-white/15 bg-white/[0.03] p-6 md:p-8">
+              <p className="text-white text-base md:text-lg font-semibold mb-4">
+                Sri Lanka's First Inter-School Business Pitch Competition
+              </p>
+              <p className="text-slate-300 text-sm md:text-base leading-relaxed mb-4">
+                The next generation of entrepreneurs is here — and they're ready to be heard.
+              </p>
+              <p className="text-slate-300 text-sm md:text-base leading-relaxed mb-4">
+                Organized by the Entrepreneurship Club of APIIT in partnership with the Ministry of Education, this landmark competition brings together the sharpest young minds from schools across Sri Lanka to pitch real business ideas to a panel of seasoned industry judges.
+              </p>
+              <p className="text-slate-300 text-sm md:text-base leading-relaxed">
+                This isn't a classroom exercise. It's a launchpad.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {/* Right: theme */}
+          <ScrollReveal direction="right" delay={150}>
+            <div className="h-full rounded-2xl border border-white/15 bg-white/[0.03] p-6 md:p-8">
+              <p className="text-[#a64d79] text-base md:text-lg font-semibold mb-4">
+                This Year's Theme: A Better Tomorrow
+              </p>
+              <p className="text-slate-300 text-sm md:text-base leading-relaxed">
+                Students are challenged to think beyond the ordinary — to build ideas that don't just make money, but make a difference. From sustainability to social impact, technology to community upliftment, contestants will present ventures designed to solve tomorrow's problems, today.
+              </p>
+            </div>
           </ScrollReveal>
         </div>
       </div>

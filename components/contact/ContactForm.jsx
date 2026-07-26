@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import ScrollReveal from '../ui/ScrollReveal';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 
 const ADDRESS = 'Asia Pacific Institute of Information Technology, No. 388 Union Place, Colombo 02, Sri Lanka';
 
@@ -22,7 +22,7 @@ export default function ContactForm() {
         <ScrollReveal>
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-7xl font-coolvetica font-normal text-white tracking-normal mb-6">
-              CONTACT <span className="text-[#7C3AED]">US</span>
+              CONTACT <span className="text-[#a64d79]">US</span>
             </h1>
             <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
               Have questions about Sandbox? Want to partner with us? Reach out and our team will get back to you.
@@ -39,7 +39,7 @@ export default function ContactForm() {
               <div className="space-y-8">
                 <div className="flex items-start">
                   <div className="w-12 h-12 rounded-full bg-[#7C3AED]/20 flex items-center justify-center flex-shrink-0 mr-4">
-                    <MapPin className="w-6 h-6 text-[#7C3AED]" />
+                    <MapPin className="w-6 h-6 text-[#a64d79]" />
                   </div>
                   <div>
                     <h4 className="text-white font-bold mb-1">Location</h4>
@@ -49,27 +49,17 @@ export default function ContactForm() {
 
                 <div className="flex items-start">
                   <div className="w-12 h-12 rounded-full bg-[#7C3AED]/20 flex items-center justify-center flex-shrink-0 mr-4">
-                    <Mail className="w-6 h-6 text-[#7C3AED]" />
+                    <Mail className="w-6 h-6 text-[#a64d79]" />
                   </div>
                   <div>
                     <h4 className="text-white font-bold mb-1">Email</h4>
-                    <a href="mailto:eclub@apiit.lk" className="text-slate-400 hover:text-white transition-colors">
-                      eclub@apiit.lk
+                    <a href="mailto:Sandbox@apiit.lk" className="text-slate-400 hover:text-white transition-colors">
+                      Sandbox@apiit.lk
                     </a>
                   </div>
                 </div>
 
-                {/* TODO: Add real phone numbers */}
-                <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-full bg-[#7C3AED]/20 flex items-center justify-center flex-shrink-0 mr-4">
-                    <Phone className="w-6 h-6 text-[#7C3AED]" />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-bold mb-1">Phone</h4>
-                    <p className="text-slate-400">TODO: Phone Number 1</p>
-                    <p className="text-slate-400">TODO: Phone Number 2</p>
-                  </div>
-                </div>
+
               </div>
             </div>
           </ScrollReveal>

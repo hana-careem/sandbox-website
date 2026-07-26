@@ -6,7 +6,7 @@ import PrizesRecognition from '../../components/what-we-offer/PrizesRecognition'
 
 export const metadata = {
   title: 'What We Offer | Sandbox',
-  description: 'Workshops, networking, and investor exposure at Sandbox.',
+  description: 'Workshops, networking, and industry exposure at Sandbox.',
 };
 
 export default function WhatWeOfferPage() {
