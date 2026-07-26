@@ -10,43 +10,10 @@ const FACE_STYLE = {
 
 export default function TeamFlipCard({ member }) {
   const [flipped, setFlipped] = useState(false)
-  const isAnimating = useRef(false)
-  const innerRef = useRef(null)
   const { name, role, image, linkedin, bio } = member
 
   const toggle = () => {
-    if (isAnimating.current) return
-
-    const prefersReducedMotion =
-      typeof window !== 'undefined' &&
-      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
-
-    const nextFlipped = !flipped
-    setFlipped(nextFlipped)
-
-    if (prefersReducedMotion) {
-      return
-    }
-
-    if (innerRef.current) {
-      isAnimating.current = true
-
-      const startRotate = flipped ? 180 : 0
-      const endRotate = nextFlipped ? 180 : 0
-
-      const animation = innerRef.current.animate(
-        [
-          { transform: `rotateY(${startRotate}deg) scale(1)`, boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' },
-          { transform: `rotateY(${(startRotate + endRotate) / 2}deg) scale(1.07)`, boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5), 0 0 20px rgba(124,58,237,0.15)', offset: 0.5 },
-          { transform: `rotateY(${endRotate}deg) scale(1)`, boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' },
-        ],
-        { duration: 720, easing: 'cubic-bezier(0.45, 0, 0.2, 1)', fill: 'forwards' }
-      )
-
-      animation.onfinish = () => {
-        isAnimating.current = false
-      }
-    }
+    setFlipped(!flipped)
   }
 
   const onKey = (e) => {
@@ -59,18 +26,18 @@ export default function TeamFlipCard({ member }) {
   return (
     <div className="group" style={{ perspective: '1200px' }}>
       <div
-        ref={innerRef}
         role="button"
         tabIndex={0}
         aria-pressed={flipped}
         aria-label={`${name}, ${role}. ${flipped ? 'Hide' : 'Show'} background`}
         onClick={toggle}
         onKeyDown={onKey}
-        className="relative aspect-[3/4] w-full cursor-pointer rounded-2xl outline-none
-                   focus-visible:ring-2 focus-visible:ring-[#7C3AED]"
+        className={`relative aspect-[3/4] w-full cursor-pointer rounded-2xl outline-none
+                   focus-visible:ring-2 focus-visible:ring-[#7C3AED] transition-transform duration-300 ${
+                     flipped ? '[transform:rotateY(180deg)]' : ''
+                   }`}
         style={{
           transformStyle: 'preserve-3d',
-          transform: flipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
           boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)',
         }}
       >

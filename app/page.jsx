@@ -1,6 +1,8 @@
 import React from 'react';
 import SandboxHero from '../components/home/SandboxHero';
-import WhatIsSandbox from '../components/home/WhatIsSandbox';
+import AboutSandbox from '../components/home/AboutSandbox';
+import OfficialPartnership from '../components/home/OfficialPartnership';
+import Guidelines from '../components/home/Guidelines';
 import Timeline from '../components/home/Timeline';
 import WhyAttend from '../components/home/WhyAttend';
 
@@ -13,9 +15,12 @@ export default function Home() {
   return (
     <main className="w-full">
       <SandboxHero />
-      <WhatIsSandbox />
+      <AboutSandbox />
+      <OfficialPartnership />
+      <Guidelines />
       <Timeline />
       <WhyAttend />
     </main>
   );
 }
+
