@@ -4,8 +4,9 @@ import Link from 'next/link';
 import ScrollReveal from '../ui/ScrollReveal';
 import AboutEditionSlideshow from '../AboutEditionSlideshow';
 
-// ─── Sandbox 1.0 photos (Grand Final) ────────────────────
+// ─── Sandbox 1.0 photos (Grand Final + Workshop) ────────────────────
 const s1_imgs = [
+  // Grand Final (7)
   '/assets/Grand final sandbox 1.0 (1).jpg',
   '/assets/Grand final sandbox 1.0 (2).jpg',
   '/assets/Grand final sandbox 1.0 (3).jpg',
@@ -13,6 +14,14 @@ const s1_imgs = [
   '/assets/Grand final sandbox 1.0 (5).jpg',
   '/assets/Grand final sandbox 1.0 (6).jpg',
   '/assets/Grand final sandbox 1.0 (7).jpg',
+  // Workshop (7)
+  '/assets/Workshop sandbox 1.0 (7).jpg',
+  '/assets/Workshop sandbox 1.0 (8).jpg',
+  '/assets/Workshop sandbox 1.0 (10).jpg',
+  '/assets/Workshop sandbox 1.0 (12).jpg',
+  '/assets/Workshop sandbox 1.0 (13).jpg',
+  '/assets/Workshop sandbox 1.0 (17).jpg',
+  '/assets/Workshop sandbox 1.0 (19).jpg',
 ];
 
 // ─── Sandbox 2.0 photos (Grand Final + Preliminaries) ─────────────
