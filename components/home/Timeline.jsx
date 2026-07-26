@@ -103,7 +103,7 @@ export default function Timeline() {
   }, []);
 
   return (
-    <section className="relative py-24 bg-[linear-gradient(to_bottom,#691e56_0%,#ffffff_12%,#ffffff_100%)] overflow-hidden">
+    <section className="relative py-24 bg-[linear-gradient(to_bottom,#3A1860_0%,#E3D5F2_15%,#E3D5F2_100%)] overflow-hidden">
       {/* Decorative background rockets */}
       <Rocket
         size={220}
