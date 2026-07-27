@@ -51,12 +51,12 @@ const CORE_SUPPORT_DATA = [
     description: "Develop the confidence and public speaking skills necessary to command a room and sell your vision.",
     icon: <Presentation className="w-7 h-7 text-[#a64d79]" />,
     images: [
-      "/assets/p1.jpg",
+      "/assets/replace 1.jpg",
       "/assets/p2.jpg",
-      "/assets/p3.jpg",
-      "/assets/p4.jpg",
-      "/assets/p5.jpg",
-      "/assets/p6.jpg"
+      "/assets/replace 3.jpg",
+      "/assets/replace 4.jpg",
+      "/assets/replace 5.jpg",
+      "/assets/replace 2.jpg"
     ],
     extra: {
       type: 'tags',

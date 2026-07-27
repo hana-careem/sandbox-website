@@ -40,15 +40,43 @@ export default function PrizesRecognition() {
               </div>
 
               {/* Cash Prizes */}
-              <div className="sm:col-span-2 lg:col-span-2 bg-slate-950/60 border border-[#9333EA]/30 p-8 rounded-2xl hover:border-[#9333EA]/60 transition-colors flex flex-col text-center items-center">
-                <div className="w-14 h-14 rounded-full bg-slate-900 flex items-center justify-center mb-4">
-                  <Trophy className="w-7 h-7 text-[#691e56]" />
+              <div className="sm:col-span-2 lg:col-span-2 flex flex-col items-center justify-center text-center">
+                <div className="relative mt-8">
+                  {/* Medal */}
+                  <div className="absolute -top-8 left-1/2 -translate-x-1/2 z-10 w-20 h-20 rounded-full bg-gradient-to-br from-[#a64d79] to-[#691e56] ring-4 ring-slate-950 flex items-center justify-center shadow-[0_0_30px_rgba(166,77,121,0.6)]">
+                    <Trophy className="w-9 h-9 text-white" />
+                  </div>
+
+                  {/* Stamp */}
+                  <div
+                    className="relative w-56 h-72 md:w-64 md:h-80 -rotate-6 flex flex-col items-center justify-center pt-8 px-4 bg-gradient-to-b from-[#a64d79] via-[#9333EA] to-[#3B0764] shadow-[0_10px_40px_rgba(147,51,234,0.45)]"
+                    style={{
+                      clipPath:
+                        "polygon(0% 0%, 16.6667% 6%, 33.3333% 0%, 50% 6%, 66.6667% 0%, 83.3333% 6%, 100% 0%, 94% 16.6667%, 100% 33.3333%, 94% 50%, 100% 66.6667%, 94% 83.3333%, 100% 100%, 83.3333% 94%, 66.6667% 100%, 50% 94%, 33.3333% 100%, 16.6667% 94%, 0% 100%, 6% 83.3333%, 0% 66.6667%, 6% 50%, 0% 33.3333%, 6% 16.6667%, 0% 0%)",
+                    }}
+                  >
+                    {/* Folded corner */}
+                    <div
+                      className="absolute bottom-0 left-0 w-9 h-9"
+                      style={{
+                        clipPath: 'polygon(0% 100%, 100% 100%, 0% 0%)',
+                        background: 'linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.35))',
+                        boxShadow: '2px -2px 8px rgba(0,0,0,0.35)',
+                      }}
+                    />
+
+                    <span className="text-white/90 text-sm font-bold tracking-[0.2em]">GRAND PRIZE</span>
+                    <span className="mt-2 text-white text-6xl md:text-7xl font-black tracking-tight leading-none">
+                      100K
+                    </span>
+                    <span className="mt-4 text-white/80 text-xs font-semibold tracking-[0.25em] text-center px-2">
+                      WINNER TAKES ALL
+                    </span>
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Cash Prizes</h3>
-                {/* TODO: exact cash amounts to be announced */}
-                <p className="text-3xl md:text-4xl font-black text-[#691e56] tracking-tight mb-3">TBA</p>
-                <p className="text-sm text-slate-400 leading-relaxed">
-                  Significant cash prizes awarded to the top 3 teams to help kickstart their business ventures.
+
+                <p className="mt-10 text-sm text-slate-400 leading-relaxed max-w-xs">
+                  Awarded to the winning team to help kickstart their business venture.
                 </p>
               </div>
 

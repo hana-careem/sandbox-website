@@ -28,8 +28,8 @@ export default function IntroSection() {
           <ScrollReveal direction="right" delay={150} className="md:w-1/2 w-full">
             <div className="relative overflow-hidden rounded-3xl ring-1 ring-white/5 shadow-[0_0_90px_rgba(124,58,237,0.10)]">
               <img
-                src="https://placehold.co/800x500"
-                alt=""
+                src="/assets/Page hero2.jpg"
+                alt="What We Offer"
                 className="w-full h-auto object-cover"
               />
             </div>
