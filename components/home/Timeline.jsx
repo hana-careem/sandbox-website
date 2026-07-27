@@ -103,23 +103,7 @@ export default function Timeline() {
   }, []);
 
   return (
-    <section className="relative py-24 bg-black overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        {/* Soft edge blends — no sharp boundaries with adjacent sections */}
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-slate-950 to-transparent z-10" />
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950 to-transparent z-10" />
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#2E1065]/30 to-black" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-[#7C3AED]/5 to-black" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-[#3c1c33]/40 to-transparent" />
-        <div
-          className="absolute inset-0 opacity-[0.06] mix-blend-overlay"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
-          }}
-        />
-      </div>
-
+    <section className="relative py-24 bg-[linear-gradient(to_bottom,#3A1860_0%,#E3D5F2_15%,#E3D5F2_100%)] overflow-hidden">
       {/* Decorative background rockets */}
       <Rocket
         size={220}
