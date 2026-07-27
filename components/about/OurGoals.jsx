@@ -3,7 +3,7 @@ import ScrollReveal from '../ui/ScrollReveal';
 
 export default function OurGoals() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-b from-slate-950 via-[#1a0e2e] to-slate-950">
       <div className="container max-w-4xl mx-auto px-4">
         <div className="relative rounded-3xl bg-white border-t-2 border-[#D4537E] ring-1 ring-black/5 shadow-[0_8px_24px_rgba(212,83,126,0.10)] px-6 py-16 md:px-16 text-center transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_32px_rgba(212,83,126,0.18)]">
           <ScrollReveal>
