@@ -10,7 +10,7 @@ import PartnersTicker from './PartnersTicker';
 // TODO: Replace with exact registration deadline when provided
 const REGISTRATION_DEADLINE = new Date('2026-09-11T23:59:59');
 
-const Dial = ({ label, value, size = "large" }) => {
+const Dial = ({ label, value, size = "large", theme = "dark" }) => {
   const numClasses = size === "small"
     ? "text-3xl md:text-4xl"
     : "text-5xl md:text-7xl";
@@ -19,21 +19,24 @@ const Dial = ({ label, value, size = "large" }) => {
     ? "text-[9px] md:text-[10px] mt-0.5"
     : "text-[10px] md:text-xs mt-2";
 
+  const numColor = theme === "light" ? "text-[#691e56]" : "text-white";
+  const labelColor = theme === "light" ? "text-slate-500" : "text-slate-400";
+
   return (
     <div className="flex flex-col items-center">
-      <span className={`font-coolvetica font-normal text-white tabular-nums leading-none ${numClasses}`}>
+      <span className={`font-coolvetica font-normal ${numColor} tabular-nums leading-none ${numClasses}`}>
         {value.toString().padStart(2, '0')}
       </span>
-      <span className={`font-normal text-slate-400 lowercase tracking-widest ${labelClasses}`}>
+      <span className={`font-normal ${labelColor} lowercase tracking-widest ${labelClasses}`}>
         {label}
       </span>
     </div>
   );
 };
 
-const Colon = ({ size = "large" }) => (
+const Colon = ({ size = "large", theme = "dark" }) => (
   <span
-    className={`font-coolvetica font-normal text-slate-500 leading-none ${
+    className={`font-coolvetica font-normal ${theme === "light" ? "text-slate-400" : "text-slate-500"} leading-none ${
       size === "small" ? "text-3xl md:text-4xl" : "text-5xl md:text-7xl"
     }`}
   >
@@ -44,6 +47,7 @@ const Colon = ({ size = "large" }) => (
 export default function SandboxHero() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [isSticky, setIsSticky] = useState(false);
+  const [barOnLight, setBarOnLight] = useState(false);
   const heroRef = useRef(null);
   const heroCtaRef = useRef(null);
   const { setHeroCtaVisible } = useHeroCta();
@@ -79,11 +83,21 @@ export default function SandboxHero() {
       if (heroRef.current) {
         // Sticky when scrolled past hero section
         const heroBottom = heroRef.current.getBoundingClientRect().bottom;
-        setIsSticky(heroBottom < 100); 
+        setIsSticky(heroBottom < 100);
       }
+
+      // Darken the sticky bar's text when it overlaps a light-background section
+      const sampleY = window.innerHeight - 30;
+      let onLight = false;
+      document.querySelectorAll('[data-sticky-bar="light"]').forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= sampleY && rect.bottom >= sampleY) onLight = true;
+      });
+      setBarOnLight(onLight);
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll();
     return () => {
       clearInterval(timer);
       window.removeEventListener('scroll', handleScroll);
@@ -104,7 +118,7 @@ export default function SandboxHero() {
             priority
           />
           <div className="absolute inset-0 bg-slate-950/55" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/40 to-slate-950" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/40 to-[#150910]" />
         </div>
 
         <div className="container max-w-7xl mx-auto px-4 relative z-10 flex flex-col items-center">
@@ -167,24 +181,24 @@ export default function SandboxHero() {
 
       {/* Sticky Compact Countdown & CTA */}
       <div 
-        className={`fixed bottom-0 left-0 w-full z-40 bg-slate-950/40 backdrop-blur-2xl border-t border-white/10 shadow-[0_-8px_32px_rgba(0,0,0,0.4)] transition-transform duration-500 transform ${isSticky ? 'translate-y-0' : 'translate-y-full'}`}
+        className={`fixed bottom-0 left-0 w-full z-40 bg-slate-950/20 backdrop-blur-2xl border-t border-white/10 shadow-[0_-8px_32px_rgba(0,0,0,0.4)] transition-transform duration-500 transform ${isSticky ? 'translate-y-0' : 'translate-y-full'}`}
       >
         <div className="max-w-7xl mx-auto px-4 py-3 flex flex-row items-center justify-center gap-6">
 
           <div className="hidden md:flex flex-col items-end">
-             <span className="text-sm font-semibold text-slate-300 uppercase tracking-wider">Registrations close in</span>
+             <span className={`text-sm font-semibold uppercase tracking-wider ${barOnLight ? 'text-slate-600' : 'text-slate-300'}`}>Registrations close in</span>
           </div>
 
           {/* Ticking Numbers */}
-          <div className="flex items-start gap-3 md:gap-4 md:border-l md:border-white/10 md:pl-6">
+          <div className={`flex items-start gap-3 md:gap-4 md:border-l md:pl-6 ${barOnLight ? 'md:border-slate-400/40' : 'md:border-white/10'}`}>
             {[
               { label: 'Days', value: timeLeft.days },
               { label: 'Hrs', value: timeLeft.hours },
               { label: 'Min', value: timeLeft.minutes }
             ].map((item, idx) => (
               <React.Fragment key={idx}>
-                {idx > 0 && <Colon size="small" />}
-                <Dial label={item.label} value={item.value} size="small" />
+                {idx > 0 && <Colon size="small" theme={barOnLight ? 'light' : 'dark'} />}
+                <Dial label={item.label} value={item.value} size="small" theme={barOnLight ? 'light' : 'dark'} />
               </React.Fragment>
             ))}
           </div>

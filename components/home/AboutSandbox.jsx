@@ -1,47 +1,81 @@
 import React from 'react';
+import { Landmark, ArrowRight } from 'lucide-react';
+import ScrollReveal from '../ui/ScrollReveal';
+
+const cardClass =
+  "rounded-3xl border border-[rgba(183,155,221,0.28)] bg-[rgba(122,79,176,0.10)] p-6 md:p-7 backdrop-blur-sm text-left";
 
 export default function AboutSandbox() {
   return (
-    <section className="relative py-20 z-10 text-center">
-      <div className="container max-w-4xl mx-auto px-4">
-        
-        {/* Eyebrow */}
-        <div className="flex flex-col items-center justify-center mb-6">
-          <p className="text-[#C3AEE6] font-medium tracking-widest uppercase text-sm">
-            What is Sandbox
-          </p>
-          <div className="w-12 h-1 bg-gradient-to-r from-[#7A4FB0] to-[#C3AEE6] mt-2 rounded-full"></div>
-        </div>
-        
-        {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-coolvetica font-normal text-[#F3EEFB] mb-6 tracking-tight">
-          Sri Lanka's First Inter-School Business Pitch Competition
-        </h2>
-        
-        {/* Kicker */}
-        <p className="text-xl md:text-2xl font-space-grotesk text-[#F3EEFB] font-medium mb-8">
-          The next generation of entrepreneurs is here — and they're ready to be heard.
-        </p>
-        
-        {/* Body */}
-        <div className="text-[#C6B9E0] space-y-6 text-lg font-inter max-w-3xl mx-auto leading-relaxed mb-10">
-          <p>
-            Organized by the Entrepreneurship Club of APIIT in partnership with the Ministry of Education, this landmark competition brings together the sharpest young minds from schools across Sri Lanka to pitch real business ideas to a panel of seasoned industry judges.
-          </p>
-          <p className="text-[#F3EEFB] font-semibold text-xl">
-            This isn't a classroom exercise. It's a launchpad.
-          </p>
-        </div>
+    <section className="relative py-20 z-10">
+      <div className="container max-w-6xl mx-auto px-4">
 
-        {/* Theme Box */}
-        <div className="max-w-3xl mx-auto rounded-3xl border border-[rgba(183,155,221,0.28)] bg-[rgba(122,79,176,0.10)] p-8 md:p-10 backdrop-blur-sm text-left">
-          <h3 className="text-2xl font-space-grotesk font-bold text-[#F3EEFB] mb-4">
-            This Year's Theme: A Better Tomorrow
-          </h3>
-          <p className="text-[#C6B9E0] text-lg font-inter leading-relaxed">
-            Students are challenged to think beyond the ordinary — to build ideas that don't just make money, but make a difference. From sustainability to social impact, technology to community upliftment, contestants will present ventures designed to solve tomorrow's problems, today.
-          </p>
+        {/* Heading */}
+        <ScrollReveal>
+          <h2 className="text-4xl md:text-5xl font-coolvetica font-normal text-[#F3EEFB] mb-10 tracking-tight text-center">
+            What is Sandbox?
+          </h2>
+        </ScrollReveal>
+
+        <ScrollReveal delay={150}>
+        <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-[auto_auto] gap-5 md:gap-6">
+          {/* Left: intro (spans both rows) */}
+          <div className={`md:row-span-2 h-full ${cardClass}`}>
+            <p className="text-[#F3EEFB] text-base md:text-lg font-semibold mb-3">
+              Sri Lanka's First Inter-School Business Pitch Competition
+            </p>
+            <p className="text-[#C6B9E0] text-sm leading-relaxed mb-3">
+              The next generation of entrepreneurs is here — and they're ready to be heard.
+            </p>
+            <p className="text-[#C6B9E0] text-sm leading-relaxed mb-3">
+              Organized by the Entrepreneurship Club of APIIT in partnership with the Ministry of Education, this landmark competition brings together the sharpest young minds from schools across Sri Lanka to pitch real business ideas to a panel of seasoned industry judges.
+            </p>
+            <p className="text-[#F3EEFB] text-sm leading-relaxed font-semibold">
+              This isn't a classroom exercise. It's a launchpad.
+            </p>
+          </div>
+
+          {/* Right-top: theme */}
+          <div className={cardClass}>
+            <p className="text-[#F3EEFB] text-base md:text-lg font-semibold mb-3">
+              This Year's Theme: A Better Tomorrow
+            </p>
+            <p className="text-[#C6B9E0] text-sm leading-relaxed">
+              Students are challenged to think beyond the ordinary — to build ideas that don't just make money, but make a difference. From sustainability to social impact, technology to community upliftment, contestants will present ventures designed to solve tomorrow's problems, today.
+            </p>
+          </div>
+
+          {/* Right-bottom: official partnership */}
+          <div className={cardClass}>
+            <p className="text-[#C3AEE6] font-medium tracking-widest uppercase text-xs mb-4">
+              Official Partnership
+            </p>
+            <div className="flex items-center gap-4">
+              <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-[#A87196] to-[#542A49] flex items-center justify-center shadow-lg border border-[rgba(183,155,221,0.15)]">
+                <Landmark className="w-7 h-7 text-[#F3EEFB]" />
+              </div>
+              <div>
+                <h3 className="text-lg font-space-grotesk font-bold text-[#F3EEFB] uppercase tracking-wide leading-tight">
+                  Ministry of Education
+                </h3>
+                <p className="text-[#C3AEE6] tracking-widest uppercase text-[11px] mt-0.5">
+                  Sri Lanka
+                </p>
+              </div>
+            </div>
+            <p className="text-[#C6B9E0] text-sm leading-relaxed mt-4">
+              Backed by the Sri Lankan government to ensure every young person — regardless of school type or background — has equal access to entrepreneurial education.
+            </p>
+            <a
+              href="__REPLACE_WITH_PARTNERSHIP_URL__"
+              className="inline-flex items-center gap-1.5 mt-4 text-[#C3AEE6] text-sm font-bold font-inter transition-colors hover:text-[#F3EEFB] group"
+            >
+              View the Government Partnership
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </a>
+          </div>
         </div>
+        </ScrollReveal>
 
       </div>
     </section>

@@ -3,26 +3,26 @@ import ScrollReveal from '../ui/ScrollReveal';
 
 export default function WhatIsSandbox() {
   return (
-    <section className="py-20 bg-gradient-to-b from-[#060718] to-[#691e56]">
+    <section className="py-20 bg-[linear-gradient(to_bottom,#e7d4f0_0%,#e7d4f0_80%,#020617_100%)]">
       <div className="container max-w-6xl mx-auto px-4">
         <ScrollReveal>
-          <h2 className="text-4xl md:text-6xl font-coolvetica font-normal text-white mb-12 tracking-tight text-center">What is Sandbox?</h2>
+          <h2 className="text-4xl md:text-6xl font-coolvetica font-normal text-slate-900 mb-12 tracking-tight text-center">What is Sandbox?</h2>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
           {/* Left: intro */}
           <ScrollReveal direction="left">
-            <div className="h-full rounded-2xl border border-white/15 bg-white/[0.03] p-6 md:p-8">
-              <p className="text-white text-base md:text-lg font-semibold mb-4">
+            <div className="h-full rounded-2xl border border-black/10 bg-white/40 p-6 md:p-8">
+              <p className="text-slate-900 text-base md:text-lg font-semibold mb-4">
                 Sri Lanka's First Inter-School Business Pitch Competition
               </p>
-              <p className="text-slate-300 text-sm md:text-base leading-relaxed mb-4">
+              <p className="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
                 The next generation of entrepreneurs is here — and they're ready to be heard.
               </p>
-              <p className="text-slate-300 text-sm md:text-base leading-relaxed mb-4">
+              <p className="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
                 Organized by the Entrepreneurship Club of APIIT in partnership with the Ministry of Education, this landmark competition brings together the sharpest young minds from schools across Sri Lanka to pitch real business ideas to a panel of seasoned industry judges.
               </p>
-              <p className="text-slate-300 text-sm md:text-base leading-relaxed">
+              <p className="text-slate-700 text-sm md:text-base leading-relaxed">
                 This isn't a classroom exercise. It's a launchpad.
               </p>
             </div>
@@ -30,11 +30,11 @@ export default function WhatIsSandbox() {
 
           {/* Right: theme */}
           <ScrollReveal direction="right" delay={150}>
-            <div className="h-full rounded-2xl border border-white/15 bg-white/[0.03] p-6 md:p-8">
+            <div className="h-full rounded-2xl border border-black/10 bg-white/40 p-6 md:p-8">
               <p className="text-[#a64d79] text-base md:text-lg font-semibold mb-4">
                 This Year's Theme: A Better Tomorrow
               </p>
-              <p className="text-slate-300 text-sm md:text-base leading-relaxed">
+              <p className="text-slate-700 text-sm md:text-base leading-relaxed">
                 Students are challenged to think beyond the ordinary — to build ideas that don't just make money, but make a difference. From sustainability to social impact, technology to community upliftment, contestants will present ventures designed to solve tomorrow's problems, today.
               </p>
             </div>
