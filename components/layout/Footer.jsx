@@ -66,9 +66,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-slate-950 pt-16 pb-8 border-t border-white/5">
-      {/* Blend edge — fades the pale lavender Timeline bottom into the dark footer */}
-      <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#E3D5F2] to-slate-950 -translate-y-full pointer-events-none" />
+    <footer className="bg-slate-950 pt-16 pb-8 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
 
