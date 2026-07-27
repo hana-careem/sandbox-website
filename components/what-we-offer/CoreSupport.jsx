@@ -9,12 +9,12 @@ const CORE_SUPPORT_DATA = [
     description: "Learn the fundamentals of business planning, financial forecasting, and effective pitching directly from industry veterans.",
     icon: <BookOpen className="w-7 h-7 text-[#a64d79]" />,
     images: [
-      "/assets/workshop-1.jpg",
-      "/assets/workshop-2.jpg",
-      "/assets/workshop-3.jpg",
-      "/assets/workshop-4.jpg",
-      "/assets/workshop-5.jpg",
-      "/assets/workshop-6.jpg"
+      "/assets/Workshop sandbox 2.0 (1).jpg",
+      "/assets/Workshop sandbox 2.0 (2).jpg",
+      "/assets/Workshop sandbox 2.0 (3).jpg",
+      "/assets/Workshop sandbox 2.0 (4).jpg",
+      "/assets/Workshop sandbox 2.0 (5).jpg",
+      "/assets/Workshop sandbox 2.0 (6).jpg"
     ],
     extra: {
       type: 'bullets',

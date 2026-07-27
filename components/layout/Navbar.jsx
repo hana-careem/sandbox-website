@@ -270,9 +270,9 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
         {/* slide-down menu */}
         <div
           className={
-            'mt-2 origin-top overflow-hidden rounded-3xl border border-white/10 ' +
+            'mt-2 origin-top overflow-y-auto rounded-3xl border border-white/10 ' +
             'bg-[#141414]/90 backdrop-blur-xl transition-all duration-300 ' +
-            (menuOpen ? 'max-h-[520px] opacity-100' : 'pointer-events-none max-h-0 opacity-0')
+            (menuOpen ? 'max-h-[75vh] opacity-100' : 'pointer-events-none max-h-0 opacity-0')
           }
         >
           <ul className="flex flex-col p-3">

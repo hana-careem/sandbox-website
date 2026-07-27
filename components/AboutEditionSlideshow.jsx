@@ -17,22 +17,24 @@ function sample(arr, n) {
 export default function AboutEditionSlideshow({
   images = [],
   label = 'Sandbox',
-  count = 8, // show about 8 pics
   interval = 4000, // slide every 4 seconds
 }) {
-  // Sample once per mount so the set is random but doesn't reshuffle on every render.
-  const pics = useMemo(() => sample(images, count), [images, count])
+  // Use all provided images, filter out any placeholders if they exist
+  const pics = useMemo(() => images.filter(img => img && !img.includes('placeholder-image.png')), [images])
   const [i, setI] = useState(0)
+
+  useEffect(() => {
+    // Reset index if it goes out of bounds when the images array changes
+    if (i >= pics.length && pics.length > 0) {
+      setI(0)
+    }
+  }, [pics.length, i])
 
   // Manual nav via the side arrows (wraps around).
   const go = (dir) => setI((prev) => (prev + dir + pics.length) % pics.length)
 
   useEffect(() => {
     if (pics.length <= 1) return
-    const reduce =
-      typeof window !== 'undefined' &&
-      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
-    if (reduce) return
 
     const id = setInterval(() => {
       setI((prev) => (prev + 1) % pics.length)
@@ -49,6 +51,9 @@ export default function AboutEditionSlideshow({
     )
   }
 
+  // Use the safe index to render (in case the effect hasn't fired yet)
+  const safeI = i >= pics.length ? 0 : i;
+
   return (
     <div
       className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-white/10 bg-black/40"
@@ -56,24 +61,22 @@ export default function AboutEditionSlideshow({
       aria-roledescription="carousel"
       aria-label={`${label} photo gallery`}
     >
-      {pics.map((src, idx) => (
-        // Cross-fade + gentle slide. All slides stacked; only the active one is visible.
-        <Image
-          key={idx}
-          src={typeof src === 'string' ? src : src?.src /* next/image static import shape */}
-          alt={`${label} — photo ${idx + 1}`}
-          loading={idx === 0 ? 'eager' : 'lazy'}
-          fill
-          className={
-            'absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-in-out ' +
-            (idx === i
-              ? 'translate-x-0'
-              : idx === (i - 1 + pics.length) % pics.length
-                ? '-translate-x-full'
-                : 'translate-x-full')
-          }
-        />
-      ))}
+      <div 
+        className="flex h-full w-full transition-transform duration-700 ease-in-out"
+        style={{ transform: `translateX(-${safeI * 100}%)` }}
+      >
+        {pics.map((src, idx) => (
+          <div key={idx} className="relative h-full w-full flex-shrink-0">
+            <Image
+              src={typeof src === 'string' ? src : src?.src /* next/image static import shape */}
+              alt={`${label} — photo ${idx + 1}`}
+              loading={idx === 0 ? 'eager' : 'lazy'}
+              fill
+              className="object-cover"
+            />
+          </div>
+        ))}
+      </div>
 
       {/* subtle dark gradient so any caption/label stays legible */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
@@ -109,7 +112,7 @@ export default function AboutEditionSlideshow({
             aria-label={`Go to photo ${idx + 1}`}
             className={
               'h-1.5 rounded-full transition-all ' +
-              (idx === i ? 'w-5 bg-[#38BDF8]' : 'w-1.5 bg-white/40 hover:bg-white/70')
+              (idx === safeI ? 'w-5 bg-[#38BDF8]' : 'w-1.5 bg-white/40 hover:bg-white/70')
             }
           />
         ))}

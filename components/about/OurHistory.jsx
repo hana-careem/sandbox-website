@@ -4,24 +4,27 @@ import Link from 'next/link';
 import ScrollReveal from '../ui/ScrollReveal';
 import AboutEditionSlideshow from '../AboutEditionSlideshow';
 
-// ─── Sandbox 1.0 photos (all now flat in public/assets/) ────────────────────
+// ─── Sandbox 1.0 photos (Grand Final + Workshop) ────────────────────
 const s1_imgs = [
-  '/assets/What we offer sandbox 1.0 (1).jpg',
-  '/assets/What we offer sandbox 1.0 (2).jpg',
-  '/assets/Wht we offer sandbox 1.0 (1).jpg',
-  '/assets/Wht we offer sandbox 1.0 (2).jpg',
-  '/assets/Wht we offer sandbox 1.0 (3).jpg',
-  '/assets/Wht we offer sandbox 1.0 (4).jpg',
-  '/assets/Wht we offer sandbox 1.0 (5).jpg',
-  '/assets/Wht we offer sandbox 1.0 (6).jpg',
-  '/assets/Wht we offer sandbox 1.0 (7).jpg',
-  '/assets/Wht we offer sandbox 1.0 (8).jpg',
-  '/assets/Wht we offer sandbox 1.0 (9).jpg',
-  '/assets/Wht we offer sandbox 1.0 (10).jpg',
-  '/assets/Wht we offer sandbox 1.0 (11).jpg',
+  // Grand Final (7)
+  '/assets/Grand final sandbox 1.0 (1).jpg',
+  '/assets/Grand final sandbox 1.0 (2).jpg',
+  '/assets/Grand final sandbox 1.0 (3).jpg',
+  '/assets/Grand final sandbox 1.0 (4).jpg',
+  '/assets/Grand final sandbox 1.0 (5).jpg',
+  '/assets/Grand final sandbox 1.0 (6).jpg',
+  '/assets/Grand final sandbox 1.0 (7).jpg',
+  // Workshop (7)
+  '/assets/Workshop sandbox 1.0 (7).jpg',
+  '/assets/Workshop sandbox 1.0 (8).jpg',
+  '/assets/Workshop sandbox 1.0 (10).jpg',
+  '/assets/Workshop sandbox 1.0 (12).jpg',
+  '/assets/Workshop sandbox 1.0 (13).jpg',
+  '/assets/Workshop sandbox 1.0 (17).jpg',
+  '/assets/Workshop sandbox 1.0 (19).jpg',
 ];
 
-// ─── Sandbox 2.0 photos (Grand Final + Preliminaries + Workshop) ─────────────
+// ─── Sandbox 2.0 photos (Grand Final + Preliminaries) ─────────────
 const s2_imgs = [
   // Grand Final (10)
   '/assets/Grand final sandbox 2.0 (1).jpg',
@@ -34,21 +37,14 @@ const s2_imgs = [
   '/assets/Grand final sandbox 2.0 (8).jpg',
   '/assets/Grand final sandbox 2.0 (9).jpg',
   '/assets/Grand final sandbox 2.0 (10).jpg',
-  // Preliminaries (6)
-  '/assets/preliminairies sandbox 2.0 (1).jpg',
-  '/assets/preliminairies sandbox 2.0 (2).jpg',
-  '/assets/preliminairies sandbox 2.0 (3).jpg',
-  '/assets/preliminairies sandbox 2.0 (4).jpg',
-  '/assets/preliminairies sandbox 2.0 (5).jpg',
-  '/assets/preliminairies sandbox 2.0 (6).jpg',
-  // Workshop (7)
-  '/assets/Workshop sandbox 2.0 (1).jpg',
-  '/assets/Workshop sandbox 2.0 (2).jpg',
-  '/assets/Workshop sandbox 2.0 (3).jpg',
-  '/assets/Workshop sandbox 2.0 (4).jpg',
-  '/assets/Workshop sandbox 2.0 (5).jpg',
-  '/assets/Workshop sandbox 2.0 (6).jpg',
-  '/assets/Workshop sandbox 2.0 (7).jpg',
+  // Preliminaries (7)
+  '/assets/Preliminaries Sandbox 2.0 (1).jpg',
+  '/assets/Preliminaries Sandbox 2.0 (2).jpg',
+  '/assets/Preliminaries Sandbox 2.0 (3).jpg',
+  '/assets/Preliminaries Sandbox 2.0 (4).jpg',
+  '/assets/Preliminaries Sandbox 2.0 (5).jpg',
+  '/assets/Preliminaries Sandbox 2.0 (6).jpg',
+  '/assets/Preliminaries Sandbox 2.0 (7).jpg',
 ];
 
 export default function OurHistory() {
