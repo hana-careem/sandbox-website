@@ -48,26 +48,26 @@ export default function EditionGallery({ edition }) {
 
   return (
     <div className="animate-in fade-in duration-500">
-      <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 md:p-12 mb-16 flex flex-col md:flex-row items-center justify-between gap-8">
-        <div>
-          <h3 className="text-slate-400 uppercase tracking-widest text-sm font-semibold mb-2">Grand Champion</h3>
-          <div className="flex items-center gap-4">
-            <Trophy size={32} className="text-[#FF4D6D]" />
-            <span className="text-2xl md:text-4xl font-black font-display text-white">{data.winner}</span>
+      <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-12 mb-16 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-8">
+        <div className="text-center md:text-left w-full md:w-auto">
+          <h3 className="text-slate-400 uppercase tracking-widest text-xs md:text-sm font-semibold mb-2">Grand Champion</h3>
+          <div className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-2 md:gap-4">
+            <Trophy size={32} className="text-[#FF4D6D] md:mb-0" />
+            <span className="text-xl md:text-4xl font-black font-display text-white text-balance">{data.winner}</span>
           </div>
         </div>
-        <div className="flex gap-8 md:gap-16 text-center md:text-left divide-x divide-slate-800">
-          <div className="pl-4">
-            <div className="text-3xl font-bold text-[#14f2db]">{data.stats.schools}</div>
-            <div className="text-slate-400 text-sm">Schools</div>
+        <div className="flex w-full md:w-auto justify-between md:justify-start gap-2 md:gap-16 text-center md:text-left divide-x divide-slate-800 pt-6 md:pt-0 border-t border-slate-800 md:border-0 mt-2 md:mt-0">
+          <div className="flex-1 md:flex-none md:pl-4">
+            <div className="text-xl md:text-3xl font-bold text-[#14f2db]">{data.stats.schools}</div>
+            <div className="text-slate-400 text-xs md:text-sm">Schools</div>
           </div>
-          <div className="pl-8">
-            <div className="text-3xl font-bold text-[#a64d79]">{data.stats.teams}</div>
-            <div className="text-slate-400 text-sm">Teams</div>
+          <div className="flex-1 md:flex-none pl-2 md:pl-8">
+            <div className="text-xl md:text-3xl font-bold text-[#a64d79]">{data.stats.teams}</div>
+            <div className="text-slate-400 text-xs md:text-sm">Teams</div>
           </div>
-          <div className="pl-8">
-            <div className="text-3xl font-bold text-[#FF4D6D]">{data.stats.pool}</div>
-            <div className="text-slate-400 text-sm">Prize Pool</div>
+          <div className="flex-1 md:flex-none pl-2 md:pl-8">
+            <div className="text-xl md:text-3xl font-bold text-[#FF4D6D]">{data.stats.pool}</div>
+            <div className="text-slate-400 text-xs md:text-sm">Prize Pool</div>
           </div>
         </div>
       </div>

@@ -22,7 +22,7 @@ export default function EditionTabs() {
               <button
                 key={edition.id}
                 onClick={() => setActiveTab(edition.id)}
-                className={`px-8 py-3 rounded-full font-bold transition-all duration-300 ${
+                className={`px-6 py-2 md:px-8 md:py-3 text-sm md:text-base rounded-full font-bold transition-all duration-300 flex items-center ${
                   activeTab === edition.id 
                     ? 'bg-[#38BDF8] text-slate-950 shadow-[0_0_20px_rgba(56,189,248,0.4)]' 
                     : 'bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800'

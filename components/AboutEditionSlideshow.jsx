@@ -62,11 +62,11 @@ export default function AboutEditionSlideshow({
       aria-label={`${label} photo gallery`}
     >
       <div 
-        className="flex h-full w-full transition-transform duration-700 ease-in-out"
-        style={{ transform: `translateX(-${safeI * 100}%)` }}
+        className="flex h-full transition-transform duration-700 ease-in-out"
+        style={{ width: `${pics.length * 100}%`, transform: `translateX(-${safeI * (100 / pics.length)}%)` }}
       >
         {pics.map((src, idx) => (
-          <div key={idx} className="relative h-full w-full flex-shrink-0">
+          <div key={idx} className="relative h-full flex-shrink-0" style={{ width: `${100 / pics.length}%` }}>
             <Image
               src={typeof src === 'string' ? src : src?.src /* next/image static import shape */}
               alt={`${label} — photo ${idx + 1}`}
