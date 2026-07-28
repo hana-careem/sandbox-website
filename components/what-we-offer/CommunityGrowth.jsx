@@ -27,35 +27,25 @@ const COMMUNITY_GROWTH_DATA = [
 
 export default function CommunityGrowth() {
   return (
-    <section className="py-24 bg-slate-950">
+    <section className="pt-0 pb-24 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ScrollReveal>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-coolvetica font-normal text-white tracking-normal mb-6">
-              Community &amp; <span className="text-[#a64d79]">Growth</span>
-            </h2>
-          </div>
-        </ScrollReveal>
-
         <div>
           {COMMUNITY_GROWTH_DATA.map((item, idx) => (
-            <ScrollReveal key={item.title} direction={idx % 2 === 0 ? 'left' : 'right'}>
+            <ScrollReveal key={item.title} direction="right">
             <div
-              className={`flex flex-col ${
-                idx % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'
-              } items-center gap-10 md:gap-16 py-12 border-b border-white/5 last:border-b-0`}
+              className="flex flex-col md:flex-row-reverse items-center gap-10 md:gap-16 py-12 border-b border-white/5 last:border-b-0"
             >
               <div className="relative w-full md:w-1/2">
                 <div className="grid grid-cols-3 gap-3">
                   {item.images.map((src, imgIdx) => (
                     <div
                       key={imgIdx}
-                      className="overflow-hidden rounded-xl border border-white/5 shadow-[0_0_40px_rgba(124,58,237,0.10)]"
+                      className="group overflow-hidden rounded-xl border border-white/5 shadow-[0_0_40px_rgba(124,58,237,0.10)]"
                     >
                       <img
                         src={src}
                         alt={`${item.title} photo ${imgIdx + 1}`}
-                        className="w-full h-24 sm:h-28 md:h-32 object-cover"
+                        className="w-full h-28 sm:h-36 md:h-44 object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                     </div>
                   ))}
