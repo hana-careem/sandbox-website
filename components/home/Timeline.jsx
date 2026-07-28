@@ -15,13 +15,8 @@ const MILESTONES = [
     desc: 'Last call for teams to lock in their spot before the competition kicks off.',
   },
   {
-    date: '2nd Week of September',
-    title: 'Press Conference',
-    desc: 'The official launch — Sandbox is announced to schools and media nationwide.',
-  },
-  {
     date: '4th week of September',
-    title: 'Workshops Begin',
+    title: 'Workshops',
     desc: 'Engaging and interactive workshops held in Colombo, Kandy, and Galle to aid participants in their preparation.',
   },
   {
@@ -103,7 +98,7 @@ export default function Timeline() {
   }, []);
 
   return (
-    <section data-sticky-bar="light" className="relative py-24 bg-[#EBD7E6] overflow-hidden">
+    <section data-sticky-bar="light" className="relative pt-10 pb-24 bg-[#EBD7E6] overflow-hidden">
       {/* Decorative background rockets */}
       <Rocket
         size={220}

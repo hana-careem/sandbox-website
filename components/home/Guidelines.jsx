@@ -14,8 +14,8 @@ export default function Guidelines() {
 
   return (
     <section data-sticky-bar="light" className="relative py-20 z-10">
-      {/* Background layer: fades in from transparent, then blends down into the Timeline's lavender */}
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,transparent_0px,#F1EAFB_140px,#F1EAFB_45%,#EBD7E6_100%)]"></div>
+      {/* Background layer: starts on the Timeline's lavender above it, then brightens for the content */}
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#EBD7E6_0%,#F1EAFB_40%,#F1EAFB_100%)]"></div>
 
       <div className="container max-w-5xl mx-auto px-4 mt-12 md:mt-16">
         

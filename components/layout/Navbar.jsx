@@ -230,11 +230,11 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
             tabIndex={showNavCta ? 0 : -1}
             className={
               REGISTER_CLASSES +
-              ' whitespace-nowrap origin-center transition-all duration-[450ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] ' +
+              ' whitespace-nowrap transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] ' +
               (showNavCta
-                ? 'opacity-100 scale-100 translate-y-0 pointer-events-auto'
-                : 'opacity-0 scale-75 translate-y-1 pointer-events-none') +
-              ' motion-reduce:transition-opacity motion-reduce:scale-100 motion-reduce:translate-y-0'
+                ? 'translate-x-0 scale-100 opacity-100 pointer-events-auto'
+                : 'translate-x-8 scale-90 opacity-0 pointer-events-none') +
+              ' motion-reduce:translate-x-0 motion-reduce:scale-100 motion-reduce:transition-opacity'
             }
           >
             Register Now

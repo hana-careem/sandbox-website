@@ -13,7 +13,7 @@ const REGISTRATION_DEADLINE = new Date('2026-09-11T23:59:59');
 const Dial = ({ label, value, size = "large", theme = "dark" }) => {
   const numClasses = size === "small"
     ? "text-3xl md:text-4xl"
-    : "text-5xl md:text-7xl";
+    : "text-3xl md:text-5xl";
 
   const labelClasses = size === "small"
     ? "text-[9px] md:text-[10px] mt-0.5"
@@ -37,7 +37,7 @@ const Dial = ({ label, value, size = "large", theme = "dark" }) => {
 const Colon = ({ size = "large", theme = "dark" }) => (
   <span
     className={`font-coolvetica font-normal ${theme === "light" ? "text-slate-400" : "text-slate-500"} leading-none ${
-      size === "small" ? "text-3xl md:text-4xl" : "text-5xl md:text-7xl"
+      size === "small" ? "text-3xl md:text-4xl" : "text-3xl md:text-5xl"
     }`}
   >
     :
@@ -48,6 +48,7 @@ export default function SandboxHero() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [isSticky, setIsSticky] = useState(false);
   const [barOnLight, setBarOnLight] = useState(false);
+  const [headlineIndex, setHeadlineIndex] = useState(1);
   const heroRef = useRef(null);
   const heroCtaRef = useRef(null);
   const { setHeroCtaVisible } = useHeroCta();
@@ -104,6 +105,12 @@ export default function SandboxHero() {
     };
   }, []);
 
+  // Swap the hero headline between "SANDBOX 3.0" and the full title every 5 seconds
+  useEffect(() => {
+    const id = setInterval(() => setHeadlineIndex((i) => (i === 0 ? 1 : 0)), 5000);
+    return () => clearInterval(id);
+  }, []);
+
   const daysLeft = Math.max(0, Math.ceil((REGISTRATION_DEADLINE.getTime() - Date.now()) / 86400000));
 
   return (
@@ -125,11 +132,21 @@ export default function SandboxHero() {
           <div className="max-w-4xl mx-auto text-center w-full">
             
             <ScrollReveal delay={100}>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black font-display text-white tracking-tighter leading-[0.9] mb-6">
-                <span className="block text-slate-300 font-coolvetica italic font-normal tracking-wide !text-5xl md:!text-7xl lg:!text-8xl">THE PREMIER</span>
-                <span className="block text-[#a64d79] font-aubrey font-normal tracking-tight whitespace-nowrap !text-5xl md:!text-7xl lg:!text-8xl">Business Pitching</span>
-                <span className="block text-slate-100 font-coolvetica italic font-normal tracking-wide !text-5xl md:!text-7xl lg:!text-8xl">COMPETITION<span className="text-[#14f2db]">.</span></span>
-              </h1>
+              <div className="relative mb-6">
+                {/* Full title — stays in flow so it defines the height (no layout shift on swap) */}
+                <h1 className={`text-5xl md:text-7xl lg:text-8xl font-black font-display text-white tracking-tighter leading-[0.9] transition-opacity duration-700 ${headlineIndex === 0 ? 'opacity-100' : 'opacity-0'}`}>
+                  <span className="block text-slate-300 font-coolvetica italic font-normal tracking-wide !text-5xl md:!text-7xl lg:!text-8xl">THE PREMIER</span>
+                  <span className="block text-[#a64d79] font-aubrey font-normal tracking-tight whitespace-nowrap !text-5xl md:!text-7xl lg:!text-8xl">Business Pitching</span>
+                  <span className="block text-slate-100 font-coolvetica italic font-normal tracking-wide !text-5xl md:!text-7xl lg:!text-8xl">COMPETITION<span className="text-[#14f2db]">.</span></span>
+                </h1>
+                {/* Alternate title — overlaid, centred, crossfades in */}
+                <div
+                  aria-hidden="true"
+                  className={`absolute inset-0 flex items-center justify-center font-black font-display tracking-tighter leading-[0.9] transition-opacity duration-700 ${headlineIndex === 1 ? 'opacity-100' : 'opacity-0'}`}
+                >
+                  <span className="text-slate-100 font-coolvetica italic font-normal tracking-wide whitespace-nowrap !text-5xl md:!text-7xl lg:!text-8xl">SANDBOX <span className="text-[#a64d79]">3.0</span></span>
+                </div>
+              </div>
             </ScrollReveal>
 
             <ScrollReveal delay={300}>
@@ -145,7 +162,7 @@ export default function SandboxHero() {
                   ref={heroCtaRef}
                   href="https://forms.gle/aA7xeVSHBGGSuhs87"
                   target="_blank"
-                  className="group inline-flex items-center justify-center gap-2.5 px-8 py-3.5 text-base font-bold rounded-full bg-[#a64d79]/30 backdrop-blur-md border border-white/10 hover:bg-[#a64d79]/40 text-white transition-all duration-300 focus:ring-2 focus:ring-[#a64d79]/50 focus:outline-none shadow-lg hover:-translate-y-0.5 active:translate-y-0 mb-12"
+                  className="group inline-flex items-center justify-center gap-2.5 px-8 py-3.5 text-base font-bold rounded-full bg-[#a64d79]/30 backdrop-blur-md border border-white/10 hover:bg-[#a64d79]/40 text-white transition-all duration-300 focus:ring-2 focus:ring-[#a64d79]/50 focus:outline-none shadow-lg hover:-translate-y-0.5 active:translate-y-0 mb-6"
                 >
                   <span>Register Now</span>
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 border border-white/10 transition-transform duration-300 group-hover:translate-x-0.5">
@@ -156,11 +173,12 @@ export default function SandboxHero() {
 
               {/* Inline Hero Countdown */}
               <ScrollReveal delay={500}>
-                <div className="flex justify-center items-start gap-4 md:gap-6 mt-12">
+                <div className="flex justify-center items-start gap-4 md:gap-6 mt-6">
                   {[
                     { label: 'Days', value: timeLeft.days },
                     { label: 'Hours', value: timeLeft.hours },
-                    { label: 'Minutes', value: timeLeft.minutes }
+                    { label: 'Minutes', value: timeLeft.minutes },
+                    { label: 'Seconds', value: timeLeft.seconds }
                   ].map((item, idx) => (
                     <React.Fragment key={idx}>
                       {idx > 0 && <Colon />}
@@ -194,7 +212,8 @@ export default function SandboxHero() {
             {[
               { label: 'Days', value: timeLeft.days },
               { label: 'Hrs', value: timeLeft.hours },
-              { label: 'Min', value: timeLeft.minutes }
+              { label: 'Min', value: timeLeft.minutes },
+              { label: 'Sec', value: timeLeft.seconds }
             ].map((item, idx) => (
               <React.Fragment key={idx}>
                 {idx > 0 && <Colon size="small" theme={barOnLight ? 'light' : 'dark'} />}

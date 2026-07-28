@@ -1,14 +1,14 @@
 import React from 'react';
-import { Landmark, ArrowRight } from 'lucide-react';
+import { Landmark } from 'lucide-react';
 import ScrollReveal from '../ui/ScrollReveal';
 
 const cardClass =
-  "rounded-3xl border border-[rgba(183,155,221,0.28)] bg-[rgba(122,79,176,0.10)] p-6 md:p-7 backdrop-blur-sm text-left";
+  "rounded-3xl border border-[rgba(183,155,221,0.28)] bg-[rgba(122,79,176,0.10)] p-5 md:p-6 backdrop-blur-sm text-left";
 
 export default function AboutSandbox() {
   return (
     <section className="relative py-20 z-10">
-      <div className="container max-w-6xl mx-auto px-4">
+      <div className="container max-w-5xl mx-auto px-4">
 
         {/* Heading */}
         <ScrollReveal>
@@ -18,63 +18,58 @@ export default function AboutSandbox() {
         </ScrollReveal>
 
         <ScrollReveal delay={150}>
-        <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-[auto_auto] gap-5 md:gap-6">
-          {/* Left: intro (spans both rows) */}
-          <div className={`md:row-span-2 h-full ${cardClass}`}>
-            <p className="text-[#F3EEFB] text-base md:text-lg font-semibold mb-3">
-              Sri Lanka's First Inter-School Business Pitch Competition
-            </p>
-            <p className="text-[#C6B9E0] text-sm leading-relaxed mb-3">
-              The next generation of entrepreneurs is here — and they're ready to be heard.
-            </p>
-            <p className="text-[#C6B9E0] text-sm leading-relaxed mb-3">
-              Organized by the Entrepreneurship Club of APIIT in partnership with the Ministry of Education, this landmark competition brings together the sharpest young minds from schools across Sri Lanka to pitch real business ideas to a panel of seasoned industry judges.
-            </p>
-            <p className="text-[#F3EEFB] text-sm leading-relaxed font-semibold">
-              This isn't a classroom exercise. It's a launchpad.
-            </p>
-          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-          {/* Right-top: theme */}
-          <div className={cardClass}>
-            <p className="text-[#F3EEFB] text-base md:text-lg font-semibold mb-3">
-              This Year's Theme: A Better Tomorrow
-            </p>
-            <p className="text-[#C6B9E0] text-sm leading-relaxed">
-              Students are challenged to think beyond the ordinary — to build ideas that don't just make money, but make a difference. From sustainability to social impact, technology to community upliftment, contestants will present ventures designed to solve tomorrow's problems, today.
-            </p>
-          </div>
-
-          {/* Right-bottom: official partnership */}
-          <div className={cardClass}>
-            <p className="text-[#C3AEE6] font-medium tracking-widest uppercase text-xs mb-4">
-              Official Partnership
-            </p>
-            <div className="flex items-center gap-4">
-              <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-[#A87196] to-[#542A49] flex items-center justify-center shadow-lg border border-[rgba(183,155,221,0.15)]">
-                <Landmark className="w-7 h-7 text-[#F3EEFB]" />
-              </div>
-              <div>
-                <h3 className="text-lg font-space-grotesk font-bold text-[#F3EEFB] uppercase tracking-wide leading-tight">
-                  Ministry of Education
-                </h3>
-                <p className="text-[#C3AEE6] tracking-widest uppercase text-[11px] mt-0.5">
-                  Sri Lanka
-                </p>
-              </div>
+            {/* Top-left: info */}
+            <div className={cardClass}>
+              <p className="text-[#F3EEFB] text-base md:text-lg font-semibold mb-3">
+                Sri Lanka's First Inter-School Business Pitch Competition
+              </p>
+              <p className="text-[#C6B9E0] text-sm leading-relaxed mb-3">
+                The next generation of entrepreneurs is here — and they're ready to be heard.
+              </p>
+              <p className="text-[#C6B9E0] text-sm leading-relaxed mb-3">
+                Organized by the Entrepreneurship Club of APIIT in partnership with the Ministry of Education, this landmark competition brings together the sharpest young minds from schools across Sri Lanka to pitch real business ideas to a panel of seasoned industry judges.
+              </p>
+              <p className="text-[#F3EEFB] text-sm leading-relaxed font-semibold">
+                This isn't a classroom exercise. It's a launchpad.
+              </p>
             </div>
-            <p className="text-[#C6B9E0] text-sm leading-relaxed mt-4">
-              Backed by the Sri Lankan government to ensure every young person — regardless of school type or background — has equal access to entrepreneurial education.
-            </p>
-            <a
-              href="__REPLACE_WITH_PARTNERSHIP_URL__"
-              className="inline-flex items-center gap-1.5 mt-4 text-[#C3AEE6] text-sm font-bold font-inter transition-colors hover:text-[#F3EEFB] group"
-            >
-              View the Government Partnership
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </a>
+
+            {/* Top-right: theme */}
+            <div className={cardClass}>
+              <p className="text-[#F3EEFB] text-base md:text-lg font-semibold mb-3">
+                This Year's Theme: A Better Tomorrow
+              </p>
+              <p className="text-[#C6B9E0] text-sm leading-relaxed">
+                Students are challenged to think beyond the ordinary — to build ideas that don't just make money, but make a difference. From sustainability to social impact, technology to community upliftment, contestants will present ventures designed to solve tomorrow's problems, today.
+              </p>
+            </div>
+
+            {/* Bottom (full width): official partnership, centred */}
+            <div className={`${cardClass} md:col-span-2 text-center`}>
+              <p className="text-[#C3AEE6] font-medium tracking-widest uppercase text-xs mb-4">
+                Official Partnership
+              </p>
+              <div className="flex items-center justify-center gap-4">
+                <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-[#A87196] to-[#542A49] flex items-center justify-center shadow-lg border border-[rgba(183,155,221,0.15)]">
+                  <Landmark className="w-7 h-7 text-[#F3EEFB]" />
+                </div>
+                <div className="text-left">
+                  <h3 className="text-lg font-space-grotesk font-bold text-[#F3EEFB] uppercase tracking-wide leading-tight">
+                    Ministry of Education
+                  </h3>
+                  <p className="text-[#C3AEE6] tracking-widest uppercase text-[11px] mt-0.5">
+                    Sri Lanka
+                  </p>
+                </div>
+              </div>
+              <p className="text-[#C6B9E0] text-sm leading-relaxed mt-4 max-w-2xl mx-auto">
+                Backed by the Sri Lankan government to ensure every young person — regardless of school type or background — has equal access to entrepreneurial education.
+              </p>
+            </div>
+
           </div>
-        </div>
         </ScrollReveal>
 
       </div>
