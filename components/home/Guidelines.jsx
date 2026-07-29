@@ -22,7 +22,7 @@ export default function Guidelines() {
           
           {/* Left Text Block */}
           <ScrollReveal className="flex-1">
-            <p className="text-[#691e56] font-bold tracking-widest uppercase mb-4 text-sm">
+            <p className="text-white font-bold tracking-widest uppercase mb-4 text-sm">
               Competition Guidelines
             </p>
             <h2 className="text-4xl md:text-5xl font-space-grotesk font-bold text-white mb-6 tracking-tight">
