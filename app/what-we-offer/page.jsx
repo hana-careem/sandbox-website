@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function WhatWeOfferPage() {
   return (
-    <main className="w-full">
+    <main className="w-full bg-[linear-gradient(180deg,#150910_0%,#2A1523_30%,#3c1c33_72%,#3c1c33_100%)] min-h-screen">
       <IntroSection />
       <CoreSupport />
       <CommunityGrowth />
