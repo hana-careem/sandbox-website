@@ -36,12 +36,18 @@ const MILESTONES = [
   },
 ];
 
+// The first 4 milestones sit on the photo collage (transparent bg).
+// The last 2 sit on the original pink bg.
+const SPLIT_INDEX = 4;
+
 export default function Timeline() {
   const containerRef = useRef(null);
   const dotRefs = useRef([]);
+  const lowerBgRef = useRef(null);
   const [pathD, setPathD] = useState('');
   const [viewBox, setViewBox] = useState('0 0 0 0');
   const [rocketPos, setRocketPos] = useState(null);
+  const [lowerTop, setLowerTop] = useState(null);
 
   useLayoutEffect(() => {
     const getRelativeOffset = (el, ancestor) => {
@@ -83,6 +89,16 @@ export default function Timeline() {
       setPathD(d);
       setViewBox(`0 0 ${container.clientWidth} ${container.scrollHeight}`);
       setRocketPos({ x: anchorX, y: tailY });
+
+      // Calculate where the lower pink background should start
+      // We put the split midway between Preliminaries (idx 3) and Semi-Finals (idx 4)
+      if (dots[SPLIT_INDEX]) {
+        const splitDot = dots[SPLIT_INDEX];
+        const { top: splitTop } = getRelativeOffset(splitDot, container);
+        // Start the pink bg a bit above the Semi-Finals dot
+        const offset = isMobile ? 60 : 40;
+        setLowerTop(splitTop - offset);
+      }
     };
 
     recalculate();
@@ -98,31 +114,28 @@ export default function Timeline() {
   }, []);
 
   return (
-    <section data-sticky-bar="light" className="relative pt-10 pb-24 bg-[#EBD7E6] overflow-hidden">
-      {/* Decorative background rockets */}
-      <Rocket
-        size={220}
-        className="absolute -top-10 -left-16 text-[#a64d79]/5 rotate-45 pointer-events-none select-none z-0"
-      />
+    <section className="relative pt-10 pb-24 overflow-hidden">
+      {/* ── Lower pink bg (Semi-Finals + Grand Finals zone only) ── */}
+      {lowerTop !== null && (
+        <div
+          ref={lowerBgRef}
+          data-sticky-bar="light"
+          className="absolute left-0 right-0 bottom-0 bg-[#EBD7E6] z-0"
+          style={{ top: lowerTop }}
+        >
+          {/* Smooth gradient transition from transparent/dark to pink */}
+          <div className="absolute -top-24 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-[#EBD7E6]" />
+        </div>
+      )}
+
+      {/* Decorative background rockets — only visible in the pink lower zone */}
       <Rocket
         size={180}
         className="absolute bottom-0 -right-10 text-[#FF4D6D]/5 -rotate-12 pointer-events-none select-none z-0"
       />
       <Rocket
-        size={140}
-        className="absolute top-1/4 right-8 md:right-24 text-[#D4537E]/[0.07] rotate-[30deg] pointer-events-none select-none z-0"
-      />
-      <Rocket
-        size={110}
-        className="absolute top-1/2 left-6 md:left-20 text-[#D4537E]/[0.06] -rotate-[20deg] pointer-events-none select-none z-0"
-      />
-      <Rocket
         size={160}
         className="absolute top-2/3 right-4 md:right-1/3 text-[#D4537E]/[0.06] rotate-[15deg] pointer-events-none select-none z-0"
-      />
-      <Rocket
-        size={90}
-        className="absolute top-[38%] left-1/3 text-[#D4537E]/[0.05] rotate-[50deg] pointer-events-none select-none z-0"
       />
       <Rocket
         size={130}
@@ -133,11 +146,11 @@ export default function Timeline() {
         <ScrollReveal>
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 mb-4">
-              <Rocket size={22} className="text-[#a64d79] rotate-45" />
-              <span className="text-sm font-bold tracking-widest text-[#a64d79] uppercase">The Journey</span>
+              <Rocket size={22} className="text-[#F3EEFB] rotate-45" />
+              <span className="text-sm font-bold tracking-widest text-[#F3EEFB] uppercase">The Journey</span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-[#691e56] mb-4">Road to the Finals</h2>
-            <p className="text-slate-600 max-w-2xl mx-auto text-lg">Here's how Sandbox unfolds, from launch to the grand finale.</p>
+            <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-white mb-4">Road to the Finals</h2>
+            <p className="text-[#C6B9E0] max-w-2xl mx-auto text-lg">Here&apos;s how Sandbox unfolds, from launch to the grand finale.</p>
           </div>
         </ScrollReveal>
 
@@ -176,6 +189,22 @@ export default function Timeline() {
           <div>
             {MILESTONES.map((item, idx) => {
               const isEven = idx % 2 === 0;
+              const isUpper = idx < SPLIT_INDEX;
+
+              // Upper cards (on collage) use translucent dark style
+              // Lower cards (on pink) use the original white/pink card style
+              const cardBg = isUpper
+                ? 'bg-slate-950/40 backdrop-blur-md border-white/10 ring-1 ring-white/5'
+                : `${isEven ? 'bg-white' : 'bg-[#FBEEF3]'} ring-1 ring-black/5`;
+
+              const cardShadow = isUpper
+                ? 'shadow-[0_8px_24px_rgba(0,0,0,0.3)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.4)]'
+                : 'shadow-[0_8px_24px_rgba(212,83,126,0.10)] hover:shadow-[0_12px_32px_rgba(212,83,126,0.18)]';
+
+              const dateColor = isUpper ? 'text-[#FF8FAB]' : 'text-[#D4537E]';
+              const titleColor = isUpper ? 'text-white' : 'text-slate-900';
+              const descColor = isUpper ? 'text-slate-300' : 'text-slate-600';
+
               return (
                 <ScrollReveal
                   key={item.title}
@@ -194,10 +223,10 @@ export default function Timeline() {
 
                     {/* Card */}
                     <div className={`w-full pl-12 md:w-1/2 md:pl-0 ${isEven ? 'md:pl-12' : 'md:pr-12'}`}>
-                      <div className={`relative rounded-2xl p-6 border-t-2 border-[#D4537E] ring-1 ring-black/5 shadow-[0_8px_24px_rgba(212,83,126,0.10)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_32px_rgba(212,83,126,0.18)] ${isEven ? 'bg-white' : 'bg-[#FBEEF3]'}`}>
-                        <span className="inline-block text-xs font-bold tracking-widest text-[#D4537E] uppercase mb-2">{item.date}</span>
-                        <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
-                        <p className="text-slate-600 leading-relaxed">{item.desc}</p>
+                      <div className={`relative rounded-2xl p-6 border-t-2 border-[#D4537E] ${cardBg} ${cardShadow} transition-all duration-300 hover:-translate-y-0.5`}>
+                        <span className={`inline-block text-xs font-bold tracking-widest ${dateColor} uppercase mb-2`}>{item.date}</span>
+                        <h3 className={`text-xl font-bold ${titleColor} mb-2`}>{item.title}</h3>
+                        <p className={`${descColor} leading-relaxed`}>{item.desc}</p>
                       </div>
                     </div>
                   </div>
