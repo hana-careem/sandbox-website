@@ -87,6 +87,12 @@ export default function PhotoCollageBackground({ children }) {
         <div className="absolute inset-0 bg-[#0d0d12]/70" />
       </div>
 
+      {/* top fade overlay to blend with hero */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 z-0 h-28 bg-gradient-to-t from-transparent to-[#0d0d12] md:h-48"
+      />
+
       {/* ALL sections that sit ON the collage.
           The collage fills this whole wrapper's height. */}
       <div className="relative z-10 w-full">

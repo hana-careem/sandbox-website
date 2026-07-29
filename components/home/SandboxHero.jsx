@@ -124,8 +124,14 @@ export default function SandboxHero() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-slate-950/55" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/40 to-[#150910]" />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-black/40 via-black/45 to-black/75"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-28 bg-gradient-to-b from-transparent to-[#0d0d12] md:h-48"
+          />
         </div>
 
         <div className="container max-w-7xl mx-auto px-4 relative z-10 flex flex-col items-center">
