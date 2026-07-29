@@ -75,7 +75,7 @@ export default function PrizesRecognition() {
                   <div className="group bg-slate-950/60 border border-white/5 p-6 rounded-2xl hover:border-[#9333EA]/50 transition-colors flex flex-col text-center items-center h-full">
                     <div className="w-full overflow-hidden rounded-xl mb-4">
                       <img
-                        src="/assets/What we offer trophy .jpg"
+                        src="/assets/special award.jpg"
                         alt="Special Awards"
                         className="w-full h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110"
                       />
@@ -92,7 +92,7 @@ export default function PrizesRecognition() {
                   <div className="group bg-slate-950/60 border border-white/5 p-6 rounded-2xl hover:border-[#9333EA]/50 transition-colors flex flex-col text-center items-center h-full">
                     <div className="w-full overflow-hidden rounded-xl mb-4">
                       <img
-                        src="/assets/What we offer certs).jpg"
+                        src="/assets/Certiciate.jpg"
                         alt="Certificates"
                         className="w-full h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110"
                       />
