@@ -38,13 +38,13 @@ const s2_imgs = [
   '/assets/Grand final sandbox 2.0 (9).jpg',
   '/assets/Grand final sandbox 2.0 (10).jpg',
   // Preliminaries (7)
-  '/assets/Preliminaries Sandbox 2.0 (1).jpg',
-  '/assets/Preliminaries Sandbox 2.0 (2).jpg',
-  '/assets/Preliminaries Sandbox 2.0 (3).jpg',
-  '/assets/Preliminaries Sandbox 2.0 (4).jpg',
-  '/assets/Preliminaries Sandbox 2.0 (5).jpg',
-  '/assets/Preliminaries Sandbox 2.0 (6).jpg',
-  '/assets/Preliminaries Sandbox 2.0 (7).jpg',
+  '/assets/Preliminary sandbox 2.0 (1).jpg',
+  '/assets/Preliminary sandbox 2.0 (2).jpg',
+  '/assets/Preliminary sandbox 2.0 (3).jpg',
+  '/assets/Preliminary sandbox 2.0 (4).jpg',
+  '/assets/Preliminary sandbox 2.0 (5).jpg',
+  '/assets/Preliminary sandbox 2.0 (6).jpg',
+  '/assets/Preliminary sandbox 2.0 (7).jpg',
 ];
 
 export default function OurHistory() {

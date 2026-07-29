@@ -21,13 +21,13 @@ const PHOTOS = {
       '/assets/Workshop sandbox 2.0 (7).jpg',
     ],
     prelims: [
-      '/assets/Preliminaries Sandbox 2.0 (1).jpg',
-      '/assets/Preliminaries Sandbox 2.0 (2).jpg',
-      '/assets/Preliminaries Sandbox 2.0 (3).jpg',
-      '/assets/Preliminaries Sandbox 2.0 (4).jpg',
-      '/assets/Preliminaries Sandbox 2.0 (5).jpg',
-      '/assets/Preliminaries Sandbox 2.0 (6).jpg',
-      '/assets/Preliminaries Sandbox 2.0 (7).jpg',
+      '/assets/Preliminary sandbox 2.0 (1).jpg',
+      '/assets/Preliminary sandbox 2.0 (2).jpg',
+      '/assets/Preliminary sandbox 2.0 (3).jpg',
+      '/assets/Preliminary sandbox 2.0 (4).jpg',
+      '/assets/Preliminary sandbox 2.0 (5).jpg',
+      '/assets/Preliminary sandbox 2.0 (6).jpg',
+      '/assets/Preliminary sandbox 2.0 (7).jpg',
     ],
     semis: [PH, PH, PH, PH, PH, PH, PH, PH], // No semi-final photos yet
     grandFinal: [
@@ -106,7 +106,6 @@ const editions = {
     theme: "Sustainability",
     stages: [
       { title: "Workshop",           icon: "Wrench", desc: "The very first Sandbox workshop.", photos: PHOTOS['1.0'].workshop },
-      { title: "Preliminary",        icon: "Users",  desc: "Early stage pitches to test the waters.", photos: PHOTOS['1.0'].prelims },
       { title: "Finals",             icon: "Trophy", desc: "The inaugural grand finale.", photos: PHOTOS['1.0'].grandFinal },
     ],
   },
@@ -121,13 +120,7 @@ const iconMap = {
 
 function StagePhotoCarousel({ photos, stageTitle }) {
   if (!photos || photos.length === 0) {
-    return (
-      <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden border border-white/5 bg-[#0F0F16] flex items-center justify-center mt-6 mb-4">
-        <span className="text-xs text-slate-500 uppercase tracking-widest">
-          PHOTO PLACEHOLDER — {stageTitle.toUpperCase()}
-        </span>
-      </div>
-    );
+    return null;
   }
 
   return (
