@@ -133,7 +133,7 @@ export default function Timeline() {
         <ScrollReveal>
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 mb-4">
-              <Rocket size={22} className="text-[#691e56] rotate-45" />
+              <Rocket size={22} className="text-white rotate-45" />
               <span className="text-sm font-bold tracking-widest text-white uppercase">The Journey</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-white mb-4">Road to the Finals</h2>
