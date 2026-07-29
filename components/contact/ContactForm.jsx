@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import ScrollReveal from '../ui/ScrollReveal';
-import { Mail, MapPin } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
 
 const ADDRESS = 'Asia Pacific Institute of Information Technology, No. 388 Union Place, Colombo 02, Sri Lanka';
 
@@ -17,7 +17,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="pt-40 pb-24 bg-slate-950 min-h-screen">
+    <section className="pt-40 pb-24 bg-[linear-gradient(180deg,#150910_0%,#2A1523_30%,#3c1c33_72%,#3c1c33_100%)] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-16">
@@ -55,6 +55,18 @@ export default function ContactForm() {
                     <h4 className="text-white font-bold mb-1">Email</h4>
                     <a href="mailto:Sandbox@apiit.lk" className="text-slate-400 hover:text-white transition-colors">
                       Sandbox@apiit.lk
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="w-12 h-12 rounded-full bg-[#7C3AED]/20 flex items-center justify-center flex-shrink-0 mr-4">
+                    <Phone className="w-6 h-6 text-[#a64d79]" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold mb-1">Phone</h4>
+                    <a href="tel:+94777683333" className="text-slate-400 hover:text-white transition-colors">
+                      077 768 3333
                     </a>
                   </div>
                 </div>

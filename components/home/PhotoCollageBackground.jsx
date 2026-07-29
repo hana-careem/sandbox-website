@@ -1,78 +1,92 @@
 "use client";
+import React from 'react';
 
-import Image from 'next/image';
+const collageItems = [
+  // Pattern mixing spans and gaps to create a bento grid with empty spaces
+  // Desktop: 6 cols
+  { src: '/assets/Site backdrop  (1).jpeg', span: 'col-span-2 row-span-2 md:col-span-2 md:row-span-2' },
+  { type: 'gap', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-1' },
+  { src: '/assets/Site backdrop  (2).jpeg', span: 'col-span-1 row-span-1 md:col-span-2 md:row-span-1' },
+  { type: 'gap', span: 'hidden md:block md:col-span-1 md:row-span-2' },
+  { src: '/assets/Site backdrop  (3).jpeg', span: 'col-span-2 row-span-1 md:col-span-1 md:row-span-1' },
+  { src: '/assets/Site backdrop  (4).jpeg', span: 'col-span-1 row-span-2 md:col-span-2 md:row-span-2' },
+  
+  { type: 'gap', span: 'hidden md:block md:col-span-1 md:row-span-1' },
+  { src: '/assets/Site backdrop  (5).jpeg', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-2' },
+  { src: '/assets/Site backdrop  (1).jpg', span: 'col-span-2 row-span-1 md:col-span-2 md:row-span-1' },
+  { type: 'gap', span: 'col-span-1 row-span-1 md:col-span-2 md:row-span-1' },
+  { src: '/assets/Site backdrop  (6).jpeg', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-1' },
 
-const COLLAGE_IMAGES = [
-  '/assets/Site backdrop  (1).jpg',
-  '/assets/Site backdrop  (3).jpg',
-  '/assets/Site backdrop  (5).jpg',
-  '/assets/Site backdrop  (7).jpg',
-  '/assets/Site backdrop  (9).jpg',
-  '/assets/Site backdrop  (10).jpg',
+  { src: '/assets/Site backdrop  (2).jpg', span: 'col-span-2 row-span-2 md:col-span-2 md:row-span-2' },
+  { type: 'gap', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-1' },
+  { src: '/assets/Site backdrop  (7).jpeg', span: 'col-span-1 row-span-1 md:col-span-2 md:row-span-1' },
+  { src: '/assets/Site backdrop  (3).jpg', span: 'col-span-2 row-span-1 md:col-span-1 md:row-span-2' },
+  
+  { type: 'gap', span: 'hidden md:block md:col-span-2 md:row-span-1' },
+  { src: '/assets/Site backdrop  (8).jpeg', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-1' },
+  { src: '/assets/Site backdrop  (4).jpg', span: 'col-span-1 row-span-1 md:col-span-2 md:row-span-2' },
+  
+  { src: '/assets/Site backdrop  (9).jpeg', span: 'col-span-2 row-span-1 md:col-span-1 md:row-span-1' },
+  { type: 'gap', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-2' },
+  { src: '/assets/Site backdrop  (10).jpeg', span: 'col-span-1 row-span-1 md:col-span-2 md:row-span-1' },
+  { type: 'gap', span: 'hidden md:block md:col-span-1 md:row-span-1' },
+  { src: '/assets/Site backdrop  (5).jpg', span: 'col-span-2 row-span-2 md:col-span-1 md:row-span-2' },
+
+  { src: '/assets/Site backdrop  (11).jpeg', span: 'col-span-1 row-span-1 md:col-span-2 md:row-span-2' },
+  { type: 'gap', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-1' },
+  { src: '/assets/Site backdrop  (6).jpg', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-1' },
+  { type: 'gap', span: 'hidden md:block md:col-span-2 md:row-span-1' },
+
+  { src: '/assets/Site backdrop  (12).jpeg', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-1' },
+  { src: '/assets/Site backdrop  (7).jpg', span: 'col-span-2 row-span-1 md:col-span-2 md:row-span-2' },
+  { type: 'gap', span: 'hidden md:block md:col-span-1 md:row-span-2' },
+  { src: '/assets/Site backdrop  (8).jpg', span: 'col-span-1 row-span-1 md:col-span-2 md:row-span-1' },
+  
+  { type: 'gap', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-1' },
+  { src: '/assets/Site backdrop  (13).jpeg', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-1' },
+  { src: '/assets/Site backdrop  (9).jpg', span: 'col-span-2 row-span-1 md:col-span-2 md:row-span-1' },
+  { type: 'gap', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-1' },
+  { src: '/assets/Site backdrop  (10).jpg', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-1' },
 ];
 
-function CollageTile({ src, style = {} }) {
+export default function PhotoCollageBackground({ children }) {
   return (
-    <div className="relative overflow-hidden rounded-2xl" style={style}>
-      <Image
-        src={src}
-        alt=""
-        fill
-        className="object-cover"
-        sizes="(max-width: 768px) 50vw, 25vw"
-        aria-hidden="true"
-      />
-      {/* Dark overlay — identical to the hero banner treatment */}
-      <div className="absolute inset-0 bg-slate-950/55" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/40 to-slate-950/60" />
-    </div>
-  );
-}
+    <div className="relative w-full bg-[linear-gradient(180deg,#150910_0%,#2A1523_30%,#3c1c33_72%,#3c1c33_100%)] overflow-hidden">
+      
+      {/* Glow effects for depth */}
+      <div className="absolute top-[5%] left-[5%] w-[400px] h-[400px] bg-[#7A3D68] rounded-full filter blur-[90px] opacity-40 pointer-events-none z-0"></div>
+      <div className="absolute top-[25%] right-[5%] w-[500px] h-[500px] bg-[#A87196] rounded-full filter blur-[90px] opacity-40 pointer-events-none z-0"></div>
+      <div className="absolute top-[50%] left-[10%] w-[450px] h-[450px] bg-[#7A3D68] rounded-full filter blur-[100px] opacity-30 pointer-events-none z-0"></div>
+      <div className="absolute top-[75%] right-[10%] w-[500px] h-[500px] bg-[#A87196] rounded-full filter blur-[100px] opacity-30 pointer-events-none z-0"></div>
 
-export default function PhotoCollageBackground() {
-  return (
-    <div className="absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
-      {/* ── Desktop bento grid (4 cols × 6 rows) ── */}
-      <div
-        className="hidden md:grid gap-3 p-4 w-full h-full"
-        style={{
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          gridTemplateRows: 'repeat(6, 1fr)',
-        }}
-      >
-        {/* Large top-left (2×2) */}
-        <CollageTile src={COLLAGE_IMAGES[0]} style={{ gridColumn: '1 / 3', gridRow: '1 / 3' }} />
-        {/* gap at col3 row1 — pink shows */}
-        {/* Small top-right */}
-        <CollageTile src={COLLAGE_IMAGES[1]} style={{ gridColumn: '4 / 5', gridRow: '1 / 2' }} />
-        {/* Tall middle */}
-        <CollageTile src={COLLAGE_IMAGES[2]} style={{ gridColumn: '3 / 4', gridRow: '2 / 4' }} />
-        {/* Tall center-left */}
-        <CollageTile src={COLLAGE_IMAGES[3]} style={{ gridColumn: '2 / 3', gridRow: '3 / 5' }} />
-        {/* Wide bottom-left */}
-        <CollageTile src={COLLAGE_IMAGES[4]} style={{ gridColumn: '1 / 3', gridRow: '5 / 6' }} />
-        {/* Tall bottom-right */}
-        <CollageTile src={COLLAGE_IMAGES[5]} style={{ gridColumn: '4 / 5', gridRow: '4 / 6' }} />
+      {/* Photo Grid Layer */}
+      <div className="absolute inset-0 z-0 opacity-40">
+        <div className="w-full h-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 auto-rows-[120px] md:auto-rows-[160px] gap-1">
+          {collageItems.map((item, idx) => {
+            if (item.type === 'gap') {
+              return <div key={`gap-${idx}`} className={`${item.span} bg-transparent`}></div>;
+            }
+            return (
+              <div key={`img-${idx}`} className={`${item.span} relative overflow-hidden group`}>
+                <img
+                  src={item.src}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  loading="lazy"
+                />
+                {/* Dark overlay for readability */}
+                <div className="absolute inset-0 bg-[#0a051e] mix-blend-multiply opacity-80"></div>
+              </div>
+            );
+          })}
+          {/* Fill remaining space if the content is longer than the grid items */}
+          <div className="col-span-full row-span-4 bg-transparent"></div>
+        </div>
       </div>
 
-      {/* ── Mobile 2-column stacked grid ── */}
-      <div
-        className="md:hidden grid gap-2 p-3 w-full h-full"
-        style={{
-          gridTemplateColumns: 'repeat(2, 1fr)',
-          gridTemplateRows: 'repeat(8, 1fr)',
-        }}
-      >
-        {/* Photo, gap, gap, photo — checkerboard rhythm */}
-        <CollageTile src={COLLAGE_IMAGES[0]} style={{ gridColumn: '1 / 2', gridRow: '1 / 3' }} />
-        {/* gap col2 rows 1-2: pink gradient shows through */}
-        <CollageTile src={COLLAGE_IMAGES[1]} style={{ gridColumn: '2 / 3', gridRow: '2 / 3' }} />
-        {/* gap col1 row 3 */}
-        <CollageTile src={COLLAGE_IMAGES[2]} style={{ gridColumn: '2 / 3', gridRow: '3 / 5' }} />
-        <CollageTile src={COLLAGE_IMAGES[3]} style={{ gridColumn: '1 / 2', gridRow: '4 / 5' }} />
-        {/* gap row 5 */}
-        <CollageTile src={COLLAGE_IMAGES[4]} style={{ gridColumn: '1 / 3', gridRow: '6 / 7' }} />
-        <CollageTile src={COLLAGE_IMAGES[5]} style={{ gridColumn: '1 / 3', gridRow: '7 / 8' }} />
+      {/* Content wrapper */}
+      <div className="relative z-20 w-full">
+        {children}
       </div>
     </div>
   );
