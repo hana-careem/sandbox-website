@@ -134,7 +134,7 @@ export default function Timeline() {
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 mb-4">
               <Rocket size={22} className="text-[#691e56] rotate-45" />
-              <span className="text-sm font-bold tracking-widest text-[#691e56] uppercase">The Journey</span>
+              <span className="text-sm font-bold tracking-widest text-white uppercase">The Journey</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-white mb-4">Road to the Finals</h2>
             <p className="text-purple-200 max-w-2xl mx-auto text-lg">Here's how Sandbox unfolds, from launch to the grand finale.</p>
