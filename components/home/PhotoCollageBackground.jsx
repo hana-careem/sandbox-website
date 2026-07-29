@@ -66,16 +66,23 @@ export default function PhotoCollageBackground({ children }) {
             'radial-gradient(ellipse 85% 90% at 50% 50%, #000 70%, transparent 100%)',
         }}
       >
-        {/* desktop = 3 or 4 per row, equal tiles + gaps; null = intentional blank cell */}
-        <div className="grid h-full w-full grid-cols-2 gap-3 md:grid-cols-4 md:gap-4 p-4">
+        {/* desktop = 3 per row (fewer/larger tiles), mobile = 2 per row, null = intentional blank cell */}
+        <div className="grid h-full w-full grid-cols-2 gap-4 md:grid-cols-3 md:gap-6 p-4">
           {repeatedCollage.map((img, i) => (
             img ? (
-              <div key={i} className="relative aspect-[4/3] overflow-hidden">
+              <div key={i} className="relative aspect-[4/3] overflow-hidden rounded-2xl">
                 <img
                   src={img.src || img}
                   alt=""
-                  className="absolute inset-0 h-full w-full object-cover opacity-40"
+                  className="absolute inset-0 h-full w-full object-cover opacity-45 rounded-2xl"
                   loading="lazy"
+                  style={{
+                    // soft "floating" edges: photo fades out at the rim into the dark bg
+                    WebkitMaskImage:
+                      'radial-gradient(ellipse 80% 80% at 50% 50%, #000 55%, transparent 100%)',
+                    maskImage:
+                      'radial-gradient(ellipse 80% 80% at 50% 50%, #000 55%, transparent 100%)',
+                  }}
                 />
               </div>
             ) : (
@@ -84,7 +91,7 @@ export default function PhotoCollageBackground({ children }) {
           ))}
         </div>
         {/* dark overlay so foreground text stays readable */}
-        <div className="absolute inset-0 bg-[#0d0d12]/70" />
+        <div className="absolute inset-0 bg-[#0d0d12]/50" />
       </div>
 
       {/* top fade overlay to blend with hero */}
