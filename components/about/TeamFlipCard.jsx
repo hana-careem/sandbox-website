@@ -45,7 +45,7 @@ export default function TeamFlipCard({ member }) {
         <div
           style={FACE_STYLE}
           className="absolute inset-0 flex flex-col overflow-hidden rounded-2xl
-                     border border-white/10 bg-[#17171d]"
+                     border border-white/10 bg-white/[0.05] backdrop-blur-md"
         >
           <div className="relative flex-1 overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -55,7 +55,7 @@ export default function TeamFlipCard({ member }) {
               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
             />
             {/* bottom fade so the caption band reads cleanly */}
-            <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#17171d] to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#2a1130] to-transparent" />
           </div>
 
           <div className="px-4 pb-4 pt-1">

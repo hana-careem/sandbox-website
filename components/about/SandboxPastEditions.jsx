@@ -195,7 +195,7 @@ export default function SandboxPastEditions() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A0A0F] text-white pt-36 pb-24 px-4 sm:px-6 font-sans">
+    <div className="min-h-screen bg-gradient-to-b from-[#1a0a1f] via-[#3a1440] to-[#1a0a1f] text-white pt-36 pb-24 px-4 sm:px-6 font-sans">
       <div className="mx-auto max-w-3xl">
         
         {/* A. Intro / hero block */}
