@@ -3,7 +3,7 @@ import Link from 'next/link';
 import AboutBanner from '../../components/about/AboutBanner';
 import OurHistory from '../../components/about/OurHistory';
 import OurGoals from '../../components/about/OurGoals';
-import MeetTheTeamSection from '../../components/about/MeetTheTeamSection';
+
 
 export const metadata = {
   title: 'About | Sandbox',
@@ -12,11 +12,10 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="bg-slate-950 min-h-screen text-slate-300 font-sans selection:bg-[#7C3AED] selection:text-white">
+    <main className="bg-gradient-to-b from-[#1a0a1f] via-[#3a1440] to-[#1a0a1f] min-h-screen text-[#c4b5c9] font-sans selection:bg-[#7C3AED] selection:text-white">
       <AboutBanner />
       <OurHistory />
       <OurGoals />
-      <MeetTheTeamSection />
     </main>
   );
 }

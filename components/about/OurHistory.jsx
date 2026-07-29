@@ -50,21 +50,21 @@ const s2_imgs = [
 export default function OurHistory() {
   const history = [
     {
-      edition: "Sandbox 1.0",
-      editionParam: "1.0",
-      desc: "The inaugural edition in September 2024 that started it all, launching Sri Lanka's first inter-school business pitching competition under the theme of Sustainability.",
-      images: s1_imgs,
-    },
-    {
       edition: "Sandbox 2.0",
       editionParam: "2.0",
       desc: "The competition had grown to 38 participating schools and 50 competing teams under the theme of Community Concerns, with St. Joseph's College, Negombo crowned champions.",
       images: s2_imgs,
     },
+    {
+      edition: "Sandbox 1.0",
+      editionParam: "1.0",
+      desc: "The inaugural edition in September 2024 that started it all, launching Sri Lanka's first inter-school business pitching competition under the theme of Sustainability.",
+      images: s1_imgs,
+    },
   ];
 
   return (
-    <section className="py-20 bg-slate-950">
+    <section className="py-20">
       <div className="container max-w-5xl mx-auto px-4">
         <ScrollReveal>
           <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-white mb-16 text-center">Our History</h2>
@@ -90,7 +90,7 @@ export default function OurHistory() {
                       <span className="text-white">{item.edition}</span>
                     )}
                   </h3>
-                  <p className="text-slate-300 text-lg leading-relaxed">{item.desc}</p>
+                  <p className="text-[#c4b5c9] text-lg leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             </ScrollReveal>
