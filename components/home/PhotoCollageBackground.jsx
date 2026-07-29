@@ -1,84 +1,72 @@
 "use client";
 import React from 'react';
 
-const collageItems = [
-  // Pattern mixing spans and gaps to create a bento grid with empty spaces
-  // Desktop: 6 cols
-  { src: '/assets/Site backdrop  (1).jpeg', span: 'col-span-2 row-span-2 md:col-span-2 md:row-span-2' },
-  { type: 'gap', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-1' },
-  { src: '/assets/Site backdrop  (2).jpeg', span: 'col-span-1 row-span-1 md:col-span-2 md:row-span-1' },
-  { type: 'gap', span: 'hidden md:block md:col-span-1 md:row-span-2' },
-  { src: '/assets/Site backdrop  (3).jpeg', span: 'col-span-2 row-span-1 md:col-span-1 md:row-span-1' },
-  { src: '/assets/Site backdrop  (4).jpeg', span: 'col-span-1 row-span-2 md:col-span-2 md:row-span-2' },
-  
-  { type: 'gap', span: 'hidden md:block md:col-span-1 md:row-span-1' },
-  { src: '/assets/Site backdrop  (5).jpeg', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-2' },
-  { src: '/assets/Site backdrop  (1).jpg', span: 'col-span-2 row-span-1 md:col-span-2 md:row-span-1' },
-  { type: 'gap', span: 'col-span-1 row-span-1 md:col-span-2 md:row-span-1' },
-  { src: '/assets/Site backdrop  (6).jpeg', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-1' },
-
-  { src: '/assets/Site backdrop  (2).jpg', span: 'col-span-2 row-span-2 md:col-span-2 md:row-span-2' },
-  { type: 'gap', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-1' },
-  { src: '/assets/Site backdrop  (7).jpeg', span: 'col-span-1 row-span-1 md:col-span-2 md:row-span-1' },
-  { src: '/assets/Site backdrop  (3).jpg', span: 'col-span-2 row-span-1 md:col-span-1 md:row-span-2' },
-  
-  { type: 'gap', span: 'hidden md:block md:col-span-2 md:row-span-1' },
-  { src: '/assets/Site backdrop  (8).jpeg', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-1' },
-  { src: '/assets/Site backdrop  (4).jpg', span: 'col-span-1 row-span-1 md:col-span-2 md:row-span-2' },
-  
-  { src: '/assets/Site backdrop  (9).jpeg', span: 'col-span-2 row-span-1 md:col-span-1 md:row-span-1' },
-  { type: 'gap', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-2' },
-  { src: '/assets/Site backdrop  (10).jpeg', span: 'col-span-1 row-span-1 md:col-span-2 md:row-span-1' },
-  { type: 'gap', span: 'hidden md:block md:col-span-1 md:row-span-1' },
-  { src: '/assets/Site backdrop  (5).jpg', span: 'col-span-2 row-span-2 md:col-span-1 md:row-span-2' },
-
-  { src: '/assets/Site backdrop  (11).jpeg', span: 'col-span-1 row-span-1 md:col-span-2 md:row-span-2' },
-  { type: 'gap', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-1' },
-  { src: '/assets/Site backdrop  (6).jpg', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-1' },
-  { type: 'gap', span: 'hidden md:block md:col-span-2 md:row-span-1' },
-
-  { src: '/assets/Site backdrop  (12).jpeg', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-1' },
-  { src: '/assets/Site backdrop  (7).jpg', span: 'col-span-2 row-span-1 md:col-span-2 md:row-span-2' },
-  { type: 'gap', span: 'hidden md:block md:col-span-1 md:row-span-2' },
-  { src: '/assets/Site backdrop  (8).jpg', span: 'col-span-1 row-span-1 md:col-span-2 md:row-span-1' },
-  
-  { type: 'gap', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-1' },
-  { src: '/assets/Site backdrop  (13).jpeg', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-1' },
-  { src: '/assets/Site backdrop  (9).jpg', span: 'col-span-2 row-span-1 md:col-span-2 md:row-span-1' },
-  { type: 'gap', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-1' },
-  { src: '/assets/Site backdrop  (10).jpg', span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-1' },
+// All 23 site-backdrop images from assets/
+const collageImages = [
+  '/assets/Site backdrop  (1).jpeg',
+  '/assets/Site backdrop  (2).jpeg',
+  '/assets/Site backdrop  (3).jpeg',
+  '/assets/Site backdrop  (4).jpeg',
+  '/assets/Site backdrop  (5).jpeg',
+  '/assets/Site backdrop  (6).jpeg',
+  '/assets/Site backdrop  (7).jpeg',
+  '/assets/Site backdrop  (8).jpeg',
+  '/assets/Site backdrop  (9).jpeg',
+  '/assets/Site backdrop  (10).jpeg',
+  '/assets/Site backdrop  (11).jpeg',
+  '/assets/Site backdrop  (12).jpeg',
+  '/assets/Site backdrop  (13).jpeg',
+  '/assets/Site backdrop  (1).jpg',
+  '/assets/Site backdrop  (2).jpg',
+  '/assets/Site backdrop  (3).jpg',
+  '/assets/Site backdrop  (4).jpg',
+  '/assets/Site backdrop  (5).jpg',
+  '/assets/Site backdrop  (6).jpg',
+  '/assets/Site backdrop  (7).jpg',
+  '/assets/Site backdrop  (8).jpg',
+  '/assets/Site backdrop  (9).jpg',
+  '/assets/Site backdrop  (10).jpg',
 ];
 
 export default function PhotoCollageBackground({ children }) {
+  // Repeat the full set of images enough times to fill a tall content band
+  // 23 images × 4 repeats = 92 tiles — plenty to cover the height
+  const repeatedImages = Array.from({ length: collageImages.length * 4 }, (_, i) => collageImages[i % collageImages.length]);
+
   return (
-    <div className="relative w-full bg-[linear-gradient(180deg,#120810_0%,#170a13_45%,#1d0d18_100%)] overflow-hidden">
-      
-      {/* Photo Grid Layer */}
-      <div className="absolute inset-0 z-0 opacity-40">
-        <div className="w-full h-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 auto-rows-[120px] md:auto-rows-[160px] gap-1">
-          {collageItems.map((item, idx) => {
-            if (item.type === 'gap') {
-              return <div key={`gap-${idx}`} className={`${item.span} bg-transparent`}></div>;
-            }
-            return (
-              <div key={`img-${idx}`} className={`${item.span} relative overflow-hidden group`}>
-                <img
-                  src={item.src}
-                  alt=""
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                  loading="lazy"
-                />
-                {/* Dark overlay for readability */}
-                <div className="absolute inset-0 bg-[#0a051e] mix-blend-multiply opacity-80"></div>
-              </div>
-            );
-          })}
-          {/* Fill remaining space if the content is longer than the grid items */}
-          <div className="col-span-full row-span-4 bg-transparent"></div>
+    <div className="relative w-full overflow-hidden">
+
+      {/* Collage backdrop layer — absolute, behind all content */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+        style={{
+          // Subtle vignette: fades to transparent at outer edges/corners
+          WebkitMaskImage:
+            'radial-gradient(ellipse 85% 90% at 50% 50%, #000 70%, transparent 100%)',
+          maskImage:
+            'radial-gradient(ellipse 85% 90% at 50% 50%, #000 70%, transparent 100%)',
+        }}
+      >
+        {/* Even grid of equal-sized tiles, ~3 cols mobile / 4 cols desktop */}
+        <div className="grid h-full w-full grid-cols-3 gap-3 md:grid-cols-4 md:gap-4">
+          {repeatedImages.map((src, i) => (
+            <div key={i} className="relative aspect-[4/3] overflow-hidden">
+              <img
+                src={src}
+                alt=""
+                className="absolute inset-0 h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          ))}
         </div>
+
+        {/* Dark overlay for text/card legibility */}
+        <div className="absolute inset-0 bg-[#0d0d12]/75" />
       </div>
 
-      {/* Content wrapper */}
+      {/* Content sits on top of the collage */}
       <div className="relative z-20 w-full">
         {children}
       </div>
