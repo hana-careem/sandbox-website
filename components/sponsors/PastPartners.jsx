@@ -8,22 +8,22 @@ import PastSponsorsMarquee from '../PastSponsorsMarquee';
 //     on the dark background. Ask the Media team to re-export them as transparent PNGs.
 const PAST_PARTNERS = [
   { name: 'ATA',          logo: '/assets/ATA-logo.png' },
-  { name: 'Black Canvas', logo: '/assets/Black-Canvas-logo.png' },
-  { name: 'CEA',          logo: '/assets/CEA-logo.png' },
-  { name: 'Hi-Tech',      logo: '/assets/hi-tech-logo.png' },
-  { name: 'JKOA',         logo: '/assets/JKOA-logo.png' },
+  { name: 'Black Canvas', logo: '/assets/Black-Canvas-logo.png', box: 'black' },
+  { name: 'CEA',          logo: '/assets/CEA-logo.png', box: 'white' },
+  { name: 'Hi-Tech',      logo: '/assets/hi-tech-logo.png', box: 'black' },
+  { name: 'JKOA',         logo: '/assets/JKOA-logo.png', box: 'white' },
   { name: 'KVK',          logo: '/assets/KVK-logo.jpeg' },          // ⚠️ JPEG — needs transparent PNG
   { name: 'Life Vision',  logo: '/assets/life-vision-logo.jpeg' },   // ⚠️ JPEG — needs transparent PNG
   { name: 'SAB',          logo: '/assets/sab-logo.png' },
-  { name: 'Sampath',      logo: '/assets/sampath-logo.jpeg' },       // ⚠️ JPEG — needs transparent PNG
-  { name: 'Sasnaka',      logo: '/assets/sasnaka-logo.png' },
-  { name: 'Unilever',     logo: '/assets/unilever-logo.png' },
-  { name: 'Veerakesari',  logo: '/assets/veerakesari-logo.png' },
+  { name: 'Sampath Bank',      logo: '/assets/sampath-logo.jpeg', box: 'white' },       // ⚠️ JPEG — needs transparent PNG
+  { name: 'Sasnaka',      logo: '/assets/sasnaka-logo.png', box: 'white' },
+  { name: 'Unilever',     logo: '/assets/unilever-logo.png', box: 'white' },
+  { name: 'Veerakesari',  logo: '/assets/veerakesari-logo.png', box: 'white' },
 ];
 
 export default function PastPartners() {
   return (
-    <section id="past-sponsors" className="py-20 bg-slate-950">
+    <section id="past-sponsors" className="py-20 bg-[linear-gradient(180deg,#2A1523_0%,#3c1c33_50%,#2A1523_100%)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <h2 className="text-4xl md:text-5xl font-coolvetica font-normal text-white text-center mb-12">

@@ -17,29 +17,41 @@ function chunk(arr, size) {
 
 function Logo({ s }) {
   return (
-    <div className="mx-4 flex h-16 w-40 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 px-5">
+    <div className="mx-6 flex shrink-0 items-center gap-4">
       {s.logo ? (
         <img
           src={typeof s.logo === 'string' ? s.logo : s.logo?.src}
           alt={s.name}
-          className="max-h-9 w-auto object-contain opacity-80"
+          className={`h-14 w-14 shrink-0 rounded-2xl object-contain ${
+            s.box === 'white' ? 'bg-white p-2' : s.box === 'black' ? 'bg-black p-2' : ''
+          }`}
         />
       ) : (
-        <span className="whitespace-nowrap text-sm font-semibold text-white/50">{s.name}</span>
+        <div className="h-14 w-14 shrink-0 rounded-2xl bg-white/10" />
       )}
+      <span className="whitespace-nowrap text-xl md:text-2xl font-bold text-white">
+        {s.name}
+      </span>
     </div>
   )
 }
 
 function Row({ items, reverse, duration }) {
-  // Duplicate the row so the loop is seamless (translateX(-50%) lands on a copy).
-  const doubled = [...items, ...items]
+  if (!items.length) return null
+  // Repeat the row's logos until they comfortably exceed the viewport width, THEN
+  // duplicate that whole track so the translateX(-50%) loop is seamless with no gap.
+  const MIN_ITEMS = 12
+  const filled = []
+  while (filled.length < MIN_ITEMS) filled.push(...items)
+  const doubled = [...filled, ...filled]
+  // Scale the duration by how many times we repeated so the scroll speed stays constant.
+  const scaledDuration = duration * (filled.length / items.length)
   return (
     <div className="group relative flex overflow-hidden">
       <div
         className="flex w-max animate-sbx-marquee group-hover:[animation-play-state:paused] motion-reduce:animate-none"
         style={{
-          animationDuration: `${duration}s`,
+          animationDuration: `${scaledDuration}s`,
           animationDirection: reverse ? 'reverse' : 'normal',
         }}
       >

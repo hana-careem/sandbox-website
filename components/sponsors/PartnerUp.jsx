@@ -5,14 +5,18 @@ import ScrollReveal from '../ui/ScrollReveal';
 
 export default function PartnerUp() {
   return (
-    <section id="become-a-partner" className="py-20 bg-slate-950">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-b from-slate-900/80 via-slate-900/40 to-slate-900/10 px-6 py-16 md:px-16 ring-1 ring-white/5 shadow-[0_0_90px_rgba(56,189,248,0.08)]">
+    <section id="become-a-partner" className="relative overflow-hidden pt-40 pb-20 bg-[linear-gradient(180deg,#2A1523_0%,#3c1c33_50%,#2A1523_100%)]">
+      {/* Soft plum glows for depth — matches AboutSandbox */}
+      <div className="absolute top-[12%] left-[8%] w-[400px] h-[400px] bg-[#7A3D68] rounded-full filter blur-[90px] opacity-40 pointer-events-none"></div>
+      <div className="absolute bottom-[12%] right-[8%] w-[450px] h-[450px] bg-[#A87196] rounded-full filter blur-[90px] opacity-30 pointer-events-none"></div>
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div className="rounded-[2.5rem] border border-[rgba(183,155,221,0.28)] bg-[rgba(122,79,176,0.10)] backdrop-blur-sm px-6 py-16 md:px-16">
         <ScrollReveal>
           <h2 className="text-4xl md:text-5xl font-coolvetica font-normal text-white mb-6">
             Partner With <span className="text-[#a64d79]">Sand<span className="font-resolve font-light">box</span></span>
           </h2>
-          <p className="text-lg text-slate-400 mb-10 leading-relaxed">
+          <p className="text-lg text-[#C6B9E0] mb-10 leading-relaxed">
             Gain unparalleled access to Sri Lanka's brightest young minds. Align your brand with youth empowerment, innovation, and entrepreneurship. Endorsing Sandbox connects you directly with the next generation of leaders from over 150 schools nationwide.
           </p>
           <Link 
