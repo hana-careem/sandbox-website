@@ -10,8 +10,8 @@ const PAST_PARTNERS = [
   { name: 'Awakening Training Academy',         logo: '/assets/ATA-logo.png' },
   { name: 'Black Canvas',                       logo: '/assets/Black-Canvas-logo.png', box: 'black', tight: true },
   { name: 'Central Environmental Authority',    logo: '/assets/CEA-logo.png', box: 'white', tight: true },
-  { name: 'Hi-Tech',                            logo: '/assets/hi-tech-logo.png', box: 'black', tight: true },
-  { name: 'Decent',                             logo: '/assets/decent-logo.jpg' },
+  { name: 'Hi-Tech Lanka',                            logo: '/assets/hi-tech-logo.png', box: 'black', tight: true },
+  { name: 'Decent Trust Holding',                             logo: '/assets/decent-logo.jpg' },
   { name: 'Department of Wildlife Conservation',logo: '/assets/DWC-logo.jpg', box: 'white' },
   { name: 'Hunters',                            logo: '/assets/hunters-logo.jpg' },
   { name: 'John Keells Office Automation',      logo: '/assets/JKOA-logo.png', box: 'white' },
@@ -24,7 +24,7 @@ const PAST_PARTNERS = [
   { name: 'Sasnaka Sansada Foundation',         logo: '/assets/sasnaka-logo.jpg', box: 'white', tight: true },
   { name: 'Unilever',                           logo: '/assets/unilever-logo.png', box: 'white', tight: true },
   { name: 'Veerakesari',                        logo: '/assets/veerakesari-logo.png', box: 'white', tight: true },
-  { name: 'Sunday Times',                       logo: '/assets/sunday-logo.avif', box: 'white' },
+  { name: 'The Sunday Times',                       logo: '/assets/sunday-logo.jpg', box: 'white', tight: true },
   { name: 'Wijeya Newspapers',                  logo: '/assets/wijeya-logo.jpg' },
 ];
 
