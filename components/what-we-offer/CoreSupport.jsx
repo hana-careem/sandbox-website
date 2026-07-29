@@ -68,16 +68,8 @@ const CORE_SUPPORT_DATA = [
 
 export default function CoreSupport() {
   return (
-    <section className="py-24 bg-slate-950">
+    <section className="pt-24 pb-0 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ScrollReveal>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-coolvetica font-normal text-white tracking-normal mb-6">
-              Core <span className="text-[#a64d79]">Support</span>
-            </h2>
-          </div>
-        </ScrollReveal>
-
         <div>
           {CORE_SUPPORT_DATA.map((item, idx) => (
             <ScrollReveal key={item.title} direction={idx % 2 === 0 ? 'left' : 'right'}>
@@ -91,12 +83,12 @@ export default function CoreSupport() {
                   {item.images.map((src, imgIdx) => (
                     <div
                       key={imgIdx}
-                      className="overflow-hidden rounded-xl border border-white/5 shadow-[0_0_40px_rgba(124,58,237,0.10)]"
+                      className="group overflow-hidden rounded-xl border border-white/5 shadow-[0_0_40px_rgba(124,58,237,0.10)]"
                     >
                       <img
                         src={src}
                         alt={`${item.title} photo ${imgIdx + 1}`}
-                        className="w-full h-28 sm:h-36 md:h-44 object-cover"
+                        className="w-full h-28 sm:h-36 md:h-44 object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                     </div>
                   ))}
