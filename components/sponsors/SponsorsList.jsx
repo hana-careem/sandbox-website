@@ -20,7 +20,7 @@ const SPONSORS_DATA = {
 
 export default function SponsorsList() {
   return (
-    <section className="pt-40 pb-24 bg-slate-950 relative z-10 min-h-screen">
+    <section className="pt-40 pb-24 bg-[linear-gradient(180deg,#2A1523_0%,#3c1c33_50%,#2A1523_100%)] relative z-10 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-20">
