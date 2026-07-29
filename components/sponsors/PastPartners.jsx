@@ -7,18 +7,25 @@ import PastSponsorsMarquee from '../PastSponsorsMarquee';
 // ⚠️  KVK, Life Vision, and Sampath logos are JPEGs — they may show white boxes
 //     on the dark background. Ask the Media team to re-export them as transparent PNGs.
 const PAST_PARTNERS = [
-  { name: 'ATA',          logo: '/assets/ATA-logo.png' },
-  { name: 'Black Canvas', logo: '/assets/Black-Canvas-logo.png', box: 'black' },
-  { name: 'CEA',          logo: '/assets/CEA-logo.png', box: 'white' },
-  { name: 'Hi-Tech',      logo: '/assets/hi-tech-logo.png', box: 'black' },
-  { name: 'JKOA',         logo: '/assets/JKOA-logo.png', box: 'white' },
-  { name: 'KVK',          logo: '/assets/KVK-logo.jpeg' },          // ⚠️ JPEG — needs transparent PNG
-  { name: 'Life Vision',  logo: '/assets/life-vision-logo.jpeg' },   // ⚠️ JPEG — needs transparent PNG
-  { name: 'SAB',          logo: '/assets/sab-logo.png' },
-  { name: 'Sampath Bank',      logo: '/assets/sampath-logo.jpeg', box: 'white' },       // ⚠️ JPEG — needs transparent PNG
-  { name: 'Sasnaka',      logo: '/assets/sasnaka-logo.png', box: 'white' },
-  { name: 'Unilever',     logo: '/assets/unilever-logo.png', box: 'white' },
-  { name: 'Veerakesari',  logo: '/assets/veerakesari-logo.png', box: 'white' },
+  { name: 'Awakening Training Academy',         logo: '/assets/ATA-logo.png' },
+  { name: 'Black Canvas',                       logo: '/assets/Black-Canvas-logo.png', box: 'black', tight: true },
+  { name: 'Central Environmental Authority',    logo: '/assets/CEA-logo.png', box: 'white', tight: true },
+  { name: 'Hi-Tech',                            logo: '/assets/hi-tech-logo.png', box: 'black', tight: true },
+  { name: 'Decent',                             logo: '/assets/decent-logo.jpg' },
+  { name: 'Department of Wildlife Conservation',logo: '/assets/DWC-logo.jpg', box: 'white' },
+  { name: 'Hunters',                            logo: '/assets/hunters-logo.jpg' },
+  { name: 'John Keells Office Automation',      logo: '/assets/JKOA-logo.png', box: 'white' },
+  { name: 'KVK Enterprises',                    logo: '/assets/KVK-logo.jpeg' },          // ⚠️ JPEG — needs transparent PNG
+  { name: 'Life Vision',                        logo: '/assets/life-vision-logo.jpeg' },   // ⚠️ JPEG — needs transparent PNG
+  { name: 'SAB',                                logo: '/assets/sab-logo.png' },
+  { name: 'Sampath Bank',                       logo: '/assets/sampath-logo.jpg', box: 'white', tight: true },       // ⚠️ JPEG — needs transparent PNG
+  { name: 'National Savings Bank',              logo: '/assets/NSB-logo.png' },
+  { name: 'Playdium',                           logo: '/assets/playdium-logo.png', box: 'white' },
+  { name: 'Sasnaka Sansada Foundation',         logo: '/assets/sasnaka-logo.jpg', box: 'white', tight: true },
+  { name: 'Unilever',                           logo: '/assets/unilever-logo.png', box: 'white', tight: true },
+  { name: 'Veerakesari',                        logo: '/assets/veerakesari-logo.png', box: 'white', tight: true },
+  { name: 'Sunday Times',                       logo: '/assets/sunday-logo.avif', box: 'white' },
+  { name: 'Wijeya Newspapers',                  logo: '/assets/wijeya-logo.jpg' },
 ];
 
 export default function PastPartners() {
@@ -32,7 +39,7 @@ export default function PastPartners() {
         </ScrollReveal>
 
         {/* Alternating-direction marquee — replaces the old static grid */}
-        <PastSponsorsMarquee sponsors={PAST_PARTNERS} perRow={4} />
+        <PastSponsorsMarquee sponsors={PAST_PARTNERS} perRow={7} />
       </div>
     </section>
   );

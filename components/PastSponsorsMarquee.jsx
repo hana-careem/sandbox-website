@@ -16,21 +16,36 @@ function chunk(arr, size) {
 }
 
 function Logo({ s }) {
+  // Names of 3+ words break onto 2 lines (first line gets the larger half).
+  const words = s.name.trim().split(/\s+/);
+  const twoLine = words.length >= 3;
+  const splitAt = Math.ceil(words.length / 2);
+  const line1 = words.slice(0, splitAt).join(' ');
+  const line2 = words.slice(splitAt).join(' ');
+
   return (
-    <div className="mx-6 flex shrink-0 items-center gap-4">
+    <div className="mx-3 flex shrink-0 items-center gap-4 rounded-2xl border border-[rgba(183,155,221,0.22)] bg-[rgba(122,79,176,0.12)] backdrop-blur-md px-6 py-4 shadow-[0_8px_24px_rgba(0,0,0,0.25)]">
       {s.logo ? (
         <img
           src={typeof s.logo === 'string' ? s.logo : s.logo?.src}
           alt={s.name}
           className={`h-14 w-14 shrink-0 rounded-2xl object-contain ${
-            s.box === 'white' ? 'bg-white p-2' : s.box === 'black' ? 'bg-black p-2' : ''
+            s.box === 'white' ? `bg-white ${s.tight ? 'p-0.5' : 'p-2'}` : s.box === 'black' ? `bg-black ${s.tight ? 'p-0.5' : 'p-2'}` : ''
           }`}
         />
       ) : (
         <div className="h-14 w-14 shrink-0 rounded-2xl bg-white/10" />
       )}
-      <span className="whitespace-nowrap text-xl md:text-2xl font-bold text-white">
-        {s.name}
+      <span className="whitespace-nowrap text-xl md:text-2xl font-bold text-white leading-tight">
+        {twoLine ? (
+          <>
+            {line1}
+            <br />
+            {line2}
+          </>
+        ) : (
+          s.name
+        )}
       </span>
     </div>
   )
@@ -66,7 +81,7 @@ function Row({ items, reverse, duration }) {
 export default function PastSponsorsMarquee({
   sponsors = [],
   perRow = 4,
-  baseDuration = 28, // seconds for one full loop; wider rows read best a touch slower
+  secondsPerItem = 7.2, // uniform scroll speed for every row (seconds per card-width)
 }) {
   const rows = useMemo(() => chunk(sponsors, perRow), [sponsors, perRow])
 
@@ -93,7 +108,7 @@ export default function PastSponsorsMarquee({
             key={r}
             items={items}
             reverse={r % 2 === 1} /* row 0 → left-moving (normal), row 1 → right, alternating */
-            duration={baseDuration + r * 4}
+            duration={items.length * secondsPerItem}
           />
         ))}
       </div>
