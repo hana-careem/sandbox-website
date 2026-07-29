@@ -134,7 +134,7 @@ export default function Timeline() {
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 mb-4">
               <Rocket size={22} className="text-purple-400 rotate-45" />
-              <span className="text-sm font-bold tracking-widest text-purple-400 uppercase">The Journey</span>
+              <span className="text-sm font-bold tracking-widest text-[#691e56] uppercase">The Journey</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-white mb-4">Road to the Finals</h2>
             <p className="text-purple-200 max-w-2xl mx-auto text-lg">Here's how Sandbox unfolds, from launch to the grand finale.</p>
@@ -194,7 +194,7 @@ export default function Timeline() {
 
                     {/* Card */}
                     <div className={`w-full pl-12 md:w-1/2 md:pl-0 ${isEven ? 'md:pl-12' : 'md:pr-12'}`}>
-                      <div className={`relative rounded-2xl p-6 border-t-2 border-[#D4537E]/80 ring-1 ring-white/10 shadow-[0_8px_24px_rgba(212,83,126,0.10)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_32px_rgba(212,83,126,0.3)] bg-black/40 backdrop-blur-md`}>
+                      <div className={`relative rounded-2xl p-6 border-t-2 border-[#D4537E]/80 ring-1 ring-white/10 shadow-[0_8px_24px_rgba(212,83,126,0.10)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_32px_rgba(212,83,126,0.3)] bg-[#1a0c16]/25 backdrop-blur-xl`}>
                         <span className="inline-block text-xs font-bold tracking-widest text-[#D4537E] uppercase mb-2">{item.date}</span>
                         <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
                         <p className="text-slate-300 leading-relaxed">{item.desc}</p>

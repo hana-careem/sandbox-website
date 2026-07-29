@@ -51,14 +51,8 @@ const collageItems = [
 
 export default function PhotoCollageBackground({ children }) {
   return (
-    <div className="relative w-full bg-[linear-gradient(180deg,#150910_0%,#2A1523_30%,#3c1c33_72%,#3c1c33_100%)] overflow-hidden">
+    <div className="relative w-full bg-[linear-gradient(180deg,#120810_0%,#170a13_45%,#1d0d18_100%)] overflow-hidden">
       
-      {/* Glow effects for depth */}
-      <div className="absolute top-[5%] left-[5%] w-[400px] h-[400px] bg-[#7A3D68] rounded-full filter blur-[90px] opacity-40 pointer-events-none z-0"></div>
-      <div className="absolute top-[25%] right-[5%] w-[500px] h-[500px] bg-[#A87196] rounded-full filter blur-[90px] opacity-40 pointer-events-none z-0"></div>
-      <div className="absolute top-[50%] left-[10%] w-[450px] h-[450px] bg-[#7A3D68] rounded-full filter blur-[100px] opacity-30 pointer-events-none z-0"></div>
-      <div className="absolute top-[75%] right-[10%] w-[500px] h-[500px] bg-[#A87196] rounded-full filter blur-[100px] opacity-30 pointer-events-none z-0"></div>
-
       {/* Photo Grid Layer */}
       <div className="absolute inset-0 z-0 opacity-40">
         <div className="w-full h-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 auto-rows-[120px] md:auto-rows-[160px] gap-1">
