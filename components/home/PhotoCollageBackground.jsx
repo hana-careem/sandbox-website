@@ -74,7 +74,7 @@ export default function PhotoCollageBackground({ children }) {
                 <img
                   src={img.src || img}
                   alt=""
-                  className="absolute inset-0 h-full w-full object-cover opacity-45 rounded-2xl"
+                  className="absolute inset-0 h-full w-full object-cover opacity-15 rounded-2xl"
                   loading="lazy"
                   style={{
                     // soft "floating" edges: photo fades out at the rim into the dark bg

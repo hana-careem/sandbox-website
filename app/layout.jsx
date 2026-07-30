@@ -1,7 +1,7 @@
 import './globals.css'
 import { Inter, Space_Grotesk } from 'next/font/google'
 import Navbar from '../components/layout/Navbar'
-import Footer from '../components/layout/Footer'
+import ConditionalFooter from '../components/layout/ConditionalFooter'
 import { HeroCtaProvider } from '../components/ui/HeroCtaContext'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
         <HeroCtaProvider>
           <Navbar />
           {children}
-          <Footer />
+          <ConditionalFooter />
         </HeroCtaProvider>
       </body>
     </html>

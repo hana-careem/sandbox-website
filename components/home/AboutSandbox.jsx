@@ -7,7 +7,7 @@ const cardClass =
 
 export default function AboutSandbox() {
   return (
-    <section className="relative py-20 z-10">
+    <section className="relative pt-10 pb-20 z-10">
       <div className="container max-w-5xl mx-auto px-4">
 
         {/* Heading */}
