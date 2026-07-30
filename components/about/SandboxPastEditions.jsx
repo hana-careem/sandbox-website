@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { Wrench, Users, Flag, Trophy, Target, ChevronUp, ChevronDown, Camera } from "lucide-react";
 import AboutEditionSlideshow from "../AboutEditionSlideshow";
+import ScrollReveal from "../ui/ScrollReveal";
 
 // ─── Photo pools — all images now flat in public/assets/ ─────────────────────
 const PH = '/assets/placeholder-image.png'; // fallback when no photos available
@@ -21,13 +22,13 @@ const PHOTOS = {
       '/assets/Workshop sandbox 2.0 (7).jpg',
     ],
     prelims: [
-      '/assets/Preliminaries Sandbox 2.0 (1).jpg',
-      '/assets/Preliminaries Sandbox 2.0 (2).jpg',
-      '/assets/Preliminaries Sandbox 2.0 (3).jpg',
-      '/assets/Preliminaries Sandbox 2.0 (4).jpg',
-      '/assets/Preliminaries Sandbox 2.0 (5).jpg',
-      '/assets/Preliminaries Sandbox 2.0 (6).jpg',
-      '/assets/Preliminaries Sandbox 2.0 (7).jpg',
+      '/assets/Preliminary sandbox 2.0 (1).jpg',
+      '/assets/Preliminary sandbox 2.0 (2).jpg',
+      '/assets/Preliminary sandbox 2.0 (3).jpg',
+      '/assets/Preliminary sandbox 2.0 (4).jpg',
+      '/assets/Preliminary sandbox 2.0 (5).jpg',
+      '/assets/Preliminary sandbox 2.0 (6).jpg',
+      '/assets/Preliminary sandbox 2.0 (7).jpg',
     ],
     semis: [PH, PH, PH, PH, PH, PH, PH, PH], // No semi-final photos yet
     grandFinal: [
@@ -106,7 +107,6 @@ const editions = {
     theme: "Sustainability",
     stages: [
       { title: "Workshop",           icon: "Wrench", desc: "The very first Sandbox workshop.", photos: PHOTOS['1.0'].workshop },
-      { title: "Preliminary",        icon: "Users",  desc: "Early stage pitches to test the waters.", photos: PHOTOS['1.0'].prelims },
       { title: "Finals",             icon: "Trophy", desc: "The inaugural grand finale.", photos: PHOTOS['1.0'].grandFinal },
     ],
   },
@@ -121,13 +121,7 @@ const iconMap = {
 
 function StagePhotoCarousel({ photos, stageTitle }) {
   if (!photos || photos.length === 0) {
-    return (
-      <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden border border-white/5 bg-[#0F0F16] flex items-center justify-center mt-6 mb-4">
-        <span className="text-xs text-slate-500 uppercase tracking-widest">
-          PHOTO PLACEHOLDER — {stageTitle.toUpperCase()}
-        </span>
-      </div>
-    );
+    return null;
   }
 
   return (
@@ -195,7 +189,14 @@ export default function SandboxPastEditions() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A0A0F] text-white pt-36 pb-24 px-4 sm:px-6 font-sans">
+    <div
+      className="min-h-screen text-white pt-36 pb-24 px-4 sm:px-6 font-sans"
+      style={{
+        background:
+          'radial-gradient(720px 620px at 12% 12%, rgba(122,61,104,0.42) 0%, rgba(122,61,104,0) 60%), radial-gradient(780px 680px at 88% 88%, rgba(168,113,150,0.30) 0%, rgba(168,113,150,0) 60%), linear-gradient(180deg, #2A1523 0%, #3c1c33 50%, #2A1523 100%)',
+      }}
+    >
+      <ScrollReveal immediate>
       <div className="mx-auto max-w-3xl">
         
         {/* A. Intro / hero block */}
@@ -302,6 +303,7 @@ export default function SandboxPastEditions() {
 
 
       </div>
+      </ScrollReveal>
     </div>
   );
 }

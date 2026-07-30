@@ -36,7 +36,13 @@ export default function FaqAccordion() {
   const [openIndex, setOpenIndex] = useState(0); 
 
   return (
-    <section className="pt-40 pb-24 bg-slate-950 min-h-screen">
+    <section
+      className="pt-32 pb-24 min-h-screen"
+      style={{
+        background:
+          'radial-gradient(720px 620px at 12% 12%, rgba(122,61,104,0.42) 0%, rgba(122,61,104,0) 60%), radial-gradient(780px 680px at 88% 88%, rgba(168,113,150,0.30) 0%, rgba(168,113,150,0) 60%), linear-gradient(180deg, #2A1523 0%, #3c1c33 50%, #2A1523 100%)',
+      }}
+    >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-16">
