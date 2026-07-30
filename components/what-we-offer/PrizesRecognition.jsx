@@ -6,8 +6,8 @@ export default function PrizesRecognition() {
   return (
     <section id="prizes-recognition" className="py-20 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-[2.5rem] px-6 py-16 md:px-16 ring-1 ring-white/5 shadow-[0_0_90px_rgba(147,51,234,0.08)]">
-          <div className="absolute inset-0 bg-gradient-to-br from-black via-[#3B0764]/50 to-[#701A5A]/40" />
+        <div className="relative overflow-hidden rounded-[2.5rem] px-6 py-16 md:px-16 ring-1 ring-white/5 shadow-[0_0_90px_rgba(178,60,150,0.08)]">
+          <div className="absolute inset-0 bg-gradient-to-br from-black via-[#4a0a44]/50 to-[#701A5A]/40" />
           <div
             className="absolute inset-0 opacity-[0.06] pointer-events-none"
             style={{
@@ -31,8 +31,8 @@ export default function PrizesRecognition() {
             <div className="flex flex-col lg:flex-row items-stretch gap-6">
               {/* Hero card: Sandbox Shield */}
               <ScrollReveal direction="left" className="lg:w-1/2 h-full">
-              <div className="group relative overflow-hidden bg-gradient-to-br from-[#3B0764]/70 to-[#701A5A]/60 border border-[#9333EA]/40 p-6 rounded-3xl hover:border-[#9333EA]/70 transition-colors flex flex-col items-center text-center shadow-[0_0_120px_rgba(147,51,234,0.35)] h-full">
-                <div className="relative w-full flex-1 min-h-[32rem] overflow-hidden rounded-2xl ring-1 ring-[#9333EA]/40 mb-6 shadow-[0_0_60px_rgba(147,51,234,0.4)]">
+              <div className="group relative overflow-hidden bg-gradient-to-br from-[#4a0a44]/70 to-[#701A5A]/60 border border-[#b23c96]/40 p-6 rounded-3xl hover:border-[#b23c96]/70 transition-colors flex flex-col items-center text-center shadow-[0_0_120px_rgba(178,60,150,0.35)] h-full">
+                <div className="relative w-full flex-1 min-h-[32rem] overflow-hidden rounded-2xl ring-1 ring-[#b23c96]/40 mb-6 shadow-[0_0_60px_rgba(178,60,150,0.4)]">
                   <img
                     src="/assets/sandbox shield cropped out.jpg"
                     alt="Sandbox Shield"
@@ -52,8 +52,8 @@ export default function PrizesRecognition() {
               <div className="lg:w-1/2 flex flex-col gap-3">
                 {/* Cash Prizes */}
                 <ScrollReveal direction="right" delay={150}>
-                <div className="bg-slate-950/60 border border-[#9333EA]/30 p-6 rounded-2xl hover:border-[#9333EA]/60 transition-colors flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded-full bg-slate-900 flex items-center justify-center mb-3">
+                <div className="bg-gradient-to-br from-[#4a0a44]/60 to-[#701A5A]/40 border border-[#b23c96]/30 p-6 rounded-2xl shadow-[0_12px_40px_rgba(178,60,150,0.22)] hover:border-[#b23c96]/60 transition-colors flex flex-col items-center text-center">
+                  <div className="w-14 h-14 rounded-full bg-[#4a0a44] flex items-center justify-center mb-3">
                     <Trophy className="w-7 h-7 text-[#a64d79]" />
                   </div>
                   <span className="text-[#a64d79] text-xs font-bold tracking-[0.2em] mb-2">GRAND CHAMPION</span>
@@ -72,7 +72,7 @@ export default function PrizesRecognition() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {/* Special Awards */}
                   <ScrollReveal direction="up" delay={300}>
-                  <div className="group bg-slate-950/60 border border-white/5 p-6 rounded-2xl hover:border-[#9333EA]/50 transition-colors flex flex-col text-center items-center h-full">
+                  <div className="group bg-gradient-to-br from-[#4a0a44]/60 to-[#701A5A]/40 border border-[#b23c96]/20 p-6 rounded-2xl shadow-[0_12px_40px_rgba(178,60,150,0.22)] hover:border-[#b23c96]/50 transition-colors flex flex-col text-center items-center h-full">
                     <div className="w-full overflow-hidden rounded-xl mb-4">
                       <img
                         src="/assets/special award.jpg"
@@ -89,7 +89,7 @@ export default function PrizesRecognition() {
 
                   {/* Certificates */}
                   <ScrollReveal direction="up" delay={450}>
-                  <div className="group bg-slate-950/60 border border-white/5 p-6 rounded-2xl hover:border-[#9333EA]/50 transition-colors flex flex-col text-center items-center h-full">
+                  <div className="group bg-gradient-to-br from-[#4a0a44]/60 to-[#701A5A]/40 border border-[#b23c96]/20 p-6 rounded-2xl shadow-[0_12px_40px_rgba(178,60,150,0.22)] hover:border-[#b23c96]/50 transition-colors flex flex-col text-center items-center h-full">
                     <div className="w-full overflow-hidden rounded-xl mb-4">
                       <img
                         src="/assets/Certiciate.jpg"

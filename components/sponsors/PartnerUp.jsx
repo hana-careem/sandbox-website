@@ -14,7 +14,7 @@ export default function PartnerUp() {
         <div className="rounded-[2.5rem] border border-[rgba(183,155,221,0.28)] bg-[rgba(122,79,176,0.10)] backdrop-blur-sm px-6 py-16 md:px-16">
         <ScrollReveal>
           <h2 className="text-4xl md:text-5xl font-coolvetica font-normal text-white mb-6">
-            Partner With <span className="text-[#a64d79]">Sand<span className="font-resolve font-light">box</span></span>
+            Partner With <span className="text-[#a64d79]">Sandbox</span>
           </h2>
           <p className="text-lg text-[#C6B9E0] mb-10 leading-relaxed">
             Gain unparalleled access to Sri Lanka's brightest young minds. Align your brand with youth empowerment, innovation, and entrepreneurship. Endorsing Sandbox connects you directly with the next generation of leaders from over 150 schools nationwide.
