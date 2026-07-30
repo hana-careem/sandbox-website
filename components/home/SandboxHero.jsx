@@ -115,7 +115,7 @@ export default function SandboxHero() {
 
   return (
     <>
-      <section ref={heroRef} className="relative min-h-screen flex items-center pt-24 pb-0 overflow-hidden bg-slate-950">
+      <section ref={heroRef} className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-slate-950">
         <div className="absolute inset-0 z-0">
           <Image
             src="/assets/home-hero.jpg"
@@ -126,7 +126,7 @@ export default function SandboxHero() {
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 z-0 bg-black/30 bg-gradient-to-b from-black/40 via-black/45 to-black/75"
+            className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-black/40 via-black/45 to-black/75"
           />
           <div
             aria-hidden="true"
