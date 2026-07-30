@@ -1,5 +1,4 @@
 import React from 'react';
-import { Users, Briefcase } from 'lucide-react';
 import SupportingContent from './SupportingContent';
 import ScrollReveal from '../ui/ScrollReveal';
 
@@ -7,7 +6,6 @@ const COMMUNITY_GROWTH_DATA = [
   {
     title: "Networking Opportunities",
     description: "Connect with like-minded student entrepreneurs from over 150 schools across the nation.",
-    icon: <Users className="w-7 h-7 text-[#a64d79]" />,
     images: [
       "/assets/N1.jpg",
       "/assets/N2.jpg",
@@ -49,9 +47,6 @@ export default function CommunityGrowth() {
                       />
                     </div>
                   ))}
-                </div>
-                <div className="absolute -bottom-5 left-6 w-16 h-16 rounded-2xl bg-slate-900 border border-white/10 flex items-center justify-center shadow-[0_0_40px_rgba(124,58,237,0.3)]">
-                  {item.icon}
                 </div>
               </div>
               <div className="text-center md:text-left md:w-1/2">

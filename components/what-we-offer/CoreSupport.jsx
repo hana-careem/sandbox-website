@@ -1,5 +1,4 @@
 import React from 'react';
-import { BookOpen, TrendingUp, Presentation } from 'lucide-react';
 import SupportingContent from './SupportingContent';
 import ScrollReveal from '../ui/ScrollReveal';
 
@@ -7,7 +6,6 @@ const CORE_SUPPORT_DATA = [
   {
     title: "Expert Workshops",
     description: "Learn the fundamentals of business planning, financial forecasting, and effective pitching directly from industry veterans.",
-    icon: <BookOpen className="w-7 h-7 text-[#a64d79]" />,
     images: [
       "/assets/Workshop sandbox 2.0 (1).jpg",
       "/assets/Workshop sandbox 2.0 (2).jpg",
@@ -28,7 +26,6 @@ const CORE_SUPPORT_DATA = [
   {
     title: "Industry Exposure",
     description: "Pitch your ideas to a panel of real-world investors, CEOs, and business leaders who are looking for the next big thing.",
-    icon: <TrendingUp className="w-7 h-7 text-[#a64d79]" />,
     images: [
       "/assets/inv-01.jpg",
       "/assets/inv-02.jpg",
@@ -49,7 +46,6 @@ const CORE_SUPPORT_DATA = [
   {
     title: "Pitching Mastery",
     description: "Develop the confidence and public speaking skills necessary to command a room and sell your vision.",
-    icon: <Presentation className="w-7 h-7 text-[#a64d79]" />,
     images: [
       "/assets/replace 1.jpg",
       "/assets/p2.jpg",
@@ -92,9 +88,6 @@ export default function CoreSupport() {
                       />
                     </div>
                   ))}
-                </div>
-                <div className="absolute -bottom-5 left-6 w-16 h-16 rounded-2xl bg-slate-900 border border-white/10 flex items-center justify-center shadow-[0_0_40px_rgba(124,58,237,0.3)]">
-                  {item.icon}
                 </div>
               </div>
               <div className="text-center md:text-left md:w-1/2">
