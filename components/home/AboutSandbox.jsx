@@ -8,7 +8,12 @@ const cardClass =
 export default function AboutSandbox() {
   return (
     <section className="relative py-20 z-10">
-      <div className="container max-w-5xl mx-auto px-4">
+      {/* reverse of the hero's fade-to-black — this section starts black at the top and lightens downward */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 z-0 h-40 bg-gradient-to-b from-black via-black/45 to-transparent md:h-56"
+      />
+      <div className="container max-w-5xl mx-auto px-4 relative z-10">
 
         {/* Heading */}
         <ScrollReveal>

@@ -99,42 +99,12 @@ export default function Timeline() {
 
   return (
     <section data-sticky-bar="dark" className="relative pt-10 pb-24 bg-transparent overflow-hidden">
-      {/* Decorative background rockets */}
-      <Rocket
-        size={220}
-        className="absolute -top-10 -left-16 text-[#a64d79]/5 rotate-45 pointer-events-none select-none z-0"
-      />
-      <Rocket
-        size={180}
-        className="absolute bottom-0 -right-10 text-[#FF4D6D]/5 -rotate-12 pointer-events-none select-none z-0"
-      />
-      <Rocket
-        size={140}
-        className="absolute top-1/4 right-8 md:right-24 text-[#D4537E]/[0.07] rotate-[30deg] pointer-events-none select-none z-0"
-      />
-      <Rocket
-        size={110}
-        className="absolute top-1/2 left-6 md:left-20 text-[#D4537E]/[0.06] -rotate-[20deg] pointer-events-none select-none z-0"
-      />
-      <Rocket
-        size={160}
-        className="absolute top-2/3 right-4 md:right-1/3 text-[#D4537E]/[0.06] rotate-[15deg] pointer-events-none select-none z-0"
-      />
-      <Rocket
-        size={90}
-        className="absolute top-[38%] left-1/3 text-[#D4537E]/[0.05] rotate-[50deg] pointer-events-none select-none z-0"
-      />
-      <Rocket
-        size={130}
-        className="absolute bottom-16 left-10 md:left-1/4 text-[#D4537E]/[0.06] -rotate-[35deg] pointer-events-none select-none z-0"
-      />
-
       <div className="container max-w-5xl mx-auto px-4 relative z-10">
         <ScrollReveal>
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 mb-4">
-              <Rocket size={22} className="text-white rotate-45" />
-              <span className="text-sm font-bold tracking-widest text-white uppercase">The Journey</span>
+              <Rocket size={22} className="text-[#a64d79] rotate-45" />
+              <span className="text-sm font-bold tracking-widest text-[#a64d79] uppercase">The Journey</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-white mb-4">Road to the Finals</h2>
             <p className="text-purple-200 max-w-2xl mx-auto text-lg">Here's how Sandbox unfolds, from launch to the grand finale.</p>

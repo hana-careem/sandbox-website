@@ -16,13 +16,19 @@ export default function Guidelines() {
     <section data-sticky-bar="dark" className="relative py-20 z-10 bg-transparent">
       {/* Background layer removed to show collage */}
 
-      <div className="container max-w-5xl mx-auto px-4 mt-12 md:mt-16">
+      {/* slight fade to #020617 at the end of the section */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-40 bg-gradient-to-b from-transparent to-[#020617] md:h-56"
+      />
+
+      <div className="container max-w-5xl mx-auto px-4 mt-12 md:mt-16 relative z-10">
         
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           
           {/* Left Text Block */}
           <ScrollReveal className="flex-1">
-            <p className="text-white font-bold tracking-widest uppercase mb-4 text-sm">
+            <p className="text-[#a64d79] font-bold tracking-widest uppercase mb-4 text-sm">
               Competition Guidelines
             </p>
             <h2 className="text-4xl md:text-5xl font-space-grotesk font-bold text-white mb-6 tracking-tight">

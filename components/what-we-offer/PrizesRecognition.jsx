@@ -31,8 +31,8 @@ export default function PrizesRecognition() {
             <div className="flex flex-col lg:flex-row items-stretch gap-6">
               {/* Hero card: Sandbox Shield */}
               <ScrollReveal direction="left" className="lg:w-1/2 h-full">
-              <div className="group relative overflow-hidden bg-gradient-to-br from-[#3B0764]/70 to-[#701A5A]/60 border border-[#9333EA]/40 px-2 py-6 md:p-6 rounded-3xl hover:border-[#9333EA]/70 transition-colors flex flex-col items-center text-center shadow-[0_0_120px_rgba(147,51,234,0.35)] h-full">
-                <div className="relative w-full flex-1 min-h-[32rem] overflow-hidden rounded-2xl ring-1 ring-[#9333EA]/40 mb-6 shadow-[0_0_60px_rgba(147,51,234,0.4)] bg-gradient-to-br from-[#3B0764] to-[#701A5A]">
+              <div className="group relative overflow-hidden bg-gradient-to-br from-[#3c1c33]/80 to-[#7A3D68]/60 border border-[#A87196]/40 px-2 py-6 md:p-6 rounded-3xl hover:border-[#A87196]/70 transition-colors flex flex-col items-center text-center shadow-[0_0_160px_rgba(168,113,150,0.55)] h-full">
+                <div className="relative w-full flex-1 min-h-[32rem] overflow-hidden rounded-2xl ring-1 ring-[#A87196]/40 mb-6 shadow-[0_0_90px_rgba(168,113,150,0.6)] bg-gradient-to-br from-[#3c1c33] to-[#7A3D68]">
                   <img
                     src="/assets/shield_extended1.jpg.jpeg"
                     alt="Sandbox Shield"

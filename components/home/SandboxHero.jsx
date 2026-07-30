@@ -124,13 +124,19 @@ export default function SandboxHero() {
             className="object-cover"
             priority
           />
+          {/* slight cool-toned dark tint over the whole image */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 z-0 bg-[#0a1424]/45"
+          />
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-black/40 via-black/45 to-black/75"
           />
+          {/* strong fade to black at the bottom so the image dissolves into the AboutSandbox section */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-28 bg-gradient-to-b from-transparent to-[#0d0d12] md:h-48"
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-64 bg-gradient-to-b from-transparent via-black/80 to-black md:h-96"
           />
         </div>
 
