@@ -3,9 +3,9 @@ import ScrollReveal from '../ui/ScrollReveal';
 
 export default function OurGoals() {
   return (
-    <section className="pt-4 pb-20 md:py-20">
+    <section className="pt-4 pb-20 md:pt-20 md:pb-20">
       <div className="container max-w-4xl mx-auto px-4">
-        <div className="relative px-6 pt-6 pb-16 md:py-16 md:px-16 text-center">
+        <div className="relative px-6 pt-6 pb-16 md:pt-6 md:pb-16 md:px-16 text-center">
           <div className="absolute inset-0 bg-[#a64d79]/10 blur-[80px] rounded-full z-0 pointer-events-none" />
           <div className="relative z-10">
             <ScrollReveal>

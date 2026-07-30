@@ -3,7 +3,7 @@ import { Landmark } from 'lucide-react';
 import ScrollReveal from '../ui/ScrollReveal';
 
 const cardClass =
-  "rounded-3xl border border-[rgba(183,155,221,0.28)] bg-[rgba(122,79,176,0.10)] p-5 md:p-6 backdrop-blur-sm text-left";
+  "rounded-3xl border border-[rgba(183,155,221,0.28)] bg-[rgba(122,79,176,0.18)] p-5 md:p-6 backdrop-blur-md text-left";
 
 export default function AboutSandbox() {
   return (

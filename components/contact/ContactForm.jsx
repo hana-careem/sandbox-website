@@ -74,7 +74,7 @@ export default function ContactForm() {
                     <a href="tel:+94777683333" className="text-slate-400 hover:text-white transition-colors">
                       077 768 3333
                     </a>
-                    <p className="text-white font-semibold mt-2">Tyanna Franchesca Avory</p>
+                    <p className="text-slate-400 text-base mt-2">Tyanna Franchesca Avory</p>
                     <p className="text-slate-400 text-sm">Secretary</p>
                   </div>
                 </div>
