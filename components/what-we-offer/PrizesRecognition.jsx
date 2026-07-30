@@ -32,11 +32,11 @@ export default function PrizesRecognition() {
               {/* Hero card: Sandbox Shield */}
               <ScrollReveal direction="left" className="lg:w-1/2 h-full">
               <div className="group relative overflow-hidden bg-gradient-to-br from-[#3c1c33]/80 to-[#7A3D68]/60 border border-[#A87196]/40 px-2 py-6 md:p-6 rounded-3xl hover:border-[#A87196]/70 transition-colors flex flex-col items-center text-center shadow-[0_0_160px_rgba(168,113,150,0.55)] h-full">
-                <div className="relative w-full flex-1 min-h-[32rem] overflow-hidden rounded-2xl ring-1 ring-[#A87196]/40 mb-6 shadow-[0_0_90px_rgba(168,113,150,0.6)] bg-gradient-to-br from-[#3c1c33] to-[#7A3D68]">
+                <div className="relative w-full flex-none md:flex-1 aspect-square md:aspect-auto min-h-0 md:min-h-[32rem] overflow-hidden rounded-2xl ring-1 ring-[#A87196]/40 mb-6 shadow-[0_0_90px_rgba(168,113,150,0.6)] bg-gradient-to-br from-[#3c1c33] to-[#7A3D68]">
                   <img
                     src="/assets/shield_extended1.jpg.jpeg"
                     alt="Sandbox Shield"
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">

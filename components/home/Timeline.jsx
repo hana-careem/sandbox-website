@@ -98,7 +98,7 @@ export default function Timeline() {
   }, []);
 
   return (
-    <section data-sticky-bar="dark" className="relative pt-10 pb-24 bg-transparent overflow-hidden">
+    <section data-sticky-bar="dark" className="relative pt-10 pb-10 md:pb-24 bg-transparent overflow-hidden">
       <div className="container max-w-5xl mx-auto px-4 relative z-10">
         <ScrollReveal>
           <div className="text-center mb-20">
@@ -143,7 +143,7 @@ export default function Timeline() {
             />
           )}
 
-          <div>
+          <div className="flex flex-col gap-11 md:gap-12">
             {MILESTONES.map((item, idx) => {
               const isEven = idx % 2 === 0;
               return (
@@ -152,7 +152,7 @@ export default function Timeline() {
                   direction={isEven ? 'right' : 'left'}
                   delay={idx * 120}
                 >
-                  <div className={`relative flex items-start md:items-center mb-28 md:mb-12 last:mb-0 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                  <div className={`relative flex items-start md:items-center ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                     {/* Dot */}
                     <span
                       ref={(el) => (dotRefs.current[idx] = el)}

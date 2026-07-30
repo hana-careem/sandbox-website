@@ -64,10 +64,10 @@ export default function OurHistory() {
   ];
 
   return (
-    <section className="py-20">
+    <section className="pt-6 pb-8 md:py-20">
       <div className="container max-w-5xl mx-auto px-4">
         <ScrollReveal>
-          <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-white mb-16 text-center">Our History</h2>
+          <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-white mb-8 md:mb-16 text-center">Our History</h2>
         </ScrollReveal>
 
         <div className="space-y-12">

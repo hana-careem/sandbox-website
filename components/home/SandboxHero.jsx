@@ -115,7 +115,7 @@ export default function SandboxHero() {
 
   return (
     <>
-      <section ref={heroRef} className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-slate-950">
+      <section ref={heroRef} className="relative min-h-[85vh] md:min-h-screen flex items-center pt-24 pb-4 md:pb-12 overflow-hidden bg-slate-950">
         <div className="absolute inset-0 z-0">
           <Image
             src="/assets/home-hero.jpg"

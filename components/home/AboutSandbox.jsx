@@ -7,7 +7,7 @@ const cardClass =
 
 export default function AboutSandbox() {
   return (
-    <section className="relative py-20 z-10">
+    <section className="relative pt-4 pb-16 md:py-20 z-10">
       {/* reverse of the hero's fade-to-black — this section starts black at the top and lightens downward */}
       <div
         aria-hidden="true"

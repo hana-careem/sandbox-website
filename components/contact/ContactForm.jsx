@@ -38,7 +38,7 @@ export default function ContactForm() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Contact Info */}
-          <ScrollReveal direction="left">
+          <ScrollReveal direction="left" className="min-w-0">
             <div className="bg-[rgba(122,79,176,0.10)] backdrop-blur-sm p-8 rounded-3xl border border-[rgba(183,155,221,0.28)] h-full">
               <h3 className="text-2xl font-bold text-white mb-8 font-display">Get in Touch</h3>
               
@@ -85,7 +85,7 @@ export default function ContactForm() {
           </ScrollReveal>
 
           {/* Contact Form */}
-          <ScrollReveal direction="right" delay={200}>
+          <ScrollReveal direction="right" delay={200} className="min-w-0">
             <form className="bg-[rgba(122,79,176,0.10)] backdrop-blur-sm p-8 rounded-3xl border border-[rgba(183,155,221,0.28)] shadow-2xl h-full">
               <div className="space-y-6">
                 <div>

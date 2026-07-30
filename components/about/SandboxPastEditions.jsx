@@ -82,7 +82,7 @@ const editions = {
       school: "St. Joseph's College, Negombo",
       wonText: "won Sandbox 2.0, taking home",
       prize: "LKR 50,000",
-      prizeTodo: true,
+      prizeTodo: false,
       is2_0: true
     },
     theme: "Community Concerns",
@@ -142,7 +142,7 @@ function StageCard({ stage, isOpen, onToggle }) {
       </div>
 
       {/* Card */}
-      <div className={`rounded-2xl border transition-all duration-300 overflow-hidden ${isOpen ? 'bg-[#0B0B14] border-white/10 shadow-lg' : 'bg-[#0B0B14]/50 border-white/5 hover:bg-[#0B0B14]/80'}`}>
+      <div className={`rounded-2xl border transition-all duration-300 overflow-hidden ${isOpen ? 'bg-[#1E0F19] border-white/10 shadow-lg' : 'bg-[#1E0F19]/50 border-white/5 hover:bg-[#1E0F19]/80'}`}>
         <button 
           onClick={onToggle}
           className="w-full px-5 py-4 sm:px-6 sm:py-5 flex items-center justify-between text-left focus:outline-none"
@@ -240,8 +240,8 @@ export default function SandboxPastEditions() {
         {/* D. WINNER block */}
         <div className="mb-10">
           <div className="flex items-center gap-2 mb-4">
-            <Trophy size={18} className="text-[#F59E0B]" />
-            <span className="text-[#F59E0B] uppercase font-bold tracking-[0.15em] text-xs">Winner</span>
+            <Trophy size={18} className="text-[#14f2db]" />
+            <span className="text-[#14f2db] uppercase font-bold tracking-[0.15em] text-xs">Winner</span>
           </div>
           
           <div className="text-2xl md:text-3xl font-medium leading-snug">

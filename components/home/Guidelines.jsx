@@ -13,7 +13,7 @@ export default function Guidelines() {
   ];
 
   return (
-    <section data-sticky-bar="dark" className="relative py-20 z-10 bg-transparent">
+    <section data-sticky-bar="dark" className="relative pt-10 pb-20 md:py-20 z-10 bg-transparent">
       {/* Background layer removed to show collage */}
 
       {/* slight fade to #020617 at the end of the section */}
@@ -22,7 +22,7 @@ export default function Guidelines() {
         className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-40 bg-gradient-to-b from-transparent to-[#020617] md:h-56"
       />
 
-      <div className="container max-w-5xl mx-auto px-4 mt-12 md:mt-16 relative z-10">
+      <div className="container max-w-5xl mx-auto px-4 mt-0 md:mt-16 relative z-10">
         
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           
