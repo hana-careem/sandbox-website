@@ -31,12 +31,12 @@ export default function PrizesRecognition() {
             <div className="flex flex-col lg:flex-row items-stretch gap-6">
               {/* Hero card: Sandbox Shield */}
               <ScrollReveal direction="left" className="lg:w-1/2 h-full">
-              <div className="group relative overflow-hidden bg-gradient-to-br from-[#3B0764]/70 to-[#701A5A]/60 border border-[#9333EA]/40 p-6 rounded-3xl hover:border-[#9333EA]/70 transition-colors flex flex-col items-center text-center shadow-[0_0_120px_rgba(147,51,234,0.35)] h-full">
+              <div className="group relative overflow-hidden bg-gradient-to-br from-[#3B0764]/70 to-[#701A5A]/60 border border-[#9333EA]/40 px-2 py-6 md:p-6 rounded-3xl hover:border-[#9333EA]/70 transition-colors flex flex-col items-center text-center shadow-[0_0_120px_rgba(147,51,234,0.35)] h-full">
                 <div className="relative w-full flex-1 min-h-[32rem] overflow-hidden rounded-2xl ring-1 ring-[#9333EA]/40 mb-6 shadow-[0_0_60px_rgba(147,51,234,0.4)] bg-gradient-to-br from-[#3B0764] to-[#701A5A]">
                   <img
-                    src="/assets/newlogo.png"
+                    src="/assets/shield_extended1.jpg.jpeg"
                     alt="Sandbox Shield"
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">
@@ -94,7 +94,7 @@ export default function PrizesRecognition() {
                       <img
                         src="/assets/Certiciate.jpg"
                         alt="Certificates"
-                        className="w-full h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="w-full h-48 md:h-56 object-cover object-[62%_40%] scale-[1.3] transition-transform duration-500 group-hover:scale-[1.36]"
                       />
                     </div>
                     <h3 className="text-lg font-bold text-white mb-2">Certificates</h3>
