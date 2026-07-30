@@ -33,24 +33,61 @@ const photos = [
   backdrop19, backdrop20, backdrop21, backdrop22, backdrop23
 ];
 
-// Build the mosaic: photo tiles with some intentional blank cells (null) mixed in.
-// `null` = an empty cell (dark background shows through), same size as a photo tile.
-const collage = [
-  photos[0], null,      photos[1], photos[2],
-  photos[3], photos[4], null,      photos[5],
-  null,      photos[6], photos[7], null,
-  photos[8], null,      photos[9], photos[10],
-  photos[11], photos[12], null,    photos[13],
-  null,      photos[14], photos[15], null,
-  photos[16], null,     photos[17], photos[18],
-  photos[19], photos[20], null,    photos[21],
-  null,      photos[22], photos[0], null,
-];
+// ── Bento patterns (match the wireframes) ───────────────────────────────
+// Both grids use a FIXED row height (via grid-auto-rows) so single-row and
+// spanning tiles coexist with no aspect-ratio/row-span conflict → no overlap.
+//
+// DESKTOP (3 cols, block of 11 → 4 rows). 5th tile = square spanning 2 rows,
+// centre column:
+//   L   L   L        row 1
+//   L  BIG  L        rows 2–3 (BIG = row-span-2, centre)
+//   L   ·   L
+//   L   L   L        row 4
+//
+// MOBILE (2 cols, block of 10 → 6 rows). 5th tile = tall (row-span-2, left),
+// 8th tile = wide (col-span-2):
+//   S   S            rows 1–2
+//   S   S
+//  TALL S            rows 3–4 (TALL = row-span-2, left col)
+//   ·   S
+//   WIDE  (span 2)   row 5
+//   S   S            row 6
+
+// gentle edge fade that keeps each tile mostly square
+const TILE_MASK = {
+  WebkitMaskImage: 'radial-gradient(ellipse 100% 100% at 50% 50%, #000 78%, transparent 100%)',
+  maskImage: 'radial-gradient(ellipse 100% 100% at 50% 50%, #000 78%, transparent 100%)',
+};
+
+function CollageTile({ img, span }) {
+  return (
+    <div className={`relative overflow-hidden rounded-md ${span}`}>
+      <img
+        src={img.src || img}
+        alt=""
+        loading="lazy"
+        className="absolute inset-0 h-full w-full object-cover opacity-30 rounded-md"
+        style={TILE_MASK}
+      />
+    </div>
+  );
+}
 
 export default function PhotoCollageBackground({ children }) {
-  // Repeat the pattern enough times to fill the FULL band height (down to the footer).
-  // 6 repeats of 36 items is 216 items. Grid is 4 items wide. 216/4 = 54 rows. That should be plenty.
-  const repeatedCollage = Array.from({ length: collage.length * 6 }).map((_, i) => collage[i % collage.length]);
+  // Desktop: 3-col blocks of 11; the 5th tile spans 2 rows (centre square).
+  const desktopTiles = Array.from({ length: 165 }).map((_, i) => ({
+    img: photos[i % photos.length],
+    span: i % 11 === 4 ? 'row-span-2' : '',
+  }));
+
+  // Mobile: 2-col blocks of 10; the 5th tile is tall (row-span-2), the 8th is wide (col-span-2).
+  const mobileTiles = Array.from({ length: 110 }).map((_, i) => {
+    const m = i % 10;
+    return {
+      img: photos[i % photos.length],
+      span: m === 4 ? 'row-span-2' : m === 7 ? 'col-span-2' : '',
+    };
+  });
 
   return (
     <div className="relative w-full overflow-hidden">
@@ -66,30 +103,26 @@ export default function PhotoCollageBackground({ children }) {
             'radial-gradient(ellipse 85% 90% at 50% 50%, #000 70%, transparent 100%)',
         }}
       >
-        {/* desktop = 3 per row (fewer/larger tiles), mobile = 2 per row, null = intentional blank cell */}
-        <div className="grid h-full w-full grid-cols-2 gap-4 md:grid-cols-3 md:gap-6 p-4">
-          {repeatedCollage.map((img, i) => (
-            img ? (
-              <div key={i} className="relative aspect-[4/3] overflow-hidden rounded-md">
-                <img
-                  src={img.src || img}
-                  alt=""
-                  className="absolute inset-0 h-full w-full object-cover opacity-30 rounded-md"
-                  loading="lazy"
-                  style={{
-                    // gentle edge fade that keeps the tile mostly square
-                    WebkitMaskImage:
-                      'radial-gradient(ellipse 100% 100% at 50% 50%, #000 78%, transparent 100%)',
-                    maskImage:
-                      'radial-gradient(ellipse 100% 100% at 50% 50%, #000 78%, transparent 100%)',
-                  }}
-                />
-              </div>
-            ) : (
-              <div key={i} aria-hidden className="relative aspect-[4/3]" />
-            )
+        {/* MOBILE grid — 2 cols; square row height so squares are square, tall = 1:2, wide = 2:1 */}
+        <div
+          className="grid md:hidden w-full grid-cols-2 gap-3 p-3"
+          style={{ gridAutoRows: 'calc((100vw - 2.25rem) / 2)' }}
+        >
+          {mobileTiles.map((t, i) => (
+            <CollageTile key={i} img={t.img} span={t.span} />
           ))}
         </div>
+
+        {/* DESKTOP grid — 3 cols; ½-column row height so single tiles are 2:1, row-span-2 = square */}
+        <div
+          className="hidden md:grid w-full grid-cols-3 gap-3 p-3"
+          style={{ gridAutoRows: 'calc((100vw - 3rem) / 6)' }}
+        >
+          {desktopTiles.map((t, i) => (
+            <CollageTile key={i} img={t.img} span={t.span} />
+          ))}
+        </div>
+
         {/* dark overlay so foreground text stays readable */}
         <div className="absolute inset-0 bg-[#0d0d12]/60" />
       </div>
