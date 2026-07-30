@@ -19,8 +19,8 @@ export default function Home() {
         <AboutSandbox />
         <Timeline />
         <Guidelines />
-        <Footer />
       </PhotoCollageBackground>
+      <Footer />
     </main>
   );
 }
