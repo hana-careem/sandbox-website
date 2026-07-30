@@ -24,17 +24,17 @@ function Logo({ s }) {
   const line2 = words.slice(splitAt).join(' ');
 
   return (
-    <div className="mx-3 flex shrink-0 items-center gap-4 rounded-2xl border border-[rgba(183,155,221,0.22)] bg-[rgba(122,79,176,0.12)] backdrop-blur-md px-6 py-4 shadow-[0_8px_24px_rgba(0,0,0,0.25)]">
+    <div className="mx-3 flex shrink-0 items-center gap-4 rounded-2xl border border-[rgba(183,155,221,0.22)] bg-[rgba(122,79,176,0.12)] backdrop-blur-md pl-3 pr-6 py-1 shadow-[0_8px_24px_rgba(0,0,0,0.25)]">
       {s.logo ? (
         <img
           src={typeof s.logo === 'string' ? s.logo : s.logo?.src}
           alt={s.name}
-          className={`h-14 w-14 shrink-0 rounded-2xl object-contain ${
+          className={`h-20 w-20 shrink-0 rounded-2xl object-contain ${
             s.box === 'white' ? `bg-white ${s.tight ? 'p-0.5' : 'p-2'}` : s.box === 'black' ? `bg-black ${s.tight ? 'p-0.5' : 'p-2'}` : ''
           }`}
         />
       ) : (
-        <div className="h-14 w-14 shrink-0 rounded-2xl bg-white/10" />
+        <div className="h-20 w-20 shrink-0 rounded-2xl bg-white/10" />
       )}
       <span className="whitespace-nowrap text-xl md:text-2xl font-bold text-white leading-tight">
         {twoLine ? (
