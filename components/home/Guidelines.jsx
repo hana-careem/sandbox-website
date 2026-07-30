@@ -13,9 +13,8 @@ export default function Guidelines() {
   ];
 
   return (
-    <section data-sticky-bar="light" className="relative py-20 z-10">
-      {/* Background layer: starts on the Timeline's lavender above it, then brightens for the content */}
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#EBD7E6_0%,#F1EAFB_40%,#F1EAFB_100%)]"></div>
+    <section data-sticky-bar="dark" className="relative py-20 z-10 bg-transparent">
+      {/* Background layer removed to show collage */}
 
       <div className="container max-w-5xl mx-auto px-4 mt-12 md:mt-16">
         
@@ -23,13 +22,13 @@ export default function Guidelines() {
           
           {/* Left Text Block */}
           <ScrollReveal className="flex-1">
-            <p className="text-[#691e56] font-bold tracking-widest uppercase mb-4 text-sm">
+            <p className="text-white font-bold tracking-widest uppercase mb-4 text-sm">
               Competition Guidelines
             </p>
-            <h2 className="text-4xl md:text-5xl font-space-grotesk font-bold text-[#23103F] mb-6 tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-space-grotesk font-bold text-white mb-6 tracking-tight">
               How to Compete & Win
             </h2>
-            <p className="text-[#4A3A68] text-lg font-inter leading-relaxed mb-8 font-medium">
+            <p className="text-purple-200 text-lg font-inter leading-relaxed mb-8 font-medium">
               Open to all schools in Sri Lanka. Teams brainstorm and pitch a business idea, judged on originality, feasibility, and presentation by leading entrepreneurs.
             </p>
             
@@ -46,14 +45,14 @@ export default function Guidelines() {
 
           {/* Right Checklist Block */}
           <ScrollReveal delay={150} className="flex-1 w-full lg:w-auto">
-            <div className="bg-white/40 p-8 md:p-10 rounded-3xl border border-[rgba(183,155,221,0.5)] shadow-xl backdrop-blur-md">
+            <div className="bg-black/40 p-8 md:p-10 rounded-3xl border border-white/10 shadow-xl backdrop-blur-md">
               <ul className="grid grid-cols-1 gap-6">
                 {guidelines.map((item, idx) => (
                   <li key={idx} className="flex items-center gap-4">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-[#3c1c33] to-[#7A3D68] flex items-center justify-center shadow-md">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-[#3c1c33] to-[#7A3D68] flex items-center justify-center shadow-md border border-[#7A3D68]/30">
                       <Check className="w-5 h-5 text-white stroke-[3]" />
                     </div>
-                    <span className="text-[#23103F] font-inter text-lg font-bold">
+                    <span className="text-white font-inter text-lg font-bold">
                       {item}
                     </span>
                   </li>

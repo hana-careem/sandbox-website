@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import ScrollReveal from '../ui/ScrollReveal';
-import { Mail, MapPin } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
 
 const ADDRESS = 'Asia Pacific Institute of Information Technology, No. 388 Union Place, Colombo 02, Sri Lanka';
 
@@ -17,7 +17,13 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="pt-40 pb-24 bg-slate-950 min-h-screen">
+    <section
+      className="pt-32 pb-24 min-h-screen"
+      style={{
+        background:
+          'radial-gradient(720px 620px at 12% 12%, rgba(122,61,104,0.42) 0%, rgba(122,61,104,0) 60%), radial-gradient(780px 680px at 88% 88%, rgba(168,113,150,0.30) 0%, rgba(168,113,150,0) 60%), linear-gradient(180deg, #2A1523 0%, #3c1c33 50%, #2A1523 100%)',
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-16">
@@ -33,12 +39,12 @@ export default function ContactForm() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Contact Info */}
           <ScrollReveal direction="left">
-            <div className="bg-slate-900/50 p-8 rounded-3xl border border-white/5 h-full">
+            <div className="bg-[rgba(122,79,176,0.10)] backdrop-blur-sm p-8 rounded-3xl border border-[rgba(183,155,221,0.28)] h-full">
               <h3 className="text-2xl font-bold text-white mb-8 font-display">Get in Touch</h3>
               
               <div className="space-y-8">
                 <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-full bg-[#7C3AED]/20 flex items-center justify-center flex-shrink-0 mr-4">
+                  <div className="w-12 h-12 rounded-full bg-[#a64d79]/20 flex items-center justify-center flex-shrink-0 mr-4">
                     <MapPin className="w-6 h-6 text-[#a64d79]" />
                   </div>
                   <div>
@@ -48,7 +54,7 @@ export default function ContactForm() {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-full bg-[#7C3AED]/20 flex items-center justify-center flex-shrink-0 mr-4">
+                  <div className="w-12 h-12 rounded-full bg-[#a64d79]/20 flex items-center justify-center flex-shrink-0 mr-4">
                     <Mail className="w-6 h-6 text-[#a64d79]" />
                   </div>
                   <div>
@@ -59,6 +65,20 @@ export default function ContactForm() {
                   </div>
                 </div>
 
+                <div className="flex items-start">
+                  <div className="w-12 h-12 rounded-full bg-[#a64d79]/20 flex items-center justify-center flex-shrink-0 mr-4">
+                    <Phone className="w-6 h-6 text-[#a64d79]" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold mb-1">Phone</h4>
+                    <a href="tel:+94777683333" className="text-slate-400 hover:text-white transition-colors">
+                      077 768 3333
+                    </a>
+                    <p className="text-white font-semibold mt-2">Tyanna Franchesca Avory</p>
+                    <p className="text-slate-400 text-sm">Secretary</p>
+                  </div>
+                </div>
+
 
               </div>
             </div>
@@ -66,14 +86,14 @@ export default function ContactForm() {
 
           {/* Contact Form */}
           <ScrollReveal direction="right" delay={200}>
-            <form className="bg-slate-900 p-8 rounded-3xl border border-white/5 shadow-2xl h-full">
+            <form className="bg-[rgba(122,79,176,0.10)] backdrop-blur-sm p-8 rounded-3xl border border-[rgba(183,155,221,0.28)] shadow-2xl h-full">
               <div className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-slate-400 mb-2">Your Name</label>
                   <input 
                     type="text" 
                     id="name" 
-                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#7C3AED] transition-colors"
+                    className="w-full bg-[rgba(21,9,16,0.5)] border border-[rgba(183,155,221,0.20)] rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#a64d79] transition-colors"
                     placeholder="Your Name"
                   />
                 </div>
@@ -82,7 +102,7 @@ export default function ContactForm() {
                   <input 
                     type="email" 
                     id="email" 
-                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#7C3AED] transition-colors"
+                    className="w-full bg-[rgba(21,9,16,0.5)] border border-[rgba(183,155,221,0.20)] rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#a64d79] transition-colors"
                     placeholder="you@example.com"
                   />
                 </div>
@@ -91,13 +111,13 @@ export default function ContactForm() {
                   <textarea 
                     id="message" 
                     rows={4}
-                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#7C3AED] transition-colors resize-none"
+                    className="w-full bg-[rgba(21,9,16,0.5)] border border-[rgba(183,155,221,0.20)] rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#a64d79] transition-colors resize-none"
                     placeholder="How can we help you?"
                   />
                 </div>
                 <button 
                   type="button"
-                  className="w-full py-4 rounded-full bg-[#7C3AED]/30 backdrop-blur-md border border-white/10 hover:bg-[#7C3AED]/40 text-white font-bold transition-all focus:ring-2 focus:ring-[#7C3AED]/50 focus:outline-none min-h-[44px] shadow-lg"
+                  className="w-full py-4 rounded-full bg-[#a64d79]/30 backdrop-blur-md border border-white/10 hover:bg-[#a64d79]/40 text-white font-bold transition-all focus:ring-2 focus:ring-[#a64d79]/50 focus:outline-none min-h-[44px] shadow-lg"
                 >
                   Send Message
                 </button>
