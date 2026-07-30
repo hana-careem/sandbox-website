@@ -4,7 +4,7 @@ import ScrollReveal from '../ui/ScrollReveal';
 
 export default function PrizesRecognition() {
   return (
-    <section id="prizes-recognition" className="py-20 bg-transparent">
+    <section id="prizes-recognition" className="pt-0 pb-20 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-[2.5rem] px-6 py-16 md:px-16 ring-1 ring-white/5 shadow-[0_0_90px_rgba(147,51,234,0.08)]">
           <div className="absolute inset-0 bg-gradient-to-br from-black via-[#3B0764]/50 to-[#701A5A]/40" />
@@ -32,9 +32,9 @@ export default function PrizesRecognition() {
               {/* Hero card: Sandbox Shield */}
               <ScrollReveal direction="left" className="lg:w-1/2 h-full">
               <div className="group relative overflow-hidden bg-gradient-to-br from-[#3B0764]/70 to-[#701A5A]/60 border border-[#9333EA]/40 p-6 rounded-3xl hover:border-[#9333EA]/70 transition-colors flex flex-col items-center text-center shadow-[0_0_120px_rgba(147,51,234,0.35)] h-full">
-                <div className="relative w-full flex-1 min-h-[32rem] overflow-hidden rounded-2xl ring-1 ring-[#9333EA]/40 mb-6 shadow-[0_0_60px_rgba(147,51,234,0.4)]">
+                <div className="relative w-full flex-1 min-h-[32rem] overflow-hidden rounded-2xl ring-1 ring-[#9333EA]/40 mb-6 shadow-[0_0_60px_rgba(147,51,234,0.4)] bg-gradient-to-br from-[#3B0764] to-[#701A5A]">
                   <img
-                    src="/assets/Sandbox shield.jpg"
+                    src="/assets/newlogo.png"
                     alt="Sandbox Shield"
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />

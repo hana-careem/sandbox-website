@@ -68,7 +68,7 @@ const CORE_SUPPORT_DATA = [
 
 export default function CoreSupport() {
   return (
-    <section className="pt-24 pb-0 bg-transparent">
+    <section className="pt-0 pb-0 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div>
           {CORE_SUPPORT_DATA.map((item, idx) => (

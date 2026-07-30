@@ -27,7 +27,7 @@ const COMMUNITY_GROWTH_DATA = [
 
 export default function CommunityGrowth() {
   return (
-    <section className="pt-0 pb-24 bg-transparent">
+    <section className="pt-0 pb-12 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div>
           {COMMUNITY_GROWTH_DATA.map((item, idx) => (

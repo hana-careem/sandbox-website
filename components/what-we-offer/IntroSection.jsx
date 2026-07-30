@@ -3,7 +3,7 @@ import ScrollReveal from '../ui/ScrollReveal';
 
 export default function IntroSection() {
   return (
-    <section className="pt-40 pb-24 bg-transparent">
+    <section className="pt-40 pb-12 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-16">
