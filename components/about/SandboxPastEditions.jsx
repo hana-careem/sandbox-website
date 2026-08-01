@@ -3,9 +3,10 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
-import { Wrench, Users, Flag, Trophy, Target, ChevronUp, ChevronDown, Camera } from "lucide-react";
+import { Wrench, Users, Flag, Trophy, ChevronUp, ChevronDown, Camera } from "lucide-react";
 import AboutEditionSlideshow from "../AboutEditionSlideshow";
 import ScrollReveal from "../ui/ScrollReveal";
+import TrackRecord from "../editions/TrackRecord";
 
 // ─── Photo pools — all images now flat in public/assets/ ─────────────────────
 const PH = '/assets/placeholder-image.png'; // fallback when no photos available
@@ -77,15 +78,6 @@ const editions = {
   "2.0": {
     label: "Sandbox 2.0",
     year: "2025",
-    subtitle: "Here's how it's structured, start to finish.",
-    winner: {
-      school: "St. Joseph's College, Negombo",
-      wonText: "won Sandbox 2.0, taking home",
-      prize: "LKR 50,000",
-      prizeTodo: false,
-      is2_0: true
-    },
-    theme: "Community Concerns",
     stages: [
       { title: "Workshop",       icon: "Wrench", desc: "Hands-on sessions across three cities to sharpen ideas before the pitch.", photos: PHOTOS['2.0'].workshop },
       { title: "Preliminaries",  icon: "Users",  desc: "The top 50 teams face off to determine who advances.", photos: PHOTOS['2.0'].prelims },
@@ -95,16 +87,6 @@ const editions = {
   "1.0": {
     label: "Sandbox 1.0",
     year: "2024",
-    subtitle: "Wrapped, here's how it played out.",
-    winner: {
-      school: "winning school",
-      schoolTodo: true,
-      wonText: "won Sandbox 1.0",
-      prize: "cash prize amount",
-      prizeTodo: true,
-      is1_0: true
-    },
-    theme: "Sustainability",
     stages: [
       { title: "Workshop",           icon: "Wrench", desc: "The very first Sandbox workshop.", photos: PHOTOS['1.0'].workshop },
       { title: "Finals",             icon: "Trophy", desc: "The inaugural grand finale.", photos: PHOTOS['1.0'].grandFinal },
@@ -208,80 +190,14 @@ export default function SandboxPastEditions() {
           </p>
         </div>
 
-        {/* B. Edition toggle (pills) */}
-        <div className="flex gap-3 mb-16">
-          {["2.0", "1.0"].map(ver => (
-            <button
-              key={ver}
-              onClick={() => {
-                setActiveEdition(ver);
-                setOpenStageIdx(0); // reset accordion when switching tabs
-              }}
-              className={`rounded-full px-6 py-2.5 text-sm font-bold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/20 ${
-                activeEdition === ver 
-                  ? 'bg-slate-100 text-[#0A0A0F] shadow-md' 
-                  : 'bg-slate-800/40 text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
-              }`}
-            >
-              Sandbox {ver}
-            </button>
-          ))}
-        </div>
-
-        {/* C. Selected edition header */}
-        <div className="mb-10">
-          <h2 className="text-3xl md:text-4xl font-extrabold font-display tracking-tight mb-3">
-            <span className="text-white">{data.label} </span>
-            <span className="text-[#a64d79]">({data.year})</span>
-          </h2>
-          <p className="text-slate-400 text-lg">{data.subtitle}</p>
-        </div>
-
-        {/* D. WINNER block */}
-        <div className="mb-10">
-          <div className="flex items-center gap-2 mb-4">
-            <Trophy size={18} className="text-[#14f2db]" />
-            <span className="text-[#14f2db] uppercase font-bold tracking-[0.15em] text-xs">Winner</span>
-          </div>
-          
-          <div className="text-2xl md:text-3xl font-medium leading-snug">
-            {data.winner.is2_0 && (
-              <p>
-                <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#a64d79] to-[#691e56]">{data.winner.school}</span>
-                <span className="text-white"> {data.winner.wonText} </span>
-                <span className="italic text-slate-500">{data.winner.prize}</span>
-                {data.winner.prizeTodo && <span className="inline-block align-middle ml-2 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-slate-800/80 text-slate-400 rounded border border-white/5">TODO</span>}
-              </p>
-            )}
-            
-            {data.winner.is1_0 && (
-              <div className="space-y-2">
-                <p>
-                  <span className="italic text-slate-500">{data.winner.school}</span>
-                  {data.winner.schoolTodo && <span className="inline-block align-middle ml-2 mr-2 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-slate-800/80 text-slate-400 rounded border border-white/5">TODO</span>}
-                  <span className="text-white"> {data.winner.wonText}</span>
-                </p>
-                <p>
-                  <span className="italic text-slate-500">{data.winner.prize}</span>
-                  {data.winner.prizeTodo && <span className="inline-block align-middle ml-2 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-slate-800/80 text-slate-400 rounded border border-white/5">TODO</span>}
-                </p>
-              </div>
-            )}
-          </div>
-        </div>
-
-        <hr className="border-t border-white/5 mb-10" />
-
-        {/* E. THEME block */}
-        <div className="mb-12">
-          <div className="flex items-center gap-2 mb-4">
-            <Target size={18} className="text-[#14f2db]" />
-            <span className="text-[#14f2db] uppercase font-bold tracking-[0.15em] text-xs">Theme</span>
-          </div>
-          <p className="text-2xl md:text-3xl italic text-violet-200">"{data.theme}"</p>
-        </div>
-
-        <hr className="border-t border-white/5 mb-12" />
+        {/* B. Track Record section (replaces old edition toggle, header, winner & theme blocks) */}
+        <TrackRecord
+          activeEdition={activeEdition}
+          onEditionChange={(id) => {
+            setActiveEdition(id);
+            setOpenStageIdx(0);
+          }}
+        />
 
         {/* F. Stage timeline (vertical accordion) */}
         <div className="relative">
