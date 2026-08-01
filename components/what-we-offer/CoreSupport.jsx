@@ -35,7 +35,7 @@ const CORE_SUPPORT_DATA = [
       "/assets/inv-06.jpg"
     ],
     extra: {
-      type: 'steps',
+      type: 'bullets',
       items: [
         "Pitch directly to real-world investors and CEOs",
         "Receive unfiltered feedback on your model and delivery",

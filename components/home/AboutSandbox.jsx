@@ -31,7 +31,7 @@ export default function AboutSandbox() {
                 Sri Lanka's First Inter-School Business Pitching Competition
               </p>
               <p className="text-[#C6B9E0] text-sm leading-relaxed mb-3">
-                The next generation of entrepreneurs is here — and they're ready to be heard.
+                The next generation of entrepreneurs is here and ready to be heard.
               </p>
               <p className="text-[#C6B9E0] text-sm leading-relaxed mb-3">
                 Organised by the Entrepreneurship Club of APIIT in partnership with the Ministry of Education, this revolutionary competition brings together the sharpest young minds from schools across Sri Lanka to pitch real business ideas to a panel of seasoned industry judges.
@@ -47,7 +47,7 @@ export default function AboutSandbox() {
                 This Year's Theme: A Better Tomorrow
               </p>
               <p className="text-[#C6B9E0] text-sm leading-relaxed">
-                Students are challenged to think beyond the ordinary — to build ideas that don't just make money, but make a difference. From sustainability to social impact, technology to community upliftment, contestants will present ventures designed to solve tomorrow's problems, today.
+                Students are challenged to think beyond the ordinary, building ideas that don't just make money, but make a difference. From sustainability to social impact, technology to community upliftment, contestants will present ventures designed to solve tomorrow's problems, today.
               </p>
             </div>
 
@@ -70,7 +70,7 @@ export default function AboutSandbox() {
                 </div>
               </div>
               <p className="text-[#C6B9E0] text-sm leading-relaxed mt-4 max-w-2xl mx-auto">
-                Backed by the Ministry of Education, Higher Education and Vocational Education of Sri Lanka to ensure every student—regardless of school type or background—has equal access to entrepreneurial education.
+                Backed by the Ministry of Education, Higher Education and Vocational Education of Sri Lanka to ensure every student has equal access to entrepreneurial education, regardless of their school type or background.
               </p>
             </div>
 

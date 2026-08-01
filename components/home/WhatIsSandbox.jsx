@@ -17,7 +17,7 @@ export default function WhatIsSandbox() {
                 Sri Lanka's First Inter-School Business Pitching Competition
               </p>
               <p className="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
-                The next generation of entrepreneurs is here — and they're ready to be heard.
+                The next generation of entrepreneurs is here and ready to be heard.
               </p>
               <p className="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
                 Organised by the Entrepreneurship Club of APIIT in partnership with the Ministry of Education, this revolutionary competition brings together the sharpest young minds from schools across Sri Lanka to pitch real business ideas to a panel of seasoned industry judges.
@@ -35,7 +35,7 @@ export default function WhatIsSandbox() {
                 This Year's Theme: A Better Tomorrow
               </p>
               <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                Students are challenged to think beyond the ordinary — to build ideas that don't just make money, but make a difference. From sustainability to social impact, technology to community upliftment, contestants will present ventures designed to solve tomorrow's problems, today.
+                Students are challenged to think beyond the ordinary, building ideas that don't just make money, but make a difference. From sustainability to social impact, technology to community upliftment, contestants will present ventures designed to solve tomorrow's problems, today.
               </p>
             </div>
           </ScrollReveal>

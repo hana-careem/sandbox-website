@@ -8,7 +8,7 @@ export default function SupportingContent({ extra }) {
       <ul className="mt-6 space-y-3 max-w-xl mx-auto md:mx-0 text-left">
         {extra.items.map((text, i) => (
           <li key={i} className="flex items-start gap-3">
-            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#7C3AED] shrink-0" />
+            <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-[#14f2db] shrink-0 shadow-[0_0_8px_rgba(20,242,219,0.6)]" />
             <span className="text-slate-400 leading-relaxed">{text}</span>
           </li>
         ))}
