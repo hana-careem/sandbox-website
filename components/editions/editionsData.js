@@ -24,12 +24,12 @@ const editionsData = [
     tabLabel: "Sandbox 1.0",
     year: "2024",
     school: {
-      name: "Winning school",
-      todo: true, // flip to false and set the real name when known
+      name: "Gateway College, Colombo",
+      todo: false,
     },
     theme: "Sustainability",
     description:
-      "The first edition that started it all, run by the founding APIIT E-Club board.",
+      "The first edition that started it all, organised by the founding board of the Entrepreneurship Club of APIIT.",
   },
 ];
 

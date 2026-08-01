@@ -14,16 +14,16 @@ export default function WhatIsSandbox() {
           <ScrollReveal direction="left">
             <div className="h-full rounded-2xl border border-black/10 bg-white/40 p-6 md:p-8">
               <p className="text-slate-900 text-base md:text-lg font-semibold mb-4">
-                Sri Lanka's First Inter-School Business Pitch Competition
+                Sri Lanka's First Inter-School Business Pitching Competition
               </p>
               <p className="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
                 The next generation of entrepreneurs is here — and they're ready to be heard.
               </p>
               <p className="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
-                Organized by the Entrepreneurship Club of APIIT in partnership with the Ministry of Education, this landmark competition brings together the sharpest young minds from schools across Sri Lanka to pitch real business ideas to a panel of seasoned industry judges.
+                Organised by the Entrepreneurship Club of APIIT in partnership with the Ministry of Education, this revolutionary competition brings together the sharpest young minds from schools across Sri Lanka to pitch real business ideas to a panel of seasoned industry judges.
               </p>
               <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                This isn't a classroom exercise. It's a launchpad.
+                This is a launchpad for your entrepreneurial journey.
               </p>
             </div>
           </ScrollReveal>

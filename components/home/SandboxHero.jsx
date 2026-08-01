@@ -8,7 +8,7 @@ import { useHeroCta } from '../ui/HeroCtaContext';
 import PartnersTicker from './PartnersTicker';
 
 // TODO: Replace with exact registration deadline when provided
-const REGISTRATION_DEADLINE = new Date('2026-09-11T23:59:59');
+const REGISTRATION_DEADLINE = new Date('2026-09-11T23:59:59+05:30');
 
 const Dial = ({ label, value, size = "large", theme = "dark" }) => {
   const numClasses = size === "small"
@@ -147,9 +147,9 @@ export default function SandboxHero() {
               <div className="relative mb-6">
                 {/* Full title — stays in flow so it defines the height (no layout shift on swap) */}
                 <h1 className={`text-5xl md:text-7xl lg:text-8xl font-black font-display text-white tracking-tighter leading-[0.9] transition-opacity duration-700 ${headlineIndex === 0 ? 'opacity-100' : 'opacity-0'}`}>
-                  <span className="block text-slate-300 font-coolvetica italic font-normal tracking-wide !text-5xl md:!text-7xl lg:!text-8xl">THE PREMIER</span>
+                  <span className="block text-slate-300 font-coolvetica italic font-normal tracking-wide !text-5xl md:!text-7xl lg:!text-8xl">Sri Lanka's Biggest Inter-School</span>
                   <span className="block text-[#a64d79] font-aubrey font-normal tracking-tight whitespace-nowrap !text-5xl md:!text-7xl lg:!text-8xl">Business Pitching</span>
-                  <span className="block text-slate-100 font-coolvetica italic font-normal tracking-wide !text-5xl md:!text-7xl lg:!text-8xl">COMPETITION<span className="text-[#14f2db]">.</span></span>
+                  <span className="block text-slate-100 font-coolvetica italic font-normal tracking-wide !text-5xl md:!text-7xl lg:!text-8xl">Competition<span className="text-[#14f2db]">.</span></span>
                 </h1>
                 {/* Alternate title — overlaid, centred, crossfades in */}
                 <div
@@ -163,7 +163,7 @@ export default function SandboxHero() {
 
             <ScrollReveal delay={300}>
               <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">
-                Sri Lanka's first inter-school pitch competition. Some ideas are born here. Others take off.
+                Where Ideas Take Flight
               </p>
             </ScrollReveal>
 

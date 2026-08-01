@@ -28,16 +28,16 @@ export default function AboutSandbox() {
             {/* Top-left: info */}
             <div className={cardClass}>
               <p className="text-[#F3EEFB] text-base md:text-lg font-semibold mb-3">
-                Sri Lanka's First Inter-School Business Pitch Competition
+                Sri Lanka's First Inter-School Business Pitching Competition
               </p>
               <p className="text-[#C6B9E0] text-sm leading-relaxed mb-3">
                 The next generation of entrepreneurs is here — and they're ready to be heard.
               </p>
               <p className="text-[#C6B9E0] text-sm leading-relaxed mb-3">
-                Organized by the Entrepreneurship Club of APIIT in partnership with the Ministry of Education, this landmark competition brings together the sharpest young minds from schools across Sri Lanka to pitch real business ideas to a panel of seasoned industry judges.
+                Organised by the Entrepreneurship Club of APIIT in partnership with the Ministry of Education, this revolutionary competition brings together the sharpest young minds from schools across Sri Lanka to pitch real business ideas to a panel of seasoned industry judges.
               </p>
               <p className="text-[#F3EEFB] text-sm leading-relaxed font-semibold">
-                This isn't a classroom exercise. It's a launchpad.
+                This is a launchpad for your entrepreneurial journey.
               </p>
             </div>
 
@@ -70,7 +70,7 @@ export default function AboutSandbox() {
                 </div>
               </div>
               <p className="text-[#C6B9E0] text-sm leading-relaxed mt-4 max-w-2xl mx-auto">
-                Backed by the Sri Lankan government to ensure every young person — regardless of school type or background — has equal access to entrepreneurial education.
+                Backed by the Ministry of Education, Higher Education and Vocational Education of Sri Lanka to ensure every student—regardless of school type or background—has equal access to entrepreneurial education.
               </p>
             </div>
 
