@@ -10,25 +10,27 @@ const FAQ_DATA = [
   },
   {
     question: "Who can participate in Sandbox?",
-    answer: "Sandbox is open to Grade 10, O/L, and A/L students from schools across Sri Lanka, including government, private, and international schools."
+    answer: "Open to students of the O/Level and A/Level curriculam."
   },
   {
     question: "How many members can be in a team?",
-    answer: "Teams have 3 to 5 members from the same school, and each school can enter up to 2 teams."
+    answer: "There must be 3 to 5 members per team."
+  },
+  {
+    question: "How many teams can register from a single school?",
+    answer: "1 school can register up to 5 teams."
   },
   {
     question: "Is there a registration fee?",
     answer: "No, Sandbox is completely free to enter."
   },
   {
-    // TODO: Replace with the confirmed registration deadline for the current
-    // edition once the committee sets it.
     question: "What is the deadline for registration?",
     answer: "Registrations for this edition will close on September 11th. Ensure your team signs up before the deadline!"
   },
   {
     question: "Do we need a prototype to pitch?",
-    answer: "A functional or conceptual prototype is required for the Grand Final. It's optional for the Preliminary Round."
+    answer: "Prototypes are optional for the Preliminary Round and Semifinals, and required for the Grand Finale."
   }
 ];
 

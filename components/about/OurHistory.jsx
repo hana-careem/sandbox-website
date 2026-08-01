@@ -58,7 +58,7 @@ export default function OurHistory() {
     {
       edition: "Sandbox 1.0",
       editionParam: "1.0",
-      desc: "The inaugural edition in September 2024 that started it all, launching Sri Lanka's first inter-school business pitching competition under the theme of Sustainability.",
+      desc: "The inaugural edition in 2024 that started it all, launching Sri Lanka's first inter-school business pitching competition under the theme of Sustainability.",
       images: s1_imgs,
     },
   ];

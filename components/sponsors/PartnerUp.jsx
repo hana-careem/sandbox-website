@@ -17,7 +17,7 @@ export default function PartnerUp() {
             Partner With <span className="text-[#a64d79]">Sandbox</span>
           </h2>
           <p className="text-lg text-[#C6B9E0] mb-10 leading-relaxed">
-            Gain unparalleled access to Sri Lanka's brightest young minds. Align your brand with youth empowerment, innovation, and entrepreneurship. Endorsing Sandbox connects you directly with the next generation of leaders from over 150 schools nationwide.
+            Gain unparalleled access to Sri Lanka's brightest young minds. Align your brand with youth empowerment, innovation, and entrepreneurship. Partnering with Sandbox connects you directly with the next generation of leaders from over 150 schools nationwide.
           </p>
           <Link 
             href="/contact" 

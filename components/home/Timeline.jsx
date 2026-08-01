@@ -5,9 +5,9 @@ import { Rocket } from 'lucide-react';
 
 const MILESTONES = [
   {
-    date: '7th of July',
+    date: '3rd of August',
     title: 'Registrations Open',
-    desc: 'Schools nationwide can now sign up their teams for this year\'s Sandbox.',
+    desc: 'Schools nationwide can now sign up their teams for Sandbox 3.0.',
   },
   {
     date: '11th of September',
@@ -17,22 +17,22 @@ const MILESTONES = [
   {
     date: '4th week of September',
     title: 'Workshops',
-    desc: 'Engaging and interactive workshops held in Colombo, Kandy, and Galle to aid participants in their preparation.',
+    desc: 'Engaging and interactive workshops to aid participants in their preparation.',
   },
   {
     date: '2nd Week of October',
-    title: 'Preliminaries',
+    title: 'Preliminary Round',
     desc: 'Teams pitch their ideas as the competition kicks into gear.',
   },
   {
     date: '4th Week of October',
-    title: 'Semi-Finals',
-    desc: 'The strongest teams battle it out for a place in the grand finale.',
+    title: 'Semifinals',
+    desc: 'The strongest teams battle it out for a place in the Grand Finale.',
   },
   {
-    date: 'November 23rd',
-    title: 'Grand Finals',
-    desc: 'The top teams face off live for the title and the prize pool.',
+    date: '3rd week of November',
+    title: 'Grand Finale',
+    desc: 'The top teams face off live for the championship.',
   },
 ];
 
@@ -106,8 +106,8 @@ export default function Timeline() {
               <Rocket size={22} className="text-[#a64d79] rotate-45" />
               <span className="text-sm font-bold tracking-widest text-[#a64d79] uppercase">The Journey</span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-white mb-4">Road to the Finals</h2>
-            <p className="text-purple-200 max-w-2xl mx-auto text-lg">Here's how Sandbox unfolds, from launch to the grand finale.</p>
+            <h2 className="text-3xl md:text-5xl font-coolvetica font-normal text-white mb-4">From its launch to the Grand Finale</h2>
+            <p className="text-purple-200 max-w-2xl mx-auto text-lg">Here's how Sandbox unfolds, from launch to the Grand Finale.</p>
           </div>
         </ScrollReveal>
 

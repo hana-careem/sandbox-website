@@ -80,8 +80,8 @@ const editions = {
     year: "2025",
     stages: [
       { title: "Workshop",       icon: "Wrench", desc: "Hands-on sessions across three cities to sharpen ideas before the pitch.", photos: PHOTOS['2.0'].workshop },
-      { title: "Preliminaries",  icon: "Users",  desc: "The top 50 teams face off to determine who advances.", photos: PHOTOS['2.0'].prelims },
-      { title: "Grand Final",    icon: "Trophy", desc: "The ultimate showdown in front of industry judges.", photos: PHOTOS['2.0'].grandFinal },
+      { title: "Preliminary Round",  icon: "Users",  desc: "The top 50 teams face off to determine who advances.", photos: PHOTOS['2.0'].prelims },
+      { title: "Grand Finale",    icon: "Trophy", desc: "The ultimate showdown in front of industry judges.", photos: PHOTOS['2.0'].grandFinal },
     ],
   },
   "1.0": {
@@ -89,7 +89,7 @@ const editions = {
     year: "2024",
     stages: [
       { title: "Workshop",           icon: "Wrench", desc: "The very first Sandbox workshop.", photos: PHOTOS['1.0'].workshop },
-      { title: "Finals",             icon: "Trophy", desc: "The inaugural grand finale.", photos: PHOTOS['1.0'].grandFinal },
+      { title: "Grand Finale",             icon: "Trophy", desc: "The inaugural Grand Finale.", photos: PHOTOS['1.0'].grandFinal },
     ],
   },
 };
@@ -186,7 +186,7 @@ export default function SandboxPastEditions() {
           <p className="text-[#a64d79] uppercase font-bold text-xs tracking-[0.2em] mb-4">Past Editions</p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-display text-white mb-6 tracking-tight">Where Sandbox has been.</h1>
           <p className="text-slate-400 leading-relaxed">
-            Held every year in Colombo, Sandbox is Sri Lanka's first-ever inter-school business pitching competition, run by the Entrepreneurship Club of APIIT in partnership with the Ministry of Education. It launched in September 2024, open to government, private, and international schools alike. By its second edition in 2025, the competition had grown to 38 participating schools and 50 competing teams, with the strongest ideas advancing through a workshop and preliminary round to a live grand finale in front of a panel of industry judges.
+            Held every year in Colombo, Sandbox is Sri Lanka's first-ever inter-school business pitching competition, organised by the Entrepreneurship Club of APIIT in partnership with the Ministry of Education. It launched in 2024, open to government, private, and international schools alike. By its second edition in 2025, the competition had grown to 38 participating schools and 50 competing teams, with the strongest ideas advancing through a workshop and Preliminary Round to a live Grand Finale in front of a panel of industry judges.
           </p>
         </div>
 

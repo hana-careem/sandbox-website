@@ -97,7 +97,7 @@ export default function Footer() {
             </div>
 
             <p className="text-slate-500 text-xs max-w-sm leading-relaxed">
-              Sri Lanka's first and largest inter-school business pitching competition, run by the APIIT Entrepreneurship Club in partnership with the Ministry of Education.
+              Sri Lanka's first and largest inter-school business pitching competition, organised by the Entrepreneurship Club of APIIT in partnership with the Ministry of Education.
             </p>
 
             {/* Social icons */}
@@ -151,13 +151,13 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Contact</h4>
             <ul className="space-y-3 text-sm text-slate-400">
-              <li className="flex items-start">
-                <MapPin size={18} className="mr-2 text-[#a64d79] flex-shrink-0 mt-0.5" />
-                <a href="#" onClick={handleAddressClick} className="hover:text-white transition-colors cursor-pointer">Entrepreneurship Club, Asia Pacific Institute of Information Technology,<br/>No. 388 Union Place, Colombo 02, Sri Lanka</a>
-              </li>
               <li className="flex items-center">
                 <Mail size={18} className="mr-2 text-[#a64d79] flex-shrink-0" />
                 <a href="mailto:Sandbox@apiit.lk" className="hover:text-white transition-colors">Sandbox@apiit.lk</a>
+              </li>
+              <li className="flex items-start">
+                <MapPin size={18} className="mr-2 text-[#a64d79] flex-shrink-0 mt-0.5" />
+                <a href="#" onClick={handleAddressClick} className="hover:text-white transition-colors cursor-pointer">Entrepreneurship Club, Asia Pacific Institute of Information Technology,<br/>No. 388 Union Place, Colombo 02, Sri Lanka</a>
               </li>
             </ul>
           </div>

@@ -5,7 +5,7 @@ import ScrollReveal from '../ui/ScrollReveal';
 const CORE_SUPPORT_DATA = [
   {
     title: "Expert Workshops",
-    description: "Learn the fundamentals of business planning, financial forecasting, and effective pitching directly from industry veterans.",
+    description: "Learn the fundamentals of business planning, financial forecasting, and effective pitching directly from industry professionals.",
     images: [
       "/assets/Workshop sandbox 2.0 (1).jpg",
       "/assets/Workshop sandbox 2.0 (2).jpg",
@@ -18,14 +18,14 @@ const CORE_SUPPORT_DATA = [
       type: 'bullets',
       items: [
         "Business planning, financial forecasting, pitch structuring",
-        "Small group format, real feedback from industry veterans",
+        "Small group format, real feedback from industry professionals",
         "Covers common early-stage mistakes before you make them"
       ]
     }
   },
   {
     title: "Industry Exposure",
-    description: "Pitch your ideas to a panel of real-world investors, CEOs, and business leaders who are looking for the next big thing.",
+    description: "Pitch your ideas to a panel of real-world investors, CEOs, and business leaders who are looking for the next big idea.",
     images: [
       "/assets/inv-01.jpg",
       "/assets/inv-02.jpg",
@@ -55,9 +55,12 @@ const CORE_SUPPORT_DATA = [
       "/assets/replace 2.jpg"
     ],
     extra: {
-      type: 'tags',
-      tags: ["Confidence", "Structure", "Objection handling", "Delivery"],
-      note: "Built through repetition, not theory."
+      type: 'bullets',
+      items: [
+        "Confidence",
+        "Pitching",
+        "Time Management"
+      ]
     }
   }
 ];

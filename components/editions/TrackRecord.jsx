@@ -61,7 +61,7 @@ export default function TrackRecord({ activeEdition, onEditionChange }) {
           color: "#14f2db",
         }}
       >
-        Track Record
+        Our Legacy
       </p>
 
       {/* 2. Heading */}
@@ -182,7 +182,7 @@ export default function TrackRecord({ activeEdition, onEditionChange }) {
             <div style={{ fontSize: "0.82rem", color: "#b3a2b0" }}>Year</div>
           </div>
 
-          {/* ── Winning school ── */}
+          {/* ── Champions ── */}
           <div
             className="track-record-col track-record-divider"
             style={{ padding: "2px 24px 20px" }}
@@ -203,7 +203,7 @@ export default function TrackRecord({ activeEdition, onEditionChange }) {
                     className="italic font-medium"
                     style={{ color: "#b3a2b0", fontWeight: 500 }}
                   >
-                    Winning school
+                    Champions
                   </span>
                   <span
                     className="font-display font-semibold uppercase inline-flex items-center"
@@ -226,7 +226,7 @@ export default function TrackRecord({ activeEdition, onEditionChange }) {
               )}
             </div>
             <div style={{ fontSize: "0.82rem", color: "#b3a2b0" }}>
-              Winning school
+              Champions
             </div>
           </div>
 

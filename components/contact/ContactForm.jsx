@@ -43,16 +43,7 @@ export default function ContactForm() {
               <h3 className="text-2xl font-bold text-white mb-8 font-display">Get in Touch</h3>
               
               <div className="space-y-8">
-                <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-full bg-[#a64d79]/20 flex items-center justify-center flex-shrink-0 mr-4">
-                    <MapPin className="w-6 h-6 text-[#a64d79]" />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-bold mb-1">Location</h4>
-                    <a href="#" onClick={handleAddressClick} className="text-slate-400 hover:text-white transition-colors cursor-pointer">Entrepreneurship Club, Asia Pacific Institute of Information Technology,<br/>No. 388 Union Place, Colombo 02, Sri Lanka</a>
-                  </div>
-                </div>
-
+                {/* Email */}
                 <div className="flex items-start">
                   <div className="w-12 h-12 rounded-full bg-[#a64d79]/20 flex items-center justify-center flex-shrink-0 mr-4">
                     <Mail className="w-6 h-6 text-[#a64d79]" />
@@ -65,6 +56,7 @@ export default function ContactForm() {
                   </div>
                 </div>
 
+                {/* Phone */}
                 <div className="flex items-start">
                   <div className="w-12 h-12 rounded-full bg-[#a64d79]/20 flex items-center justify-center flex-shrink-0 mr-4">
                     <Phone className="w-6 h-6 text-[#a64d79]" />
@@ -79,6 +71,16 @@ export default function ContactForm() {
                   </div>
                 </div>
 
+                {/* Location */}
+                <div className="flex items-start">
+                  <div className="w-12 h-12 rounded-full bg-[#a64d79]/20 flex items-center justify-center flex-shrink-0 mr-4">
+                    <MapPin className="w-6 h-6 text-[#a64d79]" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold mb-1">Location</h4>
+                    <a href="#" onClick={handleAddressClick} className="text-slate-400 hover:text-white transition-colors cursor-pointer">Entrepreneurship Club, Asia Pacific Institute of Information Technology,<br/>No. 388 Union Place, Colombo 02, Sri Lanka</a>
+                  </div>
+                </div>
 
               </div>
             </div>
