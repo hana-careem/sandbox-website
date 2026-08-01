@@ -17,7 +17,7 @@ const editionsData = [
     },
     theme: "Community Concerns",
     description:
-      "Sandbox returned bigger — a national field of school teams and a full organising board, where St. Joseph's College, Negombo were crowned champions.",
+      "Sandbox returned bigger - a national field of school teams",
   },
   {
     id: "1.0",

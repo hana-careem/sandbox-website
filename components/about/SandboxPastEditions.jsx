@@ -79,7 +79,7 @@ const editions = {
     label: "Sandbox 2.0",
     year: "2025",
     stages: [
-      { title: "Workshop",       icon: "Wrench", desc: "Hands-on sessions across three cities to sharpen ideas before the pitch.", photos: PHOTOS['2.0'].workshop },
+      { title: "Workshop",       icon: "Wrench", desc: "Hands-on sessions to sharpen ideas before the pitch.", photos: PHOTOS['2.0'].workshop },
       { title: "Preliminary Round",  icon: "Users",  desc: "The top 50 teams face off to determine who advances.", photos: PHOTOS['2.0'].prelims },
       { title: "Grand Finale",    icon: "Trophy", desc: "The ultimate showdown in front of industry judges.", photos: PHOTOS['2.0'].grandFinal },
     ],
@@ -88,7 +88,7 @@ const editions = {
     label: "Sandbox 1.0",
     year: "2024",
     stages: [
-      { title: "Workshop",           icon: "Wrench", desc: "The very first Sandbox workshop.", photos: PHOTOS['1.0'].workshop },
+      { title: "Workshop",           icon: "Wrench", desc: "The very first Sandbox workshop series.", photos: PHOTOS['1.0'].workshop },
       { title: "Grand Finale",             icon: "Trophy", desc: "The inaugural Grand Finale.", photos: PHOTOS['1.0'].grandFinal },
     ],
   },
