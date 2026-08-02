@@ -302,7 +302,7 @@ export default function ContactForm() {
                       Your message was sent successfully!
                     </p>
                     <p style={{ color: "#c7f9e5", fontSize: "13.5px", margin: "2px 0 0" }}>
-                      Thanks — the Sandbox team will get back to you soon.
+                      Thanks, the Sandbox team will get back to you soon.
                     </p>
                   </div>
                 </div>
