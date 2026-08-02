@@ -38,11 +38,22 @@ export default function Guidelines() {
               Open to all schools in Sri Lanka. Teams brainstorm and pitch a business idea, judged on originality, feasibility, and presentation by leading entrepreneurs.
             </p>
             
+            {/* Desktop Button */}
             <a 
               href="/sandbox-rules-and-regulations.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#3c1c33] to-[#7A3D68] text-[#F3EEFB] px-8 py-4 rounded-full font-bold font-inter transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 group"
+              className="hidden md:inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#3c1c33] to-[#7A3D68] text-[#F3EEFB] px-8 py-4 rounded-full font-bold font-inter transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 group"
+            >
+              View Full Rules & Regulations
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+
+            {/* Mobile Button */}
+            <a 
+              href="/sandbox-rules-and-regulations.pdf" 
+              download="Sandbox - Rules & Regulations.pdf"
+              className="inline-flex md:hidden items-center justify-center gap-2 bg-gradient-to-r from-[#3c1c33] to-[#7A3D68] text-[#F3EEFB] px-8 py-4 rounded-full font-bold font-inter transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 group"
             >
               View Full Rules & Regulations
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
