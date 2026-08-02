@@ -118,7 +118,6 @@ export default function ContactForm() {
 
     const newErrors = {};
     if (!form.name.trim()) newErrors.name = "Please enter your name.";
-    if (!form.school.trim()) newErrors.school = "Please enter your school.";
     if (!form.position) newErrors.position = "Please select a position.";
     if (!form.email.trim() || !EMAIL_RE.test(form.email.trim()))
       newErrors.email = "Please enter a valid email address.";
@@ -389,7 +388,6 @@ export default function ContactForm() {
                       ref={(el) => (fieldRefs.current.school = el)}
                       type="text"
                       id="contact-school"
-                      required
                       aria-invalid={!!errors.school}
                       aria-describedby={errors.school ? "err-school" : undefined}
                       placeholder="e.g. Royal College"
