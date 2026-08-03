@@ -163,7 +163,7 @@ export default function SandboxHero() {
 
             <ScrollReveal delay={300}>
               <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">
-                Where Ideas Take Flight
+                Where Ideas Take Flight.
               </p>
             </ScrollReveal>
 
