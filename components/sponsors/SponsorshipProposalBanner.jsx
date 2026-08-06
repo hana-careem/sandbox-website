@@ -26,7 +26,7 @@ export default function SponsorshipProposalBanner() {
                 href={SPONSORSHIP_PROPOSAL_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-bold rounded-full border border-[#a64d79] text-[#a64d79] hover:bg-[#a64d79] hover:text-white transition-all focus:ring-2 focus:ring-[#a64d79]/50 focus:outline-none min-h-[44px]"
+                className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-bold rounded-full bg-[#a64d79]/15 backdrop-blur-md border border-[#a64d79]/50 text-white hover:bg-[#a64d79] hover:border-[#a64d79] hover:shadow-[0_0_20px_rgba(166,77,121,0.4)] transition-all focus:ring-2 focus:ring-[#a64d79]/50 focus:outline-none min-h-[44px]"
               >
                 View the Sponsorship Proposal
                 <ArrowRight className="w-5 h-5" />
