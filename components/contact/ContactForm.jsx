@@ -69,7 +69,6 @@ export default function ContactForm() {
   const [form, setForm] = useState({
     name: "",
     schoolCompany: "",
-    school: "",
     position: "",
     email: "",
     message: "",
@@ -127,7 +126,7 @@ export default function ContactForm() {
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       /* Focus first invalid field */
-      const order = ["name", "schoolCompany", "school", "position", "email", "message"];
+      const order = ["name", "schoolCompany", "position", "email", "message"];
       for (const f of order) {
         if (newErrors[f] && fieldRefs.current[f]) {
           fieldRefs.current[f].focus();
@@ -144,14 +143,13 @@ export default function ContactForm() {
       await emailjs.send(SERVICE_ID, TEMPLATE_ID, {
         name: form.name.trim(),
         school_company: form.schoolCompany.trim(),
-        school: form.school.trim(),
         position: form.position,
         email: form.email.trim(),
         message: form.message.trim(),
       });
 
       setBanner("success");
-      setForm({ name: "", schoolCompany: "", school: "", position: "", email: "", message: "" });
+      setForm({ name: "", schoolCompany: "", position: "", email: "", message: "" });
       /* Scroll banner into view */
       setTimeout(() => {
         bannerRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -379,54 +377,29 @@ export default function ContactForm() {
                   )}
                 </div>
 
-                {/* School / Company */}
-                <div>
-                  <label htmlFor="contact-school-company" style={labelStyle}>
-                    School / Company
-                  </label>
-                  <input
-                    ref={(el) => (fieldRefs.current.schoolCompany = el)}
-                    type="text"
-                    id="contact-school-company"
-                    aria-invalid={!!errors.schoolCompany}
-                    aria-describedby={errors.schoolCompany ? "err-schoolCompany" : undefined}
-                    placeholder="School or Company"
-                    value={form.schoolCompany}
-                    onChange={(e) => handleChange("schoolCompany", e.target.value)}
-                    onFocus={() => setFocusedField("schoolCompany")}
-                    onBlur={() => setFocusedField(null)}
-                    style={fieldStyle("schoolCompany")}
-                  />
-                  {errors.schoolCompany && (
-                    <p id="err-schoolCompany" style={errorTextStyle}>
-                      {errors.schoolCompany}
-                    </p>
-                  )}
-                </div>
-
-                {/* 2+3. School & Position — side by side */}
+                {/* 2. School/Company & Position — side by side */}
                 <div className="contact-two-col">
-                  {/* 2. Your School */}
+                  {/* School / Company */}
                   <div>
-                    <label htmlFor="contact-school" style={labelStyle}>
-                      Your School
+                    <label htmlFor="contact-school-company" style={labelStyle}>
+                      School / Company
                     </label>
                     <input
-                      ref={(el) => (fieldRefs.current.school = el)}
+                      ref={(el) => (fieldRefs.current.schoolCompany = el)}
                       type="text"
-                      id="contact-school"
-                      aria-invalid={!!errors.school}
-                      aria-describedby={errors.school ? "err-school" : undefined}
-                      placeholder="e.g. Royal College"
-                      value={form.school}
-                      onChange={(e) => handleChange("school", e.target.value)}
-                      onFocus={() => setFocusedField("school")}
+                      id="contact-school-company"
+                      aria-invalid={!!errors.schoolCompany}
+                      aria-describedby={errors.schoolCompany ? "err-schoolCompany" : undefined}
+                      placeholder="School or Company"
+                      value={form.schoolCompany}
+                      onChange={(e) => handleChange("schoolCompany", e.target.value)}
+                      onFocus={() => setFocusedField("schoolCompany")}
                       onBlur={() => setFocusedField(null)}
-                      style={fieldStyle("school")}
+                      style={fieldStyle("schoolCompany")}
                     />
-                    {errors.school && (
-                      <p id="err-school" style={errorTextStyle}>
-                        {errors.school}
+                    {errors.schoolCompany && (
+                      <p id="err-schoolCompany" style={errorTextStyle}>
+                        {errors.schoolCompany}
                       </p>
                     )}
                   </div>
