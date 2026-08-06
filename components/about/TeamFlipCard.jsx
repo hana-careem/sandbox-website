@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useRef } from 'react'
-import { Linkedin, RotateCcw, Sparkles } from 'lucide-react'
+import { useState } from 'react'
+import { Linkedin, RotateCcw } from 'lucide-react'
 
 const FACE_STYLE = {
   backfaceVisibility: 'hidden',
@@ -61,7 +61,6 @@ export default function TeamFlipCard({ member }) {
           <div className="px-4 pb-4 pt-1">
             <p className="font-['Space_Grotesk'] text-base font-medium text-white">{name}</p>
             <p className="text-sm text-white/55">{role}</p>
-            {education && <p className="text-xs text-white/40">{education}</p>}
             {linkedin ? (
               <a
                 href={linkedin}
@@ -80,15 +79,6 @@ export default function TeamFlipCard({ member }) {
             )}
           </div>
 
-          {/* flip hint */}
-          <span
-            className="absolute right-3 top-3 grid h-7 w-7 place-items-center rounded-full
-                       bg-black/40 text-white/70 backdrop-blur-sm transition-opacity
-                       opacity-0 group-hover:opacity-100"
-            aria-hidden="true"
-          >
-            <Sparkles className="h-3.5 w-3.5" />
-          </span>
         </div>
 
         {/* ---------- BACK: concise background ---------- */}
@@ -99,7 +89,7 @@ export default function TeamFlipCard({ member }) {
         >
           <p className="font-['Space_Grotesk'] text-base font-medium text-white">{name}</p>
           <p className="text-sm text-[#FF4D6D]">{role}</p>
-          {education && <p className="mb-3 text-xs text-white/40">{education}</p>}
+          {education && <p className="mb-3 text-xs text-[#14f2db]/80">{education}</p>}
           {!education && <div className="mb-3" />}
 
           <p className="flex-1 overflow-y-auto text-sm leading-relaxed text-white/70">{bio}</p>
