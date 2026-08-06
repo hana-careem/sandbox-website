@@ -24,7 +24,7 @@ function Logo({ s }) {
   const line2 = words.slice(splitAt).join(' ');
 
   return (
-    <div className="mx-3 flex shrink-0 items-center gap-4 rounded-2xl border border-[rgba(183,155,221,0.22)] bg-[rgba(122,79,176,0.12)] backdrop-blur-md pl-3 pr-6 py-1 shadow-[0_8px_24px_rgba(0,0,0,0.25)]">
+    <div className="mx-3 flex shrink-0 items-center gap-[15px] rounded-[18px] border border-[rgba(255,255,255,0.08)] bg-[rgba(52,30,60,0.62)] backdrop-blur-[6px] pl-[12px] pr-[20px] py-[12px] shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_12px_30px_-22px_rgba(0,0,0,0.7)] transition-all duration-300 hover:-translate-y-[4px] hover:bg-[rgba(66,40,74,0.72)] hover:border-[rgba(255,255,255,0.16)]">
       {s.logo ? (
         <img
           src={typeof s.logo === 'string' ? s.logo : s.logo?.src}
@@ -36,7 +36,7 @@ function Logo({ s }) {
       ) : (
         <div className="h-20 w-20 shrink-0 rounded-2xl bg-white/10" />
       )}
-      <span className="whitespace-nowrap text-xl md:text-2xl font-bold text-white leading-tight">
+      <span className="whitespace-nowrap text-[15px] font-semibold text-[#ffffff] leading-[1.2]">
         {twoLine ? (
           <>
             {line1}
