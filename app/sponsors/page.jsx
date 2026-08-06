@@ -1,6 +1,7 @@
 import React from 'react';
 // import SponsorsList from '../../components/sponsors/SponsorsList'; // hidden (kept for later)
 import PartnerUp from '../../components/sponsors/PartnerUp';
+import SponsorshipProposalBanner from '../../components/sponsors/SponsorshipProposalBanner';
 import PastPartners from '../../components/sponsors/PastPartners';
 
 export const metadata = {
@@ -13,6 +14,7 @@ export default function SponsorsPage() {
     <main className="w-full">
       {/* <SponsorsList /> */}
       <PartnerUp />
+      <SponsorshipProposalBanner />
       <PastPartners />
     </main>
   );
