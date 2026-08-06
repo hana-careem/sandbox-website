@@ -10,7 +10,7 @@ const FACE_STYLE = {
 
 export default function TeamFlipCard({ member }) {
   const [flipped, setFlipped] = useState(false)
-  const { name, role, image, linkedin, bio } = member
+  const { name, role, image, linkedin, bio, education } = member
 
   const toggle = () => {
     setFlipped(!flipped)
@@ -61,6 +61,7 @@ export default function TeamFlipCard({ member }) {
           <div className="px-4 pb-4 pt-1">
             <p className="font-['Space_Grotesk'] text-base font-medium text-white">{name}</p>
             <p className="text-sm text-white/55">{role}</p>
+            {education && <p className="text-xs text-white/40">{education}</p>}
             {linkedin ? (
               <a
                 href={linkedin}
@@ -97,7 +98,9 @@ export default function TeamFlipCard({ member }) {
                      border-[#7C3AED]/40 bg-[#1a1526] p-5"
         >
           <p className="font-['Space_Grotesk'] text-base font-medium text-white">{name}</p>
-          <p className="mb-3 text-sm text-[#FF4D6D]">{role}</p>
+          <p className="text-sm text-[#FF4D6D]">{role}</p>
+          {education && <p className="mb-3 text-xs text-white/40">{education}</p>}
+          {!education && <div className="mb-3" />}
 
           <p className="flex-1 overflow-y-auto text-sm leading-relaxed text-white/70">{bio}</p>
 

@@ -31,41 +31,41 @@ export const TEAM = [
   { name: 'Maneesha Thatuwalakanda', role: 'Chairperson', category: 'leadership', image: '/assets/Maneesha Thatuwalakanda communications.webp', linkedin: '', bio: 'Co-chairs the Sandbox 3.0 organising committee.' },
   { name: 'Himansa Indusara', role: 'Chairperson', category: 'leadership', image: '/assets/Himansa Indusara Communication.webp', linkedin: '', bio: 'Co-chairs the Sandbox 3.0 organising committee.' },
   { name: 'Ayodya Perera', role: 'Project Coordinator', category: 'leadership', image: '/assets/Ayodya Sasuni Perera Marketing.webp', linkedin: '', bio: 'Coordinates the Sandbox 3.0 project across every sub-team.' },
-  { name: 'Tyanna Franchesca Avory', role: 'Secretary', category: 'leadership', image: placeholderImage, linkedin: '', bio: 'Secretary of the Sandbox 3.0 organising committee.' },
+  { name: 'Tyanna Franchesca Avory', role: 'Secretary', category: 'leadership', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/tyanna-avory-a879a32b2', bio: 'Secretary of the Sandbox 3.0 organising committee.', education: 'BSc (Hons) Computer Science' },
   { name: 'Pujaa Shruti Senthilnathan', role: 'Treasurer', category: 'leadership', image: placeholderImage, linkedin: '', bio: 'Manages the Sandbox 3.0 budget and finances.' },
   // linkedin: distinctive name match, but headline says Edith Cowan University —
   // confirm with Yunus directly before shipping:
-  { name: 'Yunus Nuhman', role: 'Head of IT', category: 'it', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/yunusnuhman/', bio: 'Leads IT — the Sandbox site, registrations and infrastructure.' },
+  { name: 'Yunus Nuhman', role: 'Head of IT', category: 'it', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/yunusnuhman/', bio: 'Leads IT — the Sandbox site, registrations and infrastructure.', education: 'BSc (Hons) Cyber Security and Networking' },
   // --- Heads ---
-  { name: 'Nadyah Riyaz', role: 'Head of Media', category: 'media', image: placeholderImage, linkedin: '', bio: 'Co-leads media — photography, videography and event coverage.' },
-  { name: 'Sameeha Fahim', role: 'Head of Media', category: 'media', image: placeholderImage, linkedin: '', bio: 'Co-leads media — photography, videography and event coverage.' },
-  { name: 'Kulthoom Husni', role: 'Head of Marketing', category: 'marketing', image: '/assets/Kulthoom Husni media.webp', linkedin: '', bio: 'Co-leads marketing — campaigns across schools and socials.' },
+  { name: 'Nadyah Riyaz', role: 'Head of Media', category: 'media', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/nadyah-riyaz-9384b8290', bio: 'Co-leads media — photography, videography and event coverage.', education: 'BSc (Hons) Business Management (Digital Marketing)' },
+  { name: 'Sameeha Fahim', role: 'Head of Media', category: 'media', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/sameeha-fahim-819023280', bio: 'Co-leads media — photography, videography and event coverage.', education: 'BSc (Hons) Cyber Security and Networking' },
+  { name: 'Kulthoom Husni', role: 'Head of Marketing', category: 'marketing', image: '/assets/Kulthoom Husni media.webp', linkedin: 'https://www.linkedin.com/in/kulthoom-husni-54b8432b7', bio: 'Co-leads marketing — campaigns across schools and socials.', education: 'BSc (Hons) Business Management (Digital Marketing)' },
   { name: 'Tharushika Gamage', role: 'Head of Marketing', category: 'marketing', image: placeholderImage, linkedin: '', bio: 'Co-leads marketing — campaigns across schools and socials.' },
-  { name: 'Nadha Rizan', role: 'Head of Communications', category: 'comms', image: placeholderImage, linkedin: '', bio: 'Co-leads communications with schools, sponsors and participants.' },
-  { name: 'Raveen', role: 'Head of Communications', category: 'comms', image: placeholderImage, linkedin: '', bio: 'Co-leads communications with schools, sponsors and participants.' },
-  { name: 'Asna Azver', role: 'Head of Logistics', category: 'logistics', image: placeholderImage, linkedin: '', bio: 'Co-leads logistics — venues, operations and event-day flow.' },
-  { name: 'Burhanuddin', role: 'Head of Logistics', category: 'logistics', image: placeholderImage, linkedin: '', bio: 'Co-leads logistics — venues, operations and event-day flow.' },
+  { name: 'Nadha Rizan', role: 'Head of Communications', category: 'comms', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/nadha-rizan-077977327', bio: 'Co-leads communications with schools, sponsors and participants.', education: 'BSc (Hons) International Business Management' },
+  { name: 'Raveen', role: 'Head of Communications', category: 'comms', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/raveen-gunasekara-552441248', bio: 'Co-leads communications with schools, sponsors and participants.', education: 'BSc (Hons) International Business Management' },
+  { name: 'Asna Azver', role: 'Head of Logistics', category: 'logistics', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/asna-azver-310249365', bio: 'Co-leads logistics — venues, operations and event-day flow.', education: 'LLB (Hons) Law' },
+  { name: 'Burhanuddin', role: 'Head of Logistics', category: 'logistics', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/m-burhanuddin-m-mansoor-bharmal-09373a249', bio: 'Co-leads logistics — venues, operations and event-day flow.', education: 'BSc (Hons) Business Management (Innovation & Entrepreneurship)' },
   // --- IT Team ---
-  { name: 'Murad Hussain', role: 'IT Team', category: 'it', image: placeholderImage, linkedin: '', bio: 'IT team, Sandbox 3.0.' },
-  { name: 'Hana Careem', role: 'IT Team', category: 'it', image: placeholderImage, linkedin: '', bio: 'IT team, Sandbox 3.0.' },
+  { name: 'Murad Hussain', role: 'IT Team', category: 'it', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/murad-hussain-6801702b2', bio: 'IT team, Sandbox 3.0.', education: 'BSc (Hons) Computer Science' },
+  { name: 'Hana Careem', role: 'IT Team', category: 'it', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/hana-careem-4304b2349', bio: 'IT team, Sandbox 3.0.', education: 'BSc (Hons) Computer Science' },
   // --- Media Team ---
-  { name: 'Tuan Shaahid Rainudeen', role: 'Media Team', category: 'media', image: placeholderImage, linkedin: '', bio: 'Media team, Sandbox 3.0.' },
-  { name: 'Dasanya', role: 'Media Team', category: 'media', image: placeholderImage, linkedin: '', bio: 'Media team, Sandbox 3.0.' },
+  { name: 'Tuan Shaahid Rainudeen', role: 'Media Team', category: 'media', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/tuan-shaahid-rainudeen-47b705374', bio: 'Media team, Sandbox 3.0.', education: 'BSc (Hons) Computer Science' },
+  { name: 'Dasanya', role: 'Media Team', category: 'media', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/dasanya-dahanayake-b09427363', bio: 'Media team, Sandbox 3.0.', education: 'BSc (Hons) International Business Management' },
   // --- Marketing Team ---
   { name: 'Diseni Chanulya Dharmadasa', role: 'Marketing Team', category: 'marketing', image: '/assets/Diseni Chanulya Dharmadhasa Marketing.webp', linkedin: '', bio: 'Marketing team, Sandbox 3.0.' },
   { name: 'Umar Shafeek', role: 'Marketing Team', category: 'marketing', image: placeholderImage, linkedin: '', bio: 'Marketing team, Sandbox 3.0.' },
-  { name: 'Thahnees Thariq', role: 'Marketing Team', category: 'marketing', image: placeholderImage, linkedin: '', bio: 'Marketing team, Sandbox 3.0. Previously Head of Logistics for Sandbox 1.0.' },
+  { name: 'Thahnees Thariq', role: 'Marketing Team', category: 'marketing', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/thahnees-tariq-04072124b', bio: 'Marketing team, Sandbox 3.0. Previously Head of Logistics for Sandbox 1.0.', education: 'BSc (Hons) International Business Management' },
   // --- Communications Team ---
-  { name: 'Bosandi de Alwis Goonatilake', role: 'Communications Team', category: 'comms', image: placeholderImage, linkedin: '', bio: 'Communications team, Sandbox 3.0.' },
+  { name: 'Bosandi de Alwis Goonatilake', role: 'Communications Team', category: 'comms', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/disenka-bosandi-de-a-goonatilake-46916630a', bio: 'Communications team, Sandbox 3.0.', education: 'BSc (Hons) International Business Management' },
   { name: 'Ayuni Randeena Karunatilaka', role: 'Communications Team', category: 'comms', image: placeholderImage, linkedin: '', bio: 'Communications team, Sandbox 3.0.' },
-  { name: 'Noor Fazeena Faiz', role: 'Communications Team', category: 'comms', image: placeholderImage, linkedin: '', bio: 'Communications team, Sandbox 3.0.' },
-  { name: 'Suresh Kumar Habilashinie', role: 'Communications Team', category: 'comms', image: placeholderImage, linkedin: '', bio: 'Communications team, Sandbox 3.0.' },
-  { name: 'Nevanya Nonis', role: 'Communications Team', category: 'comms', image: placeholderImage, linkedin: '', bio: 'Communications team, Sandbox 3.0.' },
+  { name: 'Noor Fazeena Faiz', role: 'Communications Team', category: 'comms', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/fazeena-faiz-a5999b355', bio: 'Communications team, Sandbox 3.0.', education: 'BSc (Hons) International Business Management' },
+  { name: 'Suresh Kumar Habilashinie', role: 'Communications Team', category: 'comms', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/habilashinie-suresh-kumar-61095633a', bio: 'Communications team, Sandbox 3.0.', education: 'BSc (Hons) International Business Management' },
+  { name: 'Nevanya Nonis', role: 'Communications Team', category: 'comms', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/nevanya-nonis-9088b1355', bio: 'Communications team, Sandbox 3.0.', education: 'BSc (Hons) Business Management' },
   { name: 'Kavindhaya Samanmali', role: 'Communications Team', category: 'comms', image: placeholderImage, linkedin: '', bio: 'Communications team, Sandbox 3.0.' },
   // --- Logistics Team ---
   { name: 'Nithispranav', role: 'Logistics Team', category: 'logistics', image: placeholderImage, linkedin: '', bio: 'Logistics team, Sandbox 3.0.' },
   { name: 'Sarith Kariyawasam', role: 'Logistics Team', category: 'logistics', image: placeholderImage, linkedin: '', bio: 'Logistics team, Sandbox 3.0.' },
-  { name: 'Rakkshetha Soundararajan', role: 'Logistics Team', category: 'logistics', image: placeholderImage, linkedin: '', bio: 'Logistics team, Sandbox 3.0.' },
+  { name: 'Rakkshetha Soundararajan', role: 'Logistics Team', category: 'logistics', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/rakkshetha-undefined-160347393', bio: 'Logistics team, Sandbox 3.0.', education: 'BSc (Hons) Business Management' },
 ]
 
 // ---------------------------------------------------------------------------
