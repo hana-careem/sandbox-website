@@ -68,6 +68,7 @@ const errorTextStyle = {
 export default function ContactForm() {
   const [form, setForm] = useState({
     name: "",
+    schoolCompany: "",
     school: "",
     position: "",
     email: "",
@@ -126,7 +127,7 @@ export default function ContactForm() {
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       /* Focus first invalid field */
-      const order = ["name", "school", "position", "email", "message"];
+      const order = ["name", "schoolCompany", "school", "position", "email", "message"];
       for (const f of order) {
         if (newErrors[f] && fieldRefs.current[f]) {
           fieldRefs.current[f].focus();
@@ -142,6 +143,7 @@ export default function ContactForm() {
     try {
       await emailjs.send(SERVICE_ID, TEMPLATE_ID, {
         name: form.name.trim(),
+        school_company: form.schoolCompany.trim(),
         school: form.school.trim(),
         position: form.position,
         email: form.email.trim(),
@@ -149,7 +151,7 @@ export default function ContactForm() {
       });
 
       setBanner("success");
-      setForm({ name: "", school: "", position: "", email: "", message: "" });
+      setForm({ name: "", schoolCompany: "", school: "", position: "", email: "", message: "" });
       /* Scroll banner into view */
       setTimeout(() => {
         bannerRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -373,6 +375,31 @@ export default function ContactForm() {
                   {errors.name && (
                     <p id="err-name" style={errorTextStyle}>
                       {errors.name}
+                    </p>
+                  )}
+                </div>
+
+                {/* School / Company */}
+                <div>
+                  <label htmlFor="contact-school-company" style={labelStyle}>
+                    School / Company
+                  </label>
+                  <input
+                    ref={(el) => (fieldRefs.current.schoolCompany = el)}
+                    type="text"
+                    id="contact-school-company"
+                    aria-invalid={!!errors.schoolCompany}
+                    aria-describedby={errors.schoolCompany ? "err-schoolCompany" : undefined}
+                    placeholder="School or Company"
+                    value={form.schoolCompany}
+                    onChange={(e) => handleChange("schoolCompany", e.target.value)}
+                    onFocus={() => setFocusedField("schoolCompany")}
+                    onBlur={() => setFocusedField(null)}
+                    style={fieldStyle("schoolCompany")}
+                  />
+                  {errors.schoolCompany && (
+                    <p id="err-schoolCompany" style={errorTextStyle}>
+                      {errors.schoolCompany}
                     </p>
                   )}
                 </div>
