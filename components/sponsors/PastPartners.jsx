@@ -80,35 +80,32 @@ function slug(s) {
 
 const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
-function Wordmark({ p }) {
-  if (p.img) {
-    return (
-      <img 
-        src={p.img} 
-        alt={p.name} 
-        className="object-contain"
-        style={{
-          maxHeight: '52px', 
-          maxWidth: '80%', 
-          opacity: 0.9 
-        }} 
-      />
-    );
-  }
-
-  let nameContent = p.name;
-  if (p.bold) {
-    const rest = p.name.slice(p.bold.length);
-    nameContent = <><b className="font-bold text-white">{p.bold}</b>{rest}</>;
-  }
-
+function SponsorCard({ p }) {
   return (
-    <div className="flex flex-col items-center gap-2 text-center wordmark-wrap">
-      {p.mark && <span className="w-[30px] h-[30px] text-slate-300 transition-colors mark-svg">{MARKS[p.mark]}</span>}
-      <span className="font-poppins font-semibold text-[clamp(15px,2.4vw,19px)] text-slate-200 tracking-[-0.01em] leading-[1.1] transition-colors name-text">
-        {nameContent}
-      </span>
-      {p.sub && <span className="text-[9px] tracking-[0.24em] uppercase text-slate-400 transition-colors sub-text">{p.sub}</span>}
+    <div className="sponsor-card-inner">
+      <div className="sponsor-logo-box">
+        {p.img ? (
+          <img
+            src={p.img}
+            alt={p.name}
+            className="object-contain"
+            style={{ width: '100%', height: '100%' }}
+          />
+        ) : (
+          /* Text-only fallback when no logo image exists */
+          <span style={{
+            fontSize: '11px',
+            fontWeight: 700,
+            color: '#1B1220',
+            textAlign: 'center',
+            lineHeight: 1.15,
+            fontFamily: '"Poppins", sans-serif',
+          }}>
+            {p.name}
+          </span>
+        )}
+      </div>
+      <span className="sponsor-name-text">{p.name}</span>
     </div>
   );
 }
@@ -350,7 +347,7 @@ export default function PastPartners() {
                 <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-[14px]">
                   {t.partners.map((p, i) => (
                     <div className="logo-card" key={i}>
-                      <Wordmark p={p} />
+                      <SponsorCard p={p} />
                     </div>
                   ))}
                 </div>
@@ -433,35 +430,55 @@ export default function PastPartners() {
 
         .logo-card {
           position: relative;
-          aspect-ratio: 16 / 10;
-          background: rgba(255,255,255,0.03);
-          border: 1px solid rgba(255,255,255,0.06);
-          border-radius: 16px;
-          display: grid; place-items: center;
-          padding: 22px;
+          background: #1B1220;
+          border: 1px solid rgba(255,255,255,0.08);
+          border-radius: 14px;
+          padding: 12px 16px;
           overflow: hidden;
           opacity: 0; transform: translateY(22px);
-          transition: background .3s, border-color .3s, transform .3s cubic-bezier(.22, 1, .36, 1);
+          transition: background 150ms ease, border-color 150ms ease;
         }
         :global(.logo-card.in) { animation: rise .6s cubic-bezier(.22, 1, .36, 1) forwards; }
         :global(.logo-card.in-instant) { opacity: 1; transform: translateY(0); transition: none; }
         
         @keyframes rise { to { opacity: 1; transform: translateY(0); } }
-        
-        .logo-card::after {
-          content: ""; position: absolute; inset: 0; border-radius: inherit;
-          background: radial-gradient(120% 120% at 50% 0%, rgba(230,0,126,.10), transparent 60%);
-          opacity: 0; transition: opacity .3s; pointer-events: none;
-        }
-        .logo-card:hover {
-          background: rgba(255,255,255,0.05);
-          border-color: rgba(255,255,255,0.12);
-          transform: translateY(-4px);
-        }
-        .logo-card:hover::after { opacity: 1; }
 
-        .logo-card:hover :global(.name-text), .logo-card:hover :global(.mark-svg) { color: #fff; }
-        .logo-card:hover :global(.sub-text) { color: #cbd5e1; /* slate-300 */ }
+        .logo-card:hover {
+          background: #241830;
+          border-color: rgba(255,255,255,0.16);
+        }
+
+        .sponsor-card-inner {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 14px;
+        }
+
+        .sponsor-logo-box {
+          width: 56px;
+          height: 56px;
+          min-width: 56px;
+          background: #FFFFFF;
+          border-radius: 10px;
+          padding: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+        }
+
+        .sponsor-name-text {
+          font-size: 15px;
+          font-weight: 600;
+          color: #F5F2F7;
+          text-align: left;
+          line-height: 1.3;
+          font-family: "Poppins", sans-serif;
+          /* Never truncate with ellipsis — allow natural wrapping */
+          overflow-wrap: break-word;
+          word-break: break-word;
+        }
 
         .layout.switching .content, .layout.switching .sidebar-inner { opacity: 0; transform: translateY(10px); }
         .layout .content, .layout .sidebar-inner { transition: opacity .4s cubic-bezier(.22, 1, .36, 1), transform .4s cubic-bezier(.22, 1, .36, 1); }
