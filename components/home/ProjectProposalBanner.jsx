@@ -35,7 +35,7 @@ export default function ProjectProposalBanner() {
               Project Proposal
             </h2>
             <p className="text-purple-200/80 text-[1rem] leading-[1.55] max-w-[52ch] m-0">
-              Everything you need to know about Sandbox — the vision, format, and impact.
+              Everything you need to know about Sandbox, The vision, format, and impact.
               Read the full proposal before your team registers.
             </p>
           </div>
