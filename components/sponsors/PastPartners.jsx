@@ -13,49 +13,48 @@ const MARKS = {
 
 export const EDITIONS = {
   "Sandbox 1.0": [
-    { name: "Host & Organiser", partners: [
-      { name: "APIIT", img: "/assets/apiit-logo.png" },
-      { name: "Entrepreneurship Club of APIIT", img: "/assets/eclub-logo.png" },
-    ]},
-    { name: "Banking Partner", partners: [
-      { name: "Sampath Bank", img: "/assets/sampath-logo.jpg" },
+    { name: "Associate Partner", partners: [
+      { name: "KVK Enterprises", img: "/assets/KVK-logo.jpeg" },
     ]},
     { name: "Learning Partner", partners: [
       { name: "Unilever", img: "/assets/unilever-logo.png" },
-      { name: "Sarvodaya", img: "/assets/sasnaka-logo.jpg" },
+      { name: "Sasnaka Sansada Foundation", img: "/assets/sasnaka-logo.jpg" },
     ]},
-    { name: "Associate Partner", partners: [
-      { name: "KVK Enterprises", img: "/assets/KVK-logo.jpeg" },
+    { name: "Banking Partner", partners: [
+      { name: "Sampath Bank", img: "/assets/sampath-logo.jpg" },
     ]},
     { name: "Advocacy Partner", partners: [
       { name: "Department of Wildlife Conservation", img: "/assets/CEA-logo.png" },
     ]},
     { name: "Print & Online Media Partner", partners: [
-      { name: "Wijeya Newspapers", img: "/assets/veerakesari-logo.png" },
+      { name: "Veerakesari", img: "/assets/veerakesari-logo.png" },
     ]},
     { name: "Photography Partner", partners: [
-      { name: "Black Canvas Photography", img: "/assets/Black-Canvas-logo.png" },
+      { name: "Black Canvas Photography", img: "/assets/Black-Canvas-logo.png", box: 'black' },
+    ]},
+    { name: "Host & Organiser", partners: [
+      { name: "Asia Pacific Institute of Information Technology (APIIT)", img: "/assets/apiit-logo-black.jpg" },
+      { name: "Entrepreneurship Club of APIIT", img: "/assets/eclub-logo.png" },
     ]},
   ],
   "Sandbox 2.0": [
     { name: "Title Sponsor", partners: [
-      { name: "John Keells Group", img: "/assets/JKOA-logo.png" },
-      { name: "Riotouch Interactive Displays", mark: "sq" },
+      { name: "John Keells Office Automation", img: "/assets/JKOA-logo.png" }
     ]},
-    { name: "Gold Sponsor", partners: [
-      { name: "Sampath Auto & Trading" },
-      { name: "Helpyou.lk" },
-      { name: "Life Vision", img: "/assets/life-vision-logo.jpeg" },
-      { name: "4-Tech Lanka", img: "/assets/hi-tech-logo.png" },
-      { name: "Hunters", img: "/assets/hunters-logo.jpg" },
-      { name: "SAB", img: "/assets/sab-logo.png" },
-      { name: "Decent Trust Holdings", img: "/assets/decent-logo.jpg" },
+    { name: "E-Logo Sponsor", partners: [
+      { name: "Sampath Auto & Trading", img: "/assets/sampathauto-logo.png" },
+      { name: "Helpyou.lk", img: "/assets/helpyou-logo.jpg", box: 'none' },
+      { name: "Life Vision", img: "/assets/life-vision-logo.jpeg", box: 'none' },
+      { name: "Hi-Tech Lanka", img: "/assets/hi-tech-logo.png", box: 'black' },
+      { name: "Hunters Woodcabins", img: "/assets/hunters-logo.jpg", box: 'none' },
+      { name: "SAB", img: "/assets/sab-logo.png", box: 'none' },
+      { name: "Decent Trust Holdings", img: "/assets/decent-logo.png" },
     ]},
     { name: "Bronze Sponsor", partners: [
       { name: "Playdium", img: "/assets/playdium-logo.png" },
-      { name: "Awakening Training Academy", img: "/assets/ATA-logo.png" },
+      { name: "Awakening Training Academy", img: "/assets/ATA-logo.png", box: 'none' },
     ]},
-    { name: "Banking Sponsor", partners: [
+    { name: "Banner Sponsor", partners: [
       { name: "National Savings Bank", img: "/assets/NSB-logo.png" },
     ]},
     { name: "AV Advertisement Sponsor", partners: [
@@ -65,10 +64,10 @@ export const EDITIONS = {
       { name: "The Sunday Times", img: "/assets/sunday-logo.jpg" },
     ]},
     { name: "Photography Partner", partners: [
-      { name: "Black Canvas Photography", img: "/assets/Black-Canvas-logo.png" },
+      { name: "Black Canvas Photography", img: "/assets/Black-Canvas-logo.png", box: 'black' },
     ]},
     { name: "Host & Organiser", partners: [
-      { name: "APIIT", img: "/assets/apiit-logo.png" },
+      { name: "Asia Pacific Institute of Information Technology (APIIT)", img: "/assets/apiit-logo-black.jpg" },
       { name: "Entrepreneurship Club of APIIT", img: "/assets/eclub-logo.png" },
     ]},
   ],
@@ -80,23 +79,62 @@ function slug(s) {
 
 const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
+/* Styles are inlined here (not via <style jsx>) because styled-jsx only scopes
+   to the component that declares it — the <style jsx> block lives in PastPartners,
+   so its .sponsor-logo-box / .sponsor-name-text rules never reach this child
+   component. Inlining guarantees every logo gets an identical white square card. */
+const cardInnerStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'stretch',
+  gap: '10px',
+};
+
+const logoBoxBaseStyle = {
+  width: '100%',
+  aspectRatio: '1 / 1',
+  borderRadius: '10px',
+  padding: '8px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  overflow: 'hidden',
+};
+
+const nameTextStyle = {
+  fontSize: '15px',
+  fontWeight: 600,
+  color: '#F5F2F7',
+  textAlign: 'left',
+  lineHeight: 1.3,
+  fontFamily: '"Poppins", sans-serif',
+  overflowWrap: 'break-word',
+  wordBreak: 'break-word',
+};
+
 function SponsorCard({ p }) {
+  const isBlack = p.box === 'black';
+  // box: 'none' → no card behind the logo (transparent); 'black' → dark card; default → white card
+  const background = p.box === 'none' ? 'transparent' : isBlack ? '#000000' : '#FFFFFF';
+  const logoBoxStyle = {
+    ...logoBoxBaseStyle,
+    background,
+  };
   return (
-    <div className="sponsor-card-inner">
-      <div className="sponsor-logo-box">
+    <div style={cardInnerStyle}>
+      <div style={logoBoxStyle}>
         {p.img ? (
           <img
             src={p.img}
             alt={p.name}
-            className="object-contain"
-            style={{ width: '100%', height: '100%' }}
+            style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '8px' }}
           />
         ) : (
           /* Text-only fallback when no logo image exists */
           <span style={{
             fontSize: '11px',
             fontWeight: 700,
-            color: '#1B1220',
+            color: isBlack ? '#F5F2F7' : '#1B1220',
             textAlign: 'center',
             lineHeight: 1.15,
             fontFamily: '"Poppins", sans-serif',
@@ -105,7 +143,7 @@ function SponsorCard({ p }) {
           </span>
         )}
       </div>
-      <span className="sponsor-name-text">{p.name}</span>
+      <span style={nameTextStyle}>{p.name}</span>
     </div>
   );
 }
@@ -271,18 +309,27 @@ export default function PastPartners() {
   const tiers = EDITIONS[activeYear] || [];
 
   return (
-    <section 
+    <section
       id="past-sponsors"
-      className="pb-20 relative bg-[linear-gradient(180deg,#2A1523_0%,#3c1c33_50%,#2A1523_100%)] font-sans" 
+      className="pb-6 md:pb-20 relative bg-[linear-gradient(180deg,#2A1523_0%,#3c1c33_50%,#2A1523_100%)] font-sans"
     >
-      
+      {/* Soft plum glows for depth — matches PartnerUp.
+          Clipped by this overflow-hidden layer so the wide blurred blobs can't
+          overflow the viewport on mobile. It's a sibling of the content, not an
+          ancestor of the sticky sidebar/year-toggle, so sticky still works. */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="absolute top-[4%] left-[8%] w-[400px] h-[400px] bg-[#7A3D68] rounded-full filter blur-[90px] opacity-40"></div>
+        <div className="absolute top-[42%] left-[38%] w-[420px] h-[420px] bg-[#7A3D68] rounded-full filter blur-[90px] opacity-30"></div>
+        <div className="absolute bottom-[8%] right-[8%] w-[450px] h-[450px] bg-[#A87196] rounded-full filter blur-[90px] opacity-30"></div>
+      </div>
+
       {/* 1. Section Header */}
       <div className="max-w-[1200px] mx-auto px-[clamp(20px,5vw,40px)] pt-20 text-center relative z-10">
-        <span className="inline-block font-poppins font-semibold text-[12px] tracking-[0.32em] text-[#e6007e] uppercase mb-4">
+        <span className="inline-block font-poppins font-semibold text-[12px] tracking-[0.32em] text-[#a64d79] uppercase mb-4">
           Our Past Partners
         </span>
         <h2 className="font-poppins font-bold text-[clamp(38px,7vw,76px)] leading-[1.02] tracking-[-0.02em] text-white">
-          Sandbox <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-[#ff1e93]">Sponsors</span>
+          Sandbox <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-[#a64d79]">Sponsors</span>
         </h2>
         <p className="text-[#C6B9E0] max-w-[560px] mx-auto mt-4 text-[clamp(15px,2vw,17px)]">
           The organisations that powered Sri Lanka's biggest inter-school business pitching competition. Meet the partners who stood with previous sandbox competitions.
@@ -293,7 +340,7 @@ export default function PastPartners() {
       <div className="years sticky top-[71px] z-40" ref={yearsRef}>
         <div className="year-switch">
           <span className="year-thumb" ref={thumbRef}></span>
-          {years.map(y => (
+          {[...years].reverse().map(y => (
             <button 
               key={y}
               className={`year-pill ${y === activeYear ? 'active' : ''}`} 
@@ -311,7 +358,7 @@ export default function PastPartners() {
         <div className={`layout ${isSwitching ? 'switching' : ''}`}>
           
           <aside className="sidebar">
-            <div className="sidebar-inner sticky top-[140px] z-50">
+            <div className="sidebar-inner sticky top-[112px] z-50">
               <nav className="tier-nav" ref={navRef}>
                 <div className="tier-indicator" ref={indicatorRef}></div>
                 {tiers.map((t, i) => {
@@ -340,11 +387,8 @@ export default function PastPartners() {
                   <h3 className="text-white m-0 font-poppins font-semibold text-[clamp(20px,3vw,27px)] tracking-[-0.01em]">
                     {t.name}
                   </h3>
-                  <span className="text-[12px] text-slate-400 font-poppins font-medium border border-slate-700/50 rounded-full px-2.5 py-0.5">
-                    {t.partners.length}
-                  </span>
                 </div>
-                <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-[14px] items-start">
+                <div className="grid grid-cols-2 md:grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-[14px] items-stretch">
                   {t.partners.map((p, i) => (
                     <div className="logo-card" key={i}>
                       <SponsorCard p={p} />
@@ -382,7 +426,7 @@ export default function PastPartners() {
           z-index: 0; will-change: transform, width;
         }
         .year-thumb.moving { 
-          box-shadow: 0 8px 26px rgba(230,0,126,0.35), inset 0 1px 0 rgba(255, 255, 255, 0.75); 
+          box-shadow: 0 8px 26px rgba(166,77,121,0.35), inset 0 1px 0 rgba(255, 255, 255, 0.75);
         }
         .year-pill {
           position: relative; z-index: 1;
@@ -401,13 +445,13 @@ export default function PastPartners() {
           padding-bottom: 120px;
         }
 
-        .sidebar { position: relative; }
+        .sidebar { position: relative; min-width: 0; }
         .tier-nav { position: relative; padding-left: 20px; }
         .tier-indicator {
           position: absolute; left: 0; top: 0;
           width: 4px; height: 30px; border-radius: 2px;
-          background: linear-gradient(#ff1e93, #e6007e);
-          box-shadow: 0 0 16px #e6007e;
+          background: linear-gradient(#c25d94, #a64d79);
+          box-shadow: 0 0 16px #a64d79;
           transition: transform 0.45s cubic-bezier(.4, 0, .1, 1), height 0.45s cubic-bezier(.4, 0, .1, 1), opacity .25s;
         }
         .tier-link {
@@ -483,21 +527,9 @@ export default function PastPartners() {
 
         @media (max-width: 1024px) {
           .years { top: 63px; }
-          .layout { grid-template-columns: 1fr; gap: 8px; }
-          .sidebar-inner { 
-            position: sticky; top: 125px; z-index: 30; margin: 0 -20px; 
-            background: rgba(42,21,35,0.85); backdrop-filter: blur(10px); 
-            padding: 10px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); 
-          }
-          .tier-nav { display: flex; gap: 4px; overflow-x: auto; padding-left: 0; scrollbar-width: none; }
-          .tier-nav::-webkit-scrollbar { display: none; }
-          .tier-indicator { display: none; }
-          .tier-link {
-            white-space: nowrap; border-bottom: none; padding: 8px 14px;
-            border: 1px solid rgba(255,255,255,0.1); border-radius: 999px; font-size: 13px;
-          }
-          .tier-link::after { display: none; }
-          .tier-link.active { border-color: #e6007e; background: rgba(230,0,126,.12); padding-left: 14px; }
+          .layout { grid-template-columns: 1fr; gap: 8px; padding-bottom: 24px; }
+          /* Filter list hidden on mobile — just scroll through the tiers */
+          .sidebar { display: none; }
         }
 
         @media (prefers-reduced-motion: reduce) {

@@ -37,10 +37,14 @@
 @layer base {
   html {
     @apply bg-slate-950;
+    /* clip (not hidden) prevents horizontal overflow WITHOUT creating a scroll
+       container — so position: sticky (e.g. the PastPartners sidebar) keeps working */
+    overflow-x: clip;
   }
 
   body {
     @apply bg-slate-950 text-slate-300;
+    overflow-x: clip;
   }
 }
 
