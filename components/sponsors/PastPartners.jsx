@@ -14,62 +14,62 @@ const MARKS = {
 export const EDITIONS = {
   "Sandbox 1.0": [
     { name: "Host & Organiser", partners: [
-      { name: "APIIT", sub: "Inspire love for learning", img: "/assets/apiit-logo.png" },
-      { name: "Entrepreneurship Club", sub: "of APIIT", img: "/assets/eclub-logo.png" },
+      { name: "APIIT", img: "/assets/apiit-logo.png" },
+      { name: "Entrepreneurship Club of APIIT", img: "/assets/eclub-logo.png" },
     ]},
     { name: "Banking Partner", partners: [
-      { name: "Sampath Bank", bold: "Sampath", img: "/assets/sampath-logo.jpg" },
+      { name: "Sampath Bank", img: "/assets/sampath-logo.jpg" },
     ]},
     { name: "Learning Partner", partners: [
-      { name: "Unilever", sub: "Sri Lanka", img: "/assets/unilever-logo.png" },
-      { name: "Sasnaka Sansada", sub: "Foundation", img: "/assets/sasnaka-logo.jpg" },
+      { name: "Unilever", img: "/assets/unilever-logo.png" },
+      { name: "Sarvodaya", img: "/assets/sasnaka-logo.jpg" },
     ]},
     { name: "Associate Partner", partners: [
-      { name: "KVK", sub: "Enterprises", img: "/assets/KVK-logo.jpeg" },
+      { name: "KVK Enterprises", img: "/assets/KVK-logo.jpeg" },
     ]},
     { name: "Advocacy Partner", partners: [
-      { name: "Central Environmental", sub: "Authority", img: "/assets/CEA-logo.png" },
+      { name: "Department of Wildlife Conservation", img: "/assets/CEA-logo.png" },
     ]},
     { name: "Print & Online Media Partner", partners: [
-      { name: "Virakesari", sub: "Since 1930", img: "/assets/veerakesari-logo.png" },
+      { name: "Wijeya Newspapers", img: "/assets/veerakesari-logo.png" },
     ]},
     { name: "Photography Partner", partners: [
-      { name: "Black Canvas", sub: "Photography", img: "/assets/Black-Canvas-logo.png" },
+      { name: "Black Canvas Photography", img: "/assets/Black-Canvas-logo.png" },
     ]},
   ],
   "Sandbox 2.0": [
     { name: "Title Sponsor", partners: [
-      { name: "JKOA", sub: "Office Automation", img: "/assets/JKOA-logo.png" },
-      { name: "Riotouch", sub: "Interactive Displays", mark: "sq" },
+      { name: "John Keells Group", img: "/assets/JKOA-logo.png" },
+      { name: "Riotouch Interactive Displays", mark: "sq" },
     ]},
     { name: "Gold Sponsor", partners: [
-      { name: "Sampath Auto", sub: "& Trading" },
-      { name: "Helpyou.lk", bold: "Help" },
-      { name: "Life Vision", bold: "Life", img: "/assets/life-vision-logo.jpeg" },
-      { name: "Hi Tech Lanka", bold: "Hi Tech", img: "/assets/hi-tech-logo.png" },
+      { name: "Sampath Auto & Trading" },
+      { name: "Helpyou.lk" },
+      { name: "Life Vision", img: "/assets/life-vision-logo.jpeg" },
+      { name: "4-Tech Lanka", img: "/assets/hi-tech-logo.png" },
       { name: "Hunters", img: "/assets/hunters-logo.jpg" },
       { name: "SAB", img: "/assets/sab-logo.png" },
-      { name: "Decent Trust", sub: "Colombo", img: "/assets/decent-logo.jpg" },
+      { name: "Decent Trust Holdings", img: "/assets/decent-logo.jpg" },
     ]},
     { name: "Bronze Sponsor", partners: [
-      { name: "Playdium", sub: "Play · Eat · Repeat", img: "/assets/playdium-logo.png" },
-      { name: "Awakening", sub: "Training Academy", img: "/assets/ATA-logo.png" },
+      { name: "Playdium", img: "/assets/playdium-logo.png" },
+      { name: "Awakening Training Academy", img: "/assets/ATA-logo.png" },
     ]},
     { name: "Banking Sponsor", partners: [
-      { name: "NSB", sub: "National Savings Bank", img: "/assets/NSB-logo.png" },
+      { name: "National Savings Bank", img: "/assets/NSB-logo.png" },
     ]},
     { name: "AV Advertisement Sponsor", partners: [
-      { name: "Sampath Bank", bold: "Sampath", img: "/assets/sampath-logo.jpg" },
+      { name: "Sampath Bank", img: "/assets/sampath-logo.jpg" },
     ]},
     { name: "Print Media Sponsor", partners: [
-      { name: "The Sunday Times", bold: "Sunday", img: "/assets/sunday-logo.jpg" },
+      { name: "The Sunday Times", img: "/assets/sunday-logo.jpg" },
     ]},
     { name: "Photography Partner", partners: [
-      { name: "Black Canvas", sub: "Photography", img: "/assets/Black-Canvas-logo.png" },
+      { name: "Black Canvas Photography", img: "/assets/Black-Canvas-logo.png" },
     ]},
     { name: "Host & Organiser", partners: [
-      { name: "APIIT", sub: "Inspire love for learning", img: "/assets/apiit-logo.png" },
-      { name: "Entrepreneurship Club", sub: "of APIIT", img: "/assets/eclub-logo.png" },
+      { name: "APIIT", img: "/assets/apiit-logo.png" },
+      { name: "Entrepreneurship Club of APIIT", img: "/assets/eclub-logo.png" },
     ]},
   ],
 };
@@ -458,7 +458,7 @@ export default function PastPartners() {
         .sponsor-logo-box {
           width: 56px;
           height: 56px;
-          min-width: 56px;
+          flex-shrink: 0;
           background: #FFFFFF;
           border-radius: 10px;
           padding: 8px;
@@ -469,6 +469,7 @@ export default function PastPartners() {
         }
 
         .sponsor-name-text {
+          flex: 1;
           font-size: 15px;
           font-weight: 600;
           color: #F5F2F7;
