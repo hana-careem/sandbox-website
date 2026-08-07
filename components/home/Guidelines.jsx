@@ -32,32 +32,26 @@ export default function Guidelines() {
               Open to all schools in Sri Lanka. Teams brainstorm and pitch a business idea, judged on originality, feasibility, and presentation by leading entrepreneurs.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-3">
-              {/* View — opens as preview in both views */}
-              <a 
-                href="/sandbox-rules-and-regulations.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#3c1c33] to-[#7A3D68] text-[#F3EEFB] px-8 py-4 rounded-full font-bold font-inter transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 group"
-              >
-                View Full Rules &amp; Regulations
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
+            {/* Desktop Button — opens as preview */}
+            <a 
+              href="/sandbox-rules-and-regulations.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hidden md:inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#3c1c33] to-[#7A3D68] text-[#F3EEFB] px-8 py-4 rounded-full font-bold font-inter transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 group"
+            >
+              View Full Rules &amp; Regulations
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
 
-              {/* Download — triggers file download in both views */}
-              <a 
-                href="/sandbox-rules-and-regulations.pdf" 
-                download="Sandbox - Rules & Regulations.pdf"
-                className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-[#F3EEFB] px-8 py-4 rounded-full font-bold font-inter transition-all duration-300 hover:bg-white/20 hover:shadow-lg hover:-translate-y-0.5 group"
-              >
-                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                  <polyline points="7 10 12 15 17 10" />
-                  <line x1="12" y1="15" x2="12" y2="3" />
-                </svg>
-                Download PDF
-              </a>
-            </div>
+            {/* Mobile Button — triggers download */}
+            <a 
+              href="/sandbox-rules-and-regulations.pdf" 
+              download="Sandbox - Rules & Regulations.pdf"
+              className="inline-flex md:hidden items-center justify-center gap-2 bg-gradient-to-r from-[#3c1c33] to-[#7A3D68] text-[#F3EEFB] px-8 py-4 rounded-full font-bold font-inter transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 group"
+            >
+              View Full Rules &amp; Regulations
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
           </ScrollReveal>
 
           {/* Right Checklist Block */}
