@@ -362,7 +362,7 @@ export default function PastPartners() {
         .years {
           display: flex; justify-content: center;
           padding: 30px 0 26px; margin-top: 8px;
-          background: linear-gradient(180deg, rgba(42,21,35,1) 30%, rgba(60,28,51,0.85) 75%, rgba(42,21,35,0) 100%);
+          background: transparent;
         }
         .year-switch {
           position: relative; display: inline-flex; padding: 6px;
