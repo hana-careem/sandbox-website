@@ -276,19 +276,19 @@ export default function PastPartners() {
   return (
     <section 
       id="past-sponsors"
-      className="pb-20 relative bg-slate-950 font-sans" 
+      className="pb-20 relative bg-[linear-gradient(180deg,#2A1523_0%,#3c1c33_50%,#2A1523_100%)] font-sans" 
     >
       
       {/* 1. Section Header */}
       <div className="max-w-[1200px] mx-auto px-[clamp(20px,5vw,40px)] pt-20 text-center relative z-10">
         <span className="inline-block font-poppins font-semibold text-[12px] tracking-[0.32em] text-[#e6007e] uppercase mb-4">
-          Our Partners
+          Our Past Partners
         </span>
         <h2 className="font-poppins font-bold text-[clamp(38px,7vw,76px)] leading-[1.02] tracking-[-0.02em] text-white">
           Sandbox <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-[#ff1e93]">Sponsors</span>
         </h2>
-        <p className="text-slate-400 max-w-[560px] mx-auto mt-4 text-[clamp(15px,2vw,17px)]">
-          The organisations that powered Sri Lanka's biggest inter-school business pitching competition. Meet the partners who stood with {activeYear}.
+        <p className="text-[#C6B9E0] max-w-[560px] mx-auto mt-4 text-[clamp(15px,2vw,17px)]">
+          The organisations that powered Sri Lanka's biggest inter-school business pitching competition. Meet the partners who stood with previous sandbox competitions.
         </p>
       </div>
 
@@ -365,7 +365,7 @@ export default function PastPartners() {
         .years {
           display: flex; justify-content: center;
           padding: 30px 0 26px; margin-top: 8px;
-          background: linear-gradient(180deg, rgba(2,6,23,1) 30%, rgba(2,6,23,0.85) 75%, rgba(2,6,23,0) 100%);
+          background: linear-gradient(180deg, rgba(42,21,35,1) 30%, rgba(60,28,51,0.85) 75%, rgba(42,21,35,0) 100%);
         }
         .year-switch {
           position: relative; display: inline-flex; padding: 6px;
@@ -471,7 +471,7 @@ export default function PastPartners() {
           .layout { grid-template-columns: 1fr; gap: 8px; }
           .sidebar-inner { 
             position: sticky; top: 125px; z-index: 30; margin: 0 -20px; 
-            background: rgba(2,6,23,0.85); backdrop-filter: blur(10px); 
+            background: rgba(42,21,35,0.85); backdrop-filter: blur(10px); 
             padding: 10px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); 
           }
           .tier-nav { display: flex; gap: 4px; overflow-x: auto; padding-left: 0; scrollbar-width: none; }
