@@ -143,8 +143,8 @@ export default function PastPartners() {
         indicatorRef.current.style.opacity = '0';
       } else {
         indicatorRef.current.style.opacity = '1';
-        indicatorRef.current.style.height = (activeLink.offsetHeight * 0.62) + 'px';
-        const topOffset = activeLink.offsetTop + (activeLink.offsetHeight * 0.19);
+        indicatorRef.current.style.height = activeLink.offsetHeight + 'px';
+        const topOffset = activeLink.offsetTop;
         indicatorRef.current.style.transform = `translateY(${topOffset}px)`;
       }
     }
@@ -344,7 +344,7 @@ export default function PastPartners() {
                     {t.partners.length}
                   </span>
                 </div>
-                <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-[14px]">
+                <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-[14px] items-start">
                   {t.partners.map((p, i) => (
                     <div className="logo-card" key={i}>
                       <SponsorCard p={p} />
@@ -397,7 +397,7 @@ export default function PastPartners() {
 
         .layout {
           display: grid;
-          grid-template-columns: 230px 1fr;
+          grid-template-columns: 320px 1fr;
           gap: clamp(28px, 5vw, 68px);
           padding-bottom: 120px;
         }
@@ -406,7 +406,7 @@ export default function PastPartners() {
         .tier-nav { position: relative; padding-left: 20px; }
         .tier-indicator {
           position: absolute; left: 0; top: 0;
-          width: 3px; height: 30px; border-radius: 3px;
+          width: 4px; height: 30px; border-radius: 2px;
           background: linear-gradient(#ff1e93, #e6007e);
           box-shadow: 0 0 16px #e6007e;
           transition: transform 0.45s cubic-bezier(.4, 0, .1, 1), height 0.45s cubic-bezier(.4, 0, .1, 1), opacity .25s;
@@ -414,26 +414,26 @@ export default function PastPartners() {
         .tier-link {
           position: relative;
           display: block; width: 100%; text-align: left; background: none; border: none;
-          font-family: "Inter", sans-serif; font-size: 15px; color: #94a3b8; /* slate-400 */
-          padding: 16px 0; cursor: pointer;
-          transition: color .25s, padding-left .25s cubic-bezier(.22, 1, .36, 1);
+          font-family: "Inter", sans-serif; font-size: 17px; font-weight: 500; color: #C4B8CC;
+          padding: 14px 0 14px 20px; cursor: pointer;
+          transition: color .15s ease, padding-left .25s cubic-bezier(.22, 1, .36, 1);
         }
         .tier-link::after {
           content: ""; position: absolute; left: 0; bottom: 0;
           width: 150px; max-width: 68%; height: 1px;
-          background: linear-gradient(90deg, rgba(255,255,255,.16), rgba(255,255,255,0));
+          background: linear-gradient(90deg, rgba(255,255,255,.08), rgba(255,255,255,0));
           transition: opacity .25s;
         }
         .tier-link:last-child::after { display: none; }
         .tier-link:hover, .tier-link:focus-visible { color: #ffffff; outline: none; }
-        .tier-link.active { color: #fff; font-weight: 600; padding-left: 4px; }
+        .tier-link.active { color: #ffffff; font-weight: 700; padding-left: 20px; }
 
         .logo-card {
           position: relative;
           background: #1B1220;
           border: 1px solid rgba(255,255,255,0.08);
           border-radius: 14px;
-          padding: 12px 16px;
+          padding: 12px;
           overflow: hidden;
           opacity: 0; transform: translateY(22px);
           transition: background 150ms ease, border-color 150ms ease;
@@ -450,15 +450,14 @@ export default function PastPartners() {
 
         .sponsor-card-inner {
           display: flex;
-          flex-direction: row;
-          align-items: center;
-          gap: 14px;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 10px;
         }
 
         .sponsor-logo-box {
-          width: 56px;
-          height: 56px;
-          flex-shrink: 0;
+          width: 100%;
+          aspect-ratio: 1 / 1;
           background: #FFFFFF;
           border-radius: 10px;
           padding: 8px;
@@ -469,7 +468,6 @@ export default function PastPartners() {
         }
 
         .sponsor-name-text {
-          flex: 1;
           font-size: 15px;
           font-weight: 600;
           color: #F5F2F7;
