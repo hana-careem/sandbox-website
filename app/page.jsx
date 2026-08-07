@@ -4,6 +4,7 @@ import AboutSandbox from '../components/home/AboutSandbox';
 import Guidelines from '../components/home/Guidelines';
 import Timeline from '../components/home/Timeline';
 import PhotoCollageBackground from '../components/home/PhotoCollageBackground';
+import ProjectProposalBanner from '../components/home/ProjectProposalBanner';
 
 export const metadata = {
   title: 'Sandbox | Inter-School Business Pitching Competition',
@@ -18,6 +19,7 @@ export default function Home() {
         <AboutSandbox />
         <Timeline />
         <Guidelines />
+        <ProjectProposalBanner />
       </PhotoCollageBackground>
     </main>
   );
