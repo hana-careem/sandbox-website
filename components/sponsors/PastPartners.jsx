@@ -311,7 +311,7 @@ export default function PastPartners() {
         <div className={`layout ${isSwitching ? 'switching' : ''}`}>
           
           <aside className="sidebar">
-            <div className="sidebar-inner sticky top-[240px]">
+            <div className="sidebar-inner sticky top-[140px] z-50">
               <nav className="tier-nav" ref={navRef}>
                 <div className="tier-indicator" ref={indicatorRef}></div>
                 {tiers.map((t, i) => {
@@ -370,7 +370,6 @@ export default function PastPartners() {
           background: rgba(255, 255, 255, 0.05);
           border: 1px solid rgba(255, 255, 255, 0.10);
           box-shadow: 0 4px 20px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.05);
-          backdrop-filter: blur(10px);
         }
         .year-thumb {
           position: absolute; top: 6px; left: 0; height: calc(100% - 12px);
