@@ -3,6 +3,9 @@ import React from 'react';
 import Link from 'next/link';
 import ScrollReveal from '../ui/ScrollReveal';
 
+// TODO: replace with the actual sponsorship proposal URL (PDF or Drive link)
+const SPONSORSHIP_PROPOSAL_URL = "#";
+
 export default function PartnerUp() {
   return (
     <section id="become-a-partner" className="relative overflow-hidden pt-32 pb-20 bg-[linear-gradient(180deg,#2A1523_0%,#3c1c33_50%,#2A1523_100%)]">
@@ -19,12 +22,25 @@ export default function PartnerUp() {
           <p className="text-lg text-[#C6B9E0] mb-10 leading-relaxed">
             Gain unparalleled access to Sri Lanka's brightest young minds. Align your brand with youth empowerment, innovation, and entrepreneurship. Partnering with Sandbox connects you directly with the next generation of leaders from over 150 schools nationwide.
           </p>
-          <Link 
-            href="/contact" 
-            className="inline-flex px-8 py-4 text-lg font-bold rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white transition-all focus:ring-2 focus:ring-white/50 focus:outline-none shadow-lg min-h-[44px]"
-          >
-            Become a Partner
-          </Link>
+          <div className="flex flex-col-reverse sm:flex-row items-center justify-center gap-4">
+            {/* Secondary — outlined */}
+            <a
+              href={SPONSORSHIP_PROPOSAL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-full bg-transparent border border-white/40 hover:bg-white/10 text-white transition-all focus:ring-2 focus:ring-white/40 focus:outline-none min-h-[44px]"
+            >
+              View Sponsorship Proposal
+            </a>
+
+            {/* Primary — main */}
+            <Link
+              href="/contact"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white transition-all focus:ring-2 focus:ring-white/50 focus:outline-none shadow-lg min-h-[44px]"
+            >
+              Become a Partner
+            </Link>
+          </div>
         </ScrollReveal>
         </div>
       </div>
