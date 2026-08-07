@@ -37,12 +37,10 @@
 @layer base {
   html {
     @apply bg-slate-950;
-    overflow-x: hidden;
   }
 
   body {
     @apply bg-slate-950 text-slate-300;
-    overflow-x: hidden;
   }
 }
 

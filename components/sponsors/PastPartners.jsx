@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
+import Image from 'next/image';
 
 const MARKS = {
   ring:   <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="2.4"/></svg>,
@@ -10,7 +11,7 @@ const MARKS = {
   hex:    <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7.5 4.5v9L12 21l-7.5-4.5v-9L12 3z" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round"/></svg>,
 };
 
-const EDITIONS = {
+export const EDITIONS = {
   "Sandbox 1.0": [
     { name: "Host & Organiser", partners: [
       { name: "APIIT", sub: "Inspire love for learning", img: "/assets/apiit-logo.png" },
@@ -24,7 +25,7 @@ const EDITIONS = {
       { name: "Sasnaka Sansada", sub: "Foundation", img: "/assets/sasnaka-logo.jpg" },
     ]},
     { name: "Associate Partner", partners: [
-      { name: "KVI", sub: "Enterprises", img: "/assets/KVK-logo.jpeg" },
+      { name: "KVK", sub: "Enterprises", img: "/assets/KVK-logo.jpeg" },
     ]},
     { name: "Advocacy Partner", partners: [
       { name: "Central Environmental", sub: "Authority", img: "/assets/CEA-logo.png" },
@@ -77,7 +78,6 @@ function slug(s) {
   return s.toLowerCase().replace(/[^a-z0-9]+/g, '-'); 
 }
 
-// Ensure useLayoutEffect works safely in SSR (Next.js)
 const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
 function Wordmark({ p }) {
@@ -86,11 +86,10 @@ function Wordmark({ p }) {
       <img 
         src={p.img} 
         alt={p.name} 
+        className="object-contain"
         style={{
-          maxHeight: '46px', 
+          maxHeight: '52px', 
           maxWidth: '80%', 
-          objectFit: 'contain', 
-          filter: 'grayscale(1) brightness(1.6)', 
           opacity: 0.9 
         }} 
       />
@@ -100,18 +99,16 @@ function Wordmark({ p }) {
   let nameContent = p.name;
   if (p.bold) {
     const rest = p.name.slice(p.bold.length);
-    nameContent = (
-      <>
-        <b>{p.bold}</b>{rest}
-      </>
-    );
+    nameContent = <><b className="font-bold text-white">{p.bold}</b>{rest}</>;
   }
 
   return (
-    <div className="wordmark">
-      {p.mark && <span className="mark">{MARKS[p.mark]}</span>}
-      <span className="name">{nameContent}</span>
-      {p.sub && <span className="sub">{p.sub}</span>}
+    <div className="flex flex-col items-center gap-2 text-center wordmark-wrap">
+      {p.mark && <span className="w-[30px] h-[30px] text-slate-300 transition-colors mark-svg">{MARKS[p.mark]}</span>}
+      <span className="font-poppins font-semibold text-[clamp(15px,2.4vw,19px)] text-slate-200 tracking-[-0.01em] leading-[1.1] transition-colors name-text">
+        {nameContent}
+      </span>
+      {p.sub && <span className="text-[9px] tracking-[0.24em] uppercase text-slate-400 transition-colors sub-text">{p.sub}</span>}
     </div>
   );
 }
@@ -129,12 +126,11 @@ export default function PastPartners() {
   const yearsRef = useRef(null);
   
   const observerRef = useRef(null);
-  const spyRef = useRef(null);
 
-  // Helper to recompute thumb position
+  // Position thumb perfectly
   const updateThumbPosition = () => {
     if (yearsRef.current && thumbRef.current) {
-      const activeBtn = yearsRef.current.querySelector('.year-pill.active');
+      const activeBtn = yearsRef.current.querySelector('.year-pill[aria-pressed="true"]');
       if (activeBtn) {
         thumbRef.current.style.width = activeBtn.offsetWidth + 'px';
         thumbRef.current.style.transform = `translateX(${activeBtn.offsetLeft}px)`;
@@ -142,7 +138,7 @@ export default function PastPartners() {
     }
   };
 
-  // Helper to recompute sidebar indicator position
+  // Position indicator smoothly
   const updateIndicatorPosition = () => {
     if (navRef.current && indicatorRef.current) {
       const activeLink = navRef.current.querySelector('.tier-link.active');
@@ -157,11 +153,10 @@ export default function PastPartners() {
     }
   };
 
-  // Handle year switch
+  // Handle year switch with spring and glow
   const handleYearSelect = (y) => {
     if (y === activeYear) return;
     
-    // Briefly add pink glow class
     if (thumbRef.current) {
       thumbRef.current.classList.add('moving');
       setTimeout(() => {
@@ -176,73 +171,100 @@ export default function PastPartners() {
     }, 340);
   };
 
-  // Recompute thumb on mount, font load, resize, and year change
+  // Recompute thumb sizes whenever year changes or fonts load
   useIsomorphicLayoutEffect(() => {
-    requestAnimationFrame(updateThumbPosition);
+    requestAnimationFrame(() => requestAnimationFrame(updateThumbPosition));
     if (document.fonts) {
       document.fonts.ready.then(() => {
-        requestAnimationFrame(updateThumbPosition);
+        requestAnimationFrame(() => requestAnimationFrame(updateThumbPosition));
       });
     }
   }, [activeYear]);
 
-  // Setup scroll reveal & spy
+  // Setup scroll spy (exact logic requested) and scroll reveals
   useEffect(() => {
     if (isSwitching) return;
     
-    // Set up scroll reveal for cards
-    if (observerRef.current) observerRef.current.disconnect();
-    const cards = contentRef.current?.querySelectorAll('.logo-card');
-    if (cards && cards.length > 0) {
-      observerRef.current = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            const card = e.target;
-            const idx = Array.from(card.parentElement.children).indexOf(card);
-            card.style.animationDelay = (idx * 55) + 'ms';
-            card.classList.add('in');
-            observerRef.current.unobserve(card);
-          }
-        });
-      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
-      cards.forEach(c => observerRef.current.observe(c));
+    // Intersection observer for logo card reveals
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReducedMotion) {
+      if (observerRef.current) observerRef.current.disconnect();
+      const cards = contentRef.current?.querySelectorAll('.logo-card');
+      if (cards && cards.length > 0) {
+        observerRef.current = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              const card = e.target;
+              const idx = Array.from(card.parentElement.children).indexOf(card);
+              card.style.animationDelay = (idx * 55) + 'ms';
+              card.classList.add('in');
+              observerRef.current.unobserve(card);
+            }
+          });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
+        cards.forEach(c => observerRef.current.observe(c));
+      }
+    } else {
+      // reduced motion: just show them immediately
+      const cards = contentRef.current?.querySelectorAll('.logo-card');
+      cards?.forEach(c => c.classList.add('in-instant'));
     }
 
-    // Set up scroll spy for tiers
-    if (spyRef.current) spyRef.current.disconnect();
+    // Passive scroll listener for Tier indicator
+    let ticking = false;
     const tierEls = contentRef.current?.querySelectorAll('.tier-block');
-    if (tierEls && tierEls.length > 0) {
-      spyRef.current = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            setActiveTier(e.target.id);
+    
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (tierEls && tierEls.length > 0) {
+            const focusLine = window.innerHeight * 0.38;
+            let currentTier = tierEls[0].id; // fallback to first
+            let minDiff = Infinity;
+            
+            for (let i = 0; i < tierEls.length; i++) {
+              const rect = tierEls[i].getBoundingClientRect();
+              if (rect.top <= focusLine) {
+                const diff = focusLine - rect.top;
+                if (diff < minDiff) {
+                  minDiff = diff;
+                  currentTier = tierEls[i].id;
+                }
+              }
+            }
+            setActiveTier(currentTier);
           }
+          ticking = false;
         });
-      }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
-      tierEls.forEach(t => spyRef.current.observe(t));
-    }
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    // Run once to initialize
+    onScroll();
 
     return () => {
       if (observerRef.current) observerRef.current.disconnect();
-      if (spyRef.current) spyRef.current.disconnect();
+      window.removeEventListener('scroll', onScroll);
     };
   }, [activeYear, isSwitching]);
 
-  // Update indicator whenever activeTier changes
+  // Sync indicator when active tier changes
   useIsomorphicLayoutEffect(() => {
-    requestAnimationFrame(updateIndicatorPosition);
+    requestAnimationFrame(() => requestAnimationFrame(updateIndicatorPosition));
   }, [activeTier, activeYear, isSwitching]);
 
-  // Handle global resize
+  // Global resize listener
   useEffect(() => {
     let resizeTimer;
     const handleResize = () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
-        requestAnimationFrame(() => {
+        requestAnimationFrame(() => requestAnimationFrame(() => {
           updateThumbPosition();
           updateIndicatorPosition();
-        });
+        }));
       }, 50);
     };
     window.addEventListener('resize', handleResize);
@@ -254,46 +276,31 @@ export default function PastPartners() {
   return (
     <section 
       id="past-sponsors"
-      className="pb-20 relative bg-[linear-gradient(180deg,#2A1523_0%,#3c1c33_50%,#2A1523_100%)] font-sans" 
-      style={{ 
-        '--card': 'rgba(122,79,176,0.10)',
-        '--card-hover': 'rgba(122,79,176,0.20)',
-        '--line': 'rgba(183,155,221,0.28)',
-        '--line-strong': 'rgba(183,155,221,0.5)',
-        '--text': '#ffffff',
-        '--muted': '#C6B9E0',
-        '--muted-2': '#a89fc0',
-        '--pink': '#a64d79',
-        '--pink-2': '#e878a8',
-        '--radius': '16px',
-        '--sidebar-w': '230px',
-        '--maxw': '1200px',
-        '--ease': 'cubic-bezier(0.22, 1, 0.36, 1)',
-        '--spring': 'cubic-bezier(0.34, 1.56, 0.5, 1)'
-      }}
+      className="pb-20 relative bg-slate-950 font-sans" 
     >
       
       {/* 1. Section Header */}
-      <div className="max-w-[1200px] mx-auto px-[clamp(20px,5vw,40px)] pt-20 text-center">
-        <span className="inline-block font-coolvetica font-semibold text-[13px] tracking-[0.32em] text-[var(--pink)] uppercase mb-[18px]">
+      <div className="max-w-[1200px] mx-auto px-[clamp(20px,5vw,40px)] pt-20 text-center relative z-10">
+        <span className="inline-block font-poppins font-semibold text-[12px] tracking-[0.32em] text-[#e6007e] uppercase mb-4">
           Our Partners
         </span>
-        <h2 className="font-coolvetica font-normal text-[clamp(38px,7vw,76px)] leading-[1.02] tracking-[-0.02em] text-white">
-          Sandbox <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-[var(--pink-2)] to-[var(--pink)]">Sponsors</span>
+        <h2 className="font-poppins font-bold text-[clamp(38px,7vw,76px)] leading-[1.02] tracking-[-0.02em] text-white">
+          Sandbox <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-[#ff1e93]">Sponsors</span>
         </h2>
-        <p className="text-[var(--muted)] max-w-[560px] mx-auto mt-5 text-[clamp(15px,2vw,17px)]">
+        <p className="text-slate-400 max-w-[560px] mx-auto mt-4 text-[clamp(15px,2vw,17px)]">
           The organisations that powered Sri Lanka's biggest inter-school business pitching competition. Meet the partners who stood with {activeYear}.
         </p>
       </div>
 
       {/* 2. Edition Toggle */}
-      <div className="years" ref={yearsRef}>
+      <div className="years sticky top-[71px] z-40" ref={yearsRef}>
         <div className="year-switch">
           <span className="year-thumb" ref={thumbRef}></span>
           {years.map(y => (
             <button 
               key={y}
               className={`year-pill ${y === activeYear ? 'active' : ''}`} 
+              aria-pressed={y === activeYear}
               onClick={() => handleYearSelect(y)}
             >
               {y}
@@ -307,7 +314,7 @@ export default function PastPartners() {
         <div className={`layout ${isSwitching ? 'switching' : ''}`}>
           
           <aside className="sidebar">
-            <div className="sidebar-inner">
+            <div className="sidebar-inner sticky top-[150px]">
               <nav className="tier-nav" ref={navRef}>
                 <div className="tier-indicator" ref={indicatorRef}></div>
                 {tiers.map((t, i) => {
@@ -329,18 +336,20 @@ export default function PastPartners() {
             </div>
           </aside>
           
-          <main className="content" ref={contentRef}>
+          <main className="content min-w-0" ref={contentRef}>
             {tiers.map(t => (
-              <section className="tier-block" id={slug(t.name)} key={t.name}>
-                <div className="tier-head">
-                  <h3 className="text-white m-0 font-coolvetica font-normal text-[clamp(20px,3vw,27px)] tracking-[-0.01em]">
+              <section className="tier-block scroll-mt-[160px] pt-2 mb-14" id={slug(t.name)} key={t.name}>
+                <div className="flex items-baseline gap-[14px] mb-[22px]">
+                  <h3 className="text-white m-0 font-poppins font-semibold text-[clamp(20px,3vw,27px)] tracking-[-0.01em]">
                     {t.name}
                   </h3>
-                  <span className="count">{t.partners.length}</span>
+                  <span className="text-[12px] text-slate-400 font-poppins font-medium border border-slate-700/50 rounded-full px-2.5 py-0.5">
+                    {t.partners.length}
+                  </span>
                 </div>
-                <div className="logo-grid">
+                <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-[14px]">
                   {t.partners.map((p, i) => (
-                    <div className="logo-card backdrop-blur-sm" key={i}>
+                    <div className="logo-card" key={i}>
                       <Wordmark p={p} />
                     </div>
                   ))}
@@ -353,69 +362,64 @@ export default function PastPartners() {
       </div>
 
       <style jsx>{`
-        /* ---------- year selector ---------- */
         .years {
-          position: sticky; top: 71px; z-index: 40;
           display: flex; justify-content: center;
           padding: 30px 0 26px; margin-top: 8px;
-          background: linear-gradient(180deg, rgba(42,21,35,0.95) 10%, rgba(42,21,35,0));
+          background: linear-gradient(180deg, rgba(2,6,23,1) 30%, rgba(2,6,23,0.85) 75%, rgba(2,6,23,0) 100%);
         }
         .year-switch {
-          position: relative; display: inline-flex; padding: 5px;
+          position: relative; display: inline-flex; padding: 6px;
           border-radius: 999px;
-          background: rgba(255, 255, 255, 0.06);
-          border: 1px solid var(--line);
-          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
-          backdrop-filter: blur(8px);
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.10);
+          box-shadow: 0 4px 20px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.05);
+          backdrop-filter: blur(10px);
         }
         .year-thumb {
-          position: absolute; top: 5px; left: 0; height: calc(100% - 10px);
+          position: absolute; top: 6px; left: 0; height: calc(100% - 12px);
           border-radius: 999px;
-          background: #f7f4f1;
+          background: linear-gradient(135deg, #fff, #f4eef1);
           box-shadow: 0 3px 12px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.75);
-          transition: transform 0.5s var(--spring),
-                      width 0.5s var(--spring),
+          transition: transform 0.5s cubic-bezier(.34, 1.56, .5, 1),
+                      width 0.5s cubic-bezier(.34, 1.56, .5, 1),
                       box-shadow 0.5s ease;
           z-index: 0; will-change: transform, width;
         }
         .year-thumb.moving { 
-          box-shadow: 0 6px 22px rgba(166, 77, 121, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.75); 
+          box-shadow: 0 8px 26px rgba(230,0,126,0.35), inset 0 1px 0 rgba(255, 255, 255, 0.75); 
         }
         .year-pill {
           position: relative; z-index: 1;
           font-family: "Poppins", sans-serif; font-weight: 600; font-size: 15px;
-          color: #c9c4cf; background: transparent; border: none;
-          border-radius: 999px; padding: 9px 26px; cursor: pointer;
-          transition: color .5s var(--ease);
+          color: #cbc3d2; background: transparent; border: none;
+          border-radius: 999px; padding: 10px 30px; cursor: pointer; white-space: nowrap;
+          transition: color .4s cubic-bezier(.22, 1, .36, 1);
         }
         .year-pill:hover { color: #ffffff; }
         .year-pill.active { color: #1b1420; font-weight: 700; }
 
-        /* ---------- layout grid ---------- */
         .layout {
           display: grid;
-          grid-template-columns: var(--sidebar-w) 1fr;
+          grid-template-columns: 230px 1fr;
           gap: clamp(28px, 5vw, 68px);
-          padding-bottom: 80px;
+          padding-bottom: 120px;
         }
 
-        /* ---------- sidebar ---------- */
         .sidebar { position: relative; }
-        .sidebar-inner { position: sticky; top: 150px; }
         .tier-nav { position: relative; padding-left: 20px; }
         .tier-indicator {
           position: absolute; left: 0; top: 0;
           width: 3px; height: 30px; border-radius: 3px;
-          background: linear-gradient(var(--pink-2), var(--pink));
-          box-shadow: 0 0 14px var(--pink);
-          transition: transform .35s var(--ease), height .35s var(--ease), opacity .25s;
+          background: linear-gradient(#ff1e93, #e6007e);
+          box-shadow: 0 0 16px #e6007e;
+          transition: transform 0.45s cubic-bezier(.4, 0, .1, 1), height 0.45s cubic-bezier(.4, 0, .1, 1), opacity .25s;
         }
         .tier-link {
           position: relative;
           display: block; width: 100%; text-align: left; background: none; border: none;
-          font-family: "Inter", sans-serif; font-size: 15px; color: var(--muted);
+          font-family: "Inter", sans-serif; font-size: 15px; color: #94a3b8; /* slate-400 */
           padding: 16px 0; cursor: pointer;
-          transition: color .25s, padding-left .25s var(--ease);
+          transition: color .25s, padding-left .25s cubic-bezier(.22, 1, .36, 1);
         }
         .tier-link::after {
           content: ""; position: absolute; left: 0; bottom: 0;
@@ -424,89 +428,67 @@ export default function PastPartners() {
           transition: opacity .25s;
         }
         .tier-link:last-child::after { display: none; }
-        .tier-link:hover { color: #ffffff; }
-        .tier-link.active { color: #fff; font-weight: 600; padding-left: 6px; }
+        .tier-link:hover, .tier-link:focus-visible { color: #ffffff; outline: none; }
+        .tier-link.active { color: #fff; font-weight: 600; padding-left: 4px; }
 
-        /* ---------- content ---------- */
-        .content { min-width: 0; }
-        .tier-block { padding-top: 8px; margin-bottom: 56px; scroll-margin-top: 160px; }
-        .tier-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 22px; }
-        .count {
-          font-size: 12px; color: var(--muted-2); font-family: "Poppins", sans-serif; font-weight: 500;
-          border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px;
-        }
-
-        .logo-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-          gap: 14px;
-        }
         .logo-card {
           position: relative;
           aspect-ratio: 16 / 10;
-          background: var(--card);
-          border: 1px solid var(--line);
-          border-radius: var(--radius);
+          background: rgba(255,255,255,0.03);
+          border: 1px solid rgba(255,255,255,0.06);
+          border-radius: 16px;
           display: grid; place-items: center;
           padding: 22px;
           overflow: hidden;
           opacity: 0; transform: translateY(22px);
-          transition: background .3s, border-color .3s, transform .3s var(--ease);
+          transition: background .3s, border-color .3s, transform .3s cubic-bezier(.22, 1, .36, 1);
         }
-        :global(.logo-card.in) { animation: rise .6s var(--ease) forwards; }
+        :global(.logo-card.in) { animation: rise .6s cubic-bezier(.22, 1, .36, 1) forwards; }
+        :global(.logo-card.in-instant) { opacity: 1; transform: translateY(0); transition: none; }
+        
         @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+        
         .logo-card::after {
           content: ""; position: absolute; inset: 0; border-radius: inherit;
-          background: radial-gradient(120% 120% at 50% 0%, rgba(166,77,121,.15), transparent 60%);
-          opacity: 0; transition: opacity .3s;
+          background: radial-gradient(120% 120% at 50% 0%, rgba(230,0,126,.10), transparent 60%);
+          opacity: 0; transition: opacity .3s; pointer-events: none;
         }
         .logo-card:hover {
-          background: var(--card-hover);
-          border-color: var(--line-strong);
+          background: rgba(255,255,255,0.05);
+          border-color: rgba(255,255,255,0.12);
           transform: translateY(-4px);
         }
         .logo-card:hover::after { opacity: 1; }
 
-        :global(.wordmark) { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; }
-        :global(.wordmark .mark) { width: 30px; height: 30px; color: #cfcfd2; transition: color .3s; }
-        :global(.wordmark .name) {
-          font-family: "Poppins", sans-serif; font-weight: 600; font-size: clamp(15px, 2.4vw, 19px);
-          color: #cbcbce; letter-spacing: -0.01em; transition: color .3s;
-          line-height: 1.1;
-        }
-        :global(.wordmark .name b) { font-weight: 700; color: #fff; }
-        :global(.wordmark .sub) {
-          font-size: 9px; letter-spacing: .24em; text-transform: uppercase;
-          color: var(--muted-2); transition: color .3s;
-        }
-        .logo-card:hover :global(.name), .logo-card:hover :global(.mark) { color: #fff; }
-        .logo-card:hover :global(.sub) { color: var(--muted); }
+        .logo-card:hover :global(.name-text), .logo-card:hover :global(.mark-svg) { color: #fff; }
+        .logo-card:hover :global(.sub-text) { color: #cbd5e1; /* slate-300 */ }
 
-        /* fade for year switch */
         .layout.switching .content, .layout.switching .sidebar-inner { opacity: 0; transform: translateY(10px); }
-        .layout .content, .layout .sidebar-inner { transition: opacity .4s var(--ease), transform .4s var(--ease); }
+        .layout .content, .layout .sidebar-inner { transition: opacity .4s cubic-bezier(.22, 1, .36, 1), transform .4s cubic-bezier(.22, 1, .36, 1); }
 
-        /* ---------- responsive ---------- */
         @media (max-width: 820px) {
           .years { top: 63px; }
           .layout { grid-template-columns: 1fr; gap: 8px; }
-          .sidebar { position: sticky; top: 118px; z-index: 30; margin: 0 -20px; }
-          .sidebar-inner { position: static; background: rgba(42,21,35,.85); backdrop-filter: blur(10px); padding: 10px 20px; border-bottom: 1px solid var(--line); }
+          .sidebar-inner { 
+            position: sticky; top: 125px; z-index: 30; margin: 0 -20px; 
+            background: rgba(2,6,23,0.85); backdrop-filter: blur(10px); 
+            padding: 10px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); 
+          }
           .tier-nav { display: flex; gap: 4px; overflow-x: auto; padding-left: 0; scrollbar-width: none; }
           .tier-nav::-webkit-scrollbar { display: none; }
           .tier-indicator { display: none; }
           .tier-link {
             white-space: nowrap; border-bottom: none; padding: 8px 14px;
-            border: 1px solid var(--line); border-radius: 999px; font-size: 13px;
+            border: 1px solid rgba(255,255,255,0.1); border-radius: 999px; font-size: 13px;
           }
           .tier-link::after { display: none; }
-          .tier-link.active { border-color: var(--pink); padding-left: 14px; background: rgba(166,77,121,.12); }
-          .content { padding-top: 12px; }
+          .tier-link.active { border-color: #e6007e; background: rgba(230,0,126,.12); padding-left: 14px; }
         }
 
         @media (prefers-reduced-motion: reduce) {
-          * { transition: none !important; animation: none !important; scroll-behavior: auto; }
-          .logo-card { opacity: 1; transform: none; }
+          .year-thumb { transition: none !important; }
+          .tier-indicator { transition: none !important; }
+          html { scroll-behavior: auto !important; }
         }
       `}</style>
     </section>
