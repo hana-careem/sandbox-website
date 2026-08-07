@@ -168,20 +168,23 @@ export default function SandboxHero() {
             </ScrollReveal>
 
             <div className="w-full flex flex-col items-center">
-              {/* Prominent CTA */}
-              <ScrollReveal delay={400} immediate>
-                <Link
-                  ref={heroCtaRef}
-                  href="https://forms.gle/aA7xeVSHBGGSuhs87"
-                  target="_blank"
-                  className="group inline-flex items-center justify-center gap-2.5 px-8 py-3.5 text-base font-bold rounded-full bg-[#a64d79]/30 backdrop-blur-md border border-white/10 hover:bg-[#a64d79]/40 text-white transition-all duration-300 focus:ring-2 focus:ring-[#a64d79]/50 focus:outline-none shadow-lg hover:-translate-y-0.5 active:translate-y-0 mb-6"
-                >
-                  <span>Register Now</span>
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 border border-white/10 transition-transform duration-300 group-hover:translate-x-0.5">
-                    <ChevronRight size={18} />
-                  </span>
-                </Link>
-              </ScrollReveal>
+              {/* Prominent CTA — the IntersectionObserver watches this stable
+                  wrapper, NOT the button, so the ScrollReveal's transform animation
+                  can't momentarily read as "out of view" and flash the nav CTA. */}
+              <div ref={heroCtaRef}>
+                <ScrollReveal delay={400}>
+                  <Link
+                    href="https://forms.gle/aA7xeVSHBGGSuhs87"
+                    target="_blank"
+                    className="group inline-flex items-center justify-center gap-2.5 px-8 py-3.5 text-base font-bold rounded-full bg-[#a64d79]/30 backdrop-blur-md border border-white/10 hover:bg-[#a64d79]/40 text-white transition-all duration-300 focus:ring-2 focus:ring-[#a64d79]/50 focus:outline-none shadow-lg hover:-translate-y-0.5 active:translate-y-0 mb-6"
+                  >
+                    <span>Register Now</span>
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 border border-white/10 transition-transform duration-300 group-hover:translate-x-0.5">
+                      <ChevronRight size={18} />
+                    </span>
+                  </Link>
+                </ScrollReveal>
+              </div>
 
               {/* Inline Hero Countdown */}
               <ScrollReveal delay={500}>

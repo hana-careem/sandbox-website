@@ -41,6 +41,10 @@ export const EDITIONS = {
     { name: "Title Sponsor", partners: [
       { name: "John Keells Office Automation", img: "/assets/JKOA-logo.png" }
     ]},
+    { name: "Bronze Sponsor", partners: [
+      { name: "Playdium", img: "/assets/playdium-logo.png" },
+      { name: "Awakening Training Academy", img: "/assets/ATA-logo.png", box: 'none' },
+    ]},
     { name: "E-Logo Sponsor", partners: [
       { name: "Sampath Auto & Trading", img: "/assets/sampathauto-logo.png" },
       { name: "Helpyou.lk", img: "/assets/helpyou-logo.jpg", box: 'none' },
@@ -49,10 +53,6 @@ export const EDITIONS = {
       { name: "Hunters Woodcabins", img: "/assets/hunters-logo.jpg", box: 'none' },
       { name: "SAB", img: "/assets/sab-logo.png", box: 'none' },
       { name: "Decent Trust Holdings", img: "/assets/decent-logo.png" },
-    ]},
-    { name: "Bronze Sponsor", partners: [
-      { name: "Playdium", img: "/assets/playdium-logo.png" },
-      { name: "Awakening Training Academy", img: "/assets/ATA-logo.png", box: 'none' },
     ]},
     { name: "Banner Sponsor", partners: [
       { name: "National Savings Bank", img: "/assets/NSB-logo.png" },
@@ -358,7 +358,7 @@ export default function PastPartners() {
         <div className={`layout ${isSwitching ? 'switching' : ''}`}>
           
           <aside className="sidebar">
-            <div className="sidebar-inner sticky top-[112px] z-50">
+            <div className="sidebar-inner sticky top-[112px] z-30">
               <nav className="tier-nav" ref={navRef}>
                 <div className="tier-indicator" ref={indicatorRef}></div>
                 {tiers.map((t, i) => {
