@@ -139,7 +139,7 @@ export default function PastPartners() {
   const updateIndicatorPosition = () => {
     if (navRef.current && indicatorRef.current) {
       const activeLink = navRef.current.querySelector('.tier-link.active');
-      if (!activeLink || window.innerWidth <= 820) {
+      if (!activeLink || window.innerWidth <= 1024) {
         indicatorRef.current.style.opacity = '0';
       } else {
         indicatorRef.current.style.opacity = '1';
@@ -307,11 +307,11 @@ export default function PastPartners() {
       </div>
 
       {/* Layout: Sidebar + Grid */}
-      <div className="max-w-[1200px] mx-auto px-[clamp(20px,5vw,40px)]">
+      <div className="w-full pl-[32px] pr-[clamp(20px,5vw,40px)]">
         <div className={`layout ${isSwitching ? 'switching' : ''}`}>
           
           <aside className="sidebar">
-            <div className="sidebar-inner sticky top-[150px]">
+            <div className="sidebar-inner sticky top-[24px]">
               <nav className="tier-nav" ref={navRef}>
                 <div className="tier-indicator" ref={indicatorRef}></div>
                 {tiers.map((t, i) => {
@@ -397,8 +397,8 @@ export default function PastPartners() {
 
         .layout {
           display: grid;
-          grid-template-columns: 320px 1fr;
-          gap: clamp(28px, 5vw, 68px);
+          grid-template-columns: 280px 1fr;
+          gap: 24px;
           padding-bottom: 120px;
         }
 
@@ -482,7 +482,7 @@ export default function PastPartners() {
         .layout.switching .content, .layout.switching .sidebar-inner { opacity: 0; transform: translateY(10px); }
         .layout .content, .layout .sidebar-inner { transition: opacity .4s cubic-bezier(.22, 1, .36, 1), transform .4s cubic-bezier(.22, 1, .36, 1); }
 
-        @media (max-width: 820px) {
+        @media (max-width: 1024px) {
           .years { top: 63px; }
           .layout { grid-template-columns: 1fr; gap: 8px; }
           .sidebar-inner { 
