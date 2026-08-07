@@ -311,7 +311,7 @@ export default function PastPartners() {
         <div className={`layout ${isSwitching ? 'switching' : ''}`}>
           
           <aside className="sidebar">
-            <div className="sidebar-inner sticky top-[150px]">
+            <div className="sidebar-inner sticky top-[240px]">
               <nav className="tier-nav" ref={navRef}>
                 <div className="tier-indicator" ref={indicatorRef}></div>
                 {tiers.map((t, i) => {
@@ -397,7 +397,7 @@ export default function PastPartners() {
 
         .layout {
           display: grid;
-          grid-template-columns: 280px 1fr;
+          grid-template-columns: 320px 1fr;
           gap: 24px;
           padding-bottom: 120px;
         }
@@ -414,8 +414,8 @@ export default function PastPartners() {
         .tier-link {
           position: relative;
           display: block; width: 100%; text-align: left; background: none; border: none;
-          font-family: "Inter", sans-serif; font-size: 17px; font-weight: 500; color: #C4B8CC;
-          padding: 14px 0 14px 20px; cursor: pointer;
+          font-family: "Inter", sans-serif; font-size: 19px; font-weight: 500; color: #C4B8CC;
+          padding: 18px 0 18px 20px; cursor: pointer;
           transition: color .15s ease, padding-left .25s cubic-bezier(.22, 1, .36, 1);
         }
         .tier-link::after {
