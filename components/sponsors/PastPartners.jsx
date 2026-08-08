@@ -45,15 +45,6 @@ export const EDITIONS = {
       { name: "Playdium", img: "/assets/playdium-logo.png" },
       { name: "Awakening Training Academy", img: "/assets/ATA-logo.png", box: 'none' },
     ]},
-    { name: "E-Logo Sponsor", partners: [
-      { name: "Sampath Auto & Trading", img: "/assets/sampathauto-logo.png" },
-      { name: "Helpyou.lk", img: "/assets/helpyou-logo.jpg", box: 'none' },
-      { name: "Life Vision", img: "/assets/life-vision-logo.jpeg", box: 'none' },
-      { name: "Hi-Tech Lanka", img: "/assets/hi-tech-logo.png", box: 'black' },
-      { name: "Hunters Woodcabins", img: "/assets/hunters-logo.jpg", box: 'none' },
-      { name: "SAB", img: "/assets/sab-logo.png", box: 'none' },
-      { name: "Decent Trust Holdings", img: "/assets/decent-logo.png" },
-    ]},
     { name: "Banner Sponsor", partners: [
       { name: "National Savings Bank", img: "/assets/NSB-logo.png" },
     ]},
@@ -65,6 +56,15 @@ export const EDITIONS = {
     ]},
     { name: "Photography Partner", partners: [
       { name: "Black Canvas Photography", img: "/assets/Black-Canvas-logo.png", box: 'black' },
+    ]},
+        { name: "E-Logo Sponsor", partners: [
+      { name: "Sampath Auto & Trading", img: "/assets/sampathauto-logo.png" },
+      { name: "Helpyou.lk", img: "/assets/helpyou-logo.jpg", box: 'none' },
+      { name: "Life Vision", img: "/assets/life-vision-logo.jpeg", box: 'none' },
+      { name: "Hi-Tech Lanka", img: "/assets/hi-tech-logo.png", box: 'black' },
+      { name: "Hunters Woodcabins", img: "/assets/hunters-logo.jpg", box: 'none' },
+      { name: "SAB", img: "/assets/sab-logo.png", box: 'none' },
+      { name: "Decent Trust Holdings", img: "/assets/decent-logo.png" },
     ]},
     { name: "Host & Organiser", partners: [
       { name: "Asia Pacific Institute of Information Technology (APIIT)", img: "/assets/apiit-logo-black.jpg" },
@@ -337,7 +337,7 @@ export default function PastPartners() {
       </div>
 
       {/* 2. Edition Toggle */}
-      <div className="years sticky top-[71px] z-40" ref={yearsRef}>
+      <div className="years relative z-40" ref={yearsRef}>
         <div className="year-switch">
           <span className="year-thumb" ref={thumbRef}></span>
           {[...years].reverse().map(y => (
@@ -526,7 +526,6 @@ export default function PastPartners() {
         .layout .content, .layout .sidebar-inner { transition: opacity .4s cubic-bezier(.22, 1, .36, 1), transform .4s cubic-bezier(.22, 1, .36, 1); }
 
         @media (max-width: 1024px) {
-          .years { top: 63px; }
           .layout { grid-template-columns: 1fr; gap: 8px; padding-bottom: 24px; }
           /* Filter list hidden on mobile — just scroll through the tiers */
           .sidebar { display: none; }

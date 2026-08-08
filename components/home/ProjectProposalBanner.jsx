@@ -67,7 +67,7 @@ export default function ProjectProposalBanner() {
                 <line x1="16" y1="17" x2="8" y2="17" />
                 <polyline points="10 9 9 9 8 9" />
               </svg>
-              View the Project Proposal
+              View Project Proposal
             </a>
 
             {/* Secondary — ghost glass */}
@@ -141,18 +141,18 @@ export default function ProjectProposalBanner() {
           color: #fff;
           white-space: nowrap;
           text-decoration: none;
-          background: linear-gradient(135deg, #ff1e93, #e6007e);
-          box-shadow: 0 8px 26px -10px #e6007e;
+          background: linear-gradient(135deg, #c25d94, #a64d79);
+          box-shadow: 0 8px 26px -10px #a64d79;
           transition:
             transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
             box-shadow 0.25s ease;
         }
         .proposal-btn-primary:hover {
           transform: translateY(-2px);
-          box-shadow: 0 12px 32px -10px #e6007e;
+          box-shadow: 0 12px 32px -10px #a64d79;
         }
         .proposal-btn-primary:focus-visible {
-          outline: 2px solid #ff1e93;
+          outline: 2px solid #a64d79;
           outline-offset: 3px;
         }
 
