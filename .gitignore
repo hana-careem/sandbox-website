@@ -13,3 +13,5 @@ Desktop.ini
 .DS_Store
 scratch/
 .vercel
+public/assets/_pre_optimization_backup/
+scripts/
