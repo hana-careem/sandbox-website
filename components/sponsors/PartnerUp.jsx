@@ -3,8 +3,27 @@ import React from 'react';
 import Link from 'next/link';
 import ScrollReveal from '../ui/ScrollReveal';
 
-// TODO: replace with the actual sponsorship proposal URL (PDF or Drive link)
-const SPONSORSHIP_PROPOSAL_URL = "#";
+// URI-encoded path to the actual PDF
+const SPONSORSHIP_PROPOSAL_PDF = "/Sandbox%203.0%20Sponsorship%20Proposal.pdf";
+
+function handleSponsorshipClick(e) {
+  e.preventDefault();
+  const isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  );
+  if (isMobile) {
+    // Auto-download on mobile
+    const link = document.createElement("a");
+    link.href = SPONSORSHIP_PROPOSAL_PDF;
+    link.download = "Sandbox 3.0 Sponsorship Proposal.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  } else {
+    // Preview in new tab on desktop
+    window.open(SPONSORSHIP_PROPOSAL_PDF, "_blank", "noopener,noreferrer");
+  }
+}
 
 export default function PartnerUp() {
   return (
@@ -24,14 +43,12 @@ export default function PartnerUp() {
           </p>
           <div className="flex flex-col-reverse sm:flex-row items-center justify-center gap-4">
             {/* Secondary — outlined */}
-            <a
-              href={SPONSORSHIP_PROPOSAL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-full bg-transparent border border-white/40 hover:bg-white/10 text-white transition-all focus:ring-2 focus:ring-white/40 focus:outline-none min-h-[44px]"
+            <button
+              onClick={handleSponsorshipClick}
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-full bg-transparent border border-white/40 hover:bg-white/10 text-white transition-all focus:ring-2 focus:ring-white/40 focus:outline-none min-h-[44px] cursor-pointer"
             >
               View Sponsorship Proposal
-            </a>
+            </button>
 
             {/* Primary — main */}
             <Link
