@@ -1,5 +1,8 @@
 *.docx
 *.pdf
+!public/Sandbox 3.0 Project Proposal.pdf
+!public/Sandbox 3.0 Sponsorship Proposal.pdf
+!public/sandbox-rules-and-regulations.pdf
 node_modules/
 .next
 .env
