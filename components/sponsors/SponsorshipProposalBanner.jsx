@@ -3,7 +3,7 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import ScrollReveal from '../ui/ScrollReveal';
 
-const SPONSORSHIP_PROPOSAL_PDF = "/Sandbox 3.0 Sponsorship Proposal.pdf";
+const SPONSORSHIP_PROPOSAL_PDF = "/Sandbox%203.0%20Sponsorship%20Proposal.pdf";
 
 function handleSponsorshipClick(e) {
   e.preventDefault();

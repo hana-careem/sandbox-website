@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 
-const PROJECT_PROPOSAL_PDF = "/Sandbox 3.0 Project Proposal.pdf";
+const PROJECT_PROPOSAL_PDF = "/Sandbox%203.0%20Project%20Proposal.pdf";
 
 export default function ProjectProposalBanner() {
   return (
