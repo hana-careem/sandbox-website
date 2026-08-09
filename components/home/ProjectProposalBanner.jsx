@@ -1,12 +1,7 @@
 "use client";
 import React from 'react';
 
-/* ──────────────────────────────────────────────────────────────────────────────
- * PROJECT_PROPOSAL_URL — drop in the real link here.
- * Both buttons point here for now; if the secondary should be a direct PDF,
- * just change the href on the Download button and add `download`.
- * ──────────────────────────────────────────────────────────────────────────── */
-export const PROJECT_PROPOSAL_URL = "#project-proposal";
+const PROJECT_PROPOSAL_PDF = "/Sandbox 3.0 Project Proposal.pdf";
 
 export default function ProjectProposalBanner() {
   return (
@@ -43,8 +38,9 @@ export default function ProjectProposalBanner() {
           {/* Right — actions */}
           <div className="proposal-actions">
             {/* Primary CTA */}
+            {/* View button — opens PDF preview in new tab on all devices */}
             <a
-              href={PROJECT_PROPOSAL_URL}
+              href={PROJECT_PROPOSAL_PDF}
               target="_blank"
               rel="noopener noreferrer"
               className="proposal-btn-primary group"
@@ -70,11 +66,10 @@ export default function ProjectProposalBanner() {
               View Project Proposal
             </a>
 
-            {/* Secondary — ghost glass */}
+            {/* Download button — always triggers file download on any device */}
             <a
-              href={PROJECT_PROPOSAL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={PROJECT_PROPOSAL_PDF}
+              download="Sandbox 3.0 Project Proposal.pdf"
               className="proposal-btn-secondary group"
             >
               {/* Download icon */}

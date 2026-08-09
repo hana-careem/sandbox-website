@@ -3,7 +3,26 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import ScrollReveal from '../ui/ScrollReveal';
 
-const SPONSORSHIP_PROPOSAL_URL = "#"; // Replace with actual URL later
+const SPONSORSHIP_PROPOSAL_PDF = "/Sandbox 3.0 Sponsorship Proposal.pdf";
+
+function handleSponsorshipClick(e) {
+  e.preventDefault();
+  const isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  );
+  if (isMobile) {
+    // Auto-download on mobile
+    const link = document.createElement("a");
+    link.href = SPONSORSHIP_PROPOSAL_PDF;
+    link.download = "Sandbox 3.0 Sponsorship Proposal.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  } else {
+    // Preview in new tab on desktop
+    window.open(SPONSORSHIP_PROPOSAL_PDF, "_blank", "noopener,noreferrer");
+  }
+}
 
 export default function SponsorshipProposalBanner() {
   return (
@@ -22,14 +41,12 @@ export default function SponsorshipProposalBanner() {
             </div>
             
             <div className="w-full md:w-auto mt-4 md:mt-0">
-              <a 
-                href={SPONSORSHIP_PROPOSAL_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-bold rounded-full bg-[#a64d79]/15 backdrop-blur-md border border-[#a64d79]/50 text-white hover:bg-[#a64d79] hover:border-[#a64d79] hover:shadow-[0_0_20px_rgba(166,77,121,0.4)] transition-all focus:ring-2 focus:ring-[#a64d79]/50 focus:outline-none min-h-[44px]"
+              <button
+                onClick={handleSponsorshipClick}
+                className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-bold rounded-full bg-[#a64d79]/15 backdrop-blur-md border border-[#a64d79]/50 text-white hover:bg-[#a64d79] hover:border-[#a64d79] hover:shadow-[0_0_20px_rgba(166,77,121,0.4)] transition-all focus:ring-2 focus:ring-[#a64d79]/50 focus:outline-none min-h-[44px] cursor-pointer"
               >
                 View Sponsorship Proposal
-              </a>
+              </button>
             </div>
             
           </div>
