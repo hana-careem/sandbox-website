@@ -120,12 +120,14 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
                 >
                   Past Editions
                 </Link>
+                {/* "Meet the Team" hidden
                 <Link
                   href="/about/team"
                   className="px-4 py-2 text-sm text-white/70 hover:text-white hover:bg-white/10 rounded-xl transition-colors"
                 >
                   Meet the Team
                 </Link>
+                */}
               </div>
             </div>
           </li>
@@ -173,12 +175,14 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
               }`}
             >
               <div className="p-2 flex flex-col gap-1">
+                {/* "Our Sponsors" hidden
                 <Link
                   href="/sponsors"
                   className="px-4 py-2 text-sm text-white/70 hover:text-white hover:bg-white/10 rounded-xl transition-colors"
                 >
                   Our Sponsors
                 </Link>
+                */}
                 <Link
                   href="/sponsors#become-a-partner"
                   className="px-4 py-2 text-sm text-white/70 hover:text-white hover:bg-white/10 rounded-xl transition-colors"
@@ -325,6 +329,7 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
                   >
                     Past Editions
                   </Link>
+                  {/* "Meet the Team" hidden
                   <Link
                     href="/about/team"
                     onClick={() => setMenuOpen(false)}
@@ -332,6 +337,7 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
                   >
                     Meet the Team
                   </Link>
+                  */}
                 </div>
               </div>
             </li>
@@ -371,6 +377,7 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
                 }`}
               >
                 <div className="pl-4 py-1 flex flex-col gap-1 border-l border-white/10 ml-6 mt-1 mb-2">
+                  {/* "Our Sponsors" hidden
                   <Link
                     href="/sponsors"
                     onClick={() => setMenuOpen(false)}
@@ -378,6 +385,7 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
                   >
                     Our Sponsors
                   </Link>
+                  */}
                   <Link
                     href="/sponsors#become-a-partner"
                     onClick={() => setMenuOpen(false)}
