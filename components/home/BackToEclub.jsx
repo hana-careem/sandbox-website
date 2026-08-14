@@ -12,7 +12,7 @@ export default function BackToEclub() {
         aria-label="Back to E-Club"
         className="
           group inline-flex items-center gap-[10px]
-          py-[8px] pr-[18px] pl-[10px] max-[480px]:p-[9px]
+          py-[8px] pr-[18px] pl-[10px]
           rounded-full bg-[rgba(16,16,31,0.72)] border border-[rgba(255,255,255,0.12)] backdrop-blur-[12px]
           shadow-[0_6px_24px_rgba(0,0,0,0.45)]
           text-[#f5f5fa] text-[14px] font-semibold no-underline
@@ -40,8 +40,8 @@ export default function BackToEclub() {
             className="w-[24px] h-[24px] block object-cover object-left" 
           />
         </span>
-        <span className="whitespace-nowrap leading-[1.15] max-[480px]:hidden">
-          <small className="block text-[10px] font-semibold tracking-[1.4px] uppercase text-[#6f6f88] mb-[1px] max-[820px]:hidden">
+        <span className="whitespace-nowrap leading-[1.15]">
+          <small className="block text-[10px] font-semibold tracking-[1.4px] uppercase text-[#6f6f88] mb-[1px]">
             Back to
           </small>
           <b className="font-bold">E-Club</b>
