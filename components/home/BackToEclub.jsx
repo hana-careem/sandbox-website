@@ -4,12 +4,12 @@ const ECLUB_URL = process.env.NEXT_PUBLIC_ECLUB_URL || "https://eclub.apiit.lk";
 
 export default function BackToEclub() {
   return (
-    <div className="pt-[14px] px-[16px] pb-0">
+    <div className="absolute top-[85px] md:top-[100px] left-[16px] z-40">
       <a 
         href={ECLUB_URL} 
         aria-label="Back to E-Club"
         className="
-          group static inline-flex items-center gap-[9px]
+          group inline-flex items-center gap-[9px]
           py-[6px] pr-[15px] pl-[7px] max-[480px]:p-[7px]
           rounded-full bg-[rgba(16,16,31,0.72)] border border-[rgba(255,255,255,0.12)] backdrop-blur-[12px]
           shadow-[0_6px_24px_rgba(0,0,0,0.45)]

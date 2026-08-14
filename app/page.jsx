@@ -14,7 +14,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main className="w-full">
+    <main className="w-full relative">
       <BackToEclub />
       <SandboxHero />
       <PhotoCollageBackground>
