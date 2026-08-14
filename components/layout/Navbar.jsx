@@ -286,7 +286,7 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
                 onClick={() => setMenuOpen(false)}
                 className={
                   'block rounded-2xl px-4 py-3 text-base transition-colors ' +
-                  (pathname === '/' ? 'bg-white/5 text-white' : 'text-white/70 active:bg-white/5 active:text-white')
+                  (pathname === '/' ? 'bg-white/5 text-white' : 'text-white/70 active:text-white')
                 }
               >
                 Home
@@ -302,7 +302,7 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
                   'w-full flex items-center justify-between rounded-2xl px-4 py-3 text-base transition-colors ' +
                   (pathname.startsWith('/about')
                     ? 'bg-white/5 text-white'
-                    : 'text-white/70 active:bg-white/5 active:text-white')
+                    : 'text-white/70 active:text-white')
                 }
               >
                 About Us
@@ -318,14 +318,14 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
                   <Link
                     href="/about"
                     onClick={() => setMenuOpen(false)}
-                    className="block px-4 py-2.5 text-sm font-medium text-white/50 active:text-white active:bg-white/5 rounded-xl transition-colors"
+                    className="block px-4 py-2.5 text-sm font-medium text-white/50 active:text-white rounded-xl transition-colors"
                   >
                     Overview
                   </Link>
                   <Link
                     href="/about/editions"
                     onClick={() => setMenuOpen(false)}
-                    className="block px-4 py-2.5 text-sm font-medium text-white/50 active:text-white active:bg-white/5 rounded-xl transition-colors"
+                    className="block px-4 py-2.5 text-sm font-medium text-white/50 active:text-white rounded-xl transition-colors"
                   >
                     Past Editions
                   </Link>
@@ -333,7 +333,7 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
                   <Link
                     href="/about/team"
                     onClick={() => setMenuOpen(false)}
-                    className="block px-4 py-2.5 text-sm font-medium text-white/50 active:text-white active:bg-white/5 rounded-xl transition-colors"
+                    className="block px-4 py-2.5 text-sm font-medium text-white/50 active:text-white rounded-xl transition-colors"
                   >
                     Meet the Team
                   </Link>
@@ -348,7 +348,7 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
                 onClick={() => setMenuOpen(false)}
                 className={
                   'block rounded-2xl px-4 py-3 text-base transition-colors ' +
-                  (pathname === '/what-we-offer' ? 'bg-white/5 text-white' : 'text-white/70 active:bg-white/5 active:text-white')
+                  (pathname === '/what-we-offer' ? 'bg-white/5 text-white' : 'text-white/70 active:text-white')
                 }
               >
                 What We Offer
@@ -364,7 +364,7 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
                   'w-full flex items-center justify-between rounded-2xl px-4 py-3 text-base transition-colors ' +
                   (pathname.startsWith('/sponsors')
                     ? 'bg-white/5 text-white'
-                    : 'text-white/70 active:bg-white/5 active:text-white')
+                    : 'text-white/70 active:text-white')
                 }
               >
                 Sponsors
@@ -381,7 +381,7 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
                   <Link
                     href="/sponsors"
                     onClick={() => setMenuOpen(false)}
-                    className="block px-4 py-2.5 text-sm font-medium text-white/50 hover:text-white hover:bg-white/5 rounded-xl transition-colors"
+                    className="block px-4 py-2.5 text-sm font-medium text-white/50 active:text-white rounded-xl transition-colors"
                   >
                     Our Sponsors
                   </Link>
@@ -389,14 +389,14 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
                   <Link
                     href="/sponsors#become-a-partner"
                     onClick={() => setMenuOpen(false)}
-                    className="block px-4 py-2.5 text-sm font-medium text-white/50 active:text-white active:bg-white/5 rounded-xl transition-colors"
+                    className="block px-4 py-2.5 text-sm font-medium text-white/50 active:text-white rounded-xl transition-colors"
                   >
                     Partner Up
                   </Link>
                   <Link
                     href="/sponsors#past-sponsors"
                     onClick={() => setMenuOpen(false)}
-                    className="block px-4 py-2.5 text-sm font-medium text-white/50 active:text-white active:bg-white/5 rounded-xl transition-colors"
+                    className="block px-4 py-2.5 text-sm font-medium text-white/50 active:text-white rounded-xl transition-colors"
                   >
                     Past Sponsors
                   </Link>
@@ -413,7 +413,7 @@ export default function Navbar({ showNavCta: showNavCtaProp }) {
                     onClick={() => setMenuOpen(false)}
                     className={
                       'block rounded-2xl px-4 py-3 text-base transition-colors ' +
-                      (isActive ? 'bg-white/5 text-white' : 'text-white/70 active:bg-white/5 active:text-white')
+                      (isActive ? 'bg-white/5 text-white' : 'text-white/70 active:text-white')
                     }
                   >
                     {label}
