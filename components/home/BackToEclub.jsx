@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 
 const ECLUB_URL = process.env.NEXT_PUBLIC_ECLUB_URL || "https://eclub.apiit.lk";
@@ -6,7 +7,8 @@ export default function BackToEclub() {
   return (
     <div className="absolute top-[85px] md:top-[100px] left-[16px] z-40">
       <a 
-        href={ECLUB_URL} 
+        href="#"
+        onClick={(e) => e.preventDefault()}
         aria-label="Back to E-Club"
         className="
           group inline-flex items-center gap-[10px]
