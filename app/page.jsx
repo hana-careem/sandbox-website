@@ -1,4 +1,5 @@
 import React from 'react';
+import BackToEclub from '../components/home/BackToEclub';
 import SandboxHero from '../components/home/SandboxHero';
 import AboutSandbox from '../components/home/AboutSandbox';
 import Guidelines from '../components/home/Guidelines';
@@ -14,6 +15,7 @@ export const metadata = {
 export default function Home() {
   return (
     <main className="w-full">
+      <BackToEclub />
       <SandboxHero />
       <PhotoCollageBackground>
         <AboutSandbox />
