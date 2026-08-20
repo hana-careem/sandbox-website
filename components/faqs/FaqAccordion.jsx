@@ -26,7 +26,7 @@ const FAQ_DATA = [
   },
   {
     question: "What is the deadline for registration?",
-    answer: "Registrations for this edition will close on September 11th. Ensure your team signs up before the deadline!"
+    answer: "Registrations for this edition will close on September 30th. Ensure your team signs up before the deadline!"
   },
   {
     question: "Do we need a prototype to pitch?",
@@ -64,7 +64,7 @@ export default function FaqAccordion() {
               <ScrollReveal key={idx} delay={idx * 50} direction="up">
                 <div className={`border rounded-2xl overflow-hidden transition-all duration-300 backdrop-blur-md ${isOpen ? 'border-white/20 bg-white/10 shadow-lg' : 'border-white/5 bg-white/5 hover:bg-white/10'}`}>
                   <button
-                    className="w-full px-6 py-5 flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/50 rounded-2xl transition-all"
+                    className="w-full px-6 py-5 flex items-center justify-between focus:outline-none rounded-2xl transition-all"
                     onClick={() => setOpenIndex(isOpen ? null : idx)}
                   >
                     <span className="text-lg font-bold text-white text-left pr-4">{faq.question}</span>
