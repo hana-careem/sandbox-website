@@ -11,18 +11,21 @@ function handleSponsorshipClick(e) {
   const isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
     navigator.userAgent
   );
+  // Use a temporary anchor for BOTH cases — an anchor click from a user gesture
+  // is never popup-blocked, unlike window.open() with a features string.
+  const link = document.createElement("a");
+  link.href = SPONSORSHIP_PROPOSAL_PDF;
   if (isMobile) {
     // Auto-download on mobile
-    const link = document.createElement("a");
-    link.href = SPONSORSHIP_PROPOSAL_PDF;
     link.download = "Sandbox 3.0 Sponsorship Proposal.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
   } else {
-    // Preview in new tab on desktop
-    window.open(SPONSORSHIP_PROPOSAL_PDF, "_blank", "noopener,noreferrer");
+    // Preview in a new tab on desktop
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
   }
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
 
 export default function PartnerUp() {
