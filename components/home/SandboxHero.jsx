@@ -8,7 +8,7 @@ import { useHeroCta } from '../ui/HeroCtaContext';
 import PartnersTicker from './PartnersTicker';
 
 // TODO: Replace with exact registration deadline when provided
-const REGISTRATION_DEADLINE = new Date('2026-09-11T23:59:59+05:30');
+const REGISTRATION_DEADLINE = new Date('2026-09-30T23:59:59+05:30');
 
 const Dial = ({ label, value, size = "large", theme = "dark" }) => {
   const numClasses = size === "small"
@@ -46,6 +46,7 @@ const Colon = ({ size = "large", theme = "dark" }) => (
 
 export default function SandboxHero() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [isClosed, setIsClosed] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [barOnLight, setBarOnLight] = useState(false);
   const [headlineIndex, setHeadlineIndex] = useState(1);
@@ -77,6 +78,9 @@ export default function SandboxHero() {
           minutes: Math.floor((difference / 1000 / 60) % 60),
           seconds: Math.floor((difference / 1000) % 60),
         });
+        setIsClosed(false);
+      } else {
+        setIsClosed(true);
       }
     }, 1000);
 
@@ -188,22 +192,30 @@ export default function SandboxHero() {
 
               {/* Inline Hero Countdown */}
               <ScrollReveal delay={500}>
-                <div className="flex justify-center items-start gap-4 md:gap-6 mt-6">
-                  {[
-                    { label: 'Days', value: timeLeft.days },
-                    { label: 'Hours', value: timeLeft.hours },
-                    { label: 'Minutes', value: timeLeft.minutes },
-                    { label: 'Seconds', value: timeLeft.seconds }
-                  ].map((item, idx) => (
-                    <React.Fragment key={idx}>
-                      {idx > 0 && <Colon />}
-                      <Dial label={item.label} value={item.value} />
-                    </React.Fragment>
-                  ))}
-                </div>
-                <p className="text-lg md:text-xl text-slate-400 text-center mt-6 leading-relaxed">
-                  Until Registrations Close!
-                </p>
+                {!isClosed ? (
+                  <>
+                    <div className="flex justify-center items-start gap-4 md:gap-6 mt-6">
+                      {[
+                        { label: 'Days', value: timeLeft.days },
+                        { label: 'Hours', value: timeLeft.hours },
+                        { label: 'Minutes', value: timeLeft.minutes },
+                        { label: 'Seconds', value: timeLeft.seconds }
+                      ].map((item, idx) => (
+                        <React.Fragment key={idx}>
+                          {idx > 0 && <Colon />}
+                          <Dial label={item.label} value={item.value} />
+                        </React.Fragment>
+                      ))}
+                    </div>
+                    <p className="text-lg md:text-xl text-slate-400 text-center mt-6 leading-relaxed">
+                      Until Registrations Close!
+                    </p>
+                  </>
+                ) : (
+                  <p className="text-2xl md:text-3xl font-bold text-white text-center mt-6 leading-relaxed">
+                    Registrations are now closed!
+                  </p>
+                )}
               </ScrollReveal>
               {/* <PartnersTicker /> */}
             </div>
@@ -213,32 +225,34 @@ export default function SandboxHero() {
       </section>
 
       {/* Sticky Compact Countdown & CTA */}
-      <div 
-        className={`fixed bottom-0 left-0 w-full z-40 bg-slate-950/20 backdrop-blur-2xl border-t border-white/10 shadow-[0_-8px_32px_rgba(0,0,0,0.4)] transition-transform duration-500 transform ${isSticky ? 'translate-y-0' : 'translate-y-full'}`}
-      >
-        <div className="max-w-7xl mx-auto px-4 py-3 flex flex-row items-center justify-center gap-6">
+      {!isClosed && (
+        <div 
+          className={`fixed bottom-0 left-0 w-full z-40 bg-slate-950/20 backdrop-blur-2xl border-t border-white/10 shadow-[0_-8px_32px_rgba(0,0,0,0.4)] transition-transform duration-500 transform ${isSticky ? 'translate-y-0' : 'translate-y-full'}`}
+        >
+          <div className="max-w-7xl mx-auto px-4 py-3 flex flex-row items-center justify-center gap-6">
 
-          <div className="hidden md:flex flex-col items-end">
-             <span className={`text-sm font-semibold uppercase tracking-wider ${barOnLight ? 'text-slate-600' : 'text-slate-300'}`}>Registrations close in</span>
-          </div>
+            <div className="hidden md:flex flex-col items-end">
+               <span className={`text-sm font-semibold uppercase tracking-wider ${barOnLight ? 'text-slate-600' : 'text-slate-300'}`}>Registrations close in</span>
+            </div>
 
-          {/* Ticking Numbers */}
-          <div className={`flex items-start gap-3 md:gap-4 md:border-l md:pl-6 ${barOnLight ? 'md:border-slate-400/40' : 'md:border-white/10'}`}>
-            {[
-              { label: 'Days', value: timeLeft.days },
-              { label: 'Hrs', value: timeLeft.hours },
-              { label: 'Min', value: timeLeft.minutes },
-              { label: 'Sec', value: timeLeft.seconds }
-            ].map((item, idx) => (
-              <React.Fragment key={idx}>
-                {idx > 0 && <Colon size="small" theme={barOnLight ? 'light' : 'dark'} />}
-                <Dial label={item.label} value={item.value} size="small" theme={barOnLight ? 'light' : 'dark'} />
-              </React.Fragment>
-            ))}
+            {/* Ticking Numbers */}
+            <div className={`flex items-start gap-3 md:gap-4 md:border-l md:pl-6 ${barOnLight ? 'md:border-slate-400/40' : 'md:border-white/10'}`}>
+              {[
+                { label: 'Days', value: timeLeft.days },
+                { label: 'Hrs', value: timeLeft.hours },
+                { label: 'Min', value: timeLeft.minutes },
+                { label: 'Sec', value: timeLeft.seconds }
+              ].map((item, idx) => (
+                <React.Fragment key={idx}>
+                  {idx > 0 && <Colon size="small" theme={barOnLight ? 'light' : 'dark'} />}
+                  <Dial label={item.label} value={item.value} size="small" theme={barOnLight ? 'light' : 'dark'} />
+                </React.Fragment>
+              ))}
+            </div>
+            
           </div>
-          
         </div>
-      </div>
+      )}
     </>
   );
 }
