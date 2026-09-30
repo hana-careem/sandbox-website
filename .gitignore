@@ -1,5 +1,6 @@
 *.docx
 *.pdf
+!public/assets/sandbox-rules-and-regulations.pdf
 node_modules/
 .next
 .env
