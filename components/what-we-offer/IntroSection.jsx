@@ -28,7 +28,7 @@ export default function IntroSection() {
           <ScrollReveal direction="right" delay={150} className="md:w-1/2 w-full">
             <div className="group relative overflow-hidden rounded-3xl ring-1 ring-white/5 shadow-[0_0_90px_rgba(124,58,237,0.10)]">
               <img
-                src="/assets/Page hero2.jpg"
+                src="/assets/Page-hero2.jpg"
                 alt="What We Offer"
                 className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
               />

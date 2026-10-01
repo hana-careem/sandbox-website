@@ -7,12 +7,12 @@ const CORE_SUPPORT_DATA = [
     title: "Expert Workshops",
     description: "Learn the fundamentals of business planning, financial forecasting, and effective pitching directly from industry professionals.",
     images: [
-      "/assets/Workshop sandbox 2.0 (1).jpg",
-      "/assets/Workshop sandbox 2.0 (2).jpg",
-      "/assets/Workshop sandbox 2.0 (3).jpg",
-      "/assets/Workshop sandbox 2.0 (4).jpg",
-      "/assets/Workshop sandbox 2.0 (5).jpg",
-      "/assets/Workshop sandbox 2.0 (6).jpg"
+      "/assets/Workshop-sandbox-2.0-(1).jpg",
+      "/assets/Workshop-sandbox-2.0-(2).jpg",
+      "/assets/Workshop-sandbox-2.0-(3).jpg",
+      "/assets/Workshop-sandbox-2.0-(4).jpg",
+      "/assets/Workshop-sandbox-2.0-(5).jpg",
+      "/assets/Workshop-sandbox-2.0-(6).jpg"
     ],
     extra: {
       type: 'bullets',
@@ -47,12 +47,12 @@ const CORE_SUPPORT_DATA = [
     title: "Pitching Mastery",
     description: "Develop the confidence and public speaking skills necessary to command a room and sell your vision.",
     images: [
-      "/assets/replace 1.jpg",
+      "/assets/replace-1.jpg",
       "/assets/p2.jpg",
-      "/assets/replace 3.jpg",
-      "/assets/replace 4.jpg",
-      "/assets/replace 5.jpg",
-      "/assets/replace 2.jpg"
+      "/assets/replace-3.jpg",
+      "/assets/replace-4.jpg",
+      "/assets/replace-5.jpg",
+      "/assets/replace-2.jpg"
     ],
     extra: {
       type: 'bullets',

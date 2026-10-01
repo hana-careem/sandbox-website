@@ -75,7 +75,7 @@ export default function PrizesRecognition() {
                   <div className="group bg-gradient-to-br from-[#4a0a44]/60 to-[#701A5A]/40 border border-[#b23c96]/20 p-6 rounded-2xl shadow-[0_12px_40px_rgba(178,60,150,0.22)] hover:border-[#b23c96]/50 transition-colors flex flex-col text-center items-center h-full">
                     <div className="w-full overflow-hidden rounded-xl mb-4">
                       <img
-                        src="/assets/special award.jpg"
+                        src="/assets/special-award.jpg"
                         alt="Special Awards"
                         className="w-full h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110"
                       />
