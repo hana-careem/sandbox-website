@@ -14,7 +14,7 @@ export const CATEGORIES = [
   { id: 'comms', label: 'Communications' },
   { id: 'marketing', label: 'Marketing' },
   { id: 'media', label: 'Media' },
-  { id: 'logistics', label: 'Logistics & Finance' },
+  { id: 'logistics', label: 'Logistics' },
 ]
 
 // ---------------------------------------------------------------------------
