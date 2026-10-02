@@ -30,7 +30,7 @@ const MILESTONES = [
     desc: 'The strongest teams battle it out for a place in the Grand Finale.',
   },
   {
-    date: '26th of January',
+    date: '26th of January 2027',
     title: 'Grand Finale and Award Ceremony',
     desc: 'The top teams face off live for the championship.',
   },
