@@ -29,7 +29,7 @@ export const TEAM = [
   // --- Leadership ---
   { name: 'Maneesha Thatuwalakanda', role: 'Chairperson', category: 'leadership', image: '/assets/Maneesha-Vindani.webp', linkedin: 'https://www.linkedin.com/in/maneesha-thatuwalakanda-850790267', bio: 'Co-chairs the Sandbox 3.0 organising committee.' },
   { name: 'Himansa Indusara', role: 'Chairperson', category: 'leadership', image: '/assets/Himansa-.webp', linkedin: 'https://www.linkedin.com/in/himansa-indusara-b36310357', bio: 'Co-chairs the Sandbox 3.0 organising committee.' },
-  { name: 'Ayodya Perera', role: 'Head of Marketing and Project Coordinator', category: 'leadership', image: '/assets/Ayodya.webp', linkedin: 'https://www.linkedin.com/in/ayodya-perera-2b4527339/', bio: 'Coordinates the Sandbox 3.0 project across every sub-team.', objectPosition: '50% 0%' },
+  { name: 'Ayodya Perera', role: 'Project Coordinator', category: 'leadership', image: '/assets/Ayodya.webp', linkedin: 'https://www.linkedin.com/in/ayodya-perera-2b4527339/', bio: 'Coordinates the Sandbox 3.0 project across every sub-team.', objectPosition: '50% 0%' },
   { name: 'Tyanna Franchesca Avory', role: 'Secretary', category: 'leadership', image: '/assets/Tyanna-franchesca.webp', linkedin: 'https://www.linkedin.com/in/tyanna-avory-a879a32b2', bio: 'Secretary of the Sandbox 3.0 organising committee.', education: 'BSc (Hons) Computer Science' },
   { name: 'Pujaa Shruti Senthilnathan', role: 'Treasurer', category: 'leadership', image: '/assets/Puja-Shrutinaathilan.webp', linkedin: 'https://www.linkedin.com/in/pujaa-shruti-senthilnathan-678790390', bio: 'Manages the Sandbox 3.0 budget and finances.' },
   // linkedin: distinctive name match, but headline says Edith Cowan University —
@@ -50,14 +50,16 @@ export const TEAM = [
   { name: 'Dasanya', role: 'Media Team', category: 'media', image: '/assets/Dasanya.webp', linkedin: 'https://www.linkedin.com/in/dasanya-dahanayake-b09427363', bio: 'Media team, Sandbox 3.0.', education: 'BSc (Hons) International Business Management' },
   // --- Marketing Team ---
   { name: 'Diseni Chanulya Dharmadasa', role: 'Marketing Team', category: 'marketing', image: '/assets/Diseni-Chanulya.webp', linkedin: 'https://www.linkedin.com/in/diseni-chanulya-a0707a359', bio: 'Marketing team, Sandbox 3.0.', objectPosition: '50% 0%' },
-  { name: 'Umar Shafeek', role: 'Marketing Team', category: 'marketing', image: '/assets/Umar-shafeek.webp', linkedin: 'https://www.linkedin.com/in/umar-shafeek-2a50a2367', bio: 'Marketing team, Sandbox 3.0.' },
-  { name: 'Thahnees Thariq', role: 'Marketing Team', category: 'marketing', image: '/assets/Thahnees-thaeiq.webp', linkedin: 'https://www.linkedin.com/in/thahnees-tariq-04072124b', bio: 'Marketing team, Sandbox 3.0. Previously Head of Logistics for Sandbox 1.0.', education: 'BSc (Hons) International Business Management' },
+    { name: 'Vihini Linaya', role: 'Marketing Team', category: 'marketing', image: '/assets/Vihini-Linaya.webp', linkedin: '', bio: 'Marketing team, Sandbox 3.0.' },
+{ name: 'Umar Shafeek', role: 'Marketing Team', category: 'marketing', image: '/assets/Umar-shafeek.webp', linkedin: 'https://www.linkedin.com/in/umar-shafeek-2a50a2367', bio: 'Marketing team, Sandbox 3.0.' },
+  { name: 'Thahnees Thariq', role: 'Logistics Team', category: 'logistics', image: '/assets/Thahnees-thaeiq.webp', linkedin: 'https://www.linkedin.com/in/thahnees-tariq-04072124b', bio: 'Marketing team, Sandbox 3.0. Previously Head of Logistics for Sandbox 1.0.', education: 'BSc (Hons) International Business Management' },
   // --- Communications Team ---
   { name: 'Bosandi de Alwis Goonatilake', role: 'Communications Team', category: 'comms', image: '/assets/Disenka-Bosandi.webp', linkedin: 'https://www.linkedin.com/in/disenka-bosandi-de-a-goonatilake-46916630a', bio: 'Communications team, Sandbox 3.0.', education: 'BSc (Hons) International Business Management' },
   { name: 'Ayuni Randeena Karunatilaka', role: 'Communications Team', category: 'comms', image: '/assets/Ayuni-Randeena.webp', linkedin: '', bio: 'Communications team, Sandbox 3.0.' },
   { name: 'Noor Fazeena Faiz', role: 'Communications Team', category: 'comms', image: '/assets/Fazeena-Faiz.webp', linkedin: 'https://www.linkedin.com/in/fazeena-faiz-a5999b355', bio: 'Communications team, Sandbox 3.0.', education: 'BSc (Hons) International Business Management' },
   { name: 'Suresh Kumar Habilashinie', role: 'Communications Team', category: 'comms', image: '/assets/Habilashinie.webp', linkedin: 'https://www.linkedin.com/in/habilashinie-suresh-kumar-61095633a', bio: 'Communications team, Sandbox 3.0.', education: 'BSc (Hons) International Business Management', objectPosition: '50% 0%' },
-  // --- Logistics Team ---
+    { name: 'Sanuli Fernando', role: 'Communications Team', category: 'comms', image: '/assets/Sanuli-Fernando.webp', linkedin: 'https://www.linkedin.com/in/sanuli-fernando-636982347/', bio: 'Communications team, Sandbox 3.0.', education: 'BSc Psychology' },
+// --- Logistics Team ---
   { name: 'Nithispranav', role: 'Logistics Team', category: 'logistics', image: '/assets/Pranav.webp', linkedin: 'https://www.linkedin.com/in/nithis-pranav-periyannen-a97990335', bio: 'Logistics team, Sandbox 3.0.', objectPosition: '50% 0%' },
   { name: 'Rakkshetha Soundararajan', role: 'Logistics Team', category: 'logistics', image: '/assets/Raksheta-.webp', linkedin: 'https://www.linkedin.com/in/rakkshetha-undefined-160347393', bio: 'Logistics team, Sandbox 3.0.', education: 'BSc (Hons) Business Management' },
 ]
@@ -110,7 +112,7 @@ export const PAST_TEAMS = [
       // linkedin derived from his own LinkedIn post URL (distinctive name) — verify:
       { group: 'Executive Board', name: 'Jason Montini Fernando', role: 'Head of IT', image: '/assets/Jason-Montini-Fernando-Head-of-IT.webp', linkedin: 'https://www.linkedin.com/in/jason-montini-fernando-006317261/' },
       // --- Committee Members ---
-      { group: 'Committee Members', name: 'Ayodya Sasuni Perera', role: 'Head of Marketing and Project Coordinator', image: '/assets/Ayodya.webp', linkedin: 'https://www.linkedin.com/in/ayodya-perera-2b4527339/', objectPosition: '50% 0%' },
+      { group: 'Committee Members', name: 'Ayodya Sasuni Perera', role: 'Project Coordinator', image: '/assets/Ayodya.webp', linkedin: 'https://www.linkedin.com/in/ayodya-perera-2b4527339/', objectPosition: '50% 0%' },
       { group: 'Committee Members', name: 'Diseni Chanulya Dharmadhasa', role: 'Marketing', image: '/assets/Diseni-Chanulya.webp', linkedin: '' },
       { group: 'Committee Members', name: 'Nethaya Mewni Gunathilaka', role: 'Marketing', image: '/assets/Nethaya-Mewni-Gunathilaka-Head-of-marketing.webp', linkedin: '' },
       { group: 'Committee Members', name: 'V. Denam Pathmanathan', role: 'Marketing', image: '/assets/V.-Denam-Pathmanathan-marketing.webp', linkedin: '' },
