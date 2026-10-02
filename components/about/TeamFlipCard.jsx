@@ -55,8 +55,8 @@ export default function TeamFlipCard({ member }) {
               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
               style={{ objectPosition: member.objectPosition || '50% 20%' }}
             />
-            {/* bottom fade so the caption band reads cleanly */}
-            <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#2a1130] to-transparent" />
+            {/* bottom fade so the caption band reads cleanly — hidden on mobile to avoid covering faces */}
+            <div className="hidden md:block absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#2a1130] to-transparent" />
           </div>
 
           <div className="px-4 pb-4 pt-1">
