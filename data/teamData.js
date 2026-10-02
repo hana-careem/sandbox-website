@@ -30,25 +30,25 @@ export const TEAM = [
   { name: 'Sudeesha Fonseka', role: 'President of Entrepreneurship Club', category: 'leadership', image: '/assets/Sudeesha-Fonseka-Treasurer.webp', linkedin: '', bio: 'President of the Entrepreneurship Club.' },
   { name: 'Maneesha Thatuwalakanda', role: 'Chairperson', category: 'leadership', image: '/assets/Maneesha-Vindani.webp', linkedin: 'https://www.linkedin.com/in/maneesha-thatuwalakanda-850790267', bio: 'Co-chairs the Sandbox 3.0 organising committee.' },
   { name: 'Himansa Indusara', role: 'Chairperson', category: 'leadership', image: '/assets/Himansa-.webp', linkedin: 'https://www.linkedin.com/in/himansa-indusara-b36310357', bio: 'Co-chairs the Sandbox 3.0 organising committee.' },
-  { name: 'Ayodya Perera', role: 'Head of Marketing and Project Coordinator', category: 'leadership', image: '/assets/Ayodya.webp', linkedin: '', bio: 'Coordinates the Sandbox 3.0 project across every sub-team.' },
+  { name: 'Ayodya Perera', role: 'Head of Marketing and Project Coordinator', category: 'leadership', image: '/assets/Ayodya.webp', linkedin: '', bio: 'Coordinates the Sandbox 3.0 project across every sub-team.', objectPosition: '50% 0%' },
   { name: 'Tyanna Franchesca Avory', role: 'Secretary', category: 'leadership', image: '/assets/Tyanna-franchesca.webp', linkedin: 'https://www.linkedin.com/in/tyanna-avory-a879a32b2', bio: 'Secretary of the Sandbox 3.0 organising committee.', education: 'BSc (Hons) Computer Science' },
   { name: 'Pujaa Shruti Senthilnathan', role: 'Treasurer', category: 'leadership', image: '/assets/Puja-Shrutinaathilan.webp', linkedin: 'https://www.linkedin.com/in/pujaa-shruti-senthilnathan-678790390', bio: 'Manages the Sandbox 3.0 budget and finances.' },
   // linkedin: distinctive name match, but headline says Edith Cowan University —
   // confirm with Yunus directly before shipping:
   { name: 'Yunus Nuhman', role: 'Head of IT', category: 'it', image: '/assets/Yunus-Nuhman.webp', linkedin: 'https://www.linkedin.com/in/yunusnuhman/', bio: 'Leads IT — the Sandbox site, registrations and infrastructure.', education: 'BSc (Hons) Cyber Security and Networking' },
   // --- Heads ---
-  { name: 'Nadyah Riyaz', role: 'Head of Media', category: 'media', image: '/assets/Nadyah.webp', linkedin: 'https://www.linkedin.com/in/nadyah-riyaz-9384b8290', bio: 'Co-leads media — photography, videography and event coverage.', education: 'BSc (Hons) Business Management (Digital Marketing)' },
+  { name: 'Nadyah Riyaz', role: 'Head of Media', category: 'media', image: '/assets/Nadyah.webp', linkedin: 'https://www.linkedin.com/in/nadyah-riyaz-9384b8290', bio: 'Co-leads media — photography, videography and event coverage.', education: 'BSc (Hons) Business Management (Digital Marketing)', objectPosition: '50% 0%' },
   { name: 'Sameeha Fahim', role: 'Head of Media', category: 'media', image: '/assets/Sameeha-fahim.webp', linkedin: 'https://www.linkedin.com/in/sameeha-fahim-819023280', bio: 'Co-leads media — photography, videography and event coverage.', education: 'BSc (Hons) Cyber Security and Networking' },
   { name: 'Nadha Rizan', role: 'Head of Communications', category: 'comms', image: '/assets/nadha-rizan.webp', linkedin: 'https://www.linkedin.com/in/nadha-rizan-077977327', bio: 'Co-leads communications with schools, sponsors and participants.', education: 'BSc (Hons) International Business Management' },
   { name: 'Nevanya Nonis', role: 'Head of Communications', category: 'comms', image: '/assets/Nevanya.webp', linkedin: 'https://www.linkedin.com/in/nevanya-nonis-9088b1355', bio: 'Communications team, Sandbox 3.0.', education: 'BSc (Hons) Business Management' },
   { name: 'Asna Azver', role: 'Head of Logistics', category: 'logistics', image: '/assets/Asna-Azwer.webp', linkedin: 'https://www.linkedin.com/in/asna-azver-310249365', bio: 'Co-leads logistics — venues, operations and event-day flow.', education: 'LLB (Hons) Law' },
   { name: 'Burhanuddin', role: 'Head of Logistics', category: 'logistics', image: '/assets/Burhan-Mansoor.webp', linkedin: 'https://www.linkedin.com/in/m-burhanuddin-m-mansoor-bharmal-09373a249', bio: 'Co-leads logistics — venues, operations and event-day flow.', education: 'BSc (Hons) Business Management (Innovation & Entrepreneurship)' },
   // --- IT Team ---
-  { name: 'Murad Hussain', role: 'IT Team', category: 'it', image: '/assets/Murad-Hussain.webp', linkedin: 'https://www.linkedin.com/in/murad-hussain-6801702b2', bio: 'IT team, Sandbox 3.0.', education: 'BSc (Hons) Computer Science' },
+  { name: 'Murad Hussain', role: 'IT Team', category: 'it', image: '/assets/Murad-Hussain.webp', linkedin: 'https://www.linkedin.com/in/murad-hussain-6801702b2', bio: 'IT team, Sandbox 3.0.', education: 'BSc (Hons) Computer Science', objectPosition: '50% 0%' },
   { name: 'Hana Careem', role: 'IT Team', category: 'it', image: '/assets/Hana-Careem.webp', linkedin: 'https://www.linkedin.com/in/hana-careem-4304b2349', bio: 'IT team, Sandbox 3.0.', education: 'BSc (Hons) Computer Science' },
   // --- Media Team ---
-  { name: 'Tuan Shaahid Rainudeen', role: 'Media Team', category: 'media', image: '/assets/Tuan-shaahid.webp', linkedin: 'https://www.linkedin.com/in/tuan-shaahid-rainudeen-47b705374', bio: 'Media team, Sandbox 3.0.', education: 'BSc (Hons) Computer Science' },
-  { name: 'Dasanya', role: 'Media Team', category: 'media', image: placeholderImage, linkedin: 'https://www.linkedin.com/in/dasanya-dahanayake-b09427363', bio: 'Media team, Sandbox 3.0.', education: 'BSc (Hons) International Business Management' },
+  { name: 'Tuan Shaahid Rainudeen', role: 'Media Team', category: 'media', image: '/assets/Tuan-shaahid.webp', linkedin: 'https://www.linkedin.com/in/tuan-shaahid-rainudeen-47b705374', bio: 'Media team, Sandbox 3.0.', education: 'BSc (Hons) Computer Science', objectPosition: '50% 0%' },
+  { name: 'Dasanya', role: 'Media Team', category: 'media', image: '/assets/Dasanya.webp', linkedin: 'https://www.linkedin.com/in/dasanya-dahanayake-b09427363', bio: 'Media team, Sandbox 3.0.', education: 'BSc (Hons) International Business Management' },
   // --- Marketing Team ---
   { name: 'Diseni Chanulya Dharmadasa', role: 'Marketing Team', category: 'marketing', image: '/assets/Diseni-Chanulya.webp', linkedin: 'https://www.linkedin.com/in/diseni-chanulya-a0707a359', bio: 'Marketing team, Sandbox 3.0.' },
   { name: 'Umar Shafeek', role: 'Marketing Team', category: 'marketing', image: '/assets/Umar-shafeek.webp', linkedin: 'https://www.linkedin.com/in/umar-shafeek-2a50a2367', bio: 'Marketing team, Sandbox 3.0.' },
@@ -59,7 +59,7 @@ export const TEAM = [
   { name: 'Noor Fazeena Faiz', role: 'Communications Team', category: 'comms', image: '/assets/Fazeena-Faiz.webp', linkedin: 'https://www.linkedin.com/in/fazeena-faiz-a5999b355', bio: 'Communications team, Sandbox 3.0.', education: 'BSc (Hons) International Business Management' },
   { name: 'Suresh Kumar Habilashinie', role: 'Communications Team', category: 'comms', image: '/assets/Habilashinie.webp', linkedin: 'https://www.linkedin.com/in/habilashinie-suresh-kumar-61095633a', bio: 'Communications team, Sandbox 3.0.', education: 'BSc (Hons) International Business Management' },
   // --- Logistics Team ---
-  { name: 'Nithispranav', role: 'Logistics Team', category: 'logistics', image: '/assets/Pranav.webp', linkedin: 'https://www.linkedin.com/in/nithis-pranav-periyannen-a97990335', bio: 'Logistics team, Sandbox 3.0.' },
+  { name: 'Nithispranav', role: 'Logistics Team', category: 'logistics', image: '/assets/Pranav.webp', linkedin: 'https://www.linkedin.com/in/nithis-pranav-periyannen-a97990335', bio: 'Logistics team, Sandbox 3.0.', objectPosition: '50% 0%' },
   { name: 'Rakkshetha Soundararajan', role: 'Logistics Team', category: 'logistics', image: '/assets/Raksheta-.webp', linkedin: 'https://www.linkedin.com/in/rakkshetha-undefined-160347393', bio: 'Logistics team, Sandbox 3.0.', education: 'BSc (Hons) Business Management' },
 ]
 
@@ -94,7 +94,6 @@ export const PAST_TEAMS = [
       { group: 'Executive Board', name: 'Craleeth Gunathilake', role: 'Chairperson', image: '/assets/Craleeth-Gunathilake-Chairperson.webp', linkedin: '' },
       { group: 'Executive Board', name: 'Shevan Gomis', role: 'Secretary', image: '/assets/Shevan-Gomis-secretary.webp', linkedin: '' },
       { group: 'Executive Board', name: 'Dewdun Jayakody', role: 'Asst. Secretary', image: '/assets/Dewdun-Jayakody-asst-secretay.webp', linkedin: '' },
-      { group: 'Executive Board', name: 'Sudeesha Fonseka', role: 'Treasurer', image: '/assets/Sudeesha-Fonseka-Treasurer.webp', linkedin: '' },
       { group: 'Executive Board', name: 'Mukthar Riyaz', role: 'Asst. Treasurer', image: '/assets/Mukthar-Riyaz-asst-treasurer.webp', linkedin: '' },
       { group: 'Executive Board', name: 'Thevnaka De Silva', role: 'Head of Marketing', image: '/assets/Thevnaka-De-Silva-Head-of-marketingwebp.webp', linkedin: '' },
       { group: 'Executive Board', name: 'Reema Mushtaq', role: 'Head of Marketing', image: '/assets/Reema-Mushtaq-head-of-marketing.webp', linkedin: '' },
@@ -112,7 +111,7 @@ export const PAST_TEAMS = [
       // linkedin derived from his own LinkedIn post URL (distinctive name) — verify:
       { group: 'Executive Board', name: 'Jason Montini Fernando', role: 'Head of IT', image: '/assets/Jason-Montini-Fernando-Head-of-IT.webp', linkedin: 'https://www.linkedin.com/in/jason-montini-fernando-006317261/' },
       // --- Committee Members ---
-      { group: 'Committee Members', name: 'Ayodya Sasuni Perera', role: 'Head of Marketing and Project Coordinator', image: '/assets/Ayodya.webp', linkedin: '' },
+      { group: 'Committee Members', name: 'Ayodya Sasuni Perera', role: 'Head of Marketing and Project Coordinator', image: '/assets/Ayodya.webp', linkedin: '', objectPosition: '50% 0%' },
       { group: 'Committee Members', name: 'Diseni Chanulya Dharmadhasa', role: 'Marketing', image: '/assets/Diseni-Chanulya.webp', linkedin: '' },
       { group: 'Committee Members', name: 'Nethaya Mewni Gunathilaka', role: 'Marketing', image: '/assets/Nethaya-Mewni-Gunathilaka-Head-of-marketing.webp', linkedin: '' },
       { group: 'Committee Members', name: 'V. Denam Pathmanathan', role: 'Marketing', image: '/assets/V.-Denam-Pathmanathan-marketing.webp', linkedin: '' },
