@@ -10,7 +10,7 @@ const FACE_STYLE = {
 
 export default function TeamFlipCard({ member }) {
   const [flipped, setFlipped] = useState(false)
-  const { name, role, image, linkedin, bio, education } = member
+  const { name, role, image, linkedin, education } = member
 
   const toggle = () => {
     setFlipped(!flipped)
@@ -32,7 +32,7 @@ export default function TeamFlipCard({ member }) {
         aria-label={`${name}, ${role}. ${flipped ? 'Hide' : 'Show'} background`}
         onClick={toggle}
         onKeyDown={onKey}
-        className={`relative aspect-[3/4] w-full cursor-pointer rounded-2xl outline-none
+        className={`relative aspect-[3/5] md:aspect-[3/4] w-full cursor-pointer rounded-2xl outline-none
                    focus-visible:ring-2 focus-visible:ring-[#7C3AED] transition-transform duration-300 ${
                      flipped ? '[transform:rotateY(180deg)]' : ''
                    }`}
@@ -59,7 +59,12 @@ export default function TeamFlipCard({ member }) {
             <div className="hidden md:block absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#2a1130] to-transparent" />
           </div>
 
-          <div className="px-4 pb-4 pt-1">
+          {/* On mobile the caption is a fixed-height flex column: name + role stay
+              top-aligned (so every card's name starts at the same level across the
+              row, role directly underneath — no gap) and the LinkedIn link is pushed
+              to the bottom with mt-auto, so links line up along the card's base. The
+              leftover space sits between the role and the link. Desktop stays natural. */}
+          <div className="flex flex-col px-4 pt-1 pb-4 min-h-[7.25rem] md:min-h-0">
             <p className="font-['Space_Grotesk'] text-base font-medium text-white">{name}</p>
             <p className="text-sm text-white/55">{role}</p>
             {linkedin ? (
@@ -69,14 +74,14 @@ export default function TeamFlipCard({ member }) {
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
                 aria-label={`${name} on LinkedIn`}
-                className="mt-2 inline-flex items-center gap-1.5 text-xs text-[#14f2db]
+                className="mt-auto md:mt-2 inline-flex items-center gap-1.5 text-xs text-[#14f2db]
                            transition-colors hover:text-white"
               >
                 <Linkedin className="h-3.5 w-3.5" />
                 LinkedIn
               </a>
             ) : (
-              <span className="mt-2 block h-[18px]" aria-hidden="true" />
+              <span className="mt-auto md:mt-2 block h-[18px]" aria-hidden="true" />
             )}
           </div>
 
@@ -93,7 +98,7 @@ export default function TeamFlipCard({ member }) {
           {education && <p className="mb-3 text-xs text-[#14f2db]/80">{education}</p>}
           {!education && <div className="mb-3" />}
 
-          <p className="flex-1 overflow-y-auto text-sm leading-relaxed text-white/70">{bio}</p>
+          <div className="flex-1" />
 
           <div className="mt-4 flex items-center justify-between">
             {linkedin ? (
