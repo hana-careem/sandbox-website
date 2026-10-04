@@ -26,9 +26,9 @@ export const CATEGORIES = [
 // ---------------------------------------------------------------------------
 export const TEAM = [
   // --- Leadership ---
-  { name: 'Maneesha Thatuwalakanda', role: 'Chairperson', category: 'leadership', image: '/assets/Maneesha-Vindani.jpeg', linkedin: 'https://www.linkedin.com/in/maneesha-thatuwalakanda-850790267' },
+  { name: 'Maneesha Thatuwalakanda', role: 'Chairperson', category: 'leadership', image: '/assets/Maneesha-Vindani.jpeg', linkedin: 'https://www.linkedin.com/in/maneesha-thatuwalakanda-850790267', course: 'International Business Management' },
   { name: 'Himansa Indusara', role: 'Chairperson', category: 'leadership', image: '/assets/Himansa-.jpeg', linkedin: 'https://www.linkedin.com/in/himansa-indusara-b36310357', education:'BSc (Hons) International Business Management', objectPosition: '50% 0%' },
-  { name: 'Ayodya Perera', role: 'Project Coordinator & Head of Marketing', category: ['leadership', 'marketing'], image: '/assets/Ayodya.webp', linkedin: 'https://www.linkedin.com/in/ayodya-perera-2b4527339/', objectPosition: '50% 0%' },
+  { name: 'Ayodya Perera', role: 'Project Coordinator and Head of Marketing', category: ['leadership', 'marketing'], image: '/assets/Ayodya.webp', linkedin: 'https://www.linkedin.com/in/ayodya-perera-2b4527339/', objectPosition: '50% 0%', longRole: true },
   { name: 'Tyanna Franchesca Avory', role: 'Secretary', category: 'leadership', image: '/assets/Tyanna-franchesca.webp', linkedin: 'https://www.linkedin.com/in/tyanna-avory-a879a32b2', education: 'BSc (Hons) Computer Science' },
   { name: 'Pujaa Shruti Senthilnathan', role: 'Treasurer', category: 'leadership', image: '/assets/Puja-Shrutinaathilan.webp', linkedin: 'https://www.linkedin.com/in/pujaa-shruti-senthilnathan-678790390', education:'BSc (Hons) Accounting and Finance', objectPosition: '50% 0%' },
   // linkedin: distinctive name match, but headline says Edith Cowan University —
