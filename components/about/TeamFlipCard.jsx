@@ -9,8 +9,8 @@ const FACE_STYLE = {
 }
 
 const LONG_ROLE_STYLE = {
-  fontSize: '0.8125rem',   /* 13px — slightly smaller than the default 14px */
-  lineHeight: '1.25',
+  fontSize: '0.71875rem',  /* 11.5px — tight enough for 2 lines on mobile & desktop */
+  lineHeight: '1.15',
   textWrap: 'balance',
 }
 
