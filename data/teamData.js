@@ -26,7 +26,7 @@ export const CATEGORIES = [
 // ---------------------------------------------------------------------------
 export const TEAM = [
   // --- Leadership ---
-  { name: 'Maneesha Thatuwalakanda', role: 'Chairperson', category: 'leadership', image: '/assets/Maneesha-Vindani.jpeg', linkedin: 'https://www.linkedin.com/in/maneesha-thatuwalakanda-850790267', course: 'International Business Management', education: 'International Business Management' },
+  { name: 'Maneesha Thatuwalakanda', role: 'Chairperson', category: 'leadership', image: '/assets/Maneesha-Vindani.jpeg', linkedin: 'https://www.linkedin.com/in/maneesha-thatuwalakanda-850790267', education: 'International Business Management' },
   { name: 'Himansa Indusara', role: 'Chairperson', category: 'leadership', image: '/assets/Himansa-.jpeg', linkedin: 'https://www.linkedin.com/in/himansa-indusara-b36310357', education:'BSc (Hons) International Business Management', objectPosition: '50% 0%' },
   { name: 'Ayodya Perera', role: 'Project Coordinator and Head of Marketing', category: ['leadership', 'marketing'], image: '/assets/Ayodya.webp', linkedin: 'https://www.linkedin.com/in/ayodya-perera-2b4527339/', objectPosition: '50% 0%', longRole: true },
   { name: 'Tyanna Franchesca Avory', role: 'Secretary', category: 'leadership', image: '/assets/Tyanna-franchesca.webp', linkedin: 'https://www.linkedin.com/in/tyanna-avory-a879a32b2', education: 'BSc (Hons) Computer Science' },
@@ -56,7 +56,7 @@ export const TEAM = [
   { name: 'Disenka Bosandi', role: 'Communications Team', category: 'comms', image: '/assets/Disenka-Bosandi.webp', linkedin: 'https://www.linkedin.com/in/disenka-bosandi-de-a-goonatilake-46916630a', education: 'BSc (Hons) International Business Management', objectPosition: '50% 0%' },
   { name: 'Ayuni Randeena', role: 'Communications Team', category: 'comms', image: '/assets/Ayuni-Randeena.webp', education: 'LLB (Hons)', linkedin: 'https://www.linkedin.com/in/ayuni-karunatilaka-1a2340422', objectPosition: '50% 0%' },
   { name: 'Fazeena Faiz', role: 'Communications Team', category: 'comms', image: '/assets/Fazeena-Faiz.webp', linkedin: 'https://www.linkedin.com/in/fazeena-faiz-a5999b355', education: 'BSc (Hons) International Business Management' },
-  { name: 'Habilashinie Suresh Kumar', role: 'Communications Team', category: 'comms', image: '/assets/Habilashinie.webp', linkedin: 'https://www.linkedin.com/in/habilashinie-suresh-kumar-61095633a', education: 'BSc (Hons) International Business Management', objectPosition: '50% 0%' },
+  { name: 'Habilashinie Suresh Kumar', role: 'Communications Team', category: 'comms', image: '/assets/Habilashinie.webp', linkedin: 'https://www.linkedin.com/in/habilashinie-suresh-kumar-61095633a', education: 'BSc (Hons) International Business Management', objectPosition: '50% 0%', longName: true },
   { name: 'Sanuli Fernando', role: 'Communications Team', category: 'comms', image: '/assets/Sanuli-Fernando.webp', linkedin: 'https://www.linkedin.com/in/sanuli-fernando-636982347/', education: 'BSc (Hons) Psychology' },
   // --- Logistics Team ---
   { name: 'Thahnees Tariq', role: 'Logistics Team', category: 'logistics', image: '/assets/Thahnees-thaeiq.webp', linkedin: 'https://www.linkedin.com/in/thahnees-tariq-04072124b', education: 'BSc (Hons) International Business Management' },
