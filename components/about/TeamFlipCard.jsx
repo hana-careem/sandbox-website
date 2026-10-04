@@ -8,9 +8,21 @@ const FACE_STYLE = {
   WebkitBackfaceVisibility: 'hidden',
 }
 
+const LONG_ROLE_STYLE = {
+  fontSize: '0.71875rem',  /* 11.5px — tight enough for 2 lines on mobile & desktop */
+  lineHeight: '1.15',
+  textWrap: 'balance',
+}
+
+const COURSE_STYLE = {
+  fontSize: '0.75rem',     /* 12px — smaller than the role text */
+  lineHeight: '1.25',
+  textWrap: 'balance',
+}
+
 export default function TeamFlipCard({ member }) {
   const [flipped, setFlipped] = useState(false)
-  const { name, role, image, linkedin, bio, education } = member
+  const { name, role, image, linkedin, education, longRole, course } = member
 
   const toggle = () => {
     setFlipped(!flipped)
@@ -32,7 +44,7 @@ export default function TeamFlipCard({ member }) {
         aria-label={`${name}, ${role}. ${flipped ? 'Hide' : 'Show'} background`}
         onClick={toggle}
         onKeyDown={onKey}
-        className={`relative aspect-[3/4] w-full cursor-pointer rounded-2xl outline-none
+        className={`relative aspect-[3/5] md:aspect-[3/4] w-full cursor-pointer rounded-2xl outline-none
                    focus-visible:ring-2 focus-visible:ring-[#7C3AED] transition-transform duration-300 ${
                      flipped ? '[transform:rotateY(180deg)]' : ''
                    }`}
@@ -47,21 +59,42 @@ export default function TeamFlipCard({ member }) {
           className="absolute inset-0 flex flex-col overflow-hidden rounded-2xl
                      border border-white/10 bg-white/[0.05] backdrop-blur-md"
         >
-          <div className="relative flex-1 overflow-hidden">
+          <div
+            className="relative overflow-hidden"
+            style={{ flex: '1 0 0%', ...(longRole ? { flexShrink: 0 } : {}) }}
+          >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={image}
               alt={name}
               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-              style={{ objectPosition: member.objectPosition || '50% 20%' }}
+              style={{
+                objectPosition: member.objectPosition || '50% 20%',
+                ...(longRole ? { objectPosition: 'center top' } : {}),
+              }}
             />
             {/* bottom fade so the caption band reads cleanly — hidden on mobile to avoid covering faces */}
             <div className="hidden md:block absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#2a1130] to-transparent" />
           </div>
 
-          <div className="px-4 pb-4 pt-1">
+          {/* On mobile the caption is a fixed-height flex column: name + role stay
+              top-aligned (so every card's name starts at the same level across the
+              row, role directly underneath — no gap) and the LinkedIn link is pushed
+              to the bottom with mt-auto, so links line up along the card's base. The
+              leftover space sits between the role and the link. Desktop stays natural. */}
+          <div className="flex flex-col px-4 pt-1 pb-4 min-h-[7.25rem] md:min-h-0">
             <p className="font-['Space_Grotesk'] text-base font-medium text-white">{name}</p>
-            <p className="text-sm text-white/55">{role}</p>
+            <p
+              className="text-sm text-white/55"
+              style={longRole ? LONG_ROLE_STYLE : undefined}
+            >
+              {role}
+            </p>
+            {course && (
+              <p className="text-white/40" style={COURSE_STYLE}>
+                {course}
+              </p>
+            )}
             {linkedin ? (
               <a
                 href={linkedin}
@@ -69,14 +102,14 @@ export default function TeamFlipCard({ member }) {
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
                 aria-label={`${name} on LinkedIn`}
-                className="mt-2 inline-flex items-center gap-1.5 text-xs text-[#14f2db]
+                className="mt-auto md:mt-2 inline-flex items-center gap-1.5 text-xs text-[#14f2db]
                            transition-colors hover:text-white"
               >
                 <Linkedin className="h-3.5 w-3.5" />
                 LinkedIn
               </a>
             ) : (
-              <span className="mt-2 block h-[18px]" aria-hidden="true" />
+              <span className="mt-auto md:mt-2 block h-[18px]" aria-hidden="true" />
             )}
           </div>
 
@@ -93,7 +126,7 @@ export default function TeamFlipCard({ member }) {
           {education && <p className="mb-3 text-xs text-[#14f2db]/80">{education}</p>}
           {!education && <div className="mb-3" />}
 
-          <p className="flex-1 overflow-y-auto text-sm leading-relaxed text-white/70">{bio}</p>
+          <div className="flex-1" />
 
           <div className="mt-4 flex items-center justify-between">
             {linkedin ? (
