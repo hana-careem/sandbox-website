@@ -8,9 +8,22 @@ const FACE_STYLE = {
   WebkitBackfaceVisibility: 'hidden',
 }
 
+const LONG_ROLE_STYLE = {
+  fontSize: '0.6875rem',   /* 11px — wraps to exactly 2 lines on narrow mobile */
+  lineHeight: '1.1',
+  textWrap: 'balance',
+}
+
+
+const COURSE_STYLE = {
+  fontSize: '0.75rem',     /* 12px — smaller than the role text */
+  lineHeight: '1.25',
+  textWrap: 'balance',
+}
+
 export default function TeamFlipCard({ member }) {
   const [flipped, setFlipped] = useState(false)
-  const { name, role, image, linkedin, education } = member
+  const { name, role, image, linkedin, education, longRole, course, longName } = member
 
   const toggle = () => {
     setFlipped(!flipped)
@@ -47,13 +60,19 @@ export default function TeamFlipCard({ member }) {
           className="absolute inset-0 flex flex-col overflow-hidden rounded-2xl
                      border border-white/10 bg-white/[0.05] backdrop-blur-md"
         >
-          <div className="relative flex-1 overflow-hidden">
+          <div
+            className="relative overflow-hidden"
+            style={{ flex: '1 0 0%', ...(longRole ? { flexShrink: 0 } : {}) }}
+          >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={image}
               alt={name}
               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-              style={{ objectPosition: member.objectPosition || '50% 20%' }}
+              style={{
+                objectPosition: member.objectPosition || '50% 20%',
+                ...(longRole ? { objectPosition: 'center top' } : {}),
+              }}
             />
             {/* bottom fade so the caption band reads cleanly — hidden on mobile to avoid covering faces */}
             <div className="hidden md:block absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#2a1130] to-transparent" />
@@ -65,8 +84,26 @@ export default function TeamFlipCard({ member }) {
               to the bottom with mt-auto, so links line up along the card's base. The
               leftover space sits between the role and the link. Desktop stays natural. */}
           <div className="flex flex-col px-4 pt-1 pb-4 min-h-[7.25rem] md:min-h-0">
-            <p className="font-['Space_Grotesk'] text-base font-medium text-white">{name}</p>
-            <p className="text-sm text-white/55">{role}</p>
+            <p
+              className={`font-['Space_Grotesk'] font-medium text-white ${
+                longName
+                  ? 'text-[13px] md:text-[15px] leading-tight md:leading-snug mt-0.5 md:mt-[1px]'
+                  : 'text-base'
+              }`}
+            >
+              {name}
+            </p>
+            <p
+              className="text-sm text-white/55"
+              style={longRole ? LONG_ROLE_STYLE : undefined}
+            >
+              {role}
+            </p>
+            {course && (
+              <p className="text-white/40" style={COURSE_STYLE}>
+                {course}
+              </p>
+            )}
             {linkedin ? (
               <a
                 href={linkedin}
@@ -93,7 +130,15 @@ export default function TeamFlipCard({ member }) {
           className="absolute inset-0 flex flex-col overflow-hidden rounded-2xl border
                      border-[#7C3AED]/40 bg-[#1a1526] p-5"
         >
-          <p className="font-['Space_Grotesk'] text-base font-medium text-white">{name}</p>
+          <p
+            className={`font-['Space_Grotesk'] font-medium text-white ${
+              longName
+                ? 'text-[13px] md:text-[15px] leading-tight md:leading-snug mt-0.5 md:mt-[1px]'
+                : 'text-base'
+            }`}
+          >
+            {name}
+          </p>
           <p className="text-sm text-[#FF4D6D]">{role}</p>
           {education && <p className="mb-3 text-xs text-[#14f2db]/80">{education}</p>}
           {!education && <div className="mb-3" />}
