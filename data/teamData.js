@@ -26,7 +26,7 @@ export const CATEGORIES = [
 // ---------------------------------------------------------------------------
 export const TEAM = [
   // --- Leadership ---
-  { name: 'Sudeesha Fonseka', role: 'President of E-Club', category: 'leadership', image: '/assets/sudeesha.jpeg', linkedin: 'https://www.linkedin.com/in/sudeeshafonseka/', education: 'BSc (Hons) in Business Innovation and Entrepreneurship' },
+  { name: 'Sudeesha Fonseka', role: 'President of E-Club', category: 'leadership', image: '/assets/sudeesha.jpeg', linkedin: 'https://www.linkedin.com/in/sudeeshafonseka/', education: 'BSc (Hons) Business Innovation and Entrepreneurship' },
   { name: 'Maneesha Thatuwalakanda', role: 'Chairperson', category: 'leadership', image: '/assets/Maneesha-Vindani.jpeg', linkedin: 'https://www.linkedin.com/in/maneesha-thatuwalakanda-850790267', education:'BSc (Hons) International Business Management' },
   { name: 'Himansa Indusara', role: 'Chairperson', category: 'leadership', image: '/assets/Himansa-.jpeg', linkedin: 'https://www.linkedin.com/in/himansa-indusara-b36310357', education:'BSc (Hons) International Business Management', objectPosition: '50% 0%' },
   { name: 'Ayodya Perera', role: 'Project Coordinator & Head of Marketing', category: ['leadership', 'marketing'], image: '/assets/Ayodya.webp', linkedin: 'https://www.linkedin.com/in/ayodya-perera-2b4527339/', education: 'BSc (Hons) Digital and Social Media Marketing', objectPosition: '50% 0%' },
